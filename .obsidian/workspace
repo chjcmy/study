@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "알고리즘/알고리즘방법/탐색/이진 탐색.md",
+            "file": "알고리즘/알고리즘 이란.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "알고리즘/알고리즘방법/탐색/이진 탐색.md",
+                "file": "알고리즘/알고리즘 이란.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "알고리즘/알고리즘방법/탐색/이진 탐색.md",
+                "file": "알고리즘/알고리즘 이란.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "알고리즘/알고리즘방법/탐색/이진 탐색.md"
+                "file": "알고리즘/알고리즘 이란.md"
               }
             }
           },
@@ -146,15 +146,15 @@
   },
   "active": "0a9e7c710258a338",
   "lastOpenFiles": [
+    "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까.md",
+    "알고리즘/알고리즘 이란.md",
+    "알고리즘/알고리즘방법/탐색/이진 탐색.md",
     "알고리즘/알고리즘방법/탐색.md",
     "알고리즘/알고리즘방법/트리/세그먼트 트리.md",
     "알고리즘/알고리즘방법/트리.md",
     "알고리즘/알고리즘방법/조합.md",
     "알고리즘/알고리즘방법/정수론.md",
     "알고리즘/알고리즘방법/정렬.md",
-    "알고리즘/알고리즘방법/정렬/선택정렬.md",
-    "알고리즘/알고리즘방법/자료구조.md",
-    "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까.md",
-    "알고리즘/알고리즘방법/동적 계획법.md"
+    "알고리즘/알고리즘방법/정렬/선택정렬.md"
   ]
 }
