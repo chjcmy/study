@@ -1,5 +1,8 @@
 {
   "promptDelete": false,
   "alwaysUpdateLinks": true,
-  "attachmentFolderPath": "/"
+  "attachmentFolderPath": "./",
+  "spellcheck": false,
+  "foldHeading": false,
+  "autoPairBrackets": false
 }
