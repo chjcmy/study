@@ -1,0 +1,160 @@
+{
+  "main": {
+    "id": "170ede58e61a061d",
+    "type": "split",
+    "children": [
+      {
+        "id": "0a9e7c710258a338",
+        "type": "leaf",
+        "state": {
+          "type": "empty",
+          "state": {}
+        }
+      },
+      {
+        "id": "4517d880a60df735",
+        "type": "leaf",
+        "state": {
+          "type": "empty",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c1be2c1eddc05f86",
+    "type": "split",
+    "children": [
+      {
+        "id": "acd7611480f8e4de",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c7d753e146aa1927",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "9b09d9919b8ae1d1",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "6565380e8adc5f88",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "0c0a0ed5b2a69168",
+    "type": "split",
+    "children": [
+      {
+        "id": "6f94db833281c995",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "323989cb0e0a701d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "009815d2353d4bf9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "9727fcf00d127cd0",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "335a1b72e0314790",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "8974810f6456c869",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "e3ba537164e3d630",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "c7d753e146aa1927",
+  "lastOpenFiles": [
+    "알고리즘 이란/아래 파일/그래프/그래프의 표현.md",
+    "알고리즘 이란.md",
+    "알고리즘 이란/그래프.md",
+    "알고리즘 이란/트리.md",
+    "알고리즘 이란/탐색.md",
+    "알고리즘 이란/조합.md",
+    "알고리즘 이란/정수론.md",
+    "알고리즘 이란/정렬.md",
+    "알고리즘 이란/자료구조.md",
+    "알고리즘 이란/알고리즘으로 풀어야 할까.md"
+  ]
+}
