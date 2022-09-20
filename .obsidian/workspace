@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "알고리즘/알고리즘방법/자료구조/코드/bj_1874.java.md",
+            "file": "알고리즘/알고리즘방법/자료구조/스택과 큐.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "알고리즘/알고리즘방법/자료구조/코드/bj_1874.java.md",
+                "file": "알고리즘/알고리즘방법/자료구조/스택과 큐.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "알고리즘/알고리즘방법/자료구조/코드/bj_1874.java.md",
+                "file": "알고리즘/알고리즘방법/자료구조/스택과 큐.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "알고리즘/알고리즘방법/자료구조/코드/bj_1874.java.md"
+                "file": "알고리즘/알고리즘방법/자료구조/스택과 큐.md"
               }
             }
           },
@@ -146,8 +146,8 @@
   },
   "active": "42c68b7b258b7a7a",
   "lastOpenFiles": [
-    "알고리즘/알고리즘방법/자료구조/스택과 큐.md",
     "알고리즘/알고리즘방법/자료구조/코드/bj_1874.java.md",
+    "알고리즘/알고리즘방법/자료구조/스택과 큐.md",
     "자료구queue.png.md",
     "알고리즘/알고리즘방법/자료구조.md",
     "알고리즘/알고리즘방법/자료구조/구간 합.md",
