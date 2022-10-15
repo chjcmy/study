@@ -18,19 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "b1139482c66828d6",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.0.0"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -166,7 +155,7 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "b1139482c66828d6",
+  "active": "42c68b7b258b7a7a",
   "lastOpenFiles": [
     "알고리즘/알고리즘방법/탐색.md",
     "알고리즘/알고리즘방법/조합.md",
