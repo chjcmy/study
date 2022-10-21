@@ -138,9 +138,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "5d86660a1545df5a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "자바/인터페이스/인터페이스.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 10
+        "currentTab": 11
       }
     ],
     "direction": "vertical"
@@ -206,7 +218,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "자바/상속/추상 클래스.md",
+                "file": "자바/인터페이스/인터페이스.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -223,7 +235,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "자바/상속/추상 클래스.md",
+                "file": "자바/인터페이스/인터페이스.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -246,7 +258,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "자바/상속/추상 클래스.md"
+                "file": "자바/인터페이스/인터페이스.md"
               }
             }
           },
@@ -276,12 +288,12 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "538b238d54df6803",
+  "active": "5d86660a1545df5a",
   "lastOpenFiles": [
+    "자바/상속/추상 클래스.md",
     "자바/클래스/객체 지향 프로그래밍.md",
     "자바/클래스/인스턴스 멤버와 정적 멤버.md",
     "자바/상속/타입 변환과 다형성.md",
-    "자바/상속/추상 클래스.md",
     "자바/상속/상속.md",
     "자바/참조타입/참조 타입과 참조 변수.md",
     "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
