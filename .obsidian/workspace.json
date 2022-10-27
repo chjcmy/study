@@ -150,9 +150,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "962d770dd6cf8631",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.0.3"
+              }
+            }
           }
         ],
-        "currentTab": 11
+        "currentTab": 12
       }
     ],
     "direction": "vertical"
@@ -285,10 +295,7 @@
     "width": 300,
     "collapsed": true
   },
-  "ribbon": {
-    "mostRecentAction": ""
-  },
-  "active": "5d86660a1545df5a",
+  "active": "962d770dd6cf8631",
   "lastOpenFiles": [
     "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
     "알고리즘/알고리즘방법/조합/조합 알아보기.md",
