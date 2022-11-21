@@ -1,10 +1,10 @@
 [
   "obsidian-admonition",
   "obsidian-advanced-slides",
+  "table-editor-obsidian",
   "calendar",
   "obsidian-checklist-plugin",
   "cmenu-plugin",
   "obsidian-minimal-settings",
-  "obsidian-git",
-  "table-editor-obsidian"
+  "obsidian-git"
 ]
