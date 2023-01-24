@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "자바/상속/타입 변환과 다형성.md",
+                "file": "알고리즘/알고리즘방법/트리.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -211,7 +211,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "자바/상속/타입 변환과 다형성.md",
+                "file": "알고리즘/알고리즘방법/트리.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -234,7 +234,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "자바/상속/타입 변환과 다형성.md"
+                "file": "알고리즘/알고리즘방법/트리.md"
               }
             }
           },
@@ -247,18 +247,18 @@
             }
           },
           {
-            "id": "e3ba537164e3d630",
-            "type": "leaf",
-            "state": {
-              "type": "todo",
-              "state": {}
-            }
-          },
-          {
             "id": "493440af814778ff",
             "type": "leaf",
             "state": {
               "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "f30b955c1bd7736c",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
               "state": {}
             }
           }
@@ -282,7 +282,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "12c1a3ebed881349",
+  "active": "f30b955c1bd7736c",
   "lastOpenFiles": [
     "알고리즘/알고리즘방법/트리.md",
     "무제 파일.canvas",
