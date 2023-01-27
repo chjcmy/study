@@ -206,7 +206,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "자바/모르는 문법.md",
+                "file": "알고리즘/알고리즘방법/트리.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -223,7 +223,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "자바/모르는 문법.md",
+                "file": "알고리즘/알고리즘방법/트리.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -246,7 +246,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "자바/모르는 문법.md"
+                "file": "알고리즘/알고리즘방법/트리.md"
               }
             }
           },
@@ -294,7 +294,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1123e1f6eb7a5eeb",
+  "active": "c7d753e146aa1927",
   "lastOpenFiles": [
     "알고리즘/알고리즘방법/트리.md",
     "무제 파일.canvas",
