@@ -8,8 +8,8 @@
   "autoPullOnBoot": true,
   "disablePush": false,
   "pullBeforePush": true,
-  "disablePopups": false,
-  "listChangedFilesInMessageBody": false,
+  "disablePopups": true,
+  "listChangedFilesInMessageBody": true,
   "showStatusBar": true,
   "updateSubmodules": true,
   "syncMethod": "merge",
@@ -19,9 +19,10 @@
   "refreshSourceControl": true,
   "basePath": "",
   "differentIntervalCommitAndPush": true,
-  "changedFilesInStatusBar": false,
+  "changedFilesInStatusBar": true,
   "showedMobileNotice": true,
   "refreshSourceControlTimer": 7000,
   "showBranchStatusBar": true,
-  "setLastSaveToLastCommit": false
+  "setLastSaveToLastCommit": false,
+  "submoduleRecurseCheckout": true
 }
