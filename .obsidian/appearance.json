@@ -4,5 +4,6 @@
   "baseFontSizeAction": true,
   "baseFontSize": 18,
   "translucency": false,
-  "accentColor": ""
+  "accentColor": "",
+  "interfaceFontFamily": "D2Coding"
 }

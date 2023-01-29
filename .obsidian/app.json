@@ -2,7 +2,11 @@
   "promptDelete": false,
   "alwaysUpdateLinks": true,
   "attachmentFolderPath": "./",
-  "spellcheck": false,
-  "foldHeading": false,
-  "autoPairBrackets": false
+  "spellcheck": true,
+  "foldHeading": true,
+  "autoPairBrackets": true,
+  "strictLineBreaks": true,
+  "showFrontmatter": true,
+  "showLineNumber": true,
+  "rightToLeft": false
 }
