@@ -20,6 +20,16 @@
             }
           },
           {
+            "id": "0742befb011220db",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.1.16"
+              }
+            }
+          },
+          {
             "id": "256c1cbe2becd682",
             "type": "leaf",
             "state": {
@@ -147,7 +157,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -302,8 +313,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "8b2a938be533bda7",
+  "active": "0742befb011220db",
   "lastOpenFiles": [
+    "spring",
+    "무제 폴더",
     "자바/참조타입/열거 타입.md",
     "자바/참조타입/배열.md",
     "자바/참조타입/메모리 사용 영역.md",
