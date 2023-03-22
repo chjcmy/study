@@ -23,9 +23,23 @@
             "id": "0742befb011220db",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.1.16"
+                "file": "자바/모르는 문법.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4c711338616a0101",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "스프링/spring boot.md",
+                "mode": "source",
+                "source": false
               }
             }
           },
@@ -158,7 +172,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -224,7 +238,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "자바/모르는 문법.md",
+                "file": "스프링/spring boot.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -241,7 +255,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "자바/모르는 문법.md",
+                "file": "스프링/spring boot.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -264,7 +278,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "자바/모르는 문법.md"
+                "file": "스프링/spring boot.md"
               }
             }
           },
@@ -313,10 +327,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0742befb011220db",
+  "active": "4c711338616a0101",
   "lastOpenFiles": [
+    "spring.md",
+    "스프링/spring boot.md",
+    "스프링",
+    "자바/모르는 문법.md",
     "spring",
-    "무제 폴더",
     "자바/참조타입/열거 타입.md",
     "자바/참조타입/배열.md",
     "자바/참조타입/메모리 사용 영역.md",
