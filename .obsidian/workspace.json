@@ -44,6 +44,90 @@
             }
           },
           {
+            "id": "9d7279f8a06ee27b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "문제들/정렬 알고리즘.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8f7a98d05422276a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "문제들/탐색 알고리즘.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "196f2b392ab906f8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "문제들/자료구조.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7e9049d6cfa4869e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "문제들/재귀 함수.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8e8efcadc4d89da6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "문제들/동적 계획법.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "140bbf19af533d47",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "문제들/그리디 알고리즘.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d74cb489beac2f23",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "문제들/탐색 알고리즘.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "256c1cbe2becd682",
             "type": "leaf",
             "state": {
@@ -172,7 +256,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -238,7 +322,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "자바/모르는 문법.md",
+                "file": "문제들/탐색 알고리즘.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -255,7 +339,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "자바/모르는 문법.md",
+                "file": "문제들/탐색 알고리즘.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -278,7 +362,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "자바/모르는 문법.md"
+                "file": "문제들/탐색 알고리즘.md"
               }
             }
           },
@@ -327,12 +411,20 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "4c711338616a0101",
+  "active": "d74cb489beac2f23",
   "lastOpenFiles": [
+    "문제들/정렬 알고리즘.md",
+    "문제들/재귀 함수.md",
+    "문제들/자료구조.md",
+    "문제들/백트래킹.md",
+    "문제들/동적 계획법.md",
+    "문제들/그리디 알고리즘.md",
+    "문제들/탐색 알고리즘.md",
+    "자바/모르는 문법.md",
+    "문제들",
     "스프링/spring boot.md",
     "spring.md",
     "스프링",
-    "자바/모르는 문법.md",
     "spring",
     "자바/참조타입/열거 타입.md",
     "자바/참조타입/배열.md",
