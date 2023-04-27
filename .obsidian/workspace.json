@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "스프링/spring boot.md",
+                "file": "자바/모르는 문법.md",
                 "mode": "source",
                 "source": false
               }
@@ -238,7 +238,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "스프링/spring boot.md",
+                "file": "자바/모르는 문법.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -255,7 +255,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "스프링/spring boot.md",
+                "file": "자바/모르는 문법.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -278,7 +278,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "스프링/spring boot.md"
+                "file": "자바/모르는 문법.md"
               }
             }
           },
@@ -329,8 +329,8 @@
   },
   "active": "4c711338616a0101",
   "lastOpenFiles": [
-    "spring.md",
     "스프링/spring boot.md",
+    "spring.md",
     "스프링",
     "자바/모르는 문법.md",
     "spring",
