@@ -121,9 +121,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "문제들/탐색 알고리즘.md",
+                "file": "문제들/자료구조.md",
                 "mode": "source",
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "6c218c3f7df73515",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.2.7"
               }
             }
           },
@@ -256,7 +266,7 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -301,6 +311,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "5700d4b184b1bba1",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -322,7 +340,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "문제들/탐색 알고리즘.md",
+                "file": "문제들/자료구조.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -339,7 +357,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "문제들/탐색 알고리즘.md",
+                "file": "문제들/자료구조.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -362,7 +380,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "문제들/탐색 알고리즘.md"
+                "file": "문제들/자료구조.md"
               }
             }
           },
@@ -411,15 +429,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "d74cb489beac2f23",
+  "active": "6c218c3f7df73515",
   "lastOpenFiles": [
-    "문제들/정렬 알고리즘.md",
-    "문제들/재귀 함수.md",
-    "문제들/자료구조.md",
     "문제들/백트래킹.md",
     "문제들/동적 계획법.md",
     "문제들/그리디 알고리즘.md",
     "문제들/탐색 알고리즘.md",
+    "문제들/정렬 알고리즘.md",
+    "문제들/재귀 함수.md",
+    "문제들/자료구조.md",
     "자바/모르는 문법.md",
     "문제들",
     "스프링/spring boot.md",
