@@ -327,6 +327,9 @@
 canvas[data-chart] {
   padding: 0.5em;
 }
+.reveal .hljs {
+  min-height: 50%;
+}
 .reveal table th,
 .reveal table td {
   vertical-align: top;

@@ -4,269 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "e9aaa3ee95427896",
+        "id": "19c0ea02147bb222",
         "type": "tabs",
         "children": [
           {
-            "id": "8b2a938be533bda7",
+            "id": "cd41087510ff23ce",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "자바/모르는 문법.md",
+                "file": "sql/advanced Select/The PADS.md",
                 "mode": "source",
                 "source": false
               }
-            }
-          },
-          {
-            "id": "0742befb011220db",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "자바/모르는 문법.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4c711338616a0101",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "자바/모르는 문법.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "9d7279f8a06ee27b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "문제들/정렬 알고리즘.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8f7a98d05422276a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "문제들/탐색 알고리즘.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "196f2b392ab906f8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "문제들/자료구조.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7e9049d6cfa4869e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "문제들/재귀 함수.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8e8efcadc4d89da6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "문제들/동적 계획법.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "140bbf19af533d47",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "문제들/그리디 알고리즘.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d74cb489beac2f23",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "문제들/자료구조.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6c218c3f7df73515",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.2.7"
-              }
-            }
-          },
-          {
-            "id": "256c1cbe2becd682",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "자바/클래스/객체 지향 프로그래밍.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "41ee612cfd633bd3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "자바/클래스/인스턴스 멤버와 정적 멤버.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8326a0d2b9c10b6b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "자바/상속/상속.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "12c1a3ebed881349",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "자바/상속/타입 변환과 다형성.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1123e1f6eb7a5eeb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "자바/모르는 문법.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7872474601d3f270",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "러스트/프로젝트.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "75be1178318d067b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "러스트/변수.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "80d91c3d2bd70996",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "러스트/패키지.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "32d4b525361400d1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "러스트/조건문.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "40d8f113f0fcae7c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "러스트/조건문.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "280af4a4b52b1c72",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
             }
           }
-        ],
-        "currentTab": 10
+        ]
       }
     ],
     "direction": "vertical"
@@ -340,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "문제들/자료구조.md",
+                "file": "sql/advanced Select/The PADS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -357,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "문제들/자료구조.md",
+                "file": "sql/advanced Select/The PADS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -380,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "문제들/자료구조.md"
+                "file": "sql/advanced Select/The PADS.md"
               }
             }
           },
@@ -425,12 +178,16 @@
       "templates:템플릿 삽입": false,
       "command-palette:명령어 팔레트 열기": false,
       "markdown-importer:마크다운 형식 가져오기 열기": false,
-      "obsidian-advanced-slides:Show Slide Preview": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "6c218c3f7df73515",
+  "active": "cd41087510ff23ce",
   "lastOpenFiles": [
+    "sql/advanced Select/The PADS.md",
+    "무제 파일.md",
+    "sql/advanced Select",
+    "sql",
     "문제들/백트래킹.md",
     "문제들/동적 계획법.md",
     "문제들/그리디 알고리즘.md",
