@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 208
+    "width": 450
   },
   "right": {
     "id": "0c0a0ed5b2a69168",
@@ -182,7 +182,7 @@
       "obsidian-advanced-slides:Show Slide Preview": false
     }
   },
-  "active": "cd41087510ff23ce",
+  "active": "c7d753e146aa1927",
   "lastOpenFiles": [
     "sql/advanced Select/The PADS.md",
     "무제 파일.md",
