@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sql/advanced Select/Occupations.md",
+                "file": "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "sql/advanced Select/Occupations.md",
+                "file": "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "sql/advanced Select/Occupations.md",
+                "file": "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "sql/advanced Select/Occupations.md"
+                "file": "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md"
               }
             }
           },
@@ -184,8 +184,20 @@
   },
   "active": "cd41087510ff23ce",
   "lastOpenFiles": [
-    "sql/advanced Select/The PADS.md",
+    "알고리즘/알고리즘방법/트리.md",
+    "알고리즘/알고리즘방법/탐색.md",
+    "알고리즘/알고리즘방법/조합.md",
+    "알고리즘/알고리즘방법/정수론.md",
+    "알고리즘/알고리즘방법/정렬.md",
+    "알고리즘/알고리즘방법/자료구조.md",
+    "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까.md",
+    "알고리즘/알고리즘방법/동적 계획법.md",
+    "알고리즘/알고리즘방법/기하.md",
+    "알고리즘/알고리즘방법/그리디.md",
+    "알고리즘/알고리즘방법/그래프.md",
+    "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
     "sql/advanced Select/Occupations.md",
+    "sql/advanced Select/The PADS.md",
     "무제 파일.md",
     "sql/advanced Select",
     "sql",
@@ -202,16 +214,6 @@
     "spring.md",
     "스프링",
     "spring",
-    "자바/참조타입/열거 타입.md",
-    "자바/참조타입/배열.md",
-    "자바/참조타입/메모리 사용 영역.md",
-    "자바/참조타입/참조 타입과 참조 변수.md",
-    "자바/순서.md",
-    "2023-01-30.md",
-    "러스트/제어문.md",
-    "러스트/조건문.md",
-    "러스트/변수.md",
-    "러스트/프로젝트.md",
-    "러스트/상수.md"
+    "자바/참조타입/열거 타입.md"
   ]
 }
