@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "알고리즘/알고리즘방법/기하/기하 알아보기.md",
+                "file": "러스트/변수.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "알고리즘/알고리즘방법/기하/기하 알아보기.md",
+                "file": "러스트/변수.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "알고리즘/알고리즘방법/기하/기하 알아보기.md",
+                "file": "러스트/변수.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "알고리즘/알고리즘방법/기하/기하 알아보기.md"
+                "file": "러스트/변수.md"
               }
             }
           },
@@ -178,11 +178,11 @@
       "templates:템플릿 삽입": false,
       "command-palette:명령어 팔레트 열기": false,
       "markdown-importer:마크다운 형식 가져오기 열기": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-advanced-slides:Show Slide Preview": false
+      "obsidian-advanced-slides:Show Slide Preview": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c7d753e146aa1927",
+  "active": "cd41087510ff23ce",
   "lastOpenFiles": [
     "알고리즘/알고리즘방법/기하/기하 알아보기.md",
     "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
