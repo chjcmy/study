@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "러스트/변수.md",
+                "file": "sql/advanced Select/The PADS.md",
                 "mode": "preview",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "러스트/변수.md",
+                "file": "sql/advanced Select/The PADS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "러스트/변수.md",
+                "file": "sql/advanced Select/The PADS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "러스트/변수.md"
+                "file": "sql/advanced Select/The PADS.md"
               }
             }
           },
@@ -182,8 +182,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "cd41087510ff23ce",
+  "active": "c7d753e146aa1927",
   "lastOpenFiles": [
+    "플로터/다트",
+    "플로터/무제 파일.md",
+    "sql/advanced Select/The PADS.md",
+    "무제 폴더",
+    "sql/advanced Select/Occupations.md",
+    "러스트/변수.md",
+    "플로터",
     "알고리즘/알고리즘방법/기하/기하 알아보기.md",
     "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
     "알고리즘/알고리즘방법/트리.md",
@@ -197,8 +204,6 @@
     "알고리즘/알고리즘방법/기하.md",
     "알고리즘/알고리즘방법/그리디.md",
     "알고리즘/알고리즘방법/그래프.md",
-    "sql/advanced Select/Occupations.md",
-    "sql/advanced Select/The PADS.md",
     "무제 파일.md",
     "sql/advanced Select",
     "sql",
@@ -209,10 +214,7 @@
     "문제들/정렬 알고리즘.md",
     "문제들/재귀 함수.md",
     "문제들/자료구조.md",
-    "자바/모르는 문법.md",
     "문제들",
-    "스프링/spring boot.md",
-    "spring.md",
     "스프링",
     "spring"
   ]
