@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sql/advanced Select/The PADS.md",
+                "file": "자바/상속/타입 변환과 다형성.md",
                 "mode": "preview",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "sql/advanced Select/The PADS.md",
+                "file": "자바/상속/타입 변환과 다형성.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "sql/advanced Select/The PADS.md",
+                "file": "자바/상속/타입 변환과 다형성.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "sql/advanced Select/The PADS.md"
+                "file": "자바/상속/타입 변환과 다형성.md"
               }
             }
           },
@@ -182,11 +182,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c7d753e146aa1927",
+  "active": "cd41087510ff23ce",
   "lastOpenFiles": [
+    "자바/상속/추상 클래스.md",
+    "자바/상속/상속.md",
+    "문제들/그리디 알고리즘.md",
+    "sql/advanced Select/The PADS.md",
     "플로터/다트",
     "플로터/무제 파일.md",
-    "sql/advanced Select/The PADS.md",
     "무제 폴더",
     "sql/advanced Select/Occupations.md",
     "러스트/변수.md",
@@ -209,11 +212,9 @@
     "sql",
     "문제들/백트래킹.md",
     "문제들/동적 계획법.md",
-    "문제들/그리디 알고리즘.md",
     "문제들/탐색 알고리즘.md",
     "문제들/정렬 알고리즘.md",
     "문제들/재귀 함수.md",
-    "문제들/자료구조.md",
     "문제들",
     "스프링",
     "spring"
