@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "자바/인터페이스/인터페이스.md",
+                "file": "자바/클래스/인스턴스 멤버와 정적 멤버.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "자바/인터페이스/인터페이스.md",
+                "file": "자바/클래스/인스턴스 멤버와 정적 멤버.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "자바/인터페이스/인터페이스.md",
+                "file": "자바/클래스/인스턴스 멤버와 정적 멤버.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "자바/인터페이스/인터페이스.md"
+                "file": "자바/클래스/인스턴스 멤버와 정적 멤버.md"
               }
             }
           },
@@ -184,10 +184,10 @@
   },
   "active": "cd41087510ff23ce",
   "lastOpenFiles": [
+    "자바/인터페이스/인터페이스.md",
     "자바/상속/상속.md",
     "자바/상속/추상 클래스.md",
     "자바/상속/타입 변환과 다형성.md",
-    "자바/인터페이스/인터페이스.md",
     "자바/참조타입/메모리 사용 영역.md",
     "자바/참조타입/열거 타입.md",
     "자바/참조타입/배열.md",
