@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "알고리즘/알고리즘방법/자료구조/슬라이딩 윈도우.md",
-                "mode": "preview",
+                "file": "플로터/처음 화면 코드/코드.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "알고리즘/알고리즘방법/자료구조/슬라이딩 윈도우.md",
+                "file": "플로터/처음 화면 코드/코드.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "알고리즘/알고리즘방법/자료구조/슬라이딩 윈도우.md",
+                "file": "플로터/처음 화면 코드/코드.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "알고리즘/알고리즘방법/자료구조/슬라이딩 윈도우.md"
+                "file": "플로터/처음 화면 코드/코드.md"
               }
             }
           },
@@ -184,8 +184,10 @@
   },
   "active": "cd41087510ff23ce",
   "lastOpenFiles": [
-    "알고리즘/알고리즘방법/자료구조/투 포인터.md",
     "알고리즘/알고리즘방법/자료구조/슬라이딩 윈도우.md",
+    "플로터/처음 화면 코드/코드.md",
+    "플로터/처음 화면 코드",
+    "알고리즘/알고리즘방법/자료구조/투 포인터.md",
     "알고리즘/알고리즘방법/자료구조/스택과 큐.md",
     "알고리즘/알고리즘방법/자료구조/배열과 리스트.md",
     "자바/클래스/인스턴스 멤버와 정적 멤버.md",
@@ -209,7 +211,6 @@
     "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
     "알고리즘/알고리즘방법/조합/조합 알아보기.md",
     "알고리즘/알고리즘방법/정렬/퀵 정렬.md",
-    "알고리즘/알고리즘방법/정렬/선택정렬.md",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/stack.png",
     "플로터/다트",
