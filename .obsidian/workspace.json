@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플로터/다트/Colletion 과 제네릭/리스트.md",
+                "file": "자바/클래스/인스턴스 멤버와 정적 멤버.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "플로터/다트/Colletion 과 제네릭/리스트.md",
+                "file": "자바/클래스/인스턴스 멤버와 정적 멤버.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "플로터/다트/Colletion 과 제네릭/리스트.md",
+                "file": "자바/클래스/인스턴스 멤버와 정적 멤버.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "플로터/다트/Colletion 과 제네릭/리스트.md"
+                "file": "자바/클래스/인스턴스 멤버와 정적 멤버.md"
               }
             }
           },
@@ -184,8 +184,8 @@
   },
   "active": "cd41087510ff23ce",
   "lastOpenFiles": [
-    "플로터/다트/변수 값 대입.md",
     "플로터/다트/Colletion 과 제네릭/리스트.md",
+    "플로터/다트/변수 값 대입.md",
     "플로터/다트/Colletion 과 제네릭",
     "자바/참조타입/배열.md",
     "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
