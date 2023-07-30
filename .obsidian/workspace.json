@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플로터/처음 화면 코드/코드.md",
-                "mode": "source",
+                "file": "grpc/grpc-web/flutter.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "플로터/처음 화면 코드/코드.md",
+                "file": "grpc/grpc-web/flutter.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "플로터/처음 화면 코드/코드.md",
+                "file": "grpc/grpc-web/flutter.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "플로터/처음 화면 코드/코드.md"
+                "file": "grpc/grpc-web/flutter.md"
               }
             }
           },
@@ -166,7 +166,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -183,6 +184,13 @@
   },
   "active": "cd41087510ff23ce",
   "lastOpenFiles": [
+    "grpc/grpc 와 다른 통신.md",
+    "grpc/prototype.md",
+    "grpc/grpc-web/golang.md",
+    "grpc/grpc-web/flutter.md",
+    "플로터/처음 화면 코드/코드.md",
+    "grpc/grpc-web",
+    "무제 폴더 1",
     "플로터/플로터.md",
     "자바/7. 상속/추상 클래스.md",
     "자바/7. 상속/타입 변환과 다형성.md",
@@ -207,19 +215,12 @@
     "문제들/자료구조.md",
     "문제들/백트래킹.md",
     "문제들/동적 계획법.md",
-    "문제들/그리디 알고리즘.md",
-    "자바/8. 인터페이스/인터페이스.md",
-    "자바/6. 클래스/패키지와 접근 제한자.md",
-    "자바/6. 클래스/인스턴스 멤버와 정적 멤버.md",
-    "자바/5. 참조타입/메모리 사용 영역.md",
     "sql/sql의 컨셉 for oracle",
-    "무제 폴더",
+    "grpc",
     "플로터/다트/Colletion 과 제네릭",
     "플로터/네비게이션",
     "플로터/처음 화면 코드",
     "알고리즘/알고리즘방법/자료구조/queue.png",
-    "알고리즘/알고리즘방법/자료구조/stack.png",
-    "플로터/다트",
-    "플로터"
+    "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
 }
