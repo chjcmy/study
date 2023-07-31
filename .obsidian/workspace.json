@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "grpc/grpc-web/flutter.md",
-                "mode": "preview",
+                "file": "grpc/grpc-web/golang.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "grpc/grpc-web/flutter.md",
+                "file": "grpc/grpc-web/golang.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "grpc/grpc-web/flutter.md",
+                "file": "grpc/grpc-web/golang.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "grpc/grpc-web/flutter.md"
+                "file": "grpc/grpc-web/golang.md"
               }
             }
           },
@@ -184,10 +184,10 @@
   },
   "active": "cd41087510ff23ce",
   "lastOpenFiles": [
+    "grpc/grpc-web/flutter.md",
     "grpc/grpc 와 다른 통신.md",
     "grpc/prototype.md",
     "grpc/grpc-web/golang.md",
-    "grpc/grpc-web/flutter.md",
     "플로터/처음 화면 코드/코드.md",
     "grpc/grpc-web",
     "무제 폴더 1",
