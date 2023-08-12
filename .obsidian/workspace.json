@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "스프링/spring boot.md",
+                "file": "자바/8. 인터페이스/인터페이스.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "스프링/spring boot.md",
+                "file": "자바/8. 인터페이스/인터페이스.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "스프링/spring boot.md",
+                "file": "자바/8. 인터페이스/인터페이스.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "스프링/spring boot.md"
+                "file": "자바/8. 인터페이스/인터페이스.md"
               }
             }
           },
@@ -184,6 +184,8 @@
   },
   "active": "cd41087510ff23ce",
   "lastOpenFiles": [
+    "자바/7. 상속/추상 클래스.md",
+    "스프링/spring boot.md",
     "통신/http3/http3(QUIC).md",
     "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
     "통신",
@@ -201,7 +203,6 @@
     "통신/grpc/grpc-web",
     "무제 폴더 1",
     "플로터/플로터.md",
-    "자바/7. 상속/추상 클래스.md",
     "자바/7. 상속/타입 변환과 다형성.md",
     "sql/EmployeeDTO.java",
     "자바/7. 상속/EmployeeDAO 1.java",
@@ -216,7 +217,6 @@
     "알고리즘/알고리즘방법/자료구조/배열과 리스트.md",
     "알고리즘/알고리즘방법/자료구조/구간 합.md",
     "문제들/탐색 알고리즘.md",
-    "문제들/정렬 알고리즘.md",
     "sql/sql의 컨셉 for oracle",
     "통신/grpc",
     "플로터/다트/Colletion 과 제네릭",
