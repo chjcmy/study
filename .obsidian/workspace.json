@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "자바/8. 인터페이스/인터페이스.md",
+                "file": "통신/key cert/key & cert.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 393
+    "width": 200
   },
   "right": {
     "id": "0c0a0ed5b2a69168",
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "자바/8. 인터페이스/인터페이스.md",
+                "file": "통신/key cert/key & cert.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "자바/8. 인터페이스/인터페이스.md",
+                "file": "통신/key cert/key & cert.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,16 +133,8 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "자바/8. 인터페이스/인터페이스.md"
+                "file": "통신/key cert/key & cert.md"
               }
-            }
-          },
-          {
-            "id": "8974810f6456c869",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {}
             }
           },
           {
@@ -154,7 +146,15 @@
             }
           },
           {
-            "id": "f30b955c1bd7736c",
+            "id": "7a2572acd69c0f19",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "ec2d6edd368c9378",
             "type": "leaf",
             "state": {
               "type": "todo",
@@ -162,7 +162,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -171,22 +171,25 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "canvas:새 캔버스 만들기": false,
-      "switcher:퀵 스위처 열기": false,
-      "graph:그래프 뷰 열기": false,
-      "daily-notes:오늘의 데일리 노트 열기": false,
-      "templates:템플릿 삽입": false,
-      "command-palette:명령어 팔레트 열기": false,
-      "markdown-importer:마크다운 형식 가져오기 열기": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "cd41087510ff23ce",
   "lastOpenFiles": [
+    "통신/http3/http3(QUIC).md",
+    "통신/key cert/key & cert.md",
+    "통신/key cert",
+    "자바/8. 인터페이스/인터페이스.md",
     "자바/7. 상속/추상 클래스.md",
     "스프링/spring boot.md",
-    "통신/http3/http3(QUIC).md",
     "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
     "통신",
     "통신/http3",
@@ -215,11 +218,8 @@
     "알고리즘/알고리즘방법/자료구조/슬라이딩 윈도우.md",
     "알고리즘/알고리즘방법/자료구조/투 포인터.md",
     "알고리즘/알고리즘방법/자료구조/배열과 리스트.md",
-    "알고리즘/알고리즘방법/자료구조/구간 합.md",
-    "문제들/탐색 알고리즘.md",
     "sql/sql의 컨셉 for oracle",
     "통신/grpc",
-    "플로터/다트/Colletion 과 제네릭",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
