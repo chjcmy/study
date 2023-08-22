@@ -182,8 +182,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "cd41087510ff23ce",
+  "active": "c7d753e146aa1927",
   "lastOpenFiles": [
+    "DB",
     "통신/key cert/key & cert.md",
     "통신/http3/http3(QUIC).md",
     "통신/key cert",
@@ -217,7 +218,6 @@
     "알고리즘/알고리즘방법/자료구조/스택과 큐.md",
     "알고리즘/알고리즘방법/자료구조/슬라이딩 윈도우.md",
     "알고리즘/알고리즘방법/자료구조/투 포인터.md",
-    "알고리즘/알고리즘방법/자료구조/배열과 리스트.md",
     "sql/sql의 컨셉 for oracle",
     "통신/grpc",
     "알고리즘/알고리즘방법/자료구조/queue.png",
