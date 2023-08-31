@@ -182,11 +182,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c7d753e146aa1927",
+  "active": "cd41087510ff23ce",
   "lastOpenFiles": [
+    "Untitled.md",
+    "통신/http3/http3(QUIC).md",
     "DB",
     "통신/key cert/key & cert.md",
-    "통신/http3/http3(QUIC).md",
     "통신/key cert",
     "자바/8. 인터페이스/인터페이스.md",
     "자바/7. 상속/추상 클래스.md",
@@ -219,7 +220,6 @@
     "알고리즘/알고리즘방법/자료구조/슬라이딩 윈도우.md",
     "알고리즘/알고리즘방법/자료구조/투 포인터.md",
     "sql/sql의 컨셉 for oracle",
-    "통신/grpc",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
