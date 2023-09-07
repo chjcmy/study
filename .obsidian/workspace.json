@@ -13,13 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "통신/http3/http3(QUIC).md",
+                "file": "sql/advanced Select/The PADS.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "a91abe5c6b025c2a",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.4.5"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "통신/http3/http3(QUIC).md",
+                "file": "sql/advanced Select/The PADS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "통신/http3/http3(QUIC).md",
+                "file": "sql/advanced Select/The PADS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "통신/http3/http3(QUIC).md"
+                "file": "sql/advanced Select/The PADS.md"
               }
             }
           },
@@ -182,10 +193,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "cd41087510ff23ce",
+  "active": "a91abe5c6b025c2a",
   "lastOpenFiles": [
-    "Untitled.md",
+    "sql/advanced Select/Occupations.md",
     "통신/http3/http3(QUIC).md",
+    "Untitled.md",
     "DB",
     "통신/key cert/key & cert.md",
     "통신/key cert",
@@ -218,7 +230,6 @@
     "알고리즘/알고리즘방법/자료구조/코드/bj_2164.java.md",
     "알고리즘/알고리즘방법/자료구조/스택과 큐.md",
     "알고리즘/알고리즘방법/자료구조/슬라이딩 윈도우.md",
-    "알고리즘/알고리즘방법/자료구조/투 포인터.md",
     "sql/sql의 컨셉 for oracle",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/stack.png"
