@@ -18,19 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "4ed6289810181e54",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.4.13"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -203,7 +192,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "4ed6289810181e54",
+  "active": "cd41087510ff23ce",
   "lastOpenFiles": [
     "sql/advanced Select/The PADS.md",
     "sql/advanced Select/Occupations.md",
