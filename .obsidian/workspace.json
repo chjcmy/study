@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "자바/8. 인터페이스/인터페이스.md",
+                "file": "통신/grpc/언어별 터미널 명령어.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "자바/8. 인터페이스/인터페이스.md",
+                "file": "통신/grpc/언어별 터미널 명령어.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "자바/8. 인터페이스/인터페이스.md",
+                "file": "통신/grpc/언어별 터미널 명령어.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "자바/8. 인터페이스/인터페이스.md"
+                "file": "통신/grpc/언어별 터미널 명령어.md"
               }
             }
           },
@@ -194,6 +194,8 @@
   },
   "active": "cd41087510ff23ce",
   "lastOpenFiles": [
+    "자바/8. 인터페이스/인터페이스.md",
+    "통신/grpc/언어별 터미널 명령어.md",
     "sql/advanced Select/The PADS.md",
     "sql/advanced Select/Occupations.md",
     "통신/http3/http3(QUIC).md",
@@ -201,7 +203,6 @@
     "DB",
     "통신/key cert/key & cert.md",
     "통신/key cert",
-    "자바/8. 인터페이스/인터페이스.md",
     "자바/7. 상속/추상 클래스.md",
     "스프링/spring boot.md",
     "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
@@ -228,7 +229,6 @@
     "자바/7. 상속/상속.md",
     "알고리즘/알고리즘방법/자료구조/코드/bj_1874.java.md",
     "알고리즘/알고리즘방법/자료구조/코드/bj_2164.java.md",
-    "알고리즘/알고리즘방법/자료구조/스택과 큐.md",
     "sql/sql의 컨셉 for oracle",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/stack.png"
