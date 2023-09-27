@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "통신/grpc/언어별 터미널 명령어.md",
+                "file": "통신/grpc/grpc-web/golang.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "통신/grpc/언어별 터미널 명령어.md",
+                "file": "통신/grpc/grpc-web/golang.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "통신/grpc/언어별 터미널 명령어.md",
+                "file": "통신/grpc/grpc-web/golang.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "통신/grpc/언어별 터미널 명령어.md"
+                "file": "통신/grpc/grpc-web/golang.md"
               }
             }
           },
@@ -194,14 +194,18 @@
   },
   "active": "cd41087510ff23ce",
   "lastOpenFiles": [
-    "자바/8. 인터페이스/인터페이스.md",
+    "통신/grpc/grpc-web/flutter.md",
+    "통신/grpc/grpc-web/golang.md",
     "통신/grpc/언어별 터미널 명령어.md",
+    "통신/grpc/grpc 와 다른 통신.md",
+    "통신/grpc/prototype.md",
+    "통신/key cert/key & cert.md",
+    "통신/http3/http3(QUIC).md",
+    "자바/8. 인터페이스/인터페이스.md",
     "sql/advanced Select/The PADS.md",
     "sql/advanced Select/Occupations.md",
-    "통신/http3/http3(QUIC).md",
     "Untitled.md",
     "DB",
-    "통신/key cert/key & cert.md",
     "통신/key cert",
     "자바/7. 상속/추상 클래스.md",
     "스프링/spring boot.md",
@@ -213,10 +217,6 @@
     "알고리즘/알고리즘방법/그래프/벨만-포드.md",
     "알고리즘/알고리즘방법/그래프/그래프의 표현.md",
     "알고리즘/알고리즘방법/그래프/다익스트라.md",
-    "통신/grpc/grpc-web/golang.md",
-    "통신/grpc/grpc-web/flutter.md",
-    "통신/grpc/grpc 와 다른 통신.md",
-    "통신/grpc/prototype.md",
     "플로터/처음 화면 코드/코드.md",
     "통신/grpc/grpc-web",
     "무제 폴더 1",
