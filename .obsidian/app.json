@@ -4,7 +4,7 @@
   "attachmentFolderPath": "./",
   "spellcheck": true,
   "foldHeading": true,
-  "autoPairBrackets": true,
+  "autoPairBrackets": false,
   "strictLineBreaks": true,
   "showFrontmatter": true,
   "showLineNumber": true,

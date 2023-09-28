@@ -13,24 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "자바/5. 참조타입/메모리 사용 영역.md",
-                "mode": "preview",
+                "file": "jpa/영속성관리/영속성관리.md",
+                "mode": "source",
                 "source": false
               }
             }
-          },
-          {
-            "id": "d17cf3f91ba70b6b",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.4.14"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -104,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "자바/5. 참조타입/메모리 사용 영역.md",
+                "file": "jpa/영속성관리/영속성관리.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "자바/5. 참조타입/메모리 사용 영역.md",
+                "file": "jpa/영속성관리/영속성관리.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "자바/5. 참조타입/메모리 사용 영역.md"
+                "file": "jpa/영속성관리/영속성관리.md"
               }
             }
           },
@@ -203,44 +192,44 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "d17cf3f91ba70b6b",
+  "active": "cd41087510ff23ce",
   "lastOpenFiles": [
-    "통신/grpc/grpc-web/golang.md",
-    "통신/grpc/grpc-web/flutter.md",
-    "통신/grpc/언어별 터미널 명령어.md",
+    "러스트/프로젝트.md",
+    "jpa/영속성관리/영속성관리.md",
+    "jpa/트랜잭션과 락, 2차 캐시",
+    "jpa/고급 주제와 성능 최적화",
+    "jpa/컬렉션과 부가 가능",
+    "jpa/웹 애플리케이션과 영속성 관리",
+    "jpa/스프링 데이터 JPA",
+    "jpa/객체지향 쿼리 언어",
+    "jpa/값 타입",
+    "jpa/프록시와 연관관계 관리",
+    "jpa/고급매핑",
+    "jpa/다양한 연관관계 매핑",
+    "러스트/패키지.md",
+    "러스트/조건문.md",
+    "러스트/제어문.md",
+    "러스트/상수.md",
+    "러스트/변수.md",
+    "통신/grpc/언어별 grpc 터미널 명령어.md",
     "통신/grpc/grpc 와 다른 통신.md",
     "통신/grpc/prototype.md",
-    "통신/key cert/key & cert.md",
     "통신/http3/http3(QUIC).md",
+    "자바/5. 참조타입/메모리 사용 영역.md",
+    "통신/grpc/grpc-web/golang.md",
+    "통신/grpc/grpc-web/flutter.md",
+    "통신/key cert/key & cert.md",
     "자바/8. 인터페이스/인터페이스.md",
     "sql/advanced Select/The PADS.md",
     "sql/advanced Select/Occupations.md",
     "Untitled.md",
-    "DB",
-    "통신/key cert",
     "자바/7. 상속/추상 클래스.md",
     "스프링/spring boot.md",
     "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
-    "통신",
-    "통신/http3",
     "알고리즘/알고리즘방법/그래프/유니온 파인드.md",
     "알고리즘/알고리즘방법/그래프/위상 정렬.md",
     "알고리즘/알고리즘방법/그래프/벨만-포드.md",
     "알고리즘/알고리즘방법/그래프/그래프의 표현.md",
-    "알고리즘/알고리즘방법/그래프/다익스트라.md",
-    "플로터/처음 화면 코드/코드.md",
-    "통신/grpc/grpc-web",
-    "무제 폴더 1",
-    "플로터/플로터.md",
-    "자바/7. 상속/타입 변환과 다형성.md",
-    "sql/EmployeeDTO.java",
-    "자바/7. 상속/EmployeeDAO 1.java",
-    "자바/7. 상속/EmployeeDAO.java",
-    "자바/5. 참조타입/참조 타입과 참조 변수.md",
-    "자바/7. 상속/상속.md",
-    "알고리즘/알고리즘방법/자료구조/코드/bj_1874.java.md",
-    "알고리즘/알고리즘방법/자료구조/코드/bj_2164.java.md",
-    "sql/sql의 컨셉 for oracle",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
