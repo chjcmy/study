@@ -210,8 +210,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c7d753e146aa1927",
+  "active": "cd41087510ff23ce",
   "lastOpenFiles": [
+    "2023-10-01.md",
+    "Untitled.canvas",
     "jpa/엔티티 매핑/엔티티 매핑.md",
     "jpa/영속성관리/영속성관리.md",
     "러스트/프로젝트.md",
@@ -246,8 +248,6 @@
     "스프링/spring boot.md",
     "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
     "알고리즘/알고리즘방법/그래프/유니온 파인드.md",
-    "알고리즘/알고리즘방법/그래프/위상 정렬.md",
-    "알고리즘/알고리즘방법/그래프/벨만-포드.md",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
