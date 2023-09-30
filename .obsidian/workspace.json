@@ -20,6 +20,24 @@
             }
           }
         ]
+      },
+      {
+        "id": "4ad30417b06c898f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "08fa0b13ee21f7fe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "jpa/영속성관리/영속성관리.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
@@ -192,7 +210,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "cd41087510ff23ce",
+  "active": "08fa0b13ee21f7fe",
   "lastOpenFiles": [
     "러스트/프로젝트.md",
     "jpa/영속성관리/영속성관리.md",
