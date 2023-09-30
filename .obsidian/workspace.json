@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "jpa/영속성관리/영속성관리.md",
+                "file": "jpa/엔티티 매핑/엔티티 매핑.md",
                 "mode": "source",
                 "source": false
               }
@@ -111,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "jpa/영속성관리/영속성관리.md",
+                "file": "jpa/엔티티 매핑/엔티티 매핑.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "jpa/영속성관리/영속성관리.md",
+                "file": "jpa/엔티티 매핑/엔티티 매핑.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "jpa/영속성관리/영속성관리.md"
+                "file": "jpa/엔티티 매핑/엔티티 매핑.md"
               }
             }
           },
@@ -210,10 +210,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "08fa0b13ee21f7fe",
+  "active": "cd41087510ff23ce",
   "lastOpenFiles": [
-    "러스트/프로젝트.md",
     "jpa/영속성관리/영속성관리.md",
+    "jpa/엔티티 매핑/엔티티 매핑.md",
+    "러스트/프로젝트.md",
     "jpa/트랜잭션과 락, 2차 캐시",
     "jpa/고급 주제와 성능 최적화",
     "jpa/컬렉션과 부가 가능",
@@ -247,7 +248,6 @@
     "알고리즘/알고리즘방법/그래프/유니온 파인드.md",
     "알고리즘/알고리즘방법/그래프/위상 정렬.md",
     "알고리즘/알고리즘방법/그래프/벨만-포드.md",
-    "알고리즘/알고리즘방법/그래프/그래프의 표현.md",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
