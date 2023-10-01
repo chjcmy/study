@@ -8,5 +8,6 @@
   "strictLineBreaks": true,
   "showFrontmatter": true,
   "showLineNumber": true,
-  "rightToLeft": false
+  "rightToLeft": false,
+  "readableLineLength": false
 }

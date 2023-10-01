@@ -6,6 +6,7 @@
       {
         "id": "19c0ea02147bb222",
         "type": "tabs",
+        "dimension": 47.92746113989637,
         "children": [
           {
             "id": "cd41087510ff23ce",
@@ -22,17 +23,18 @@
         ]
       },
       {
-        "id": "4ad30417b06c898f",
+        "id": "5828d6f0e0a1f5cd",
         "type": "tabs",
+        "dimension": 52.07253886010362,
         "children": [
           {
-            "id": "0b71f60f0c095598",
+            "id": "69ff49d1934b5954",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "jpa/엔티티 매핑/엔티티 매핑.md",
-                "mode": "source",
+                "file": "jpa/연관관계 매핑 기초/연관관계 매핑 기초.md",
+                "mode": "preview",
                 "source": false
               }
             }
