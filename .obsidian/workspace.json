@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "jpa/연관관계 매핑 기초/연관관계 매핑 기초.md",
+                "file": "데터베이스/대용량데이터베이스 솔루션/1. 테이블과 인덱스의 분리형/테이블과 인덱스의 분리형.md",
                 "mode": "source",
                 "source": false
               }
@@ -111,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "jpa/연관관계 매핑 기초/연관관계 매핑 기초.md",
+                "file": "데터베이스/대용량데이터베이스 솔루션/1. 테이블과 인덱스의 분리형/테이블과 인덱스의 분리형.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "jpa/연관관계 매핑 기초/연관관계 매핑 기초.md",
+                "file": "데터베이스/대용량데이터베이스 솔루션/1. 테이블과 인덱스의 분리형/테이블과 인덱스의 분리형.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "jpa/연관관계 매핑 기초/연관관계 매핑 기초.md"
+                "file": "데터베이스/대용량데이터베이스 솔루션/1. 테이블과 인덱스의 분리형/테이블과 인덱스의 분리형.md"
               }
             }
           },
@@ -210,13 +210,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c8fafe83e61e7049",
+  "active": "cd41087510ff23ce",
   "lastOpenFiles": [
+    "jpa/연관관계 매핑 기초/연관관계 매핑 기초.md",
+    "데터베이스/대용량데이터베이스 솔루션/1. 테이블과 인덱스의 분리형/테이블과 인덱스의 분리형.md",
     "플로터/bloc/개념.md",
     "데터베이스/대용량데이터베이스 솔루션/1. 테이블과 인덱스의 분리형",
     "데터베이스/대용량데이터베이스 솔루션",
     "데터베이스",
-    "jpa/연관관계 매핑 기초/연관관계 매핑 기초.md",
     "플로터/bloc",
     "jpa/엔티티 매핑/엔티티 매핑.md",
     "2023-10-01.md",
