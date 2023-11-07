@@ -6,7 +6,6 @@
       {
         "id": "19c0ea02147bb222",
         "type": "tabs",
-        "dimension": 47.92746113989638,
         "children": [
           {
             "id": "cd41087510ff23ce",
@@ -19,27 +18,15 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "9cdd958bb62997ea",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.4.16"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
-        "id": "5828d6f0e0a1f5cd",
+        "id": "e9e39984f054d470",
         "type": "tabs",
-        "dimension": 52.07253886010362,
         "children": [
           {
-            "id": "69ff49d1934b5954",
+            "id": "c8fafe83e61e7049",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -223,10 +210,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9cdd958bb62997ea",
+  "active": "c8fafe83e61e7049",
   "lastOpenFiles": [
-    "jpa/엔티티 매핑/엔티티 매핑.md",
+    "플로터/bloc/개념.md",
+    "데터베이스/대용량데이터베이스 솔루션/1. 테이블과 인덱스의 분리형",
+    "데터베이스/대용량데이터베이스 솔루션",
+    "데터베이스",
     "jpa/연관관계 매핑 기초/연관관계 매핑 기초.md",
+    "플로터/bloc",
+    "jpa/엔티티 매핑/엔티티 매핑.md",
     "2023-10-01.md",
     "Untitled.canvas",
     "jpa/영속성관리/영속성관리.md",
@@ -237,10 +229,6 @@
     "jpa/웹 애플리케이션과 영속성 관리",
     "jpa/스프링 데이터 JPA",
     "jpa/객체지향 쿼리 언어",
-    "jpa/값 타입",
-    "jpa/프록시와 연관관계 관리",
-    "jpa/고급매핑",
-    "jpa/다양한 연관관계 매핑",
     "러스트/패키지.md",
     "러스트/조건문.md",
     "러스트/제어문.md",
@@ -255,13 +243,11 @@
     "통신/grpc/grpc-web/flutter.md",
     "통신/key cert/key & cert.md",
     "자바/8. 인터페이스/인터페이스.md",
-    "sql/advanced Select/The PADS.md",
-    "sql/advanced Select/Occupations.md",
+    "데터베이스/sql/advanced Select/The PADS.md",
+    "데터베이스/sql/advanced Select/Occupations.md",
     "Untitled.md",
     "자바/7. 상속/추상 클래스.md",
     "스프링/spring boot.md",
-    "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
-    "알고리즘/알고리즘방법/그래프/유니온 파인드.md",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
