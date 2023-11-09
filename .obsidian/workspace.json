@@ -20,24 +20,6 @@
             }
           }
         ]
-      },
-      {
-        "id": "e9e39984f054d470",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "c8fafe83e61e7049",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "jpa/연관관계 매핑 기초/연관관계 매핑 기초.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
