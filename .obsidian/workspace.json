@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
+                "file": "플로터/플로터.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
+                "file": "플로터/플로터.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
+                "file": "플로터/플로터.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md"
+                "file": "플로터/플로터.md"
               }
             }
           },
@@ -194,6 +194,7 @@
   },
   "active": "cd41087510ff23ce",
   "lastOpenFiles": [
+    "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
     "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
     "알고리즘/알고리즘방법/트리/이진 트리.md",
     "알고리즘/알고리즘방법/트리/세그먼트 트리.md",
@@ -230,7 +231,6 @@
     "자바/5. 참조타입/메모리 사용 영역.md",
     "통신/grpc/grpc-web/golang.md",
     "통신/grpc/grpc-web/flutter.md",
-    "통신/key cert/key & cert.md",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
