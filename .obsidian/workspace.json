@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "코틀린/문법 정리/array.md",
+                "file": "코틀린/문법 정리/함수.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "코틀린/문법 정리/array.md",
+                "file": "코틀린/문법 정리/함수.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "코틀린/문법 정리/array.md",
+                "file": "코틀린/문법 정리/함수.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "코틀린/문법 정리/array.md"
+                "file": "코틀린/문법 정리/함수.md"
               }
             }
           },
@@ -194,8 +194,9 @@
   },
   "active": "cd41087510ff23ce",
   "lastOpenFiles": [
-    "코틀린/문법 정리/반복문.md",
     "코틀린/문법 정리/array.md",
+    "코틀린/문법 정리/함수.md",
+    "코틀린/문법 정리/반복문.md",
     "코틀린/문법 정리/조건문.md",
     "코틀린/문법 정리/변수.md",
     "코틀린/문법 정리",
@@ -230,7 +231,6 @@
     "러스트/상수.md",
     "러스트/변수.md",
     "통신/grpc/언어별 grpc 터미널 명령어.md",
-    "통신/grpc/grpc 와 다른 통신.md",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
