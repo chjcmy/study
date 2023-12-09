@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "코틀린/문법 정리/Untitled.md",
+                "file": "코틀린/문법 정리/array.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "코틀린/문법 정리/Untitled.md",
+                "file": "코틀린/문법 정리/array.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "코틀린/문법 정리/Untitled.md",
+                "file": "코틀린/문법 정리/array.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "코틀린/문법 정리/Untitled.md"
+                "file": "코틀린/문법 정리/array.md"
               }
             }
           },
@@ -192,11 +192,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c7d753e146aa1927",
+  "active": "cd41087510ff23ce",
   "lastOpenFiles": [
+    "코틀린/문법 정리/반복문.md",
+    "코틀린/문법 정리/array.md",
+    "코틀린/문법 정리/조건문.md",
+    "코틀린/문법 정리/변수.md",
     "코틀린/문법 정리",
     "플로터/플로터.md",
-    "코틀린/문법 정리/Untitled.md",
     "코틀린",
     "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
     "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
@@ -221,7 +224,6 @@
     "jpa/고급 주제와 성능 최적화",
     "jpa/컬렉션과 부가 가능",
     "jpa/웹 애플리케이션과 영속성 관리",
-    "jpa/스프링 데이터 JPA",
     "러스트/패키지.md",
     "러스트/조건문.md",
     "러스트/제어문.md",
@@ -229,8 +231,6 @@
     "러스트/변수.md",
     "통신/grpc/언어별 grpc 터미널 명령어.md",
     "통신/grpc/grpc 와 다른 통신.md",
-    "통신/grpc/prototype.md",
-    "통신/http3/http3(QUIC).md",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
