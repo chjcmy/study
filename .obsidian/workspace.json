@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "코틀린/문법 정리/인터페이스.md",
+                "file": "플로터/플로터.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "코틀린/문법 정리/인터페이스.md",
+                "file": "플로터/플로터.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "코틀린/문법 정리/인터페이스.md",
+                "file": "플로터/플로터.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "코틀린/문법 정리/인터페이스.md"
+                "file": "플로터/플로터.md"
               }
             }
           },
@@ -194,8 +194,8 @@
   },
   "active": "cd41087510ff23ce",
   "lastOpenFiles": [
-    "코틀린/문법 정리/클래스.md",
     "코틀린/문법 정리/인터페이스.md",
+    "코틀린/문법 정리/클래스.md",
     "코틀린/문법 정리/함수.md",
     "코틀린/문법 정리/array.md",
     "코틀린/문법 정리/반복문.md",
