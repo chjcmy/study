@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플로터/플로터.md",
+                "file": "알고리즘/알고리즘방법/자료구조/구간 합.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "플로터/플로터.md",
+                "file": "알고리즘/알고리즘방법/자료구조/구간 합.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "플로터/플로터.md",
+                "file": "알고리즘/알고리즘방법/자료구조/구간 합.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "플로터/플로터.md"
+                "file": "알고리즘/알고리즘방법/자료구조/구간 합.md"
               }
             }
           },
@@ -151,7 +151,9 @@
             "state": {
               "type": "all-properties",
               "state": {
-                "sortOrder": "frequency"
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
               }
             }
           },
@@ -181,19 +183,22 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "markdown-importer:Open format converter": false,
+      "switcher:퀵 스위처 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 데일리 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "markdown-importer:마크다운 형식 가져오기 열기": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "cd41087510ff23ce",
   "lastOpenFiles": [
+    "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
+    "스프링/spring boot.md",
+    "플로터/플로터.md",
     "코틀린/문법 정리/인터페이스.md",
     "코틀린/문법 정리/클래스.md",
     "코틀린/문법 정리/함수.md",
@@ -202,7 +207,6 @@
     "코틀린/문법 정리/조건문.md",
     "코틀린/문법 정리/변수.md",
     "코틀린/문법 정리",
-    "플로터/플로터.md",
     "코틀린",
     "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
     "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
@@ -229,8 +233,6 @@
     "jpa/웹 애플리케이션과 영속성 관리",
     "러스트/패키지.md",
     "러스트/조건문.md",
-    "러스트/제어문.md",
-    "러스트/상수.md",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
