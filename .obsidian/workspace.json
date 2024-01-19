@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "데터베이스/트랜잭션 격리 수준/트랜잭션 격리 수준.md",
+                "file": "알고리즘/알고리즘방법/자료구조/구간 합.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "데터베이스/트랜잭션 격리 수준/트랜잭션 격리 수준.md",
+                "file": "알고리즘/알고리즘방법/자료구조/구간 합.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "데터베이스/트랜잭션 격리 수준/트랜잭션 격리 수준.md",
+                "file": "알고리즘/알고리즘방법/자료구조/구간 합.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "데터베이스/트랜잭션 격리 수준/트랜잭션 격리 수준.md"
+                "file": "알고리즘/알고리즘방법/자료구조/구간 합.md"
               }
             }
           },
@@ -196,7 +196,6 @@
   },
   "active": "cd41087510ff23ce",
   "lastOpenFiles": [
-    "알고리즘/알고리즘방법/자료구조/구간 합.md",
     "데터베이스/트랜잭션 격리 수준/트랜잭션 격리 수준.md",
     "데터베이스/트랜잭션 격리 수준",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
@@ -235,6 +234,7 @@
     "jpa/고급 주제와 성능 최적화",
     "jpa/컬렉션과 부가 가능",
     "러스트/패키지.md",
+    "러스트/조건문.md",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
