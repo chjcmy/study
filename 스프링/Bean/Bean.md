@@ -8,7 +8,7 @@
 
 | scope 종류 | 종류에 따른 설명 |
 | ---- | ---- |
-| Singleton Scope |                                |
+| Singleton Scope | 가즈아                               |
 | Prototype Scope |  |
 | Request Scope |  |
 | Session Scope |  |

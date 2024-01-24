@@ -172,14 +172,21 @@
               "type": "todo",
               "state": {}
             }
+          },
+          {
+            "id": "2720bdec4f7cbabd",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
           }
         ],
-        "currentTab": 7
+        "currentTab": 8
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,6 +203,7 @@
   },
   "active": "cd41087510ff23ce",
   "lastOpenFiles": [
+    "스프링/Bean/Bean.md",
     "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
     "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
     "알고리즘/알고리즘방법/정렬/선택정렬.md",
@@ -216,7 +224,6 @@
     "알고리즘/알고리즘방법/그리디/그리디/그리디 알고리즘.md",
     "알고리즘/알고리즘방법/기하/기하 알아보기.md",
     "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
-    "스프링/Bean/Bean.md",
     "데터베이스/트랜잭션/트랜잭션 격리 수준/트랜잭션 격리 수준.md",
     "스프링/Bean",
     "데터베이스/트랜잭션/트랜잭션.md",

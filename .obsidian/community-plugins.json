@@ -6,5 +6,6 @@
   "obsidian-checklist-plugin",
   "cmenu-plugin",
   "obsidian-minimal-settings",
-  "obsidian-git"
+  "obsidian-git",
+  "obsidian-version-history-diff"
 ]
