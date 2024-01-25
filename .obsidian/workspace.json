@@ -174,15 +174,15 @@
             }
           },
           {
-            "id": "2720bdec4f7cbabd",
+            "id": "ef82580e7b854eab",
             "type": "leaf",
             "state": {
-              "type": "git-view",
+              "type": "git-history-view",
               "state": {}
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -201,7 +201,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "cd41087510ff23ce",
+  "active": "db5c519021057ee3",
   "lastOpenFiles": [
     "스프링/Bean/Bean.md",
     "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
