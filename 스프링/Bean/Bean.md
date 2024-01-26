@@ -8,10 +8,10 @@
 
 | scope 종류 | 종류에 따른 설명 |
 | ---- | ---- |
-| Singleton Scope | 가즈아                               |
-| Prototype Scope |  |
-| Request Scope |  |
-| Session Scope |  |
-| Application Scope |  |
+| Singleton Scope | 스프링의 기본 스코프로, 한 개의 Bean 정의에 대해 한 개의 객체 인스턴스만 생성하고 관리합니다. 따라서, 어플리케이션 내에서 Singleton 스코프의 Bean은 공유되어 사용된다                               |
+| Prototype Scope | Bean을 요청할 때마다 새로운 객체 인스턴스를 생성합니다. 따라서, 같은 Bean 정의를 사용하더라도 각각 별개의 객체가 생성된다 |
+| Request Scope | HTTP 요청이 들어올 때마다 새로운 Bean을 생성하고, 그 요청이 끝나면 Bean은 소멸한다 |
+| Session Scope | 웹 어플리케이션에서 HTTP 세션 동안 Bean이 유지되는 스코프이다. 즉, 사용자가 웹사이트에 접속하여 세션을 시작할 때 Bean이 생성되고, 세션이 끝나면 Bean은 소멸한다 |
+| Application Scope | 웹 어플리케이션의 생명 주기 동안 Bean이 유지되는 스코프이다. 어플리케이션이 시작할 때 Bean이 생성되고, 어플리케이션이 종료되면 Bean은 소멸된다 |
 |  |  |
 
