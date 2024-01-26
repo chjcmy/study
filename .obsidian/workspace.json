@@ -32,20 +32,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "4dc6700305575dac",
-            "type": "leaf",
-            "state": {
-              "type": "diff-view",
-              "state": {
-                "file": "스프링/Bean/Bean.md",
-                "staged": false
-              }
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -261,7 +250,7 @@
       }
     ]
   },
-  "active": "4dc6700305575dac",
+  "active": "2720bdec4f7cbabd",
   "lastOpenFiles": [
     "스프링/Bean/Bean.md",
     "conflict-files-obsidian-git.md",
