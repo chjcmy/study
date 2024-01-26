@@ -15,11 +15,37 @@
               "state": {
                 "file": "스프링/Bean/Bean.md",
                 "mode": "source",
+                "backlinks": true,
                 "source": false
               }
             }
+          },
+          {
+            "id": "ac3a61a821d35135",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "스프링/Bean/Bean.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4dc6700305575dac",
+            "type": "leaf",
+            "state": {
+              "type": "diff-view",
+              "state": {
+                "file": "스프링/Bean/Bean.md",
+                "staged": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -93,7 +119,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "스프링/Bean/Bean.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +135,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "스프링/Bean/Bean.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -132,9 +156,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "스프링/Bean/Bean.md"
-              }
+              "state": {}
             }
           },
           {
@@ -201,9 +223,58 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "cd41087510ff23ce",
+  "floating": {
+    "id": "6e450f16a6e67e3a",
+    "type": "floating",
+    "children": [
+      {
+        "id": "94d362bd1d1126b4",
+        "type": "window",
+        "children": [
+          {
+            "id": "9d68b641477aee7d",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "bef0815eb5a1171f",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "스프링/Bean/Bean.md",
+                    "mode": "source",
+                    "backlinks": true,
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 1128,
+        "y": 1131,
+        "width": 600,
+        "height": 600,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "4dc6700305575dac",
   "lastOpenFiles": [
     "스프링/Bean/Bean.md",
+    "conflict-files-obsidian-git.md",
+    "자바/jvm/jvm.md",
+    "자바/jvm",
+    "스프링/컨테이너/컨테이너.md",
+    "스프링/컨테이너",
+    "스프링/aop/aop.md",
+    "스프링/aop",
+    "관점 지향 프로그래밍/관점 지향 프로그래밍.md",
+    "관점 지향 프로그래밍",
+    "객체 지향/객체지향.md",
+    "객체 지향",
     "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
     "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
     "알고리즘/알고리즘방법/정렬/선택정렬.md",
@@ -229,20 +300,9 @@
     "데터베이스/트랜잭션/트랜잭션.md",
     "데터베이스/트랜잭션",
     "데터베이스/트랜잭션/트랜잭션 격리 수준",
-    "스프링/spring boot.md",
-    "플로터/플로터.md",
-    "코틀린/문법 정리/인터페이스.md",
-    "코틀린/문법 정리/클래스.md",
-    "코틀린/문법 정리/함수.md",
-    "코틀린/문법 정리/array.md",
     "코틀린/문법 정리",
     "코틀린",
-    "데터베이스/대용량데이터베이스 솔루션/1. 테이블과 인덱스의 분리형",
-    "데터베이스/대용량데이터베이스 솔루션",
-    "데터베이스",
-    "플로터/bloc",
     "Untitled.canvas",
-    "jpa/트랜잭션과 락, 2차 캐시",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
 }
