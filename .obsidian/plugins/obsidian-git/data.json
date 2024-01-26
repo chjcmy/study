@@ -27,10 +27,10 @@
   "gitDir": "",
   "showFileMenu": true,
   "lineAuthor": {
-    "show": false,
+    "show": true,
     "followMovement": "inactive",
     "authorDisplay": "initials",
-    "showCommitHash": false,
+    "showCommitHash": true,
     "dateTimeFormatOptions": "date",
     "dateTimeFormatCustomString": "YYYY-MM-DD HH:mm",
     "dateTimeTimezone": "viewer-local",
@@ -46,8 +46,8 @@
       "b": 255
     },
     "textColorCss": "var(--text-muted)",
-    "ignoreWhitespace": false,
-    "gutterSpacingFallbackLength": 5,
+    "ignoreWhitespace": true,
+    "gutterSpacingFallbackLength": 19,
     "lastShownAuthorDisplay": "initials",
     "lastShownDateTimeFormatOptions": "date"
   },

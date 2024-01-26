@@ -6,12 +6,8 @@
 * 서비스 클래스와 같은 Spring Bean은 상태를 저장하지 않는 "무상태(stateless)" 로 설계되는것이 일반적이다.
 * 동일한 bean 인스턴스가 여러요청에서 재사용되더라도 각 요청은 독립적인 상태를 가진다
 
-| scope 종류 | 종류에 따른 설명 |
-| ---- | ---- |
-| Singleton Scope |                                |
-| Prototype Scope |  |
-| Request Scope |  |
-| Session Scope |  |
-| Application Scope |  |
-|  |  |
+## Scope
+	Bean이 존재할 수 있는 범위
+
+
 
