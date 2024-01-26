@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "스프링/컨테이너/컨테이너.md",
+                "file": "자바/jvm/jvm.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "스프링/컨테이너/컨테이너.md",
+                "file": "자바/jvm/jvm.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "스프링/컨테이너/컨테이너.md",
+                "file": "자바/jvm/jvm.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "스프링/컨테이너/컨테이너.md"
+                "file": "자바/jvm/jvm.md"
               }
             }
           },
@@ -211,8 +211,10 @@
   },
   "active": "20df4f56ac72c27f",
   "lastOpenFiles": [
-    "스프링/Bean/Bean.md",
     "스프링/컨테이너/컨테이너.md",
+    "자바/jvm/jvm.md",
+    "자바/jvm",
+    "스프링/Bean/Bean.md",
     "스프링/컨테이너",
     "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
     "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
@@ -243,13 +245,11 @@
     "플로터/플로터.md",
     "코틀린/문법 정리/인터페이스.md",
     "코틀린/문법 정리/클래스.md",
-    "코틀린/문법 정리/함수.md",
     "코틀린/문법 정리",
     "코틀린",
     "데터베이스/대용량데이터베이스 솔루션/1. 테이블과 인덱스의 분리형",
     "데터베이스/대용량데이터베이스 솔루션",
     "데터베이스",
-    "플로터/bloc",
     "Untitled.canvas",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
