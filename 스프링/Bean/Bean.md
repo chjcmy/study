@@ -7,7 +7,18 @@
 * 동일한 bean 인스턴스가 여러요청에서 재사용되더라도 각 요청은 독립적인 상태를 가진다
 
 ## Scope
-	Bean이 존재할 수 있는 범위
+	Bean의 생명주기와 가시성을 결정하는 설정
+#### Singleton Scope
+	Spring 컨테이너가 초기화될 때 한 번만 Bean을 생성하며, 이후에는 동일한 인스턴슥 재사용된다. (기본)
+#### Prototype Scope
+	Prototype Scope를 가진 Bean을 조회하면 스프링 컨테이너는 항상 새로운 인스턴스를 생성해서 반환한다.
+#### Request Scope 
+	웹 요청이 들어오고 나서 응답이 나갈 때까지만 유지되는 Scope이다
+#### Session Scope
+	웹 세션이 생성되고 종료될때까지 유지되는 Scope이다.
+#### Application Scope
+	웹의 서블릿 컨텍스트와 같은 범위로 유지되는 Scope이다.
+	
 
 
 
