@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "스프링/Bean/Bean.md",
+                "file": "객체 지향/객체지향.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -108,6 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "객체 지향/객체지향.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,6 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "객체 지향/객체지향.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +147,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "객체 지향/객체지향.md"
+              }
             }
           },
           {
@@ -212,49 +216,16 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "floating": {
-    "id": "6e450f16a6e67e3a",
-    "type": "floating",
-    "children": [
-      {
-        "id": "94d362bd1d1126b4",
-        "type": "window",
-        "children": [
-          {
-            "id": "9d68b641477aee7d",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "bef0815eb5a1171f",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "스프링/Bean/Bean.md",
-                    "mode": "source",
-                    "backlinks": true,
-                    "source": false
-                  }
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 1128,
-        "y": 1131,
-        "width": 600,
-        "height": 600,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "2720bdec4f7cbabd",
+  "active": "ac3a61a821d35135",
   "lastOpenFiles": [
+    "객체 지향/ocp/ocp.md",
+    "객체 지향/객체지향.md",
+    "객체 지향/ocp",
+    "객체 지향/srp/SRP.md",
+    "객체 지향/srp",
     "스프링/Bean/Bean.md",
-    "conflict-files-obsidian-git.md",
     "자바/jvm/jvm.md",
+    "conflict-files-obsidian-git.md",
     "자바/jvm",
     "스프링/컨테이너/컨테이너.md",
     "스프링/컨테이너",
@@ -262,7 +233,6 @@
     "스프링/aop",
     "관점 지향 프로그래밍/관점 지향 프로그래밍.md",
     "관점 지향 프로그래밍",
-    "객체 지향/객체지향.md",
     "객체 지향",
     "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
     "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
@@ -284,13 +254,9 @@
     "알고리즘/알고리즘방법/그리디/그리디/그리디 알고리즘.md",
     "알고리즘/알고리즘방법/기하/기하 알아보기.md",
     "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
-    "데터베이스/트랜잭션/트랜잭션 격리 수준/트랜잭션 격리 수준.md",
     "스프링/Bean",
-    "데터베이스/트랜잭션/트랜잭션.md",
     "데터베이스/트랜잭션",
     "데터베이스/트랜잭션/트랜잭션 격리 수준",
-    "코틀린/문법 정리",
-    "코틀린",
     "Untitled.canvas",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
