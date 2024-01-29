@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "객체 지향/lsp/lsp.md",
-                "mode": "source",
+                "file": "객체 지향/dip/dip.md",
+                "mode": "preview",
                 "backlinks": true,
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "객체 지향/lsp/lsp.md",
+                "file": "객체 지향/dip/dip.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "객체 지향/lsp/lsp.md",
+                "file": "객체 지향/dip/dip.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "객체 지향/lsp/lsp.md"
+                "file": "객체 지향/dip/dip.md"
               }
             }
           },
@@ -210,18 +210,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c7d753e146aa1927",
+  "active": "99878f2f218fd998",
   "lastOpenFiles": [
+    "객체 지향/isp/isp.md",
+    "객체 지향/dip/dip.md",
+    "객체 지향/dip/ㅇㄹㅇㄹㅁㄴㄹㄴㅁㄹㅁㄴㅇㄹ.md",
+    "객체 지향/lsp/lsp.md",
+    "객체 지향/ocp/ocp.md",
     "자바/8. 인터페이스/인터페이스.md",
     "객체 지향/객체지향.md",
-    "객체 지향/dip/dip.md",
-    "객체 지향/isp/isp.md",
-    "객체 지향/lsp/lsp.md",
     "객체 지향/dip",
     "객체 지향/lsp",
     "스프링/aop/aop.md",
     "객체 지향/isp",
-    "객체 지향/ocp/ocp.md",
     "객체 지향/srp/SRP.md",
     "객체 지향/srp",
     "객체 지향/ocp",
@@ -250,7 +251,6 @@
     "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 표기법 알아보기.md",
     "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 활용하기.md",
     "알고리즘/알고리즘방법/그래프/유니온 파인드.md",
-    "알고리즘/알고리즘방법/그래프/다익스트라.md",
     "Untitled.canvas",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
