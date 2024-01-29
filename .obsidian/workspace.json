@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "객체 지향/객체지향.md",
+                "file": "객체 지향/lsp/lsp.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "객체 지향/객체지향.md",
+                "file": "객체 지향/lsp/lsp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "객체 지향/객체지향.md",
+                "file": "객체 지향/lsp/lsp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "객체 지향/객체지향.md"
+                "file": "객체 지향/lsp/lsp.md"
               }
             }
           },
@@ -212,6 +212,11 @@
   },
   "active": "c7d753e146aa1927",
   "lastOpenFiles": [
+    "자바/8. 인터페이스/인터페이스.md",
+    "객체 지향/객체지향.md",
+    "객체 지향/dip/dip.md",
+    "객체 지향/isp/isp.md",
+    "객체 지향/lsp/lsp.md",
     "객체 지향/dip",
     "객체 지향/lsp",
     "스프링/aop/aop.md",
@@ -220,7 +225,6 @@
     "객체 지향/srp/SRP.md",
     "객체 지향/srp",
     "객체 지향/ocp",
-    "객체 지향/객체지향.md",
     "관점 지향 프로그래밍/관점 지향 프로그래밍.md",
     "관점 지향 프로그래밍",
     "스프링/컨테이너/컨테이너.md",
@@ -230,7 +234,6 @@
     "스프링/무제 파일.md",
     "스프링/aop",
     "스프링/Bean/Bean.md",
-    "객체 지향",
     "자바/jvm/jvm.md",
     "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
     "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
@@ -248,9 +251,6 @@
     "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 활용하기.md",
     "알고리즘/알고리즘방법/그래프/유니온 파인드.md",
     "알고리즘/알고리즘방법/그래프/다익스트라.md",
-    "알고리즘/알고리즘방법/그래프/그래프의 표현.md",
-    "알고리즘/알고리즘방법/그리디/그리디/그리디 알고리즘.md",
-    "알고리즘/알고리즘방법/기하/기하 알아보기.md",
     "Untitled.canvas",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
