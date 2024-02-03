@@ -4,23 +4,37 @@
     "type": "split",
     "children": [
       {
-        "id": "2eec0ee4faa3e1d2",
+        "id": "19c0ea02147bb222",
         "type": "tabs",
         "children": [
           {
-            "id": "99878f2f218fd998",
+            "id": "cd41087510ff23ce",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "스프링/Bean/Bean.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ac3a61a821d35135",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "객체 지향/dip/dip.md",
-                "mode": "preview",
+                "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -175,15 +189,7 @@
             }
           },
           {
-            "id": "ef82580e7b854eab",
-            "type": "leaf",
-            "state": {
-              "type": "git-history-view",
-              "state": {}
-            }
-          },
-          {
-            "id": "025bb8f68c59294c",
+            "id": "2720bdec4f7cbabd",
             "type": "leaf",
             "state": {
               "type": "git-view",
@@ -191,11 +197,11 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 8
       }
     ],
     "direction": "horizontal",
-    "width": 257.5
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -210,32 +216,30 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "99878f2f218fd998",
+  "active": "ac3a61a821d35135",
   "lastOpenFiles": [
     "객체 지향/isp/isp.md",
-    "객체 지향/dip/dip.md",
-    "객체 지향/dip/ㅇㄹㅇㄹㅁㄴㄹㄴㅁㄹㅁㄴㅇㄹ.md",
+    "관점 지향 프로그래밍/관점 지향 프로그래밍.md",
     "객체 지향/lsp/lsp.md",
-    "객체 지향/ocp/ocp.md",
-    "자바/8. 인터페이스/인터페이스.md",
-    "객체 지향/객체지향.md",
-    "객체 지향/dip",
     "객체 지향/lsp",
-    "스프링/aop/aop.md",
     "객체 지향/isp",
+    "객체 지향/dip/dip.md",
+    "객체 지향/dip",
+    "객체 지향/ocp/ocp.md",
+    "무제 폴더",
+    "객체 지향/객체지향.md",
+    "객체 지향/ocp",
     "객체 지향/srp/SRP.md",
     "객체 지향/srp",
-    "객체 지향/ocp",
-    "관점 지향 프로그래밍/관점 지향 프로그래밍.md",
-    "관점 지향 프로그래밍",
-    "스프링/컨테이너/컨테이너.md",
-    "스프링/serviceLayer",
-    "스프링/DTO",
-    "스프링/DAO",
-    "스프링/무제 파일.md",
-    "스프링/aop",
     "스프링/Bean/Bean.md",
     "자바/jvm/jvm.md",
+    "conflict-files-obsidian-git.md",
+    "자바/jvm",
+    "스프링/컨테이너/컨테이너.md",
+    "스프링/컨테이너",
+    "스프링/aop/aop.md",
+    "스프링/aop",
+    "관점 지향 프로그래밍",
     "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
     "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
     "알고리즘/알고리즘방법/정렬/선택정렬.md",
@@ -251,6 +255,8 @@
     "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 표기법 알아보기.md",
     "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 활용하기.md",
     "알고리즘/알고리즘방법/그래프/유니온 파인드.md",
+    "알고리즘/알고리즘방법/그래프/다익스트라.md",
+    "알고리즘/알고리즘방법/그래프/그래프의 표현.md",
     "Untitled.canvas",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
