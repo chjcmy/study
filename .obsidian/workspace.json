@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "객체 지향/dip/dip.md",
+                "file": "자바/함수형.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "객체 지향/dip/dip.md",
+                "file": "자바/함수형.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "객체 지향/dip/dip.md",
+                "file": "자바/함수형.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "객체 지향/dip/dip.md"
+                "file": "자바/함수형.md"
               }
             }
           },
@@ -218,12 +218,14 @@
   },
   "active": "ac3a61a821d35135",
   "lastOpenFiles": [
+    "객체 지향/dip/dip.md",
+    "자바/함수형.md",
+    "자바/모르는 문법.md",
     "객체 지향/isp/isp.md",
     "관점 지향 프로그래밍/관점 지향 프로그래밍.md",
     "객체 지향/lsp/lsp.md",
     "객체 지향/lsp",
     "객체 지향/isp",
-    "객체 지향/dip/dip.md",
     "객체 지향/dip",
     "객체 지향/ocp/ocp.md",
     "무제 폴더",
@@ -255,8 +257,6 @@
     "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 표기법 알아보기.md",
     "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 활용하기.md",
     "알고리즘/알고리즘방법/그래프/유니온 파인드.md",
-    "알고리즘/알고리즘방법/그래프/다익스트라.md",
-    "알고리즘/알고리즘방법/그래프/그래프의 표현.md",
     "Untitled.canvas",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
