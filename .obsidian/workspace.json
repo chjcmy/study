@@ -11,9 +11,20 @@
             "id": "863edd4a03ebc8b3",
             "type": "leaf",
             "state": {
+              "type": "diff-view",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "staged": false
+              }
+            }
+          },
+          {
+            "id": "79dc133719311662",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "러스트/조건문.md",
+                "file": "conflict-files-obsidian-git.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +105,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "러스트/조건문.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +121,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "러스트/조건문.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,9 +142,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "러스트/조건문.md"
-              }
+              "state": {}
             }
           },
           {
@@ -212,9 +219,11 @@
   },
   "active": "863edd4a03ebc8b3",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "러스트/조건문.md",
+    "자바/함수형.md",
     "러스트/패키지.md",
     "러스트/프로젝트.md",
-    "러스트/조건문.md",
     "러스트/제어문.md",
     "러스트/변수.md",
     "러스트/상수.md",
@@ -246,8 +255,6 @@
     "스프링/Bean/Bean.md",
     "자바/jvm/jvm.md",
     "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
-    "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
-    "알고리즘/알고리즘방법/정렬/선택정렬.md",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
