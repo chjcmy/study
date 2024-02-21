@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "코틀린/in 키워드/in 키워드.md",
+                "file": "자바/7. 상속/타입 변환과 다형성.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "코틀린/in 키워드/in 키워드.md",
+                "file": "자바/7. 상속/타입 변환과 다형성.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "코틀린/in 키워드/in 키워드.md",
+                "file": "자바/7. 상속/타입 변환과 다형성.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "코틀린/in 키워드/in 키워드.md"
+                "file": "자바/7. 상속/타입 변환과 다형성.md"
               }
             }
           },
@@ -212,8 +212,12 @@
   },
   "active": "16fa4eb43b260f03",
   "lastOpenFiles": [
-    "코틀린/루프와 범위/루프와 범위.md",
+    "자바/7. 상속/추상 클래스.md",
+    "자바/7. 상속/상속.md",
+    "코틀린/식과 문/식과 문.md",
     "코틀린/in 키워드/in 키워드.md",
+    "코틀린/식과 문",
+    "코틀린/루프와 범위/루프와 범위.md",
     "코틀린/in 키워드",
     "코틀린/while로 반복하기/while로 반복하기.md",
     "코틀린/루프와 범위",
@@ -224,7 +228,6 @@
     "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 표기법 알아보기.md",
     "자바/8. 인터페이스/인터페이스.md",
     "자바/7. 상속/타입 변환과 다형성.md",
-    "자바/7. 상속/추상 클래스.md",
     "자바/6. 클래스/패키지와 접근 제한자.md",
     "자바/6. 클래스/인스턴스 멤버와 정적 멤버.md",
     "자바/6. 클래스/객체 지향 프로그래밍.md",
@@ -245,9 +248,6 @@
     "conflict-files-obsidian-git.md",
     "러스트/조건문.md",
     "자바/함수형.md",
-    "러스트/패키지.md",
-    "러스트/프로젝트.md",
-    "객체 지향/dip",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
