@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "코틀린/문자열 템플릿/문자열 템플릿.md",
+                "file": "코틀린/불리언/불리언.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "코틀린/문자열 템플릿/문자열 템플릿.md",
+                "file": "코틀린/불리언/불리언.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "코틀린/문자열 템플릿/문자열 템플릿.md",
+                "file": "코틀린/불리언/불리언.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "코틀린/문자열 템플릿/문자열 템플릿.md"
+                "file": "코틀린/불리언/불리언.md"
               }
             }
           },
@@ -212,8 +212,12 @@
   },
   "active": "16fa4eb43b260f03",
   "lastOpenFiles": [
-    "자바/5. 참조타입/컨테이너.md",
+    "코틀린/수 타입/수 타입.md",
+    "코틀린/불리언/불리언.md",
+    "코틀린/불리언",
     "코틀린/문자열 템플릿/문자열 템플릿.md",
+    "코틀린/수 타입",
+    "자바/5. 참조타입/컨테이너.md",
     "코틀린/문자열 템플릿",
     "스프링/lombok.md",
     "코틀린/함수/함수.md",
@@ -240,14 +244,10 @@
     "객체 지향/lsp/lsp.md",
     "객체 지향/ocp/ocp.md",
     "자바/8. 인터페이스/인터페이스.md",
-    "객체 지향/객체지향.md",
     "객체 지향/dip",
     "객체 지향/lsp",
-    "스프링/aop/aop.md",
     "객체 지향/isp",
     "객체 지향/srp",
-    "객체 지향/ocp",
-    "관점 지향 프로그래밍",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
