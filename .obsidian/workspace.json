@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "코틀린/집합/집합.md",
+                "file": "코틀린/맵/맵.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "코틀린/집합/집합.md",
+                "file": "코틀린/맵/맵.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "코틀린/집합/집합.md",
+                "file": "코틀린/맵/맵.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "코틀린/집합/집합.md"
+                "file": "코틀린/맵/맵.md"
               }
             }
           },
@@ -212,8 +212,10 @@
   },
   "active": "16fa4eb43b260f03",
   "lastOpenFiles": [
-    "코틀린/데이터 타입/데이터 타입.md",
     "코틀린/집합/집합.md",
+    "코틀린/맵/맵.md",
+    "코틀린/맵",
+    "코틀린/데이터 타입/데이터 타입.md",
     "코틀린/집합",
     "코틀린/객체/객체.md",
     "코틀린/식과 문/식과 문.md",
@@ -245,9 +247,7 @@
     "코틀린/불리언",
     "코틀린/문자열 템플릿/문자열 템플릿.md",
     "코틀린/수 타입",
-    "자바/5. 참조타입/컨테이너.md",
     "코틀린/문자열 템플릿",
-    "코틀린/함수",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
