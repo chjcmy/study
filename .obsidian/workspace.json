@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "객체 지향/srp/SRP.md",
+                "file": "객체 지향/isp/isp.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "객체 지향/srp/SRP.md",
+                "file": "객체 지향/isp/isp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "객체 지향/srp/SRP.md",
+                "file": "객체 지향/isp/isp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "객체 지향/srp/SRP.md"
+                "file": "객체 지향/isp/isp.md"
               }
             }
           },
@@ -212,6 +212,9 @@
   },
   "active": "16fa4eb43b260f03",
   "lastOpenFiles": [
+    "객체 지향/lsp/lsp.md",
+    "객체 지향/ocp/ocp.md",
+    "객체 지향/srp/SRP.md",
     "코틀린/맵/맵.md",
     "코틀린/집합/집합.md",
     "코틀린/맵",
@@ -220,9 +223,6 @@
     "코틀린/객체/객체.md",
     "코틀린/식과 문/식과 문.md",
     "코틀린/객체",
-    "객체 지향/srp/SRP.md",
-    "객체 지향/ocp/ocp.md",
-    "객체 지향/lsp/lsp.md",
     "객체 지향/isp/isp.md",
     "객체 지향/dip/dip.md",
     "자바/7. 상속/타입 변환과 다형성.md",
