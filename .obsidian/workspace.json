@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "코틀린/맵/맵.md",
+                "file": "객체 지향/srp/SRP.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "코틀린/맵/맵.md",
+                "file": "객체 지향/srp/SRP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "코틀린/맵/맵.md",
+                "file": "객체 지향/srp/SRP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "코틀린/맵/맵.md"
+                "file": "객체 지향/srp/SRP.md"
               }
             }
           },
@@ -212,8 +212,8 @@
   },
   "active": "16fa4eb43b260f03",
   "lastOpenFiles": [
-    "코틀린/집합/집합.md",
     "코틀린/맵/맵.md",
+    "코틀린/집합/집합.md",
     "코틀린/맵",
     "코틀린/데이터 타입/데이터 타입.md",
     "코틀린/집합",
