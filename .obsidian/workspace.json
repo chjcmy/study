@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "객체 지향/isp/isp.md",
+                "file": "jpa/영속성관리/영속성관리.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "객체 지향/isp/isp.md",
+                "file": "jpa/영속성관리/영속성관리.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "객체 지향/isp/isp.md",
+                "file": "jpa/영속성관리/영속성관리.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "객체 지향/isp/isp.md"
+                "file": "jpa/영속성관리/영속성관리.md"
               }
             }
           },
@@ -212,6 +212,8 @@
   },
   "active": "16fa4eb43b260f03",
   "lastOpenFiles": [
+    "스프링/컨테이너/서블릿 콘테이너.md",
+    "객체 지향/isp/isp.md",
     "객체 지향/lsp/lsp.md",
     "객체 지향/ocp/ocp.md",
     "객체 지향/srp/SRP.md",
@@ -223,7 +225,6 @@
     "코틀린/객체/객체.md",
     "코틀린/식과 문/식과 문.md",
     "코틀린/객체",
-    "객체 지향/isp/isp.md",
     "객체 지향/dip/dip.md",
     "자바/7. 상속/타입 변환과 다형성.md",
     "자바/7. 상속/추상 클래스.md",
@@ -245,7 +246,6 @@
     "자바/6. 클래스/객체 지향 프로그래밍.md",
     "코틀린/수 타입/수 타입.md",
     "코틀린/불리언",
-    "코틀린/문자열 템플릿/문자열 템플릿.md",
     "코틀린/수 타입",
     "코틀린/문자열 템플릿",
     "알고리즘/알고리즘방법/자료구조/queue.png",
