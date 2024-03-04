@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "스프링/aop/TransactionAspect.java.md",
+                "file": "jpa/엔티티 매핑/엔티티 매핑.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "0c0a0ed5b2a69168",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "스프링/aop/TransactionAspect.java.md",
+                "file": "jpa/엔티티 매핑/엔티티 매핑.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "스프링/aop/TransactionAspect.java.md",
+                "file": "jpa/엔티티 매핑/엔티티 매핑.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "스프링/aop/TransactionAspect.java.md"
+                "file": "jpa/엔티티 매핑/엔티티 매핑.md"
               }
             }
           },
@@ -214,8 +213,15 @@
   },
   "active": "16fa4eb43b260f03",
   "lastOpenFiles": [
-    "스프링/lombok.md",
+    "플로터/다트/Colletion 과 제네릭/리스트.md",
+    "플로터/처음 화면 코드/코드.md",
+    "플로터/bloc/개념.md",
+    "플로터/플로터.md",
+    "동기와 비동기/비동기.md",
+    "동기와 비동기/동기.md",
     "스프링/aop/TransactionAspect.java.md",
+    "동기와 비동기",
+    "스프링/lombok.md",
     "스프링/spring boot.md",
     "객체 지향/객체지향.md",
     "스프링/컨테이너/컨테이너.md",
@@ -237,19 +243,12 @@
     "자바/7. 상속/타입 변환과 다형성.md",
     "자바/7. 상속/추상 클래스.md",
     "자바/7. 상속/상속.md",
-    "코틀린/in 키워드/in 키워드.md",
     "코틀린/식과 문",
-    "코틀린/루프와 범위/루프와 범위.md",
     "코틀린/in 키워드",
-    "코틀린/while로 반복하기/while로 반복하기.md",
     "코틀린/루프와 범위",
-    "코틀린/불리언/불리언.md",
     "코틀린/while로 반복하기",
-    "알고리즘/알고리즘방법/자료구조/구간 합.md",
-    "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 활용하기.md",
     "코틀린/불리언",
     "코틀린/수 타입",
-    "코틀린/문자열 템플릿",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
