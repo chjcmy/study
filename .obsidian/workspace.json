@@ -13,10 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "객체 지향/lsp/lsp.md",
+                "file": "리눅스/명령어/명령어.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "c2cbac7abbe5e034",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.11"
               }
             }
           }
@@ -94,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "객체 지향/lsp/lsp.md",
+                "file": "리눅스/명령어/명령어.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "객체 지향/lsp/lsp.md",
+                "file": "리눅스/명령어/명령어.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "객체 지향/lsp/lsp.md"
+                "file": "리눅스/명령어/명령어.md"
               }
             }
           },
@@ -212,6 +222,10 @@
   },
   "active": "16fa4eb43b260f03",
   "lastOpenFiles": [
+    "객체 지향/lsp/lsp.md",
+    "리눅스/명령어/명령어.md",
+    "리눅스/명령어",
+    "리눅스",
     "스프링/aop/TransactionAspect.java.md",
     "동기와 비동기/비동기.md",
     "동기와 비동기/동기.md",
@@ -229,7 +243,6 @@
     "코틀린/객체",
     "객체 지향/srp/SRP.md",
     "객체 지향/ocp/ocp.md",
-    "객체 지향/lsp/lsp.md",
     "자바/7. 상속/타입 변환과 다형성.md",
     "자바/7. 상속/추상 클래스.md",
     "자바/7. 상속/상속.md",
@@ -245,9 +258,6 @@
     "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 활용하기.md",
     "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 표기법 알아보기.md",
     "자바/8. 인터페이스/인터페이스.md",
-    "자바/6. 클래스/패키지와 접근 제한자.md",
-    "코틀린/불리언",
-    "코틀린/수 타입",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
