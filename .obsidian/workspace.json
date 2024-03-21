@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "리눅스/명령어/명령어.md",
+                "file": "도커/명령어.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "리눅스/명령어/명령어.md",
+                "file": "도커/명령어.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "리눅스/명령어/명령어.md",
+                "file": "도커/명령어.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "리눅스/명령어/명령어.md"
+                "file": "도커/명령어.md"
               }
             }
           },
@@ -222,8 +222,10 @@
   },
   "active": "16fa4eb43b260f03",
   "lastOpenFiles": [
-    "객체 지향/lsp/lsp.md",
     "리눅스/명령어/명령어.md",
+    "도커/명령어.md",
+    "도커",
+    "객체 지향/lsp/lsp.md",
     "리눅스/명령어",
     "리눅스",
     "스프링/aop/TransactionAspect.java.md",
@@ -253,11 +255,9 @@
     "코틀린/while로 반복하기/while로 반복하기.md",
     "코틀린/루프와 범위",
     "코틀린/불리언/불리언.md",
-    "코틀린/while로 반복하기",
     "알고리즘/알고리즘방법/자료구조/구간 합.md",
     "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 활용하기.md",
     "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 표기법 알아보기.md",
-    "자바/8. 인터페이스/인터페이스.md",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
