@@ -21,6 +21,16 @@
             }
           },
           {
+            "id": "5bdff16afde0e522",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.12"
+              }
+            }
+          },
+          {
             "id": "c2cbac7abbe5e034",
             "type": "leaf",
             "state": {
@@ -30,7 +40,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -220,7 +231,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "16fa4eb43b260f03",
+  "active": "5bdff16afde0e522",
   "lastOpenFiles": [
     "알고리즘/알고리즘방법/정렬/기수 정렬.md",
     "알고리즘/알고리즘방법/정렬/병합 정렬.md",
