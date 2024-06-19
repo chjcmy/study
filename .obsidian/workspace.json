@@ -42,9 +42,19 @@
                 "currentVersion": "1.5.11"
               }
             }
+          },
+          {
+            "id": "beb6b33d2ebeb7b7",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.3"
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -234,7 +244,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c7d753e146aa1927",
+  "active": "beb6b33d2ebeb7b7",
   "lastOpenFiles": [
     "크롤링/셀ㅣ니움",
     "크롤링",
