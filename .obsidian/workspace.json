@@ -37,24 +37,17 @@
             "id": "c2cbac7abbe5e034",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.5.11"
-              }
-            }
-          },
-          {
-            "id": "beb6b33d2ebeb7b7",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.6.3"
+                "file": "jpa/Entity/무제 파일.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               }
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -128,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "알고리즘/알고리즘방법/정렬/버블 정렬.md",
+                "file": "jpa/Entity/무제 파일.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -145,7 +138,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "알고리즘/알고리즘방법/정렬/버블 정렬.md",
+                "file": "jpa/Entity/무제 파일.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -168,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "알고리즘/알고리즘방법/정렬/버블 정렬.md"
+                "file": "jpa/Entity/무제 파일.md"
               }
             }
           },
@@ -244,8 +237,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "beb6b33d2ebeb7b7",
+  "active": "c2cbac7abbe5e034",
   "lastOpenFiles": [
+    "jpa/Entity/무제 파일.md",
+    "jpa/Entity",
     "크롤링/셀ㅣ니움",
     "크롤링",
     "데이터베이스/대용량데이터베이스 솔루션/1. 테이블과 인덱스의 분리형/테이블과 인덱스의 분리형.md",
@@ -280,8 +275,6 @@
     "코틀린/맵",
     "코틀린/집합",
     "코틀린/객체",
-    "코틀린/식과 문",
-    "코틀린/in 키워드",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
