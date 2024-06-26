@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "jpa/Entity/무제 파일.md",
+                "file": "CS/콜 바이/콜 바이.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -121,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "jpa/Entity/무제 파일.md",
+                "file": "CS/콜 바이/콜 바이.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -138,7 +138,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "jpa/Entity/무제 파일.md",
+                "file": "CS/콜 바이/콜 바이.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "jpa/Entity/무제 파일.md"
+                "file": "CS/콜 바이/콜 바이.md"
               }
             }
           },
@@ -239,6 +239,14 @@
   },
   "active": "c2cbac7abbe5e034",
   "lastOpenFiles": [
+    "객체 지향/isp/isp.md",
+    "CS/콜 바이/콜 바이.md",
+    "CS/콜 바이",
+    "CS",
+    "객체 지향/dip/dip.md",
+    "객체 지향/lsp/lsp.md",
+    "객체 지향/ocp/ocp.md",
+    "객체 지향/srp/SRP.md",
     "jpa/Entity/무제 파일.md",
     "jpa/Entity",
     "크롤링/셀ㅣ니움",
@@ -248,7 +256,6 @@
     "jpa/연관관계 매핑 기초/연관관계 매핑 기초.md",
     "jpa/엔티티 매핑/엔티티 매핑.md",
     "데이터베이스/트랜잭션/트랜잭션 격리 수준/트랜잭션 격리 수준.md",
-    "객체 지향/dip/dip.md",
     "스프링/Bean/Bean.md",
     "스프링/aop/TransactionAspect.java.md",
     "스프링/aop/aop.md",
@@ -263,18 +270,11 @@
     "알고리즘/알고리즘방법/자료구조/스택과 큐.md",
     "알고리즘/알고리즘방법/트리/이진 트리.md",
     "알고리즘/알고리즘방법/트리.md",
-    "도커/명령어.md",
-    "리눅스/명령어/명령어.md",
     "도커",
-    "객체 지향/lsp/lsp.md",
     "리눅스/명령어",
     "리눅스",
-    "동기와 비동기/비동기.md",
-    "동기와 비동기/동기.md",
     "동기와 비동기",
     "코틀린/맵",
-    "코틀린/집합",
-    "코틀린/객체",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
