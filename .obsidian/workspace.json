@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS/콜 바이/콜 바이.md",
+                "file": "데이터베이스/인덱스.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -121,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CS/콜 바이/콜 바이.md",
+                "file": "데이터베이스/인덱스.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -138,7 +138,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CS/콜 바이/콜 바이.md",
+                "file": "데이터베이스/인덱스.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CS/콜 바이/콜 바이.md"
+                "file": "데이터베이스/인덱스.md"
               }
             }
           },
@@ -239,8 +239,9 @@
   },
   "active": "c2cbac7abbe5e034",
   "lastOpenFiles": [
-    "객체 지향/isp/isp.md",
     "CS/콜 바이/콜 바이.md",
+    "데이터베이스/인덱스.md",
+    "객체 지향/isp/isp.md",
     "CS/콜 바이",
     "CS",
     "객체 지향/dip/dip.md",
@@ -269,7 +270,6 @@
     "알고리즘/알고리즘방법/정렬/버블 정렬.md",
     "알고리즘/알고리즘방법/자료구조/스택과 큐.md",
     "알고리즘/알고리즘방법/트리/이진 트리.md",
-    "알고리즘/알고리즘방법/트리.md",
     "도커",
     "리눅스/명령어",
     "리눅스",
