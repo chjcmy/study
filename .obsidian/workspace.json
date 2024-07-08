@@ -45,9 +45,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "c0360a9464d3ecd0",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.5"
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -237,7 +247,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c2cbac7abbe5e034",
+  "active": "c0360a9464d3ecd0",
   "lastOpenFiles": [
     "CS/콜 바이/콜 바이.md",
     "데이터베이스/인덱스.md",
