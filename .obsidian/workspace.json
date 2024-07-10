@@ -39,25 +39,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "데이터베이스/인덱스.md",
+                "file": "CS/콜 바이/콜 바이.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
-          },
-          {
-            "id": "c0360a9464d3ecd0",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.6.5"
-              }
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -115,7 +105,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 369.5
   },
   "right": {
     "id": "0c0a0ed5b2a69168",
@@ -131,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "데이터베이스/인덱스.md",
+                "file": "CS/콜 바이/콜 바이.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +138,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "데이터베이스/인덱스.md",
+                "file": "CS/콜 바이/콜 바이.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "데이터베이스/인덱스.md"
+                "file": "CS/콜 바이/콜 바이.md"
               }
             }
           },
@@ -232,7 +222,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 257.5
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -247,47 +238,47 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c0360a9464d3ecd0",
+  "active": "c7d753e146aa1927",
   "lastOpenFiles": [
+    "자바/Mono",
+    "자바/무제 파일.md",
+    "동기와 비동기/동기.md",
+    "자바/무제 폴더",
     "CS/콜 바이/콜 바이.md",
-    "데이터베이스/인덱스.md",
-    "객체 지향/isp/isp.md",
+    "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
+    "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
+    "알고리즘/알고리즘방법/트리/트리 알아보기.md",
+    "알고리즘/알고리즘방법/트리/트라이.md",
+    "알고리즘/알고리즘방법/트리/이진 트리.md",
+    "알고리즘/알고리즘방법/트리/세그먼트 트리.md",
+    "알고리즘/알고리즘방법/조합/조합 알아보기.md",
+    "알고리즘/알고리즘방법/정렬/선택정렬.md",
+    "알고리즘/알고리즘방법/정렬/삽입정렬.md",
+    "알고리즘/알고리즘방법/정렬/병합 정렬.md",
+    "알고리즘/알고리즘방법/정렬/버블 정렬.md",
+    "알고리즘/알고리즘방법/정렬/기수 정렬.md",
+    "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
+    "알고리즘/알고리즘방법/자료구조/투 포인터.md",
+    "알고리즘/알고리즘방법/자료구조/스택과 큐.md",
+    "알고리즘/알고리즘방법/자료구조/배열과 리스트.md",
+    "알고리즘/알고리즘방법/자료구조/구간 합.md",
+    "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 활용하기.md",
+    "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 표기법 알아보기.md",
+    "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
+    "알고리즘/알고리즘방법/그리디/그리디/그리디 알고리즘.md",
+    "알고리즘/알고리즘방법/그래프/그래프의 표현.md",
+    "알고리즘/알고리즘방법/그래프/다익스트라.md",
     "CS/콜 바이",
     "CS",
-    "객체 지향/dip/dip.md",
-    "객체 지향/lsp/lsp.md",
-    "객체 지향/ocp/ocp.md",
-    "객체 지향/srp/SRP.md",
-    "jpa/Entity/무제 파일.md",
     "jpa/Entity",
     "크롤링/셀ㅣ니움",
     "크롤링",
-    "데이터베이스/대용량데이터베이스 솔루션/1. 테이블과 인덱스의 분리형/테이블과 인덱스의 분리형.md",
-    "jpa/영속성관리/영속성관리.md",
-    "jpa/연관관계 매핑 기초/연관관계 매핑 기초.md",
-    "jpa/엔티티 매핑/엔티티 매핑.md",
-    "데이터베이스/트랜잭션/트랜잭션 격리 수준/트랜잭션 격리 수준.md",
-    "스프링/Bean/Bean.md",
-    "스프링/aop/TransactionAspect.java.md",
-    "스프링/aop/aop.md",
-    "스프링/컨테이너/컨테이너.md",
-    "스프링/컨테이너/서블릿 콘테이너.md",
-    "알고리즘/알고리즘방법/정렬/선택정렬.md",
-    "알고리즘/알고리즘방법/정렬/기수 정렬.md",
-    "알고리즘/알고리즘방법/정렬/병합 정렬.md",
-    "알고리즘/알고리즘방법/정렬/퀵 정렬.md",
-    "알고리즘/알고리즘방법/정렬/삽입정렬.md",
-    "알고리즘/알고리즘방법/정렬/버블 정렬.md",
-    "알고리즘/알고리즘방법/자료구조/스택과 큐.md",
-    "알고리즘/알고리즘방법/트리/이진 트리.md",
     "도커",
     "리눅스/명령어",
     "리눅스",
     "동기와 비동기",
-    "코틀린/맵",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
-    "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
     "Untitled.canvas",
     "알고리즘/알고리즘방법/자료구조/stack.png"
   ]
