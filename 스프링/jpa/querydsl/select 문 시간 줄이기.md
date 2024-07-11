@@ -46,7 +46,7 @@ public List<customerDto> getcustomer (int orderTypes, Date startDate, Date endDa
 		adTem.orderType,
 		adItem.customer.id.as("customerId"))
 	)
-	.from(adTem)
+	.from(aditem)
 	.where(adTem.orderType.in()orderTypes)
 			and(adTem.txDate.between(startDate, endDate)))
 	.groupBy(adTem.orderType, adItem.txDate, adItem.customer)
@@ -61,6 +61,5 @@ public AdBond toEntity() {
 			.customer(new Customer(customerId))
 			.build();
 }
-
-
 ```
+
