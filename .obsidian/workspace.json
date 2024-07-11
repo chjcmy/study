@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS/콜 바이/콜 바이.md",
+                "file": "스프링/jpa/querydsl/select 문 시간 줄이기.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -121,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CS/콜 바이/콜 바이.md",
+                "file": "스프링/jpa/querydsl/select 문 시간 줄이기.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -138,7 +138,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CS/콜 바이/콜 바이.md",
+                "file": "스프링/jpa/querydsl/select 문 시간 줄이기.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CS/콜 바이/콜 바이.md"
+                "file": "스프링/jpa/querydsl/select 문 시간 줄이기.md"
               }
             }
           },
@@ -238,13 +238,16 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c7d753e146aa1927",
+  "active": "c2cbac7abbe5e034",
   "lastOpenFiles": [
+    "스프링/jpa/querydsl/동적쿼리에서의 null 값일 때의 해결방법.md",
+    "스프링/jpa/querydsl/select 문 시간 줄이기.md",
+    "CS/콜 바이/콜 바이.md",
+    "스프링/jpa/querydsl",
     "자바/Mono",
     "자바/무제 파일.md",
     "동기와 비동기/동기.md",
     "자바/무제 폴더",
-    "CS/콜 바이/콜 바이.md",
     "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
     "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
     "알고리즘/알고리즘방법/트리/트리 알아보기.md",
@@ -267,16 +270,13 @@
     "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
     "알고리즘/알고리즘방법/그리디/그리디/그리디 알고리즘.md",
     "알고리즘/알고리즘방법/그래프/그래프의 표현.md",
-    "알고리즘/알고리즘방법/그래프/다익스트라.md",
     "CS/콜 바이",
     "CS",
-    "jpa/Entity",
+    "스프링/jpa/Entity",
     "크롤링/셀ㅣ니움",
     "크롤링",
     "도커",
     "리눅스/명령어",
-    "리눅스",
-    "동기와 비동기",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
     "Untitled.canvas",
