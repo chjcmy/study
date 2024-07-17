@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS 하루에 한번씩 볼것/RESTful API.md",
+                "file": "CS 하루에 한번씩 볼것/JSON.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -121,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CS 하루에 한번씩 볼것/RESTful API.md",
+                "file": "CS 하루에 한번씩 볼것/JSON.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -138,7 +138,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CS 하루에 한번씩 볼것/RESTful API.md",
+                "file": "CS 하루에 한번씩 볼것/JSON.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CS 하루에 한번씩 볼것/RESTful API.md"
+                "file": "CS 하루에 한번씩 볼것/JSON.md"
               }
             }
           },
@@ -238,11 +238,20 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c7d753e146aa1927",
+  "active": "c2cbac7abbe5e034",
   "lastOpenFiles": [
+    "데이터베이스/대용량데이터베이스 솔루션/1. 테이블과 인덱스의 분리형/테이블과 인덱스의 분리형.md",
+    "CS 하루에 한번씩 볼것/JSON.md",
+    "데이터베이스/sql/advanced Select/The PADS.md",
+    "데이터베이스/sql/advanced Select/Occupations.md",
+    "데이터베이스/트랜잭션/트랜잭션 격리 수준/트랜잭션 격리 수준.md",
+    "스프링/jpa/영속성관리/영속성관리.md",
+    "CS 하루에 한번씩 볼것/콜 바이/콜 바이.md",
+    "스프링/컨테이너/컨테이너.md",
+    "스프링/컨테이너/DI.md",
+    "CS 하루에 한번씩 볼것/RESTful API.md",
     "스프링/컨테이너/IoC.md",
     "스프링/컨테이너/서블릿 콘테이너.md",
-    "스프링/컨테이너/DI.md",
     "스프링/Bean/@Component.md",
     "스프링/Bean/@RestController.md",
     "스프링/Bean/@Autowired.md",
@@ -250,9 +259,7 @@
     "스프링/jpa/querydsl/동적쿼리에서의 null 값일 때의 해결방법.md",
     "객체 지향/객체지향.md",
     "객체 지향/dip/dip.md",
-    "CS 하루에 한번씩 볼것/RESTful API.md",
     "스프링/Bean/Bean.md",
-    "CS 하루에 한번씩 볼것/콜 바이/콜 바이.md",
     "스프링/jpa/querydsl",
     "자바/Mono",
     "자바/무제 파일.md",
@@ -262,13 +269,6 @@
     "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
     "알고리즘/알고리즘방법/트리/트리 알아보기.md",
     "알고리즘/알고리즘방법/트리/트라이.md",
-    "알고리즘/알고리즘방법/트리/이진 트리.md",
-    "알고리즘/알고리즘방법/트리/세그먼트 트리.md",
-    "알고리즘/알고리즘방법/조합/조합 알아보기.md",
-    "알고리즘/알고리즘방법/정렬/선택정렬.md",
-    "알고리즘/알고리즘방법/정렬/삽입정렬.md",
-    "알고리즘/알고리즘방법/정렬/병합 정렬.md",
-    "알고리즘/알고리즘방법/정렬/버블 정렬.md",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
     "CS 하루에 한번씩 볼것/콜 바이",
     "CS 하루에 한번씩 볼것",
