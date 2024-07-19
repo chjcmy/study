@@ -39,15 +39,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS 하루에 한번씩 볼것/JSON.md",
+                "file": "스프링/시큐리티/spring security.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
+          },
+          {
+            "id": "c334a6ef0b40e166",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.7"
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -121,7 +131,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CS 하루에 한번씩 볼것/JSON.md",
+                "file": "스프링/시큐리티/spring security.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -138,7 +148,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CS 하루에 한번씩 볼것/JSON.md",
+                "file": "스프링/시큐리티/spring security.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,7 +171,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CS 하루에 한번씩 볼것/JSON.md"
+                "file": "스프링/시큐리티/spring security.md"
               }
             }
           },
@@ -238,10 +248,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c2cbac7abbe5e034",
+  "active": "c334a6ef0b40e166",
   "lastOpenFiles": [
-    "데이터베이스/대용량데이터베이스 솔루션/1. 테이블과 인덱스의 분리형/테이블과 인덱스의 분리형.md",
+    "스프링/spring boot.md",
+    "스프링/시큐리티/spring security.md",
+    "스프링/시큐리티",
+    "스프링/jpa/querydsl/동적쿼리에서의 null 값일 때의 해결방법.md",
+    "스프링/jpa/querydsl/select 문 시간 줄이기.md",
     "CS 하루에 한번씩 볼것/JSON.md",
+    "데이터베이스/대용량데이터베이스 솔루션/1. 테이블과 인덱스의 분리형/테이블과 인덱스의 분리형.md",
     "데이터베이스/sql/advanced Select/The PADS.md",
     "데이터베이스/sql/advanced Select/Occupations.md",
     "데이터베이스/트랜잭션/트랜잭션 격리 수준/트랜잭션 격리 수준.md",
@@ -255,8 +270,6 @@
     "스프링/Bean/@Component.md",
     "스프링/Bean/@RestController.md",
     "스프링/Bean/@Autowired.md",
-    "스프링/jpa/querydsl/select 문 시간 줄이기.md",
-    "스프링/jpa/querydsl/동적쿼리에서의 null 값일 때의 해결방법.md",
     "객체 지향/객체지향.md",
     "객체 지향/dip/dip.md",
     "스프링/Bean/Bean.md",
@@ -267,8 +280,6 @@
     "자바/무제 폴더",
     "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
     "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
-    "알고리즘/알고리즘방법/트리/트리 알아보기.md",
-    "알고리즘/알고리즘방법/트리/트라이.md",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
     "CS 하루에 한번씩 볼것/콜 바이",
     "CS 하루에 한번씩 볼것",
@@ -276,7 +287,6 @@
     "크롤링/셀ㅣ니움",
     "크롤링",
     "도커",
-    "리눅스/명령어",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
     "Untitled.canvas",
