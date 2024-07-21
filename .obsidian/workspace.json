@@ -50,9 +50,12 @@
             "id": "c334a6ef0b40e166",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.6.7"
+                "file": "스프링/요청, 응답/ResponseEntity.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               }
             }
           }
@@ -131,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "스프링/시큐리티/spring security.md",
+                "file": "스프링/요청, 응답/ResponseEntity.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "스프링/시큐리티/spring security.md",
+                "file": "스프링/요청, 응답/ResponseEntity.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "스프링/시큐리티/spring security.md"
+                "file": "스프링/요청, 응답/ResponseEntity.md"
               }
             }
           },
@@ -250,6 +253,8 @@
   },
   "active": "c334a6ef0b40e166",
   "lastOpenFiles": [
+    "스프링/요청, 응답/ResponseEntity.md",
+    "스프링/요청, 응답",
     "스프링/spring boot.md",
     "스프링/시큐리티/spring security.md",
     "스프링/시큐리티",
@@ -279,14 +284,12 @@
     "동기와 비동기/동기.md",
     "자바/무제 폴더",
     "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
-    "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
     "CS 하루에 한번씩 볼것/콜 바이",
     "CS 하루에 한번씩 볼것",
     "스프링/jpa/Entity",
     "크롤링/셀ㅣ니움",
     "크롤링",
-    "도커",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
     "Untitled.canvas",

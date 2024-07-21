@@ -1,0 +1,1 @@
+	일반 객체 보다 ResponseEntity 를 사용하는게 좋음 
