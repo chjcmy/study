@@ -52,7 +52,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "쿠버네티스/쿠버네티스 설치.md",
+                "file": "쿠버네티스/쿠버네티스란????.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "쿠버네티스/쿠버네티스 설치.md",
+                "file": "쿠버네티스/쿠버네티스란????.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "쿠버네티스/쿠버네티스 설치.md",
+                "file": "쿠버네티스/쿠버네티스란????.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "쿠버네티스/쿠버네티스 설치.md"
+                "file": "쿠버네티스/쿠버네티스란????.md"
               }
             }
           },
@@ -253,8 +253,9 @@
   },
   "active": "c334a6ef0b40e166",
   "lastOpenFiles": [
-    "객체 지향/lsp/lsp.md",
     "쿠버네티스/쿠버네티스 설치.md",
+    "쿠버네티스/쿠버네티스란????.md",
+    "객체 지향/lsp/lsp.md",
     "쿠버네티스",
     "객체 지향/isp/isp.md",
     "객체 지향/dip/dip.md",
@@ -281,7 +282,6 @@
     "스프링/Bean/@RestController.md",
     "스프링/Bean/@Autowired.md",
     "객체 지향/객체지향.md",
-    "스프링/Bean/Bean.md",
     "스프링/jpa/querydsl",
     "자바/Mono",
     "자바/무제 폴더",
