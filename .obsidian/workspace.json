@@ -52,7 +52,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "쿠버네티스/Ingress.md",
+                "file": "쿠버네티스/서비스.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "쿠버네티스/Ingress.md",
+                "file": "쿠버네티스/서비스.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "쿠버네티스/Ingress.md",
+                "file": "쿠버네티스/서비스.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "쿠버네티스/Ingress.md"
+                "file": "쿠버네티스/서비스.md"
               }
             }
           },
@@ -251,10 +251,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c7d753e146aa1927",
+  "active": "c334a6ef0b40e166",
   "lastOpenFiles": [
-    "쿠버네티스/서비스.md",
     "쿠버네티스/Ingress.md",
+    "쿠버네티스/서비스.md",
     "쿠버네티스/istio 란 ?????.md",
     "쿠버네티스/명령어.md",
     "쿠버네티스/쿠버네티스 디플로이먼트.md",
