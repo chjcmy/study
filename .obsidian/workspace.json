@@ -52,7 +52,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "쿠버네티스/서비스.md",
+                "file": "쿠버네티스/helm/helm.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "쿠버네티스/서비스.md",
+                "file": "쿠버네티스/helm/helm.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "쿠버네티스/서비스.md",
+                "file": "쿠버네티스/helm/helm.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "쿠버네티스/서비스.md"
+                "file": "쿠버네티스/helm/helm.md"
               }
             }
           },
@@ -253,8 +253,10 @@
   },
   "active": "c334a6ef0b40e166",
   "lastOpenFiles": [
-    "쿠버네티스/Ingress.md",
     "쿠버네티스/서비스.md",
+    "쿠버네티스/helm/helm.md",
+    "쿠버네티스/helm",
+    "쿠버네티스/Ingress.md",
     "쿠버네티스/istio 란 ?????.md",
     "쿠버네티스/명령어.md",
     "쿠버네티스/쿠버네티스 디플로이먼트.md",
@@ -289,14 +291,12 @@
     "CS 하루에 한번씩 볼것/콜 바이/콜 바이.md",
     "스프링/컨테이너/컨테이너.md",
     "스프링/컨테이너/DI.md",
-    "CS 하루에 한번씩 볼것/RESTful API.md",
     "스프링/jpa/querydsl",
     "자바/Mono",
     "자바/무제 폴더",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
     "CS 하루에 한번씩 볼것/콜 바이",
     "CS 하루에 한번씩 볼것",
-    "스프링/jpa/Entity",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
     "Untitled.canvas"
