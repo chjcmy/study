@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "쿠버네티스/포트폴리오.md",
+                "file": "쿠버네티스/calico.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -121,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "쿠버네티스/포트폴리오.md",
+                "file": "쿠버네티스/calico.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -138,7 +138,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "쿠버네티스/포트폴리오.md",
+                "file": "쿠버네티스/calico.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "쿠버네티스/포트폴리오.md"
+                "file": "쿠버네티스/calico.md"
               }
             }
           },
@@ -240,9 +240,10 @@
   },
   "active": "c2cbac7abbe5e034",
   "lastOpenFiles": [
+    "쿠버네티스/포트폴리오.md",
+    "쿠버네티스/calico.md",
     "쿠버네티스/helm/helm.md",
     "쿠버네티스/명령어.md",
-    "쿠버네티스/포트폴리오.md",
     "쿠버네티스/Ingress.md",
     "스프링/시큐리티/spring security.md",
     "쿠버네티스/서비스.md",
@@ -277,7 +278,6 @@
     "데이터베이스/트랜잭션/트랜잭션 격리 수준/트랜잭션 격리 수준.md",
     "스프링/jpa/영속성관리/영속성관리.md",
     "CS 하루에 한번씩 볼것/콜 바이/콜 바이.md",
-    "스프링/컨테이너/컨테이너.md",
     "스프링/jpa/querydsl",
     "자바/Mono",
     "자바/무제 폴더",
