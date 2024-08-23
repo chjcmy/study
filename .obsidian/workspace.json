@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "쿠버네티스/네임스페이스.md",
+                "file": "쿠버네티스/설치/1. 시간 설정.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -121,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "쿠버네티스/네임스페이스.md",
+                "file": "쿠버네티스/설치/1. 시간 설정.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -138,7 +138,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "쿠버네티스/네임스페이스.md",
+                "file": "쿠버네티스/설치/1. 시간 설정.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "쿠버네티스/네임스페이스.md"
+                "file": "쿠버네티스/설치/1. 시간 설정.md"
               }
             }
           },
@@ -240,9 +240,11 @@
   },
   "active": "c2cbac7abbe5e034",
   "lastOpenFiles": [
+    "쿠버네티스/네임스페이스.md",
+    "쿠버네티스/설치/1. 시간 설정.md",
+    "쿠버네티스/설치",
     "쿠버네티스/서비스.md",
     "쿠버네티스/무제 파일.md",
-    "쿠버네티스/네임스페이스.md",
     "쿠버네티스/포트폴리오.md",
     "쿠버네티스/calico.md",
     "쿠버네티스/helm/helm.md",
@@ -277,13 +279,11 @@
     "데이터베이스/대용량데이터베이스 솔루션/1. 테이블과 인덱스의 분리형/테이블과 인덱스의 분리형.md",
     "데이터베이스/sql/advanced Select/The PADS.md",
     "데이터베이스/sql/advanced Select/Occupations.md",
-    "데이터베이스/트랜잭션/트랜잭션 격리 수준/트랜잭션 격리 수준.md",
     "스프링/jpa/querydsl",
     "자바/Mono",
     "자바/무제 폴더",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
     "CS 하루에 한번씩 볼것/콜 바이",
-    "CS 하루에 한번씩 볼것",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
     "Untitled.canvas"
