@@ -1,0 +1,105 @@
+```bash
+#!/bin/bash
+
+# Update and upgrade the system
+apt update
+apt upgrade -y
+
+# Install chrony
+apt install -y chrony
+
+# Configure chrony
+cat <<EOF | sudo tee -a /etc/chrony/chrony.conf
+server 203.248.240.140 iburst maxsources 2
+EOF
+
+systemctl restart chrony
+
+# Verify time synchronization
+chronyc sources
+timedatectl set-timezone Asia/Seoul
+
+# Disable swap
+swapoff -a
+
+# Load necessary kernel modules
+cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+overlay
+br_netfilter
+EOF
+
+# Configure sysctl
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward                 = 1
+EOF
+
+sudo sysctl --system
+
+# Install containerd
+apt install -y containerd
+
+# Configure containerd
+mkdir -p /etc/containerd
+containerd config default | sudo tee /etc/containerd/config.toml
+sed -i 's/SystemdCgroup = false/SystemdCgroup = true/g' /etc/containerd/config.toml
+systemctl restart containerd.service
+
+# Install necessary packages
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl gpg
+
+# Configure firewall
+ports=(
+  6443     # Kubernetes API server
+  10250    # Kubelet
+  2375     # Docker (or Containerd)
+  30000-32767 # NodePort services
+  80       # Dashboard, Ingress Controller
+  443      # Ingress Controller
+  44134    # Helm Tiller
+  2379     # etcd
+  2380     # etcd
+)
+
+function allow_port {
+  port="$1"
+  ufw allow $port/tcp
+  ufw allow $port/udp
+}
+
+for port in "${ports[@]}"; do
+  if [[ $port == *"-"* ]]; then
+    start=$(echo $port | cut -d'-' -f1)
+    end=$(echo $port | cut -d'-' -f2)
+    for ((i=$start; i<=$end; i++)); do
+      allow_port $i
+    done
+  else
+    allow_port $port
+  fi
+done
+
+# Enable firewall if needed
+# ufw enable
+
+# Check firewall status
+ufw status
+
+# Add Kubernetes repository and import the public key
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+# Install Kubernetes components
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+
+# Enable kubelet
+sudo systemctl enable --now kubelet
+
+reboot
+
+```
