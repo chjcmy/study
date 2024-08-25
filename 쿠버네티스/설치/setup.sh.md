@@ -10,6 +10,10 @@ apt install -y chrony
 
 # Configure chrony
 cat <<EOF | sudo tee -a /etc/chrony/chrony.conf
+# pool ntp.ubuntu.com        iburst maxsources 4
+# pool 0.ubuntu.pool.ntp.org iburst maxsources 1
+# pool 1.ubuntu.pool.ntp.org iburst maxsources 1
+# pool 2.ubuntu.pool.ntp.org iburst maxsources 2
 server 203.248.240.140 iburst maxsources 2
 EOF
 
@@ -21,6 +25,9 @@ timedatectl set-timezone Asia/Seoul
 
 # Disable swap
 swapoff -a
+
+# Comment out swap line in /etc/fstab
+sed -i '/\/swap.img/s/^/#/' /etc/fstab
 
 # Load necessary kernel modules
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
