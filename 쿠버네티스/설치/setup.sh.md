@@ -57,42 +57,8 @@ systemctl restart containerd.service
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl gpg
 
-# Configure firewall
-ports=(
-  6443     # Kubernetes API server
-  10250    # Kubelet
-  2375     # Docker (or Containerd)
-  30000-32767 # NodePort services
-  80       # Dashboard, Ingress Controller
-  443      # Ingress Controller
-  44134    # Helm Tiller
-  2379     # etcd
-  2380     # etcd
-)
-
-function allow_port {
-  port="$1"
-  ufw allow $port/tcp
-  ufw allow $port/udp
-}
-
-for port in "${ports[@]}"; do
-  if [[ $port == *"-"* ]]; then
-    start=$(echo $port | cut -d'-' -f1)
-    end=$(echo $port | cut -d'-' -f2)
-    for ((i=$start; i<=$end; i++)); do
-      allow_port $i
-    done
-  else
-    allow_port $port
-  fi
-done
-
-# Enable firewall if needed
-# ufw enable
-
-# Check firewall status
-ufw status
+# Disable firewall
+ufw disable
 
 # Add Kubernetes repository and import the public key
 sudo mkdir -p /etc/apt/keyrings
