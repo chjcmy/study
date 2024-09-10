@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "테라폼/테라 폼 실행 과정.md",
+                "file": "aws/vpc.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -121,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "테라폼/테라 폼 실행 과정.md",
+                "file": "aws/vpc.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -138,7 +138,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "테라폼/테라 폼 실행 과정.md",
+                "file": "aws/vpc.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "테라폼/테라 폼 실행 과정.md"
+                "file": "aws/vpc.md"
               }
             }
           },
@@ -240,8 +240,10 @@
   },
   "active": "c2cbac7abbe5e034",
   "lastOpenFiles": [
-    "쿠버네티스/설치/4.  쿠버네티스 설치.md",
     "테라폼/테라 폼 실행 과정.md",
+    "aws/vpc.md",
+    "aws",
+    "쿠버네티스/설치/4.  쿠버네티스 설치.md",
     "테라폼",
     "쿠버네티스/설치/5. calico 설치.md",
     "쿠버네티스/쿠버네티스 디플로이먼트.md",
@@ -278,11 +280,9 @@
     "객체 지향/dip/dip.md",
     "스프링/요청, 응답/ResponseEntity.md",
     "스프링/요청, 응답",
-    "스프링/spring boot.md",
     "스프링/시큐리티",
     "스프링/jpa/querydsl",
     "자바/Mono",
-    "자바/무제 폴더",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
