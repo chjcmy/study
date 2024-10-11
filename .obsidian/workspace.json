@@ -39,7 +39,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "객체 지향/srp/SRP.md",
+                "file": "관점 지향 프로그래밍/관점 지향 프로그래밍.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -121,7 +121,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "객체 지향/srp/SRP.md",
+                "file": "관점 지향 프로그래밍/관점 지향 프로그래밍.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -138,7 +138,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "객체 지향/srp/SRP.md",
+                "file": "관점 지향 프로그래밍/관점 지향 프로그래밍.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "객체 지향/srp/SRP.md"
+                "file": "관점 지향 프로그래밍/관점 지향 프로그래밍.md"
               }
             }
           },
@@ -240,8 +240,8 @@
   },
   "active": "c2cbac7abbe5e034",
   "lastOpenFiles": [
-    "객체 지향/객체지향.md",
     "객체 지향/srp/SRP.md",
+    "객체 지향/객체지향.md",
     "객체 지향/ocp/ocp.md",
     "객체 지향/lsp/lsp.md",
     "객체 지향/isp/isp.md",
