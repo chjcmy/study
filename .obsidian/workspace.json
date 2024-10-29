@@ -17,7 +17,9 @@
                 "mode": "source",
                 "backlinks": true,
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "버블 정렬"
             }
           },
           {
@@ -30,7 +32,9 @@
                 "mode": "source",
                 "backlinks": true,
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "dip"
             }
           },
           {
@@ -39,15 +43,29 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "네트워크/localhost vs 0.0.0.0 vs 127.0.0.1.md",
+                "file": "CS 하루에 한번씩 볼것/콜 바이/콜 바이.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "콜 바이"
+            }
+          },
+          {
+            "id": "e9bb3faa74c5e3c6",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.4"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.4"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -67,7 +85,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
             }
           },
           {
@@ -82,7 +102,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "검색"
             }
           },
           {
@@ -90,7 +112,9 @@
             "type": "leaf",
             "state": {
               "type": "starred",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "플러그인이 더 이상 활성화되지 않음"
             }
           },
           {
@@ -98,7 +122,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -121,7 +147,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "네트워크/localhost vs 0.0.0.0 vs 127.0.0.1.md",
+                "file": "알고리즘/알고리즘방법/정렬/버블 정렬.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +155,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "버블 정렬의 백링크"
             }
           },
           {
@@ -138,10 +166,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "네트워크/localhost vs 0.0.0.0 vs 127.0.0.1.md",
+                "file": "알고리즘/알고리즘방법/정렬/버블 정렬.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "버블 정렬의 나가는 링크"
             }
           },
           {
@@ -152,7 +182,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -161,8 +193,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "네트워크/localhost vs 0.0.0.0 vs 127.0.0.1.md"
-              }
+                "file": "알고리즘/알고리즘방법/정렬/버블 정렬.md"
+              },
+              "icon": "lucide-list",
+              "title": "버블 정렬 개요"
             }
           },
           {
@@ -170,7 +204,9 @@
             "type": "leaf",
             "state": {
               "type": "advanced-tables-toolbar",
-              "state": {}
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
             }
           },
           {
@@ -182,7 +218,9 @@
                 "sortOrder": "frequency",
                 "showSearch": false,
                 "searchQuery": ""
-              }
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
             }
           },
           {
@@ -190,7 +228,9 @@
             "type": "leaf",
             "state": {
               "type": "calendar",
-              "state": {}
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           },
           {
@@ -198,7 +238,9 @@
             "type": "leaf",
             "state": {
               "type": "todo",
-              "state": {}
+              "state": {},
+              "icon": "checkmark",
+              "title": "Todo List"
             }
           },
           {
@@ -206,7 +248,9 @@
             "type": "leaf",
             "state": {
               "type": "git-history-view",
-              "state": {}
+              "state": {},
+              "icon": "history",
+              "title": "History"
             }
           },
           {
@@ -214,7 +258,9 @@
             "type": "leaf",
             "state": {
               "type": "git-view",
-              "state": {}
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
         ],
@@ -238,38 +284,38 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c2cbac7abbe5e034",
+  "active": "e9bb3faa74c5e3c6",
   "lastOpenFiles": [
-    "관점 지향 프로그래밍/관점 지향 프로그래밍.md",
-    "네트워크/localhost vs 0.0.0.0 vs 127.0.0.1.md",
+    "스프링/jpa/querydsl/select 문 시간 줄이기.md",
+    "알고리즘/알고리즘방법/트리/트리 알아보기.md",
+    "알고리즘/알고리즘방법/트리/트라이.md",
+    "알고리즘/알고리즘방법/트리/이진 트리.md",
+    "알고리즘/알고리즘방법/트리/세그먼트 트리.md",
+    "알고리즘/알고리즘방법/탐색/이진 탐색.md",
+    "알고리즘/알고리즘방법/탐색/너비 우선 탐색.md",
+    "알고리즘/알고리즘방법/탐색/깊이 우선 탐색.md",
+    "알고리즘/알고리즘방법/조합/조합 알아보기.md",
+    "알고리즘/알고리즘방법/정렬/퀵 정렬.md",
+    "알고리즘/알고리즘방법/정렬/선택정렬.md",
+    "알고리즘/알고리즘방법/정렬/삽입정렬.md",
+    "알고리즘/알고리즘방법/정렬/병합 정렬.md",
+    "알고리즘/알고리즘방법/정렬/버블 정렬.md",
+    "알고리즘/알고리즘방법/정렬/기수 정렬.md",
+    "알고리즘/알고리즘방법/자료구조/투 포인터.md",
+    "알고리즘/알고리즘방법/자료구조/슬라이딩 윈도우.md",
+    "알고리즘/알고리즘방법/자료구조/스택과 큐.md",
+    "알고리즘/알고리즘방법/자료구조/배열과 리스트.md",
+    "알고리즘/알고리즘방법/자료구조/구간 합.md",
+    "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
+    "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 활용하기.md",
+    "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 표기법 알아보기.md",
+    "스프링/spring boot.md",
+    "스프링/lombok.md",
+    "스프링/jpa/querydsl/동적쿼리에서의 null 값일 때의 해결방법.md",
     "네트워크",
-    "객체 지향/srp/SRP.md",
-    "객체 지향/객체지향.md",
-    "객체 지향/ocp/ocp.md",
-    "객체 지향/lsp/lsp.md",
-    "객체 지향/isp/isp.md",
-    "객체 지향/dip/dip.md",
-    "aws/vpc.md",
-    "테라폼/테라 폼 실행 과정.md",
     "aws",
-    "쿠버네티스/설치/4.  쿠버네티스 설치.md",
     "테라폼",
-    "쿠버네티스/설치/5. calico 설치.md",
-    "쿠버네티스/쿠버네티스 디플로이먼트.md",
-    "쿠버네티스/쿠버네티스 설치.md",
-    "쿠버네티스/쿠버네티스란????.md",
-    "쿠버네티스/calico.md",
-    "쿠버네티스/프로메테우스 와 그라파나.md",
-    "쿠버네티스/pod.md",
-    "쿠버네티스/설치/setup.sh.md",
-    "쿠버네티스/설치/3.  컨테이너 설치.md",
-    "쿠버네티스/설치/2. 메모리.md",
-    "쿠버네티스/설치/1. 시간 설정.md",
-    "쿠버네티스/네임스페이스.md",
     "쿠버네티스/설치",
-    "쿠버네티스/서비스.md",
-    "쿠버네티스/포트폴리오.md",
-    "쿠버네티스/helm/helm.md",
     "쿠버네티스/helm",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.12.48.png",
