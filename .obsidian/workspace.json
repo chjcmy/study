@@ -51,21 +51,9 @@
               "icon": "lucide-file",
               "title": "콜 바이"
             }
-          },
-          {
-            "id": "e9bb3faa74c5e3c6",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.7.4"
-              },
-              "icon": "lucide-file",
-              "title": "Release Notes 1.7.4"
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -147,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "알고리즘/알고리즘방법/정렬/버블 정렬.md",
+                "file": "CS 하루에 한번씩 볼것/콜 바이/콜 바이.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -157,7 +145,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "버블 정렬의 백링크"
+              "title": "콜 바이의 백링크"
             }
           },
           {
@@ -166,12 +154,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "알고리즘/알고리즘방법/정렬/버블 정렬.md",
+                "file": "CS 하루에 한번씩 볼것/콜 바이/콜 바이.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "버블 정렬의 나가는 링크"
+              "title": "콜 바이의 나가는 링크"
             }
           },
           {
@@ -193,10 +181,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "알고리즘/알고리즘방법/정렬/버블 정렬.md"
+                "file": "CS 하루에 한번씩 볼것/콜 바이/콜 바이.md"
               },
               "icon": "lucide-list",
-              "title": "버블 정렬 개요"
+              "title": "콜 바이 개요"
             }
           },
           {
@@ -284,7 +272,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e9bb3faa74c5e3c6",
+  "active": "c2cbac7abbe5e034",
   "lastOpenFiles": [
     "스프링/jpa/querydsl/select 문 시간 줄이기.md",
     "알고리즘/알고리즘방법/트리/트리 알아보기.md",
