@@ -43,25 +43,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "스프링/컨테이너/컨테이너.md",
+                "file": "스프링/컨테이너/DI.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "컨테이너"
+              "title": "DI"
             }
           },
           {
-            "id": "9ce2dc3ee1fb710e",
+            "id": "1692c3a8bd2d899e",
             "type": "leaf",
             "state": {
               "type": "release-notes",
               "state": {
-                "currentVersion": "1.7.6"
+                "currentVersion": "1.7.7"
               },
               "icon": "lucide-file",
-              "title": "Release Notes 1.7.6"
+              "title": "Release Notes 1.7.7"
             }
           }
         ],
@@ -284,9 +284,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9ce2dc3ee1fb710e",
+  "active": "1692c3a8bd2d899e",
   "lastOpenFiles": [
+    "스프링/컨테이너/서블릿 콘테이너.md",
+    "스프링/컨테이너/컨테이너.md",
     "스프링/컨테이너/DI.md",
+    "동기와 비동기/동기.md",
+    "네트워크/localhost vs 0.0.0.0 vs 127.0.0.1.md",
     "스프링/컨테이너/IoC.md",
     "CS 하루에 한번씩 볼것/콜 바이/콜 바이.md",
     "객체 지향/dip/dip.md",
@@ -308,10 +312,6 @@
     "알고리즘/알고리즘방법/자료구조/투 포인터.md",
     "알고리즘/알고리즘방법/자료구조/슬라이딩 윈도우.md",
     "알고리즘/알고리즘방법/자료구조/스택과 큐.md",
-    "알고리즘/알고리즘방법/자료구조/배열과 리스트.md",
-    "알고리즘/알고리즘방법/자료구조/구간 합.md",
-    "알고리즘/알고리즘방법/동적계획법/동적 계획법 알아보기.md",
-    "알고리즘/알고리즘방법/알고리즘으로 풀어야 할까/시간 복잡도 활용하기.md",
     "네트워크",
     "aws",
     "테라폼",
