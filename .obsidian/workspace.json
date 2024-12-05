@@ -43,29 +43,17 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "스프링/컨테이너/DI.md",
+                "file": "알고리즘/문제 풀이/boj_2447.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DI"
-            }
-          },
-          {
-            "id": "1692c3a8bd2d899e",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.7.7"
-              },
-              "icon": "lucide-file",
-              "title": "Release Notes 1.7.7"
+              "title": "boj_2447"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -284,11 +272,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1692c3a8bd2d899e",
+  "active": "c2cbac7abbe5e034",
   "lastOpenFiles": [
+    "스프링/컨테이너/DI.md",
+    "알고리즘/문제 풀이/boj_2447.md",
+    "알고리즘/문제 풀이",
     "스프링/컨테이너/서블릿 콘테이너.md",
     "스프링/컨테이너/컨테이너.md",
-    "스프링/컨테이너/DI.md",
     "동기와 비동기/동기.md",
     "네트워크/localhost vs 0.0.0.0 vs 127.0.0.1.md",
     "스프링/컨테이너/IoC.md",
@@ -311,7 +301,6 @@
     "알고리즘/알고리즘방법/정렬/기수 정렬.md",
     "알고리즘/알고리즘방법/자료구조/투 포인터.md",
     "알고리즘/알고리즘방법/자료구조/슬라이딩 윈도우.md",
-    "알고리즘/알고리즘방법/자료구조/스택과 큐.md",
     "네트워크",
     "aws",
     "테라폼",
@@ -328,7 +317,6 @@
     "쿠버네티스",
     "스프링/요청, 응답",
     "스프링/시큐리티",
-    "스프링/jpa/querydsl",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107184636.png",
     "알고리즘/알고리즘방법/자료구조/queue.png",
     "알고리즘/알고리즘방법/자료구조/Pasted image 20240107190007.png",
