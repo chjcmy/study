@@ -43,13 +43,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "데이터베이스/sql/with 문.md",
+                "file": "스프링/jpa/Entity/Entity.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "with 문"
+              "title": "Entity"
             }
           }
         ],
@@ -274,8 +274,8 @@
   },
   "active": "c2cbac7abbe5e034",
   "lastOpenFiles": [
-    "코틀린/생성자/생성자.md",
     "데이터베이스/sql/with 문.md",
+    "코틀린/생성자/생성자.md",
     "코틀린/프로퍼티/프로퍼티.md",
     "코틀린/생성자",
     "코틀린/in 키워드/in 키워드.md",
