@@ -43,13 +43,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "aws/vpc.md",
+                "file": "aws/로드벨런서.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "vpc"
+              "title": "로드벨런서"
             }
           }
         ],
@@ -272,8 +272,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c2cbac7abbe5e034",
+  "active": "c7d753e146aa1927",
   "lastOpenFiles": [
+    "aws/vpc.md",
+    "도커/명령어.md",
     "aws/로드벨런서.md",
     "aws/route53.md",
     "스프링/jpa/Entity/Entity.md",
@@ -304,8 +306,6 @@
     "스프링/컨테이너/컨테이너.md",
     "동기와 비동기/동기.md",
     "네트워크/localhost vs 0.0.0.0 vs 127.0.0.1.md",
-    "스프링/컨테이너/IoC.md",
-    "CS 하루에 한번씩 볼것/콜 바이/콜 바이.md",
     "네트워크",
     "aws",
     "테라폼",
