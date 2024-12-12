@@ -43,13 +43,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "aws/로드벨런서.md",
+                "file": "aws/vpc.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "로드벨런서"
+              "title": "vpc"
             }
           }
         ],
@@ -274,8 +274,9 @@
   },
   "active": "c2cbac7abbe5e034",
   "lastOpenFiles": [
-    "스프링/jpa/Entity/Entity.md",
     "aws/로드벨런서.md",
+    "aws/route53.md",
+    "스프링/jpa/Entity/Entity.md",
     "데이터베이스/sql/with 문.md",
     "코틀린/생성자/생성자.md",
     "코틀린/프로퍼티/프로퍼티.md",
@@ -305,7 +306,6 @@
     "네트워크/localhost vs 0.0.0.0 vs 127.0.0.1.md",
     "스프링/컨테이너/IoC.md",
     "CS 하루에 한번씩 볼것/콜 바이/콜 바이.md",
-    "객체 지향/dip/dip.md",
     "네트워크",
     "aws",
     "테라폼",
