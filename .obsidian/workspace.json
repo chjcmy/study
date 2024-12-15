@@ -43,13 +43,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "관점 지향 프로그래밍/관점 지향 프로그래밍.md",
+                "file": "데이터베이스/sql/with 문.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "관점 지향 프로그래밍"
+              "title": "with 문"
             }
           }
         ],
@@ -272,10 +272,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c7d753e146aa1927",
+  "active": "c2cbac7abbe5e034",
   "lastOpenFiles": [
-    "CS 하루에 한번씩 볼것/콜 바이/콜 바이.md",
+    "데이터베이스/sql/with 문.md",
     "관점 지향 프로그래밍/관점 지향 프로그래밍.md",
+    "CS 하루에 한번씩 볼것/콜 바이/콜 바이.md",
     "네트워크/SSL (Secure Sockets Layer).md",
     "네트워크/http vs https vs http2 vs http3.md",
     "aws/로드벨런서.md",
@@ -284,7 +285,6 @@
     "도커/명령어.md",
     "aws/route53.md",
     "스프링/jpa/Entity/Entity.md",
-    "데이터베이스/sql/with 문.md",
     "코틀린/생성자/생성자.md",
     "코틀린/프로퍼티/프로퍼티.md",
     "코틀린/생성자",
