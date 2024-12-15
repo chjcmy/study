@@ -35,13 +35,31 @@ ORDER BY ID ASC;
 
 ```sql
 
-`WITH ExampleCTE AS (     SELECT column1, column2    FROM some_table    WHERE condition ) SELECT * FROM ExampleCTE;`
+WITH ExampleCTE AS (
+	SELECT column1, column2
+    FROM some_table    
+    WHERE condition
+) 
+SELECT * FROM ExampleCTE;
 ```
 ## 핵심 포인트
 
 1. 임시 테이블: WITH 문은 임시 결과셋 생성
 2. 재사용성: 복잡한 쿼리 단순화 및 재사용
 3. 가독성: 쿼리를 논리적 부분으로 분할
+
+```sql
+
+WITH MAX_SIZE_PER_YEAR AS (
+	SELECT YEAR(DIFFERENTIATION_DATE) AS YEAR, MAX(SIZE_OF_COLONY) AS MAX_SIZE 
+	FROM ECOLI_DATA 
+	GROUP BY YEAR(DIFFERENTIATION_DATE) 
+	) 
+	SELECT YEAR(E.DIFFERENTIATION_DATE) AS YEAR, M.MAX_SIZE - E.SIZE_OF_COLONY AS YEAR_DEV, E.ID 
+	FROM ECOLI_DATA E 
+	JOIN MAX_SIZE_PER_YEAR M ON YEAR(E.DIFFERENTIATION_DATE) = M.YEAR 
+	ORDER BY YEAR, YEAR_DEV;
+```
 
 ## 관련 태그
 
