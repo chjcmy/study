@@ -1,33 +1,60 @@
-## 1. JSON Canvas
+JSON은 경량의 데이터 교환 형식으로, 사람이 읽고 쓰기 쉽고 기계가 파싱하고 생성하기 쉽습니다.
 
-- Obsidian Canvas 파일 형식이 JSON Canvas로 발전
-- 오픈 소스 리소스 제공 (MIT 라이선스)
-- 무한 캔버스 데이터를 위한 개방형 파일 형식
+## 기본 구조
 
-## 2. JSON 가져오기 플러그인
+- JSON은 두 가지 구조를 기본으로 합니다:
+    
+    1. 이름/값 쌍의 집합 (객체)
+    2. 값의 순서화된 리스트 (배열)
+    
 
-- JSON/CSV Importer 플러그인 사용
-- JSON 데이터를 Obsidian 노트로 변환 가능
-- Handlebars 템플릿을 이용한 데이터 처리
+## 데이터 타입
 
-## 3. JSON 쿼리 플러그인 (Q-JSON)
+JSON은 다음과 같은 데이터 타입을 지원합니다:
 
-- JSON 객체에서 데이터 추출 및 쿼리 가능
-- 외부 JSON 파일 참조 지원
-- 다양한 플래그를 통한 기능 확장 ( #qj-id, #qj-file 등)
+- 숫자 (Number)
+- 문자열 (String)
+- 불리언 (Boolean)
+- 배열 (Array)
+- 객체 (Object)
+- null
 
-## 4. JSON 포맷팅
+## 문법
 
-- Format Code 플러그인을 통해 JSON 코드 포맷팅 가능
+1. 객체: 중괄호 {}로 표현json
+```json
+    `{"name": "John", "age": 30}`
+```
+    
+2. 배열: 대괄호 []로 표현json
+    ```json
+    ["apple", "banana", "cherry"]
+    ```
 
-## 5. Frontmatter에서의 JSON 사용
+    
+3. 값: 큰따옴표로 묶인 문자열, 숫자, true/false, null, 객체, 배열json
+    
+    ```json
+{   
+	"name": "John",
+	"age": 30,  
+	"isStudent": false,  
+	"grades": [85, 90, 78],  
+	"address": null 
+	}
+```
+    
 
-- Frontmatter에 JSON 데이터 포함 가능 (권장되지 않음)
-- Dataview를 통해 JSON 데이터 처리 가능
+## 특징
 
-## 6. JSON 파일 처리
+- 언어 독립적: 대부분의 프로그래밍 언어에서 사용 가능
+- 자기 서술적 (self-describing): 데이터 구조를 쉽게 이해할 수 있음
+- 계층적 구조: 복잡한 데이터 구조 표현 가능
 
-- Templater 플러그인을 사용하여 JSON 파일 파싱 및 노트 생성 가능
+## 사용 사례
 
-JSON은 Obsidian에서 다양한 방식으로 활용될 수 있으며, 플러그인을 통해 더욱 확장된 기능을 제공합니다.관련 태그:  
-#JSON #Obsidian #데이터포맷 #JSONCanvas #플러그인 #데이터가져오기 #쿼리 #포맷팅 #Frontmatter #Templater #Dataview
+- API 응답 형식
+- 설정 파일
+- 데이터 저장 및 전송
+
+#JSON #데이터포맷 #웹개발 #API #데이터교환 #JavaScript
