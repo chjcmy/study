@@ -23,7 +23,7 @@ JSON은 다음과 같은 데이터 타입을 지원합니다:
 
 1. 객체: 중괄호 {}로 표현json
 ```json
-    `{"name": "John", "age": 30}`
+    {"name": "John", "age": 30}
 ```
     
 2. 배열: 대괄호 []로 표현json
@@ -34,7 +34,7 @@ JSON은 다음과 같은 데이터 타입을 지원합니다:
     
 3. 값: 큰따옴표로 묶인 문자열, 숫자, true/false, null, 객체, 배열json
     
-    ```json
+ ```json
 {   
 	"name": "John",
 	"age": 30,  
