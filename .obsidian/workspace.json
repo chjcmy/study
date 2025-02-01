@@ -28,17 +28,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "웹/DTO (Data Transfer Object).md",
+                "file": "통신/jwt & acess token , refresh token/jwt & access token, refresh token.md",
                 "mode": "source",
+                "source": false,
                 "backlinks": true,
-                "source": false
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
               "icon": "lucide-file",
-              "title": "DTO (Data Transfer Object)"
+              "title": "jwt & access token, refresh token"
+            }
+          },
+          {
+            "id": "5ed390f399d3d495",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.4"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -57,7 +78,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "파일 탐색기"
@@ -236,21 +258,24 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:퀵 스위처 열기": false,
+      "switcher:빠른 전환기 열기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
+      "markdown-importer:마크다운 형식 불러오기 열기": false,
       "graph:그래프 뷰 열기": false,
       "canvas:새 캔버스 만들기": false,
-      "daily-notes:오늘의 데일리 노트 열기": false,
       "templates:템플릿 삽입": false,
       "command-palette:명령어 팔레트 열기": false,
-      "markdown-importer:마크다운 형식 가져오기 열기": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "5bdff16afde0e522",
+  "active": "5ed390f399d3d495",
   "lastOpenFiles": [
-    "* 데이터베이스/sql/문법/1. 기본.md",
     "웹/DTO (Data Transfer Object).md",
+    "통신/jwt & acess token , refresh token/jwt & access token, refresh token.md",
+    "통신/jwt & acess token , refresh token",
+    "nestjs",
+    "* 데이터베이스/sql/문법/1. 기본.md",
     "웹",
     "* 데이터베이스/sql/문법/2. 고급.md",
     "* 데이터베이스/sql/문법/5. 최종고급.md",
@@ -279,12 +304,9 @@
     "* 코틀린/6. 실패 방지하기",
     "* 코틀린/5. 객체 지향 프로그래밍/9. 합성.md",
     "* 코틀린/5. 객체 지향 프로그래밍/8. 다형성.md",
-    "* 코틀린/5. 객체 지향 프로그래밍/7. 업캐스트.md",
     "* 코틀린/5. 객체 지향 프로그래밍",
     "* 코틀린/4. 함수형 프로그래밍",
     "* 코틀린/2. 객체소개/무제 폴더",
-    "* 코틀린/7. 파워툴",
-    "* 코틀린/3. 사용성",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.12.48.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 4.05.20.png",
