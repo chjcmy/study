@@ -69,9 +69,19 @@
               "icon": "lucide-file",
               "title": "코드"
             }
+          },
+          {
+            "id": "4f844deeb787087a",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "그래프 뷰"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -293,9 +303,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "c7d753e146aa1927",
+  "active": "4f844deeb787087a",
   "lastOpenFiles": [
-    "플로터/무제",
+    "Excalidraw/Drawing 2025-02-04 02.46.45.excalidraw.md",
+    "플로터/처음 화면 코드/코드.md",
+    "Excalidraw",
+    "플로터/상태관리",
     "웹/DTO (Data Transfer Object).md",
     "통신/jwt & acess token , refresh token/jwt & access token, refresh token.md",
     "통신/jwt & acess token , refresh token",
@@ -327,10 +340,7 @@
     "* 코틀린/6. 실패 방지하기/2. 검사 명령.md",
     "* 코틀린/6. 실패 방지하기/1. 예외 처리.md",
     "* 코틀린/6. 실패 방지하기",
-    "* 코틀린/5. 객체 지향 프로그래밍/9. 합성.md",
     "* 코틀린/5. 객체 지향 프로그래밍",
-    "* 코틀린/4. 함수형 프로그래밍",
-    "* 코틀린/2. 객체소개/무제 폴더",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.12.48.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 4.05.20.png",
