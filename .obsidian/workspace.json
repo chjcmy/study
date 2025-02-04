@@ -74,10 +74,24 @@
             "id": "4f844deeb787087a",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "그래프 뷰"
+              "type": "markdown",
+              "state": {
+                "file": "플로터/상태관리/상태 이해하기.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "상태 이해하기"
             }
           }
         ],
@@ -305,6 +319,7 @@
   },
   "active": "4f844deeb787087a",
   "lastOpenFiles": [
+    "플로터/상태관리/상태 이해하기.md",
     "Excalidraw/Drawing 2025-02-04 02.46.45.excalidraw.md",
     "플로터/처음 화면 코드/코드.md",
     "Excalidraw",
@@ -338,7 +353,6 @@
     "* 코틀린/6. 실패 방지하기/4. 자원 해제.md",
     "* 코틀린/6. 실패 방지하기/3. Nothing 타입.md",
     "* 코틀린/6. 실패 방지하기/2. 검사 명령.md",
-    "* 코틀린/6. 실패 방지하기/1. 예외 처리.md",
     "* 코틀린/6. 실패 방지하기",
     "* 코틀린/5. 객체 지향 프로그래밍",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
