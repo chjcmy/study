@@ -76,7 +76,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플로터/provider/무제.md",
+                "file": "플로터/riverpod/Riverpod 상태 관리 정리.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -91,7 +91,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "무제"
+              "title": "Riverpod 상태 관리 정리"
             }
           }
         ],
@@ -319,8 +319,10 @@
   },
   "active": "4f844deeb787087a",
   "lastOpenFiles": [
+    "플로터/provider/provider.md",
+    "플로터/riverpod/Riverpod 상태 관리 정리.md",
+    "플로터/riverpod",
     "플로터/상태관리/상태 이해하기.md",
-    "플로터/provider/무제.md",
     "플로터/provider",
     "Excalidraw/Drawing 2025-02-04 02.46.45.excalidraw.md",
     "플로터/처음 화면 코드/코드.md",
@@ -353,8 +355,6 @@
     "* 코틀린/6. 실패 방지하기/6. 단위 테스트.md",
     "* 코틀린/6. 실패 방지하기/5. 로깅.md",
     "* 코틀린/6. 실패 방지하기/4. 자원 해제.md",
-    "* 코틀린/6. 실패 방지하기/3. Nothing 타입.md",
-    "* 코틀린/6. 실패 방지하기",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.12.48.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 4.05.20.png",
