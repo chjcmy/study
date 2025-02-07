@@ -290,12 +290,22 @@
             "state": {
               "type": "todo",
               "state": {},
+              "icon": "lucide-file",
+              "title": "플러그인이 더 이상 활성화돼있지 않음"
+            }
+          },
+          {
+            "id": "ab6fcb11a8851484",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {},
               "icon": "checkmark",
               "title": "Todo List"
             }
           }
         ],
-        "currentTab": 10
+        "currentTab": 11
       }
     ],
     "direction": "horizontal",
@@ -317,7 +327,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "4f844deeb787087a",
+  "active": "ab6fcb11a8851484",
   "lastOpenFiles": [
     "플로터/provider/provider.md",
     "플로터/riverpod/Riverpod 상태 관리 정리.md",
