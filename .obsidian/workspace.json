@@ -56,36 +56,12 @@
             }
           },
           {
-            "id": "d990d6f6a5d304d8",
+            "id": "d161562d951cfe65",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플러터/5. 상태 관리/Redux.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Redux"
-            }
-          },
-          {
-            "id": "76395c6a13f34248",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "플러터/5. 상태 관리/MobX.md",
+                "file": "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/MobX.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -104,12 +80,12 @@
             }
           },
           {
-            "id": "1082b2c93f63602b",
+            "id": "daf37459ac59f0fe",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플러터/5. 상태 관리/BLoC.md",
+                "file": "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/BLoC.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -128,12 +104,36 @@
             }
           },
           {
-            "id": "16f713866bab4f55",
+            "id": "b50748b8211bf2b3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플러터/5. 상태 관리/Provider.md",
+                "file": "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/GetX.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "GetX"
+            }
+          },
+          {
+            "id": "340416c4378f2956",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Provider.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -152,12 +152,12 @@
             }
           },
           {
-            "id": "651b69264f124c91",
+            "id": "bf88485a69a28917",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플러터/5. 상태 관리/Riverpod.md",
+                "file": "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Riverpod.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -173,30 +173,6 @@
               },
               "icon": "lucide-file",
               "title": "Riverpod"
-            }
-          },
-          {
-            "id": "cce4b6f305365ab5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "플러터/5. 상태 관리/GetX.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "GetX"
             }
           }
         ],
@@ -432,16 +408,23 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "d990d6f6a5d304d8",
+  "active": "d161562d951cfe65",
   "lastOpenFiles": [
-    "플러터/5. 상태 관리/Redux.md",
     "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션.md",
-    "플러터/5. 상태 관리/MobX.md",
-    "플러터/5. 상태 관리/BLoC.md",
-    "플러터/5. 상태 관리/Provider.md",
-    "플러터/5. 상태 관리/Riverpod.md",
-    "플러터/5. 상태 관리/GetX.md",
+    "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Redux.md",
+    "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/MobX.md",
+    "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/BLoC.md",
+    "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/GetX.md",
+    "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Provider.md",
+    "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Riverpod.md",
     "플러터/5. 상태 관리/BLoC 패턴.md",
+    "플러터/5. 상태 관리/BLoC.md",
+    "플러터/5. 상태 관리/Provider 패턴.md",
+    "플러터/5. 상태 관리/GetX.md",
+    "플러터/5. 상태 관리/Redux.md",
+    "플러터/5. 상태 관리/Riverpod.md",
+    "플러터/5. 상태 관리/MobX.md",
+    "플러터/5. 상태 관리/Provider.md",
     "플러터/4. 네비게이션과 라우팅/중첩 네비게이션.md",
     "플러터/4. 네비게이션과 라우팅/인수 전달 및 결과 반환.md",
     "플러터/4. 네비게이션과 라우팅/명명된 라우트.md",
@@ -453,13 +436,6 @@
     "플러터/3. Flutter 위젯 심화/위젯 트리와 엘리먼트 트리.md",
     "플러터/3. Flutter 위젯 심화/위젯 생명주기/build().md",
     "플러터/3. Flutter 위젯 심화/위젯 생명주기/createState().md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기/deactivate().md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기/didChangeDependencies().md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기/didUpdateWidget().md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기/dispose().md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기/initState().md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기/setState().md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기.md",
     "플러터/2. Flutter 입문/위젯의 개념과 종류 (Stateless, Stateful)/위젯 생명주기",
     "플러터/1. Dart 기초",
     "플러터",
