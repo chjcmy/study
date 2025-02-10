@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플러터/3. Flutter 위젯 심화/위젯 생명주기/dispose().md",
+                "file": "플러터/4. 네비게이션과 라우팅/인수 전달 및 결과 반환.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,107 +52,11 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "dispose()"
-            }
-          },
-          {
-            "id": "182f82199b8c3d4e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "플러터/3. Flutter 위젯 심화/위젯 생명주기/deactivate().md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "deactivate()"
-            }
-          },
-          {
-            "id": "b59ee16f4da42120",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "플러터/3. Flutter 위젯 심화/위젯 생명주기/setState().md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "setState()"
-            }
-          },
-          {
-            "id": "421a8d47daa4f72a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "플러터/3. Flutter 위젯 심화/위젯 생명주기/didUpdateWidget().md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "didUpdateWidget()"
-            }
-          },
-          {
-            "id": "3f4afa2f8d1e2fdc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "플러터/3. Flutter 위젯 심화/위젯 생명주기/build().md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "build()"
+              "title": "인수 전달 및 결과 반환"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -384,17 +288,24 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "3f4afa2f8d1e2fdc",
+  "active": "c7d753e146aa1927",
   "lastOpenFiles": [
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기/didChangeDependencies().md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기/initState().md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기/createState().md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기.md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기/dispose().md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기/deactivate().md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기/setState().md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기/didUpdateWidget().md",
+    "플러터/4. 네비게이션과 라우팅/명명된 라우트.md",
+    "플러터/4. 네비게이션과 라우팅/기본 네비게이션 (push, pop).md",
+    "플러터/3. Flutter 위젯 심화/Material Design 위젯.md",
+    "플러터/3. Flutter 위젯 심화/커스텀 위젯 만들기.md",
+    "플러터/3. Flutter 위젯 심화/BuildContext의 이해.md",
+    "플러터/3. Flutter 위젯 심화/Cupertino 위젯.md",
+    "플러터/3. Flutter 위젯 심화/위젯 트리와 엘리먼트 트리.md",
     "플러터/3. Flutter 위젯 심화/위젯 생명주기/build().md",
+    "플러터/3. Flutter 위젯 심화/위젯 생명주기/createState().md",
+    "플러터/3. Flutter 위젯 심화/위젯 생명주기/deactivate().md",
+    "플러터/3. Flutter 위젯 심화/위젯 생명주기/didChangeDependencies().md",
+    "플러터/3. Flutter 위젯 심화/위젯 생명주기/didUpdateWidget().md",
+    "플러터/3. Flutter 위젯 심화/위젯 생명주기/dispose().md",
+    "플러터/3. Flutter 위젯 심화/위젯 생명주기/initState().md",
+    "플러터/3. Flutter 위젯 심화/위젯 생명주기/setState().md",
+    "플러터/3. Flutter 위젯 심화/위젯 생명주기.md",
     "플러터/2. Flutter 입문/위젯의 개념과 종류 (Stateless, Stateful)/위젯 생명주기/initState().md",
     "플러터/2. Flutter 입문/위젯의 개념과 종류 (Stateless, Stateful)/위젯 생명주기/createState().md",
     "플러터/2. Flutter 입문/기본 레이아웃 위젯 (Container, Row, Column, Stack)/Container.md",
@@ -406,13 +317,6 @@
     "플러터/2. Flutter 입문/기본 레이아웃 위젯 (Container, Row, Column, Stack).md",
     "플러터/2. Flutter 입문/기본 레이아웃 위젯 (Container, Row, Column, Stack)/Stack.md",
     "플러터/2. Flutter 입문/기본 레이아웃 위젯 (Container, Row, Column, Stack)/Column.md",
-    "플러터/2. Flutter 입문/기본 레이아웃 위젯 (Container, Row, Column, Stack)/Row.md",
-    "플러터/2. Flutter 입문/개발 환경 설정 (IDE, SDK 설치).md",
-    "플러터/1. Dart 기초/Null 안정성과 Null 처리.md",
-    "플러터/1. Dart 기초/함수와 람다 표현식.md",
-    "플러터/1. Dart 기초/컬렉션 (List, Set, Map).md",
-    "플러터/1. Dart 기초/제어 흐름 (조건문, 반복문).md",
-    "플러터/1. Dart 기초/변수, 데이터 타입, 연산자.md",
     "플러터/1. Dart 기초",
     "플러터",
     "플러터/11. 고급 주제/푸시 알림 구현",
