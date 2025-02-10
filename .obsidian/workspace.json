@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플러터/9. 테스팅과 디버깅/성능 프로파일링.md",
+                "file": "플러터/9. 테스팅과 디버깅/위젯 테스트.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "성능 프로파일링"
+              "title": "위젯 테스트"
             }
           },
           {
@@ -314,6 +314,7 @@
   },
   "active": "daf37459ac59f0fe",
   "lastOpenFiles": [
+    "플러터/9. 테스팅과 디버깅/성능 프로파일링.md",
     "플러터/9. 테스팅과 디버깅/디버깅 기법.md",
     "플러터/9. 테스팅과 디버깅/단위 테스트.md",
     "플러터/8. 플랫폼 통합 및 플러그인/플랫폼 채널 사용하기.md",
@@ -339,7 +340,6 @@
     "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Redux.md",
     "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Provider.md",
     "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/MobX.md",
-    "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/GetX.md",
     "플러터/2. Flutter 입문/위젯의 개념과 종류 (Stateless, Stateful)/위젯 생명주기",
     "플러터/1. Dart 기초",
     "플러터",
