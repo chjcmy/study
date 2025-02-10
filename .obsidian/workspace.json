@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/BLoC.md",
+                "file": "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Riverpod.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,7 +52,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "BLoC"
+              "title": "Riverpod"
             }
           },
           {
@@ -314,11 +314,11 @@
   },
   "active": "daf37459ac59f0fe",
   "lastOpenFiles": [
-    "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/GetX.md",
-    "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/MobX.md",
-    "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Provider.md",
     "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Redux.md",
     "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Riverpod.md",
+    "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Provider.md",
+    "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/MobX.md",
+    "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/GetX.md",
     "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/BLoC.md",
     "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션.md",
     "플러터/3. Flutter 위젯 심화/위젯 생명주기.md",
