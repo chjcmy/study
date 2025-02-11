@@ -11,10 +11,24 @@
             "id": "daf37459ac59f0fe",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "그래프 뷰"
+              "type": "markdown",
+              "state": {
+                "file": "플러터/3. Flutter 위젯 심화/BuildContext의 이해.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "BuildContext의 이해"
             }
           }
         ]
@@ -249,8 +263,9 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "daf37459ac59f0fe",
+  "active": "c7d753e146aa1927",
   "lastOpenFiles": [
+    "플러터/3. Flutter 위젯 심화/커스텀 위젯 만들기.md",
     "플러터/3. Flutter 위젯 심화/위젯 트리와 엘리먼트 트리.md",
     "2025-02-11.md",
     "클래스.md",
@@ -277,7 +292,6 @@
     "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/생성자.md",
     "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/클래스 (Class).md",
     "플러터/2. Flutter 입문/기본 레이아웃 위젯 (Container, Row, Column, Stack)/Container.md",
-    "플러터/11. 고급 주제/테마 및 스타일링.md",
     "플러터/2. Flutter 입문/위젯의 개념과 종류 (Stateless, Stateful)/위젯 생명주기",
     "플러터/1. Dart 기초",
     "플러터",

@@ -1,4 +1,3 @@
-# BuildContext의 이해
 
 BuildContext는 Flutter에서 위젯 트리 내의 위젯의 위치를 나타내는 핵심 개념이다.
 
