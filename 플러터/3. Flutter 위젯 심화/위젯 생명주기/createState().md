@@ -1,4 +1,3 @@
-# createState()
 
 `createState()` 메서드는 StatefulWidget의 생명주기에서 가장 먼저 호출되는 메서드이다.
 

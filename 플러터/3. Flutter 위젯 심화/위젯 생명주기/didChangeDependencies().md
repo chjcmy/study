@@ -12,7 +12,7 @@
    - 컨텍스트에 의존적인 초기화 작업을 수행한다.
 
 3. **사용 시기**: 
-   - `InheritedWidget`을 사용하여 데이터를 가져올 때
+   - `InheritedWidget`을 사용하여 데이터를 가져올 때 ([[InheritedWidget의 이해]]
    - `BuildContext`가 필요한 초기화 작업을 수행할 때
 
 ## 사용 예시

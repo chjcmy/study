@@ -8,36 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d6dfde13da13c47c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "플러터/3. Flutter 위젯 심화/위젯 생명주기.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "위젯 생명주기"
-            }
-          },
-          {
             "id": "daf37459ac59f0fe",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플러터/11. 고급 주제/푸시 알림 구현.md",
+                "file": "플러터/3. Flutter 위젯 심화/위젯 트리와 엘리먼트 트리.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -52,35 +28,10 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "푸시 알림 구현"
-            }
-          },
-          {
-            "id": "340416c4378f2956",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/GetX.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "GetX"
+              "title": "위젯 트리와 엘리먼트 트리"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -314,32 +265,33 @@
   },
   "active": "c7d753e146aa1927",
   "lastOpenFiles": [
+    "플러터/3. Flutter 위젯 심화/위젯 생명주기.md",
+    "플러터/3. Flutter 위젯 심화/위젯 생명주기/didUpdateWidget().md",
+    "플러터/3. Flutter 위젯 심화/위젯 트리와 엘리먼트 트리.md",
+    "플러터/3. Flutter 위젯 심화/위젯 생명주기/build().md",
+    "플러터/5. 상태 관리/InheritedWidget의 이해.md",
+    "플러터/3. Flutter 위젯 심화/위젯 생명주기/didChangeDependencies().md",
+    "플러터/3. Flutter 위젯 심화/위젯 생명주기/initState().md",
+    "플러터/3. Flutter 위젯 심화/위젯 생명주기/createState().md",
+    "플러터/2. Flutter 입문/Flutter 소개 및 아키텍처.md",
+    "플러터/2. Flutter 입문/위젯의 개념과 종류 (Stateless, Stateful).md",
+    "플러터/2. Flutter 입문/사용자 입력 처리 (버튼, 텍스트 필드).md",
+    "플러터/2. Flutter 입문/기본 레이아웃 위젯 (Container, Row, Column, Stack).md",
+    "플러터/2. Flutter 입문/기본 레이아웃 위젯 (Container, Row, Column, Stack)/Stack.md",
+    "플러터/2. Flutter 입문/기본 레이아웃 위젯 (Container, Row, Column, Stack)/Row.md",
+    "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/믹신 (Mixin)/mixin 다중사용.md",
+    "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/믹신 (Mixin).md",
+    "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/믹신 (Mixin)",
+    "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스).md",
+    "플러터/11. 고급 주제/푸시 알림 구현.md",
+    "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/추상 클래스 (Abstract Class).md",
+    "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/인터페이스 (Interface).md",
+    "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/생성자.md",
+    "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/클래스 (Class).md",
+    "플러터/2. Flutter 입문/기본 레이아웃 위젯 (Container, Row, Column, Stack)/Container.md",
     "플러터/11. 고급 주제/테마 및 스타일링.md",
     "플러터/11. 고급 주제/접근성.md",
     "플러터/11. 고급 주제/백그라운드 작업 처리.md",
-    "플러터/11. 고급 주제/국제화 및 지역화.md",
-    "플러터/10. 배포 및 최적화/앱 스토어 및 구글 플레이 스토어 배포.md",
-    "플러터/10. 배포 및 최적화/앱 빌드 및 서명.md",
-    "플러터/10. 배포 및 최적화/성능 최적화 기법.md",
-    "플러터/10. 배포 및 최적화/메모리 관리.md",
-    "플러터/9. 테스팅과 디버깅/통합 테스트.md",
-    "플러터/9. 테스팅과 디버깅/위젯 테스트.md",
-    "플러터/9. 테스팅과 디버깅/성능 프로파일링.md",
-    "플러터/9. 테스팅과 디버깅/디버깅 기법.md",
-    "플러터/9. 테스팅과 디버깅/단위 테스트.md",
-    "플러터/8. 플랫폼 통합 및 플러그인/플랫폼 채널 사용하기.md",
-    "플러터/8. 플랫폼 통합 및 플러그인/커스텀 플러그인 개발.md",
-    "플러터/8. 플랫폼 통합 및 플러그인/기존 플러그인 사용법.md",
-    "플러터/7. 애니메이션과 고급 UI/Hero 애니메이션.md",
-    "플러터/7. 애니메이션과 고급 UI/커스텀 페인터.md",
-    "플러터/7. 애니메이션과 고급 UI/제스처 감지.md",
-    "플러터/7. 애니메이션과 고급 UI/암시적 애니메이션.md",
-    "플러터/7. 애니메이션과 고급 UI/명시적 애니메이션.md",
-    "플러터/6. 데이터 저장 및 API 통신/SQLite 데이터베이스 사용.md",
-    "플러터/6. 데이터 저장 및 API 통신/SharedPreferences를 이용한 로컬 데이터 저장.md",
-    "플러터/6. 데이터 저장 및 API 통신/RESTful API 통신.md",
-    "플러터/6. 데이터 저장 및 API 통신/JSON 직렬화 및 역직렬화.md",
-    "플러터/6. 데이터 저장 및 API 통신/HTTP 요청 및 응답 처리.md",
     "플러터/2. Flutter 입문/위젯의 개념과 종류 (Stateless, Stateful)/위젯 생명주기",
     "플러터/1. Dart 기초",
     "플러터",
@@ -349,7 +301,6 @@
     "플러터/11. 고급 주제/백그라운드 작업 처리",
     "플러터/11. 고급 주제/국제화 및 지역화",
     "플러터/11. 고급 주제",
-    "플러터/10. 배포 및 최적화/앱 스토어 및 구글 플레이 스토어 배포",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.12.48.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 4.05.20.png",
