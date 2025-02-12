@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플러터/3. Flutter 위젯 심화/BuildContext의 이해.md",
+                "file": "플러터/4. 네비게이션과 라우팅/중첩 네비게이션.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "BuildContext의 이해"
+              "title": "중첩 네비게이션"
             }
           }
         ]
@@ -265,6 +265,12 @@
   },
   "active": "c7d753e146aa1927",
   "lastOpenFiles": [
+    "플러터/4. 네비게이션과 라우팅/인수 전달 및 결과 반환.md",
+    "플러터/4. 네비게이션과 라우팅/명명된 라우트.md",
+    "플러터/4. 네비게이션과 라우팅/기본 네비게이션 (push, pop).md",
+    "플러터/3. Flutter 위젯 심화/Material Design 위젯.md",
+    "플러터/3. Flutter 위젯 심화/Cupertino 위젯.md",
+    "플러터/3. Flutter 위젯 심화/BuildContext의 이해.md",
     "플러터/3. Flutter 위젯 심화/커스텀 위젯 만들기.md",
     "플러터/3. Flutter 위젯 심화/위젯 트리와 엘리먼트 트리.md",
     "2025-02-11.md",
@@ -286,12 +292,6 @@
     "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/믹신 (Mixin).md",
     "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/믹신 (Mixin)",
     "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스).md",
-    "플러터/11. 고급 주제/푸시 알림 구현.md",
-    "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/추상 클래스 (Abstract Class).md",
-    "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/인터페이스 (Interface).md",
-    "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/생성자.md",
-    "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/클래스 (Class).md",
-    "플러터/2. Flutter 입문/기본 레이아웃 위젯 (Container, Row, Column, Stack)/Container.md",
     "플러터/2. Flutter 입문/위젯의 개념과 종류 (Stateless, Stateful)/위젯 생명주기",
     "플러터/1. Dart 기초",
     "플러터",
