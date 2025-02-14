@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Riverpod.md",
+                "file": "플러터/print log/Print vs Log in Flutter.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Riverpod"
+              "title": "Print vs Log in Flutter"
             }
           }
         ]
@@ -265,6 +265,13 @@
   },
   "active": "daf37459ac59f0fe",
   "lastOpenFiles": [
+    "플러터/UI/component/tile.md",
+    "플러터/print log/Print vs Log in Flutter.md",
+    "플러터/print log",
+    "플러터/UI/component/input field.md",
+    "플러터/UI/component/asset icon.md",
+    "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Riverpod.md",
+    "플러터/UI/component",
     "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Provider.md",
     "플러터/11. 고급 주제/국제화 및 지역화/다국어.md",
     "플러터/11. 고급 주제/국제화 및 지역화.md",
@@ -290,17 +297,10 @@
     "플러터/3. Flutter 위젯 심화/위젯 생명주기.md",
     "플러터/3. Flutter 위젯 심화/위젯 생명주기/didUpdateWidget().md",
     "플러터/3. Flutter 위젯 심화/위젯 생명주기/build().md",
-    "플러터/5. 상태 관리/InheritedWidget의 이해.md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기/didChangeDependencies().md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기/initState().md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기/createState().md",
-    "플러터/2. Flutter 입문/Flutter 소개 및 아키텍처.md",
     "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/믹신 (Mixin)",
     "플러터/2. Flutter 입문/위젯의 개념과 종류 (Stateless, Stateful)/위젯 생명주기",
     "플러터/1. Dart 기초",
     "플러터",
-    "플러터/11. 고급 주제/푸시 알림 구현",
-    "플러터/11. 고급 주제/테마 및 스타일링",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.12.48.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 4.05.20.png",
