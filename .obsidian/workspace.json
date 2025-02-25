@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플러터/UI/component/AlertDialog.md",
+                "file": "플러터/생각하는 순서/전체적인 틀/1.기본 인프라 구축.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "AlertDialog"
+              "title": "1.기본 인프라 구축"
             }
           }
         ]
@@ -265,8 +265,12 @@
   },
   "active": "daf37459ac59f0fe",
   "lastOpenFiles": [
-    "플러터/라이브러리/CachedNetworkImage.md",
+    "플러터/생각하는 순서/전체적인 틀/개발 로드맵.md",
+    "플러터/생각하는 순서/전체적인 틀/1.기본 인프라 구축.md",
     "플러터/UI/component/AlertDialog.md",
+    "플러터/생각하는 순서/전체적인 틀",
+    "플러터/생각하는 순서",
+    "플러터/라이브러리/CachedNetworkImage.md",
     "플러터/print log/Print vs Log in Flutter.md",
     "플러터/라이브러리",
     "플러터/UI/component/tile.md",
@@ -296,11 +300,7 @@
     "플러터/3. Flutter 위젯 심화/커스텀 위젯 만들기.md",
     "플러터/3. Flutter 위젯 심화/위젯 트리와 엘리먼트 트리.md",
     "2025-02-11.md",
-    "클래스.md",
-    "플러터/3. Flutter 위젯 심화/위젯 생명주기.md",
     "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/믹신 (Mixin)",
-    "플러터/2. Flutter 입문/위젯의 개념과 종류 (Stateless, Stateful)/위젯 생명주기",
-    "플러터/1. Dart 기초",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.12.48.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 4.05.20.png",
