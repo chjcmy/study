@@ -30,8 +30,21 @@
               "icon": "lucide-file",
               "title": "레이아웃 위젯 정리"
             }
+          },
+          {
+            "id": "cebbadfe95d480da",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.7"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -260,11 +273,10 @@
       "obsidian-advanced-slides:Show Slide Preview": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-git:Open Git source control": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "daf37459ac59f0fe",
+  "active": "cebbadfe95d480da",
   "lastOpenFiles": [
     "플러터/라이브러리/intl.md",
     "플러터/UI/레이아웃 위젯 정리.md",
