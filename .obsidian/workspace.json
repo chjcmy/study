@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플러터/print log/log.md",
+                "file": "플러터/print log/객체 log.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "log"
+              "title": "객체 log"
             }
           }
         ]
@@ -266,7 +266,7 @@
   "active": "daf37459ac59f0fe",
   "lastOpenFiles": [
     "플러터/print log/Print vs Log in Flutter.md",
-    "플러터/print log/log.md",
+    "플러터/print log/객체 log.md",
     "플러터/생각하는 순서/bloc.md",
     "플러터/UI/레이아웃 위젯 정리.md",
     "플러터/라이브러리/intl.md",
