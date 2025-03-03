@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플러터/UI/레이아웃 위젯 정리.md",
+                "file": "플러터/생각하는 순서/bloc.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,23 +28,10 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "레이아웃 위젯 정리"
-            }
-          },
-          {
-            "id": "cebbadfe95d480da",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.8.7"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.7"
+              "title": "bloc"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -276,10 +263,11 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "cebbadfe95d480da",
+  "active": "daf37459ac59f0fe",
   "lastOpenFiles": [
-    "플러터/라이브러리/intl.md",
     "플러터/UI/레이아웃 위젯 정리.md",
+    "플러터/생각하는 순서/bloc.md",
+    "플러터/라이브러리/intl.md",
     "플러터/UI/component/tile.md",
     "플러터/UI/component/asset icon.md",
     "플러터/UI/component/input field.md",
@@ -312,7 +300,6 @@
     "플러터/3. Flutter 위젯 심화/Material Design 위젯.md",
     "플러터/3. Flutter 위젯 심화/Cupertino 위젯.md",
     "플러터/3. Flutter 위젯 심화/BuildContext의 이해.md",
-    "플러터/3. Flutter 위젯 심화/커스텀 위젯 만들기.md",
     "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/믹신 (Mixin)",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.12.48.png",
