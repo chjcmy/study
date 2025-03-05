@@ -30,8 +30,21 @@
               "icon": "lucide-file",
               "title": "객체 log"
             }
+          },
+          {
+            "id": "e5835ec51de149e9",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.9"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.9"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -263,7 +276,7 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "daf37459ac59f0fe",
+  "active": "e5835ec51de149e9",
   "lastOpenFiles": [
     "플러터/print log/Print vs Log in Flutter.md",
     "플러터/print log/객체 log.md",
