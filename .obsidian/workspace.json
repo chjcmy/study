@@ -30,21 +30,8 @@
               "icon": "lucide-file",
               "title": "객체 log"
             }
-          },
-          {
-            "id": "e5835ec51de149e9",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.8.9"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.9"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -190,7 +177,7 @@
                 "searchQuery": ""
               },
               "icon": "lucide-archive",
-              "title": "All properties"
+              "title": "모든 속성"
             }
           },
           {
@@ -199,8 +186,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "lucide-file",
-              "title": "플러그인이 더 이상 활성화돼있지 않음"
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           },
           {
@@ -209,8 +196,8 @@
             "state": {
               "type": "git-history-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "플러그인이 더 이상 활성화돼있지 않음"
+              "icon": "history",
+              "title": "History"
             }
           },
           {
@@ -219,8 +206,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "플러그인이 더 이상 활성화돼있지 않음"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           },
           {
@@ -229,8 +216,8 @@
             "state": {
               "type": "todo",
               "state": {},
-              "icon": "lucide-file",
-              "title": "플러그인이 더 이상 활성화돼있지 않음"
+              "icon": "checkmark",
+              "title": "Todo List"
             }
           },
           {
@@ -239,8 +226,8 @@
             "state": {
               "type": "todo",
               "state": {},
-              "icon": "lucide-file",
-              "title": "플러그인이 더 이상 활성화돼있지 않음"
+              "icon": "checkmark",
+              "title": "Todo List"
             }
           },
           {
@@ -254,12 +241,11 @@
             }
           }
         ],
-        "currentTab": 11
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 403.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -273,10 +259,12 @@
       "obsidian-advanced-slides:Show Slide Preview": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-git:Open Git source control": false,
-      "obsidian-excalidraw-plugin:New drawing": false
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "publish:변경사항 게재": false,
+      "workspaces:작업 공간 레이아웃 관리": false
     }
   },
-  "active": "e5835ec51de149e9",
+  "active": "ef857417ae85fd64",
   "lastOpenFiles": [
     "플러터/print log/Print vs Log in Flutter.md",
     "플러터/print log/객체 log.md",
