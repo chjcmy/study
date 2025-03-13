@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플러터/print log/객체 log.md",
+                "file": "플러터/라이브러리/Flutter에서 Dio와 HTTP 패키지 비교.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "객체 log"
+              "title": "Flutter에서 Dio와 HTTP 패키지 비교"
             }
           }
         ]
@@ -264,10 +264,11 @@
       "workspaces:작업 공간 레이아웃 관리": false
     }
   },
-  "active": "ef857417ae85fd64",
+  "active": "daf37459ac59f0fe",
   "lastOpenFiles": [
-    "플러터/print log/Print vs Log in Flutter.md",
     "플러터/print log/객체 log.md",
+    "플러터/라이브러리/Flutter에서 Dio와 HTTP 패키지 비교.md",
+    "플러터/print log/Print vs Log in Flutter.md",
     "플러터/생각하는 순서/bloc.md",
     "플러터/UI/레이아웃 위젯 정리.md",
     "플러터/라이브러리/intl.md",
@@ -300,7 +301,6 @@
     "플러터/4. 네비게이션과 라우팅/명명된 라우트.md",
     "플러터/4. 네비게이션과 라우팅/기본 네비게이션 (push, pop).md",
     "플러터/3. Flutter 위젯 심화/Material Design 위젯.md",
-    "플러터/3. Flutter 위젯 심화/Cupertino 위젯.md",
     "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/믹신 (Mixin)",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.12.48.png",
