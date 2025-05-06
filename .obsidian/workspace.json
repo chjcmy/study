@@ -30,21 +30,8 @@
               "icon": "lucide-file",
               "title": "Flutter에서 Dio와 HTTP 패키지 비교"
             }
-          },
-          {
-            "id": "920592594f41ecb2",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.8.10"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.10"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -258,7 +245,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 403.5
+    "width": 403.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -277,7 +265,7 @@
       "workspaces:작업 공간 레이아웃 관리": false
     }
   },
-  "active": "920592594f41ecb2",
+  "active": "daf37459ac59f0fe",
   "lastOpenFiles": [
     "플러터/print log/객체 log.md",
     "플러터/라이브러리/Flutter에서 Dio와 HTTP 패키지 비교.md",
