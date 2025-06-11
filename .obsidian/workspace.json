@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Smart Recipe AI Backend Setup/04_API_엔드포인트_구조.md",
+                "file": "Smart Recipe AI Backend/LangChain-Ollama-API-정리.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "04_API_엔드포인트_구조"
+              "title": "LangChain-Ollama-API-정리"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "임베딩",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -84,8 +84,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -266,10 +265,12 @@
       "workspaces:작업 공간 레이아웃 관리": false
     }
   },
-  "active": "9b09d9919b8ae1d1",
+  "active": "c7d753e146aa1927",
   "lastOpenFiles": [
-    "Smart Recipe AI Backend/API 엔드포인트 정리.md",
     "Smart Recipe AI Backend/데이터 로드 과정 정리.md",
+    "Smart Recipe AI Backend/LangChain-Ollama-API-정리.md",
+    "Smart Recipe AI Backend/API 엔드포인트 정리.md",
+    "Smart Recipe AI Backend Setup/04_API_엔드포인트_구조.md",
     "Smart Recipe AI Backend",
     "Smart Recipe AI Backend Setup/03_데이터베이스_구성.md",
     "Smart Recipe AI Backend Setup/02_환경설정_및_의존성.md",
@@ -300,8 +301,6 @@
     "플러터/11. 고급주제/국제화 및 지역화",
     "플러터/11. 고급주제",
     "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스).md",
-    "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/클래스 (Class).md",
-    "국제화 및 지역화/다국화.md",
     "국제화 및 지역화",
     "플러터/UI",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
