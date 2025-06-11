@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "플러터/라이브러리/Flutter에서 Dio와 HTTP 패키지 비교.md",
+                "file": "Smart Recipe AI Backend Setup/04_API_엔드포인트_구조.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Flutter에서 Dio와 HTTP 패키지 비교"
+              "title": "04_API_엔드포인트_구조"
             }
           }
         ]
@@ -63,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "임베딩",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -84,7 +84,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -265,10 +266,16 @@
       "workspaces:작업 공간 레이아웃 관리": false
     }
   },
-  "active": "daf37459ac59f0fe",
+  "active": "9b09d9919b8ae1d1",
   "lastOpenFiles": [
-    "플러터/print log/객체 log.md",
+    "Smart Recipe AI Backend/API 엔드포인트 정리.md",
+    "Smart Recipe AI Backend/데이터 로드 과정 정리.md",
+    "Smart Recipe AI Backend",
+    "Smart Recipe AI Backend Setup/03_데이터베이스_구성.md",
+    "Smart Recipe AI Backend Setup/02_환경설정_및_의존성.md",
+    "Smart Recipe AI Backend Setup/01_프로젝트_개요.md",
     "플러터/라이브러리/Flutter에서 Dio와 HTTP 패키지 비교.md",
+    "플러터/print log/객체 log.md",
     "플러터/print log/Print vs Log in Flutter.md",
     "플러터/생각하는 순서/bloc.md",
     "플러터/UI/레이아웃 위젯 정리.md",
@@ -296,13 +303,7 @@
     "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/클래스 (Class).md",
     "국제화 및 지역화/다국화.md",
     "국제화 및 지역화",
-    "플러터/4. 네비게이션과 라우팅/중첩 네비게이션.md",
     "플러터/UI",
-    "플러터/4. 네비게이션과 라우팅/인수 전달 및 결과 반환.md",
-    "플러터/4. 네비게이션과 라우팅/명명된 라우트.md",
-    "플러터/4. 네비게이션과 라우팅/기본 네비게이션 (push, pop).md",
-    "플러터/3. Flutter 위젯 심화/Material Design 위젯.md",
-    "플러터/1. Dart 기초/객체 지향 프로그래밍 (클래스, 상속, 인터페이스)/믹신 (Mixin)",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.12.48.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 4.05.20.png",
