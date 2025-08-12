@@ -11,24 +11,10 @@
             "id": "daf37459ac59f0fe",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Smart Recipe AI Backend/Claude와_백엔드_API_개발_프롬프트_가이드.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Claude와_백엔드_API_개발_프롬프트_가이드"
+              "title": "New tab"
             }
           }
         ]
@@ -275,7 +261,7 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "22854ded3ee967d1",
+  "active": "c7d753e146aa1927",
   "lastOpenFiles": [
     "Smart Recipe AI Backend/LangChain-Ollama-API-정리.md",
     "Smart Recipe AI Backend/Claude와_백엔드_API_개발_프롬프트_가이드.md",
