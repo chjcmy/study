@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "2ba1aad284e4607d",
+        "id": "a1c905858aeca71b",
         "type": "tabs",
         "children": [
           {
-            "id": "daf37459ac59f0fe",
+            "id": "99b14dfe41566fe6",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -246,6 +246,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -261,8 +262,9 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "c7d753e146aa1927",
+  "active": "99b14dfe41566fe6",
   "lastOpenFiles": [
+    "Untitled.md",
     "Smart Recipe AI Backend/LangChain-Ollama-API-정리.md",
     "Smart Recipe AI Backend/Claude와_백엔드_API_개발_프롬프트_가이드.md",
     "Smart Recipe AI Backend/데이터 로드 과정 정리.md",
@@ -294,7 +296,6 @@
     "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Provider.md",
     "플러터/11. 고급 주제/국제화 및 지역화/다국어.md",
     "플러터/11. 고급 주제/국제화 및 지역화.md",
-    "플러터/11. 고급주제/국제화 및 지역화/다국어.md",
     "플러터/11. 고급주제/국제화 및 지역화",
     "플러터/11. 고급주제",
     "국제화 및 지역화",
