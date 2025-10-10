@@ -11,24 +11,10 @@
             "id": "93b9847eee75e6d0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "* 코틀린/1. 기초/1. var 과 val.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "1. var 과 val"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "그래프 뷰"
             }
           }
         ]
@@ -288,6 +274,9 @@
   },
   "active": "93b9847eee75e6d0",
   "lastOpenFiles": [
+    "객체 지향/srp/SRP.md",
+    "객체 지향/dip/dip.md",
+    "* 코틀린/1. 기초/1. var 과 val.md",
     "* 코틀린/00. 코틀린 목차.md",
     "통신/http3/http3(QUIC).md",
     "* 코틀린/7. 파워 툴/2. 영역 함수.md",
@@ -321,9 +310,6 @@
     "Smart Recipe AI Backend/데이터 로드 과정 정리.md",
     "Smart Recipe AI Backend/API 엔드포인트 정리.md",
     "Smart Recipe AI Backend Setup/04_API_엔드포인트_구조.md",
-    "Smart Recipe AI Backend Setup/03_데이터베이스_구성.md",
-    "Smart Recipe AI Backend Setup/02_환경설정_및_의존성.md",
-    "Smart Recipe AI Backend Setup/01_프로젝트_개요.md",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.12.48.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 4.05.20.png",
