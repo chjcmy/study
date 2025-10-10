@@ -1,4 +1,5 @@
 # 7. 트랜잭션과 동시성 제어
+#PostgreSQL/Transaction #PostgreSQL/Concurrency
 
 여러 사용자가 동시에 데이터베이스에 접근할 때 데이터의 일관성과 무결성을 지키는 것은 매우 중요합니다. PostgreSQL은 이를 위해 트랜잭션(Transaction), ACID 원칙, 그리고 정교한 동시성 제어(Concurrency Control) 메커니즘을 제공합니다.
 
@@ -6,7 +7,8 @@
 
 ### 트랜잭션(Transaction)이란?
 
-트랜잭션은 **"더 이상 쪼갤 수 없는 데이터베이스 작업의 단위"**입니다. 여러 개의 SQL 명령어를 하나의 논리적 단위로 묶은 것으로, 이 단위 내의 모든 작업은 전부 성공하거나(`COMMIT`) 전부 실패(`ROLLBACK`)해야 합니다.
+> [!INFO]
+> 트랜잭션은 **"더 이상 쪼갤 수 없는 데이터베이스 작업의 단위"**입니다. 여러 개의 SQL 명령어를 하나의 논리적 단위로 묶은 것으로, 이 단위 내의 모든 작업은 전부 성공하거나(`COMMIT`) 전부 실패(`ROLLBACK`)해야 합니다.
 
 ```sql
 BEGIN; -- 트랜잭션 시작
@@ -56,8 +58,9 @@ MVCC가 대부분의 상황을 처리하지만, 여러 트랜잭션이 동일한
 
 -   **자동 잠금**: `UPDATE`, `DELETE` 등의 DML 명령어는 대상이 되는 행(Row)에 자동으로 배타적인 잠금(Exclusive Lock)을 겁니다. 다른 트랜잭션은 이 잠금이 풀릴 때까지 해당 행을 수정하거나 삭제할 수 없습니다.
 -   **명시적 잠금 (`SELECT FOR ...`)**: 개발자가 필요에 따라 특정 행을 명시적으로 잠글 수 있습니다.
-    -   **`SELECT ... FOR UPDATE`**: 비관적 잠금(Pessimistic Locking)의 대표적인 예. 특정 행을 조회하면서 즉시 배타적인 잠금을 겁니다. 다른 트랜잭션은 이 행에 접근하여 `UPDATE`, `DELETE` 하거나 `FOR UPDATE` 잠금을 걸 수 없으며, 현재 트랜잭션이 `COMMIT` 또는 `ROLLBACK` 될 때까지 기다려야 합니다. 동시 수정으로 인한 데이터 덮어쓰기를 막을 때 유용합니다.
-    -   **`SELECT ... FOR SHARE`**: 공유 잠금(Shared Lock)을 겁니다. 다른 트랜잭션이 이 행을 `UPDATE`하거나 `DELETE`하는 것은 막지만, `FOR SHARE` 잠금을 거는 것은 허용합니다.
+    > [!TIP] 비관적 잠금 (Pessimistic Locking)
+    > -   **`SELECT ... FOR UPDATE`**: 특정 행을 조회하면서 즉시 배타적인 잠금을 겁니다. 다른 트랜잭션은 이 행에 접근하여 `UPDATE`, `DELETE` 하거나 `FOR UPDATE` 잠금을 걸 수 없으며, 현재 트랜잭션이 `COMMIT` 또는 `ROLLBACK` 될 때까지 기다려야 합니다. 동시 수정으로 인한 데이터 덮어쓰기를 막을 때 유용합니다.
+    > -   **`SELECT ... FOR SHARE`**: 공유 잠금(Shared Lock)을 겁니다. 다른 트랜잭션이 이 행을 `UPDATE`하거나 `DELETE`하는 것은 막지만, `FOR SHARE` 잠금을 거는 것은 허용합니다.
 
 ```sql
 BEGIN;
@@ -72,3 +75,7 @@ UPDATE users SET points = 150 WHERE user_id = 1;
 
 COMMIT;
 ```
+
+---
+> [[00. 포스트그레스 목차|⬆️ 목차로 돌아가기]]
+> [[6. 인덱스/README|⬅️ 이전: 6. 인덱스]] | [[8. 성능 튜닝/README|➡️ 다음: 8. 성능 튜닝]]

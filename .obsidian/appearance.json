@@ -1,6 +1,6 @@
 {
-  "cssTheme": "Minimal",
-  "theme": "obsidian",
+  "cssTheme": "",
+  "theme": "system",
   "baseFontSizeAction": true,
   "baseFontSize": 18,
   "translucency": false,

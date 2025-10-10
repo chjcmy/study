@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "포스트그레스/2. 설치 및 설정/README.md",
+                "file": "포스트그레스/11. 벡터와 pgvector 확장/README.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -30,21 +30,8 @@
               "icon": "lucide-file",
               "title": "README"
             }
-          },
-          {
-            "id": "5588b9c634263a72",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.9.14"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.9.14"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -67,7 +54,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "파일 탐색기"
             }
           },
           {
@@ -283,32 +270,37 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:Create new base": false,
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "markdown-importer:Open format converter": false,
-      "workspaces:Manage workspace layouts": false,
-      "publish:Publish changes...": false,
+      "switcher:빠른 전환기 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "markdown-importer:마크다운 형식 불러오기 열기": false,
+      "workspaces:작업 공간 레이아웃 관리": false,
+      "publish:변경사항 게재": false,
+      "bases:새 베이스 생성하기": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-git:Open Git source control": false,
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "5588b9c634263a72",
+  "active": "99b14dfe41566fe6",
   "lastOpenFiles": [
     "포스트그레스/8. 성능 튜닝/README.md",
+    "포스트그레스/11. 벡터와 pgvector 확장/README.md",
+    "포스트그레스/11. 벡터와 pgvector 확장",
+    "포스트그레스/2. 설치 및 설정/README.md",
+    "포스트그레스/1. PostgreSQL 소개/README.md",
+    "포스트그레스/9. 백업 및 복구/README.md",
+    "포스트그레스/00. 포스트그레스 목차.md",
+    "포스트그레스/10. 사용자 및 권한 관리/README.md",
     "포스트그레스/7. 트랜잭션과 동시성/README.md",
     "포스트그레스/6. 인덱스/README.md",
     "포스트그레스/5. 데이터 타입/README.md",
     "포스트그레스/4. 고급 SQL/README.md",
-    "포스트그레스/1. PostgreSQL 소개/README.md",
     "포스트그레스/3. 기본 SQL/README.md",
-    "포스트그레스/2. 설치 및 설정/README.md",
     "포스트그레스/10. 사용자 및 권한 관리",
     "포스트그레스/9. 백업 및 복구",
     "포스트그레스/8. 성능 튜닝",
@@ -318,7 +310,6 @@
     "포스트그레스/4. 고급 SQL",
     "포스트그레스/3. 기본 SQL",
     "포스트그레스/2. 설치 및 설정",
-    "포스트그레스/1. PostgreSQL 소개",
     "Untitled.md",
     "Smart Recipe AI Backend/LangChain-Ollama-API-정리.md",
     "Smart Recipe AI Backend/Claude와_백엔드_API_개발_프롬프트_가이드.md",
@@ -333,10 +324,6 @@
     "플러터/print log/Print vs Log in Flutter.md",
     "플러터/생각하는 순서/bloc.md",
     "플러터/UI/레이아웃 위젯 정리.md",
-    "플러터/라이브러리/intl.md",
-    "플러터/UI/component/tile.md",
-    "플러터/UI/component/asset icon.md",
-    "플러터/UI/component/input field.md",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.12.48.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 4.05.20.png",
