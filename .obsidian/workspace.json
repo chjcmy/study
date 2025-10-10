@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "a1c905858aeca71b",
+        "id": "b2e28442fde2cd08",
         "type": "tabs",
         "children": [
           {
-            "id": "99b14dfe41566fe6",
+            "id": "93b9847eee75e6d0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "포스트그레스/11. 벡터와 pgvector 확장/README.md",
+                "file": "* 코틀린/1. 기초/1. var 과 val.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "1. var 과 val"
             }
           }
         ]
@@ -286,10 +286,15 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "99b14dfe41566fe6",
+  "active": "93b9847eee75e6d0",
   "lastOpenFiles": [
-    "포스트그레스/8. 성능 튜닝/README.md",
+    "* 코틀린/00. 코틀린 목차.md",
+    "통신/http3/http3(QUIC).md",
+    "* 코틀린/7. 파워 툴/2. 영역 함수.md",
+    "* 데이터베이스/00. 데이터베이스 목차.md",
     "포스트그레스/11. 벡터와 pgvector 확장/README.md",
+    "* 스프링/00. 스프링 목차.md",
+    "포스트그레스/8. 성능 튜닝/README.md",
     "포스트그레스/11. 벡터와 pgvector 확장",
     "포스트그레스/2. 설치 및 설정/README.md",
     "포스트그레스/1. PostgreSQL 소개/README.md",
@@ -319,11 +324,6 @@
     "Smart Recipe AI Backend Setup/03_데이터베이스_구성.md",
     "Smart Recipe AI Backend Setup/02_환경설정_및_의존성.md",
     "Smart Recipe AI Backend Setup/01_프로젝트_개요.md",
-    "플러터/라이브러리/Flutter에서 Dio와 HTTP 패키지 비교.md",
-    "플러터/print log/객체 log.md",
-    "플러터/print log/Print vs Log in Flutter.md",
-    "플러터/생각하는 순서/bloc.md",
-    "플러터/UI/레이아웃 위젯 정리.md",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.12.48.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 4.05.20.png",
