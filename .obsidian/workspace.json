@@ -11,13 +11,40 @@
             "id": "99b14dfe41566fe6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "포스트그레스/2. 설치 및 설정/README.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "README"
+            }
+          },
+          {
+            "id": "5588b9c634263a72",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.14"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.14"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -272,16 +299,32 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "5248b4934b15c8b6",
+  "active": "5588b9c634263a72",
   "lastOpenFiles": [
-    "포스트그레스",
+    "포스트그레스/8. 성능 튜닝/README.md",
+    "포스트그레스/7. 트랜잭션과 동시성/README.md",
+    "포스트그레스/6. 인덱스/README.md",
+    "포스트그레스/5. 데이터 타입/README.md",
+    "포스트그레스/4. 고급 SQL/README.md",
+    "포스트그레스/1. PostgreSQL 소개/README.md",
+    "포스트그레스/3. 기본 SQL/README.md",
+    "포스트그레스/2. 설치 및 설정/README.md",
+    "포스트그레스/10. 사용자 및 권한 관리",
+    "포스트그레스/9. 백업 및 복구",
+    "포스트그레스/8. 성능 튜닝",
+    "포스트그레스/7. 트랜잭션과 동시성",
+    "포스트그레스/6. 인덱스",
+    "포스트그레스/5. 데이터 타입",
+    "포스트그레스/4. 고급 SQL",
+    "포스트그레스/3. 기본 SQL",
+    "포스트그레스/2. 설치 및 설정",
+    "포스트그레스/1. PostgreSQL 소개",
     "Untitled.md",
     "Smart Recipe AI Backend/LangChain-Ollama-API-정리.md",
     "Smart Recipe AI Backend/Claude와_백엔드_API_개발_프롬프트_가이드.md",
     "Smart Recipe AI Backend/데이터 로드 과정 정리.md",
     "Smart Recipe AI Backend/API 엔드포인트 정리.md",
     "Smart Recipe AI Backend Setup/04_API_엔드포인트_구조.md",
-    "Smart Recipe AI Backend",
     "Smart Recipe AI Backend Setup/03_데이터베이스_구성.md",
     "Smart Recipe AI Backend Setup/02_환경설정_및_의존성.md",
     "Smart Recipe AI Backend Setup/01_프로젝트_개요.md",
@@ -294,22 +337,6 @@
     "플러터/UI/component/tile.md",
     "플러터/UI/component/asset icon.md",
     "플러터/UI/component/input field.md",
-    "플러터/UI/component/AlertDialog.md",
-    "플러터/생각하는 순서/전체적인 틀/개발 로드맵.md",
-    "플러터/생각하는 순서/전체적인 틀/1.기본 인프라 구축.md",
-    "플러터/생각하는 순서/전체적인 틀",
-    "플러터/생각하는 순서",
-    "플러터/라이브러리/CachedNetworkImage.md",
-    "플러터/라이브러리",
-    "플러터/print log",
-    "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Riverpod.md",
-    "플러터/UI/component",
-    "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Provider.md",
-    "플러터/11. 고급 주제/국제화 및 지역화/다국어.md",
-    "플러터/11. 고급주제/국제화 및 지역화",
-    "플러터/11. 고급주제",
-    "국제화 및 지역화",
-    "플러터/UI",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.12.48.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 4.05.20.png",
