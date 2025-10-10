@@ -148,8 +148,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "advanced-tables-toolbar"
             }
           },
           {
@@ -172,8 +172,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "calendar"
             }
           },
           {
@@ -182,8 +182,8 @@
             "state": {
               "type": "git-history-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "git-history-view"
             }
           },
           {
@@ -192,8 +192,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "git-view"
             }
           },
           {
@@ -202,8 +202,8 @@
             "state": {
               "type": "todo",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "todo"
             }
           },
           {
@@ -212,8 +212,8 @@
             "state": {
               "type": "todo",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "todo"
             }
           },
           {
@@ -222,12 +222,22 @@
             "state": {
               "type": "todo",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "lucide-ghost",
+              "title": "todo"
             }
           },
           {
             "id": "22854ded3ee967d1",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "todo"
+            }
+          },
+          {
+            "id": "5248b4934b15c8b6",
             "type": "leaf",
             "state": {
               "type": "todo",
@@ -237,7 +247,7 @@
             }
           }
         ],
-        "currentTab": 12
+        "currentTab": 13
       }
     ],
     "direction": "horizontal",
@@ -262,8 +272,9 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "99b14dfe41566fe6",
+  "active": "5248b4934b15c8b6",
   "lastOpenFiles": [
+    "포스트그레스",
     "Untitled.md",
     "Smart Recipe AI Backend/LangChain-Ollama-API-정리.md",
     "Smart Recipe AI Backend/Claude와_백엔드_API_개발_프롬프트_가이드.md",
@@ -295,7 +306,6 @@
     "플러터/UI/component",
     "플러터/5. 상태 관리/GetX, Riverpod 등 다른 상태 관리 솔루션/Provider.md",
     "플러터/11. 고급 주제/국제화 및 지역화/다국어.md",
-    "플러터/11. 고급 주제/국제화 및 지역화.md",
     "플러터/11. 고급주제/국제화 및 지역화",
     "플러터/11. 고급주제",
     "국제화 및 지역화",
