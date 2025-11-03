@@ -1,243 +1,45 @@
 {
   "tasks": [
     {
-      "id": "684be295-439f-414f-b1a4-e57a8158f7be",
-      "name": "중학 수학 복습",
-      "description": "AI 학습에 필요한 최소한의 중학 수학 개념을 복습합니다. 방정식, 부등식, 기본 함수 개념을 다시 학습합니다.",
+      "id": "70507d8d-f93c-4777-9a20-27a93893c36d",
+      "name": "Phase 1: Refactor and Detail Calculus",
+      "description": "Refactor the `01_미적분학.md` file into a structured folder, then iteratively detail the content of each new sub-topic file.",
       "status": "pending",
       "dependencies": [],
-      "createdAt": "2025-11-02T05:03:55.515Z",
-      "updatedAt": "2025-11-02T05:03:55.515Z",
-      "implementationGuide": "1. 중학교 1~3학년 수학 교과서의 목차를 훑어보며 기억나지 않는 부분을 확인합니다.\n2. 각 단원의 핵심 개념(정의, 공식)을 노트에 정리합니다.\n3. 간단한 예제 문제를 풀어보며 개념 이해도를 확인합니다.",
-      "verificationCriteria": "각 단원별 핵심 개념을 다른 사람에게 설명할 수 있을 정도로 이해했는지 확인합니다."
+      "createdAt": "2025-11-03T03:00:45.115Z",
+      "updatedAt": "2025-11-03T03:00:45.115Z",
+      "implementationGuide": "1. Read the content of `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/01_미적분학.md`. 2. Create the directory `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/01_미적분학`. 3. Create and populate the sub-topic files (`01_함수의_극한과_연속.md`, `02_미분.md`, `03_적분.md`, `04_다변수_미적분.md`) with content from the original file. 4. Create the `목차.md` file with links to the new sub-topics. 5. Delete the original `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/01_미적분학.md` file. 6. After the refactoring is complete, begin the iterative content generation phase for the calculus sub-topics, starting with `01_함수의_극한과_연속.md`. This involves reading the file, expanding it with detailed explanations and practice problems, writing the new content back, and asking the user for confirmation before moving to the next file.",
+      "verificationCriteria": "The `01_미적분학` folder must be created with the correct sub-topic files and `목차.md`. The original file must be deleted. All sub-topic files must be populated with detailed content and practice problems, with user confirmation at each step."
     },
     {
-      "id": "0d4f869b-63fc-467e-bd97-1bfa7da4cec4",
-      "name": "함수와 다변수 함수",
-      "description": "함수의 기본 개념을 이해하고, AI 모델에서 사용되는 다변수 함수에 대해 학습합니다.",
+      "id": "ba7ecdac-6b42-4fb0-84de-9eaffb7962f4",
+      "name": "Phase 2: Refactor and Detail Linear Algebra",
+      "description": "Refactor the `02_선형대수학.md` file into a structured folder, then iteratively detail the content of each new sub-topic file.",
       "status": "pending",
       "dependencies": [
         {
-          "taskId": "684be295-439f-414f-b1a4-e57a8158f7be"
+          "taskId": "70507d8d-f93c-4777-9a20-27a93893c36d"
         }
       ],
-      "createdAt": "2025-11-02T05:03:55.515Z",
-      "updatedAt": "2025-11-02T05:03:55.515Z",
-      "implementationGuide": "1. 함수의 정의, 정의역, 공역, 치역의 개념을 복습합니다.\n2. 일차함수, 이차함수의 그래프를 직접 그려봅니다.\n3. 다변수 함수의 개념을 이해하고, 간단한 예제를 통해 변수가 여러 개일 때 함수가 어떻게 동작하는지 확인합니다.",
-      "verificationCriteria": "함수의 그래프를 보고 식을 유추할 수 있고, 다변수 함수에 대한 간단한 예제를 풀 수 있습니다."
+      "createdAt": "2025-11-03T03:00:45.115Z",
+      "updatedAt": "2025-11-03T03:00:45.115Z",
+      "implementationGuide": "1. Read the content of `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/02_선형대수학.md`. 2. Create the directory `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/02_선형대수학`. 3. Create and populate the sub-topic files (`01_벡터와_행렬.md`, `02_행렬식과_역행렬.md`, `03_선형_독립과_벡터_공간.md`, `04_고유값과_고유벡터.md`). 4. Create the `목차.md` file with links. 5. Delete the original `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/02_선형대수학.md` file. 6. Begin the iterative content generation phase for the linear algebra sub-topics.",
+      "verificationCriteria": "The `02_선형대수학` folder must be created with the correct sub-topic files and `목차.md`. The original file must be deleted. All sub-topic files must be populated with detailed content and practice problems."
     },
     {
-      "id": "3e46dd03-429c-4d5b-9640-7c62209e22d2",
-      "name": "로그 함수",
-      "description": "로그의 기본 개념과 성질을 이해하고, 로그 함수 그래프를 학습합니다.",
+      "id": "f1ea2b7c-c6ab-4780-be7c-33713f4d4e3e",
+      "name": "Phase 3: Refactor and Detail Probability Theory",
+      "description": "Refactor the `03_확률론.md` file into a structured folder, then iteratively detail the content of each new sub-topic file.",
       "status": "pending",
       "dependencies": [
         {
-          "taskId": "0d4f869b-63fc-467e-bd97-1bfa7da4cec4"
+          "taskId": "ba7ecdac-6b42-4fb0-84de-9eaffb7962f4"
         }
       ],
-      "createdAt": "2025-11-02T05:03:55.515Z",
-      "updatedAt": "2025-11-02T05:03:55.515Z",
-      "implementationGuide": "1. 로그의 정의와 밑 변환 공식을 학습합니다.\n2. 로그의 기본 성질(합, 차, 곱)을 증명해봅니다.\n3. 로그 함수 그래프를 직접 그려보고, 지수 함수와의 관계를 이해합니다.",
-      "verificationCriteria": "로그의 성질을 이용하여 식을 간단하게 만들 수 있고, 로그 함수 그래프를 그릴 수 있습니다."
-    },
-    {
-      "id": "9ad47b60-14f7-476d-b995-4402a40ff8c7",
-      "name": "벡터와 행렬",
-      "description": "벡터와 행렬의 기본 연산을 배우고, AI에서 어떻게 활용되는지 이해합니다.",
-      "status": "pending",
-      "dependencies": [
-        {
-          "taskId": "684be295-439f-414f-b1a4-e57a8158f7be"
-        }
-      ],
-      "createdAt": "2025-11-02T05:03:55.515Z",
-      "updatedAt": "2025-11-02T05:03:55.515Z",
-      "implementationGuide": "1. 벡터의 정의, 덧셈, 뺄셈, 스칼라 곱을 학습합니다.\n2. 행렬의 정의, 덧셈, 뺄셈, 곱셈을 학습합니다.\n3. 벡터와 행렬이 데이터를 어떻게 표현하는지 구체적인 예를 통해 학습합니다. (예: 이미지 데이터를 행렬로 표현하기)",
-      "verificationCriteria": "벡터와 행렬의 기본 연산을 수행할 수 있고, 데이터가 벡터와 행렬로 어떻게 표현되는지 설명할 수 있습니다."
-    },
-    {
-      "id": "d6734e1c-123b-45f7-9fb1-935c00042c6f",
-      "name": "전치와 내적",
-      "description": "전치행렬과 벡터의 내적을 이해하고, 기하학적 의미를 파악합니다.",
-      "status": "pending",
-      "dependencies": [
-        {
-          "taskId": "9ad47b60-14f7-476d-b995-4402a40ff8c7"
-        }
-      ],
-      "createdAt": "2025-11-02T05:03:55.515Z",
-      "updatedAt": "2025-11-02T05:03:55.515Z",
-      "implementationGuide": "1. 전치행렬의 정의와 성질을 학습합니다.\n2. 벡터 내적의 정의와 계산법을 익힙니다.\n3. 내적의 기하학적 의미(두 벡터 사이의 각도, 투영)를 그림으로 이해합니다.",
-      "verificationCriteria": "전치행렬을 구할 수 있고, 두 벡터의 내적을 계산하고 기하학적 의미를 설명할 수 있습니다."
-    },
-    {
-      "id": "f57c12d2-ef74-48a2-816b-038d67da31d5",
-      "name": "미분과 도함수",
-      "description": "미분의 개념을 이해하고, 여러 함수의 도함수를 구하는 방법을 학습합니다.",
-      "status": "pending",
-      "dependencies": [
-        {
-          "taskId": "0d4f869b-63fc-467e-bd97-1bfa7da4cec4"
-        }
-      ],
-      "createdAt": "2025-11-02T05:03:55.515Z",
-      "updatedAt": "2025-11-02T05:03:55.515Z",
-      "implementationGuide": "1. 미분 계수의 정의와 기하학적 의미(접선의 기울기)를 이해합니다.\n2. 기본적인 미분 공식(상수, x^n)을 암기하고 증명해봅니다.\n3. 곱의 미분법, 몫의 미분법을 학습하고 예제를 풀어봅니다.",
-      "verificationCriteria": "미분 계수의 의미를 설명할 수 있고, 다항함수의 도함수를 구할 수 있습니다."
-    },
-    {
-      "id": "065beceb-2761-4477-8d76-9788a002b29a",
-      "name": "연쇄 법칙 (Chain Rule)",
-      "description": "합성함수의 미분법인 연쇄 법칙을 이해하고, 복잡한 함수를 미분하는 데 적용합니다.",
-      "status": "pending",
-      "dependencies": [
-        {
-          "taskId": "f57c12d2-ef74-48a2-816b-038d67da31d5"
-        }
-      ],
-      "createdAt": "2025-11-02T05:03:55.515Z",
-      "updatedAt": "2025-11-02T05:03:55.515Z",
-      "implementationGuide": "1. 합성함수의 개념을 복습합니다.\n2. 연쇄 법칙의 공식을 암기하고, 왜 성립하는지 직관적으로 이해해봅니다.\n3. 다양한 합성함수 예제에 연쇄 법칙을 적용하여 미분하는 연습을 합니다.",
-      "verificationCriteria": "합성함수를 보고 내부 함수와 외부 함수를 구분할 수 있으며, 연쇄 법칙을 이용하여 미분할 수 있습니다."
-    },
-    {
-      "id": "b0997d8f-e8c2-4544-98cb-15e8f0868da4",
-      "name": "편미분과 그라디언트",
-      "description": "다변수 함수를 미분하는 편미분을 배우고, 그라디언트의 개념과 의미를 이해합니다.",
-      "status": "pending",
-      "dependencies": [
-        {
-          "taskId": "f57c12d2-ef74-48a2-816b-038d67da31d5"
-        },
-        {
-          "taskId": "9ad47b60-14f7-476d-b995-4402a40ff8c7"
-        }
-      ],
-      "createdAt": "2025-11-02T05:03:55.515Z",
-      "updatedAt": "2025-11-02T05:03:55.515Z",
-      "implementationGuide": "1. 편미분의 정의와 계산법을 학습합니다. (한 변수 외에는 상수로 취급)\n2. 그라디언트가 각 변수에 대한 편미분으로 이루어진 벡터임을 이해합니다.\n3. 간단한 다변수 함수에 대해 그라디언트를 직접 계산해봅니다.",
-      "verificationCriteria": "다변수 함수를 각 변수에 대해 편미분할 수 있고, 그라디언트를 계산할 수 있습니다."
-    },
-    {
-      "id": "d3146ccc-0c10-4cfa-9a2c-f858a737c290",
-      "name": "확률과 통계 기초",
-      "description": "AI의 불확실성을 다루기 위한 확률과 통계의 기본 개념을 학습합니다.",
-      "status": "pending",
-      "dependencies": [
-        {
-          "taskId": "684be295-439f-414f-b1a4-e57a8158f7be"
-        }
-      ],
-      "createdAt": "2025-11-02T05:03:55.515Z",
-      "updatedAt": "2025-11-02T05:03:55.515Z",
-      "implementationGuide": "1. 확률의 기본 용어(표본 공간, 사건, 확률)를 정의합니다.\n2. 조건부 확률과 베이즈 정리를 학습합니다.\n3. 평균, 분산, 표준편차 등 기초 통계량을 계산하는 방법을 익힙니다.",
-      "verificationCriteria": "간단한 확률 문제를 풀 수 있고, 데이터셋의 평균과 분산을 계산할 수 있습니다."
-    },
-    {
-      "id": "e5e64332-a1de-496e-8a12-cd2db0418491",
-      "name": "확률 분포",
-      "description": "데이터의 분포를 나타내는 확률 분포의 개념을 이해하고, 대표적인 분포들을 학습합니다.",
-      "status": "pending",
-      "dependencies": [
-        {
-          "taskId": "d3146ccc-0c10-4cfa-9a2c-f858a737c290"
-        }
-      ],
-      "createdAt": "2025-11-02T05:03:55.515Z",
-      "updatedAt": "2025-11-02T05:03:55.515Z",
-      "implementationGuide": "1. 확률 변수와 확률 분포의 개념을 이해합니다.\n2. 이산 확률 분포(베르누이, 이항)와 연속 확률 분포(균등, 정규)의 특징을 학습합니다.\n3. 각 분포가 어떤 상황에서 사용되는지 예제를 통해 이해합니다.",
-      "verificationCriteria": "각 확률 분포의 특징을 설명할 수 있고, 어떤 상황에 어떤 분포를 사용해야 할지 판단할 수 있습니다."
-    },
-    {
-      "id": "d9c3e464-0f43-4218-b6f4-e6ae41a504b7",
-      "name": "극한과 입실론-델타 논법",
-      "description": "극한의 개념을 엄밀하게 정의하는 입실론-델타 논법을 이해합니다.",
-      "status": "pending",
-      "dependencies": [
-        {
-          "taskId": "f57c12d2-ef74-48a2-816b-038d67da31d5"
-        }
-      ],
-      "createdAt": "2025-11-02T05:04:10.450Z",
-      "updatedAt": "2025-11-02T05:04:10.450Z",
-      "implementationGuide": "1. 극한의 직관적인 개념을 복습합니다.\n2. 입실론-델타 논법의 정의를 학습하고, 각 기호가 의미하는 바를 파악합니다.\n3. 간단한 함수에 대해 입실론-델타 논법을 사용하여 극한을 증명하는 예제를 따라해봅니다.",
-      "verificationCriteria": "입실론-델타 논법의 정의를 설명할 수 있고, 간단한 극한 증명을 이해할 수 있습니다."
-    },
-    {
-      "id": "65bcd7e6-e67c-45a0-a47a-f1ab62541692",
-      "name": "테일러 급수",
-      "description": "복잡한 함수를 다항함수로 근사하는 테일러 급수를 학습합니다.",
-      "status": "pending",
-      "dependencies": [
-        {
-          "taskId": "f57c12d2-ef74-48a2-816b-038d67da31d5"
-        }
-      ],
-      "createdAt": "2025-11-02T05:04:10.450Z",
-      "updatedAt": "2025-11-02T05:04:10.450Z",
-      "implementationGuide": "1. 테일러 급수의 기본 아이디어(함수를 다항식으로 근사)를 이해합니다.\n2. 테일러 급수 공식을 학습하고, 각 항이 무엇을 의미하는지 파악합니다.\n3. sin(x), cos(x), e^x와 같은 주요 함수들의 테일러 급수를 유도해봅니다.",
-      "verificationCriteria": "테일러 급수의 의미를 설명할 수 있고, 간단한 함수의 테일러 급수를 구할 수 있습니다."
-    },
-    {
-      "id": "c354319a-9cda-42bf-a344-1df03a32d1a7",
-      "name": "벡터와 행렬 미분",
-      "description": "스칼라, 벡터, 행렬을 서로 미분하는 방법을 학습합니다. 이는 딥러닝의 역전파 알고리즘을 이해하는 데 필수적입니다.",
-      "status": "pending",
-      "dependencies": [
-        {
-          "taskId": "b0997d8f-e8c2-4544-98cb-15e8f0868da4"
-        }
-      ],
-      "createdAt": "2025-11-02T05:04:10.450Z",
-      "updatedAt": "2025-11-02T05:04:10.450Z",
-      "implementationGuide": "1. 스칼라를 벡터로 미분하는 경우(그라디언트)를 복습합니다.\n2. 벡터를 벡터로, 스칼라를 행렬로, 행렬을 행렬로 미분하는 규칙을 학습합니다.\n3. 각 미분 규칙에 대한 간단한 예제를 풀어보며 계산에 익숙해집니다.",
-      "verificationCriteria": "다양한 형태의 벡터 및 행렬 미분을 계산할 수 있습니다."
-    },
-    {
-      "id": "8e90b74a-4aea-4d53-940f-aac2b410bb6e",
-      "name": "최대 우도 추정 (MLE)",
-      "description": "주어진 데이터에 가장 잘 맞는 모델 파라미터를 찾는 방법인 최대 우도 추정(MLE)을 학습합니다.",
-      "status": "pending",
-      "dependencies": [
-        {
-          "taskId": "e5e64332-a1de-496e-8a12-cd2db0418491"
-        }
-      ],
-      "createdAt": "2025-11-02T05:04:10.450Z",
-      "updatedAt": "2025-11-02T05:04:10.450Z",
-      "implementationGuide": "1. '우도(Likelihood)'의 개념을 이해합니다. (어떤 파라미터가 주어졌을 때, 주어진 데이터가 관찰될 확률)\n2. 우도 함수를 최대로 만드는 파라미터를 찾는 과정을 학습합니다.\n3. 로그 우도를 사용하여 계산을 간단하게 만드는 방법을 익힙니다. (정규분포의 평균, 분산을 MLE로 추정하는 예제 풀이)",
-      "verificationCriteria": "MLE의 개념을 설명할 수 있고, 간단한 모델에 대해 MLE를 적용하여 파라미터를 추정할 수 있습니다."
-    },
-    {
-      "id": "25732f77-5468-4a95-93f2-4442fd9c7945",
-      "name": "최대 사후 확률 (MAP)",
-      "description": "사전 지식을 활용하여 파라미터를 추정하는 최대 사후 확률(MAP)을 학습합니다.",
-      "status": "pending",
-      "dependencies": [
-        {
-          "taskId": "8e90b74a-4aea-4d53-940f-aac2b410bb6e"
-        }
-      ],
-      "createdAt": "2025-11-02T05:04:10.450Z",
-      "updatedAt": "2025-11-02T05:04:10.450Z",
-      "implementationGuide": "1. 베이즈 정리와 '사후 확률(Posterior)'의 개념을 복습합니다.\n2. MAP가 사후 확률을 최대로 만드는 파라미터를 찾는 것임을 이해합니다.\n3. MLE와 MAP의 관계를 비교하며 차이점을 파악합니다. (MAP는 사전 분포(prior)를 고려함)",
-      "verificationCriteria": "MAP의 개념을 설명할 수 있고, MLE와 MAP의 차이점을 설명할 수 있습니다."
-    },
-    {
-      "id": "6b0f88c9-2e91-4f61-b2e6-1e33514c002d",
-      "name": "정보 이론 기초",
-      "description": "정보의 양을 측정하는 엔트로피, 두 확률 분포의 차이를 측정하는 크로스 엔트로피와 KL 발산을 학습합니다.",
-      "status": "pending",
-      "dependencies": [
-        {
-          "taskId": "e5e64332-a1de-496e-8a12-cd2db0418491"
-        }
-      ],
-      "createdAt": "2025-11-02T05:04:10.450Z",
-      "updatedAt": "2025-11-02T05:04:10.450Z",
-      "implementationGuide": "1. 엔트로피의 정의와 정보량의 관점에서 의미를 이해합니다.\n2. 크로스 엔트로피와 KL 발산의 정의와 공식을 학습합니다.\n3. 이 개념들이 머신러닝 모델의 손실 함수(Loss function)로 어떻게 사용되는지 이해합니다.",
-      "verificationCriteria": "엔트로피, 크로스 엔트로피, KL 발산의 개념을 설명하고, 머신러닝에서 어떻게 활용되는지 설명할 수 있습니다."
+      "createdAt": "2025-11-03T03:00:45.115Z",
+      "updatedAt": "2025-11-03T03:00:45.115Z",
+      "implementationGuide": "1. Read the content of `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/03_확률론.md`. 2. Create the directory `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/03_확률론`. 3. Create and populate the sub-topic files (`01_확률의_기초.md`, `02_확률_분포와_기댓값.md`, `03_주요_확률_분포.md`, `04_통계적_추론과_가설_검정.md`). 4. Create the `목차.md` file with links. 5. Delete the original `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/03_확률론.md` file. 6. Begin the iterative content generation phase for the probability theory sub-topics.",
+      "verificationCriteria": "The `03_확률론` folder must be created with the correct sub-topic files and `목차.md`. The original file must be deleted. All sub-topic files must be populated with detailed content and practice problems."
     }
   ]
 }
