@@ -11,10 +11,24 @@
             "id": "269ea76ef6588863",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "그래프 뷰"
+              "type": "markdown",
+              "state": {
+                "file": "ai/회귀/05.1. 로지스틱 회귀 훈련 상세.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "05.1. 로지스틱 회귀 훈련 상세"
             }
           }
         ]
@@ -274,11 +288,15 @@
   },
   "active": "269ea76ef6588863",
   "lastOpenFiles": [
+    "ai/회귀/05. 로지스틱 회귀.md",
+    "ai/회귀/05.1. 로지스틱 회귀 훈련 상세.md",
+    "ai/회귀/로지스틱 회귀 모델 훈련.md",
+    "ai/회귀/00. 회귀 분석.md",
     "ai/회귀/04. 비선형 회귀.md",
+    "ai/회귀/무제",
     "ai/회귀/01. 단순 선형 회귀.md",
     "ai/회귀/다항식 및 비선형 회귀.md",
     "ai/회귀/03. 다항 회귀.md",
-    "ai/회귀/00. 회귀 분석.md",
     "ai/기초 수학 학습/03_확률론/16_정보_이론_기초.md",
     "~/ShrimpData/memory/tasks_memory_2025-11-10T07-22-38.json",
     "~/ShrimpData/memory",
@@ -300,16 +318,12 @@
     "ai/기초 수학 학습/01_미적분학/02_함수와_다변수_함수.md",
     "ai/다중선형회귀.md",
     "ai/단순회귀.md",
-    "ai/선형회귀.md",
-    "ai.md",
-    "ai/기초 수학 학습/고등 수학/01_함수의_심화/01_다항_함수.md",
     "ai/기초 수학 학습/03_확률론",
     "ai/기초 수학 학습/02_선형대수학",
     "ai/기초 수학 학습/01_미적분학",
     "ai/기초 수학 학습/고등 수학/05_확률과_통계_심화",
     "ai/기초 수학 학습/고등 수학/04_미적분_기초",
     "ai/기초 수학 학습/고등 수학/03_지수와_로그",
-    "ai/기초 수학 학습/고등 수학/02_수열과_급수",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.12.48.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 4.05.20.png",
