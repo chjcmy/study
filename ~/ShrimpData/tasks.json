@@ -1,45 +1,15 @@
 {
   "tasks": [
     {
-      "id": "70507d8d-f93c-4777-9a20-27a93893c36d",
-      "name": "Phase 1: Refactor and Detail Calculus",
-      "description": "Refactor the `01_미적분학.md` file into a structured folder, then iteratively detail the content of each new sub-topic file.",
+      "id": "0ab925b9-79d0-4fb5-af58-2b7c1e90fb62",
+      "name": "회귀 분석 문서 재구성 및 '알파' 개념 추가",
+      "description": "사용자의 요청에 따라 'ai' 폴더 내의 회귀 관련 문서들을 옵시디언 형식에 맞게 재구성하고, '알파(학습률)' 개념을 추가하여 정리합니다.",
       "status": "pending",
       "dependencies": [],
-      "createdAt": "2025-11-03T03:00:45.115Z",
-      "updatedAt": "2025-11-03T03:00:45.115Z",
-      "implementationGuide": "1. Read the content of `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/01_미적분학.md`. 2. Create the directory `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/01_미적분학`. 3. Create and populate the sub-topic files (`01_함수의_극한과_연속.md`, `02_미분.md`, `03_적분.md`, `04_다변수_미적분.md`) with content from the original file. 4. Create the `목차.md` file with links to the new sub-topics. 5. Delete the original `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/01_미적분학.md` file. 6. After the refactoring is complete, begin the iterative content generation phase for the calculus sub-topics, starting with `01_함수의_극한과_연속.md`. This involves reading the file, expanding it with detailed explanations and practice problems, writing the new content back, and asking the user for confirmation before moving to the next file.",
-      "verificationCriteria": "The `01_미적분학` folder must be created with the correct sub-topic files and `목차.md`. The original file must be deleted. All sub-topic files must be populated with detailed content and practice problems, with user confirmation at each step."
-    },
-    {
-      "id": "ba7ecdac-6b42-4fb0-84de-9eaffb7962f4",
-      "name": "Phase 2: Refactor and Detail Linear Algebra",
-      "description": "Refactor the `02_선형대수학.md` file into a structured folder, then iteratively detail the content of each new sub-topic file.",
-      "status": "pending",
-      "dependencies": [
-        {
-          "taskId": "70507d8d-f93c-4777-9a20-27a93893c36d"
-        }
-      ],
-      "createdAt": "2025-11-03T03:00:45.115Z",
-      "updatedAt": "2025-11-03T03:00:45.115Z",
-      "implementationGuide": "1. Read the content of `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/02_선형대수학.md`. 2. Create the directory `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/02_선형대수학`. 3. Create and populate the sub-topic files (`01_벡터와_행렬.md`, `02_행렬식과_역행렬.md`, `03_선형_독립과_벡터_공간.md`, `04_고유값과_고유벡터.md`). 4. Create the `목차.md` file with links. 5. Delete the original `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/02_선형대수학.md` file. 6. Begin the iterative content generation phase for the linear algebra sub-topics.",
-      "verificationCriteria": "The `02_선형대수학` folder must be created with the correct sub-topic files and `목차.md`. The original file must be deleted. All sub-topic files must be populated with detailed content and practice problems."
-    },
-    {
-      "id": "f1ea2b7c-c6ab-4780-be7c-33713f4d4e3e",
-      "name": "Phase 3: Refactor and Detail Probability Theory",
-      "description": "Refactor the `03_확률론.md` file into a structured folder, then iteratively detail the content of each new sub-topic file.",
-      "status": "pending",
-      "dependencies": [
-        {
-          "taskId": "ba7ecdac-6b42-4fb0-84de-9eaffb7962f4"
-        }
-      ],
-      "createdAt": "2025-11-03T03:00:45.115Z",
-      "updatedAt": "2025-11-03T03:00:45.115Z",
-      "implementationGuide": "1. Read the content of `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/03_확률론.md`. 2. Create the directory `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/03_확률론`. 3. Create and populate the sub-topic files (`01_확률의_기초.md`, `02_확률_분포와_기댓값.md`, `03_주요_확률_분포.md`, `04_통계적_추론과_가설_검정.md`). 4. Create the `목차.md` file with links. 5. Delete the original `/Users/choeseonghyeon/Documents/study/ai/기초 수학 학습/03_확률론.md` file. 6. Begin the iterative content generation phase for the probability theory sub-topics.",
-      "verificationCriteria": "The `03_확률론` folder must be created with the correct sub-topic files and `목차.md`. The original file must be deleted. All sub-topic files must be populated with detailed content and practice problems."
+      "createdAt": "2025-11-10T07:22:38.159Z",
+      "updatedAt": "2025-11-10T07:22:38.159Z",
+      "implementationGuide": "1. 'ai/회귀' 폴더를 생성합니다.\n2. 기존 회귀 문서들을 통합하여 '01. 단순 선형 회귀.md'와 '02. 다중 선형 회귀.md'로 재구성하고, '00. 회귀 분석.md' 개요 파일을 새로 생성합니다.\n3. 각 회귀 문서에 경사 하강법과 학습률(알파)에 대한 설명을 추가합니다.\n4. 옵시디언의 내부 링크와 태그를 사용하여 문서들을 유기적으로 연결합니다.\n5. 작업 완료 후 기존의 오래된 회귀 파일들을 삭제합니다.",
+      "verificationCriteria": "1. 'ai/회귀' 폴더와 그 안에 3개의 새로운 마크다운 파일('00. 회귀 분석.md', '01. 단순 선형 회귀.md', '02. 다중 선형 회귀.md')이 생성되었는지 확인합니다.\n2. '01. 단순 선형 회귀.md'와 '02. 다중 선형 회귀.md' 파일 내에 '경사 하강법'과 '학습률(알파)'에 대한 설명이 포함되었는지 확인합니다.\n3. 문서들 간에 옵시디언 형식의 내부 링크가 올바르게 적용되었는지 확인합니다.\n4. 'ai' 폴더에서 기존의 '선형회귀.md', '단순회귀.md', '다중선형회귀.md' 파일들이 삭제되었는지 확인합니다."
     }
   ]
 }
