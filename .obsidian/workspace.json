@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "fe8cc0fabae02f67",
+        "id": "4e3f62960b202e8e",
         "type": "tabs",
         "children": [
           {
-            "id": "f125c9faad59c02a",
+            "id": "4bca5f8a1e7360bd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ai/트리 기반 모델/01. 의사 결정 트리.md",
+                "file": "ai/트리 기반 모델/01.1. 회귀 트리.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "01. 의사 결정 트리"
+              "title": "01.1. 회귀 트리"
             }
           }
         ]
@@ -286,12 +286,14 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "f125c9faad59c02a",
+  "active": "4bca5f8a1e7360bd",
   "lastOpenFiles": [
-    "ai/트리 기반 모델/03. 그래디언트 부스팅 머신.md",
+    "ai/MSE (평균 제곱 오차).md",
+    "ai/트리 기반 모델/01.1. 회귀 트리.md",
+    "ai/트리 기반 모델/01. 의사 결정 트리.md",
     "ai/트리 기반 모델/02. 랜덤 포레스트.md",
     "02. 랜덤 포레스트.md",
-    "ai/트리 기반 모델/01. 의사 결정 트리.md",
+    "ai/트리 기반 모델/03. 그래디언트 부스팅 머신.md",
     "ai/회귀/의사결정 트리.md",
     "ai/트리 기반 모델/00. 트리 기반 모델.md",
     "ai/트리 기반 모델",
@@ -317,8 +319,6 @@
     "ai/기초 수학 학습/02_선형대수학/10_전치와_내적.md",
     "ai/기초 수학 학습/02_선형대수학/09_벡터와_행렬.md",
     "ai/기초 수학 학습/01_미적분학/08_편미분과_그라디언트.md",
-    "ai/기초 수학 학습/01_미적분학/07_테일러_급수.md",
-    "ai/기초 수학 학습/01_미적분학/06_연쇄_법칙_(Chain_Rule).md",
     "ai/기초 수학 학습/03_확률론",
     "ai/기초 수학 학습/02_선형대수학",
     "ai/기초 수학 학습/01_미적분학",
