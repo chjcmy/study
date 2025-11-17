@@ -30,8 +30,21 @@
               "icon": "lucide-file",
               "title": "01. 바이어스-분산 트레이드오프 및 앙상블"
             }
+          },
+          {
+            "id": "4919822aa3c02cd1",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.10.3"
+              },
+              "icon": "lucide-book-up",
+              "title": "릴리즈 노트 1.10.3"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -286,7 +299,7 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "c7d753e146aa1927",
+  "active": "4919822aa3c02cd1",
   "lastOpenFiles": [
     "ai/비지도 학습/02. 차원 축소 알고리즘 (PCA, t-SNE, UMAP).md",
     "ai/비지도 학습/01.2. 밀도 기반 클러스터링 (DBSCAN, HDBSCAN).md",
