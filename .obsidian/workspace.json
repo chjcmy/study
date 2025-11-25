@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "포스트그레스/00. 포스트그레스 목차.md",
+                "file": "ai/concepts/Transformer.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "00. 포스트그레스 목차"
+              "title": "Transformer"
             }
           }
         ]
@@ -288,11 +288,18 @@
   },
   "active": "4bca5f8a1e7360bd",
   "lastOpenFiles": [
-    "ai/models/BERT4Rec.md",
-    "ai/models/SASRec.md",
+    "ai/비지도 학습/01.2. 밀도 기반 클러스터링 (DBSCAN, HDBSCAN).md",
     "ai/models/Wide_and_Deep.md",
-    "ai/models/Neural_Collaborative_Filtering.md",
+    "ai/concepts/Transformer.md",
+    "ai/concepts/Embedding.md",
+    "ai/concepts/GMF.md",
+    "ai/concepts/MLP.md",
+    "ai/concepts",
+    "ai/models/SASRec.md",
     "ai/models/Matrix_Factorization.md",
+    "ai/models/Neural_Collaborative_Filtering.md",
+    "ai/models/BERT4Rec.md",
+    "포스트그레스/00. 포스트그레스 목차.md",
     "ai/models",
     "ai/기초 수학 학습/고등 수학/05_확률과_통계_심화/01_경우의_수.md",
     "ai/신경망 학습 과정/5. 학습.md",
@@ -310,12 +317,6 @@
     "ai/최적화.md",
     "ai/오차.md",
     "ai/순전파.md",
-    "ai/역전파.md",
-    "ai/기초 수학 학습/고등 수학/04_미적분_기초/03_적분과_AI.md",
-    "ai/기초 수학 학습/고등 수학/04_미적분_기초/02_미분과_AI.md",
-    "ai/기초 수학 학습/00. 수학적 표기법.md",
-    "ai/기초 수학 학습/00_기초_수학_학습_목차.md",
-    "ai/기초 수학 학습/고등 수학/02_수열과_급수/03_AI와_수열급수의_연결점.md",
     "ai/비지도 학습",
     "ai/기본 개념",
     "ai/기타 모델",
@@ -323,7 +324,6 @@
     "ai/회귀/무제",
     "~/ShrimpData/memory/tasks_memory_2025-11-10T07-22-38.json",
     "~/ShrimpData/memory",
-    "ai/회귀",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.26.25.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 5.12.48.png",
     "쿠버네티스/스크린샷/스크린샷 2024-08-12 오후 4.05.20.png",
