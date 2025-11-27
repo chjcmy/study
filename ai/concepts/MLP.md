@@ -9,7 +9,9 @@
     - MLP는 "A를 좋아하는데 주말 밤에는 B를 싫어하고 대신 C를 찾는다" 같은 복잡한 패턴을 파악할 수 있습니다.
 
 ## ⚙️ 구조 (Architecture)
-1.  **Linear Layer (Dense Layer)**: 입력값에 가중치(Weight)를 곱하고 편향(Bias)을 더함. `y = Wx + b`
+1.  **Linear Layer (Dense Layer)**: 입력값에 가중치(Weight)를 곱하고 편향(Bias)을 더함. 
+    - 수식: $y = Wx + b$
+    - 다층 퍼셉트론 전파: $h^{(l)} = \sigma(W^{(l)}h^{(l-1)} + b^{(l)})$
 2.  **Activation Function (활성화 함수)**: ReLU, Sigmoid 등을 사용하여 비선형성을 부여함. (이게 없으면 아무리 층을 쌓아도 선형 모델과 같음)
 3.  **Dropout**: 과적합(Overfitting)을 막기 위해 학습 중 일부 뉴런을 랜덤하게 끔.
 

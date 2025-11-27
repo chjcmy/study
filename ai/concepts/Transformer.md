@@ -4,6 +4,8 @@
 구글이 2017년 "Attention is All You Need" 논문에서 발표한 혁신적인 신경망 구조입니다. 원래는 번역(기계 번역)을 위해 만들어졌지만, 지금은 GPT, BERT 등 모든 최신 AI의 기반이 되었습니다.
 
 - **핵심 역할**: **"문맥(Context)과 관계(Relation) 파악"**
+- **수식 (Scaled Dot-Product Attention)**: 
+  $$ Attention(Q, K, V) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V $$
 - **Self-Attention**: 문장(또는 시퀀스) 내의 단어들이 서로 어떤 관계가 있는지 스스로(Self) 계산합니다.
 
 ## ⚙️ 원리 (추천 시스템 관점)

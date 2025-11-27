@@ -4,6 +4,7 @@
 기존의 **Matrix Factorization (MF)**를 신경망의 관점에서 일반화(Generalize)한 것입니다. 
 
 - **핵심 역할**: **"선형적(Linear) 상호작용 학습"**
+- **수식**: $\hat{y}_{ui} = \sigma(h^T (p_u \odot q_i))$
 - **특징**: MF는 GMF의 특수한 형태라고 볼 수 있습니다.
 
 ## ⚙️ 구조 (Architecture)

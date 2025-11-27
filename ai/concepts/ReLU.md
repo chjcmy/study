@@ -3,7 +3,9 @@
 ## 📌 개념 (Concept)
 딥러닝에서 가장 많이 사용되는 **활성화 함수(Activation Function)**입니다. 입력값이 0보다 작으면 0으로, 0보다 크면 입력값 그대로 출력하는 아주 단순한 함수입니다.
 
-- **수식**: $f(x) = \max(0, x)$
+- **수식**: 
+    - 함수값: $f(x) = \max(0, x)$
+    - 미분값(Gradient): $f'(x) = \begin{cases} 1 & \text{if } x > 0 \\ 0 & \text{if } x \le 0 \end{cases}$
 - **핵심 역할**: **"비선형성(Non-linearity) 부여"** 및 **"학습 효율성 증대"**
 
 ## ⚙️ 왜 쓸까? (Why ReLU?)
