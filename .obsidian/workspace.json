@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ai/concepts/Transformer.md",
+                "file": "ai/concepts/MLP.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,10 +28,23 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Transformer"
+              "title": "MLP"
+            }
+          },
+          {
+            "id": "fef24c3e9b549cc5",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.10.6"
+              },
+              "icon": "lucide-book-up",
+              "title": "릴리즈 노트 1.10.6"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -286,17 +299,19 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "4bca5f8a1e7360bd",
+  "active": "fef24c3e9b549cc5",
   "lastOpenFiles": [
+    "ai/concepts/MSE (평균 제곱 오차).md",
+    "ai/concepts/MLP.md",
+    "ai/회귀/00. 회귀 분석.md",
+    "ai/concepts/Transformer.md",
     "ai/concepts/ReLU.md",
     "ai.md",
-    "ai/concepts/Transformer.md",
     "02. 랜덤 포레스트.md",
     "ai/비지도 학습/01.2. 밀도 기반 클러스터링 (DBSCAN, HDBSCAN).md",
     "ai/models/Wide_and_Deep.md",
     "ai/concepts/Embedding.md",
     "ai/concepts/GMF.md",
-    "ai/concepts/MLP.md",
     "ai/concepts",
     "ai/models/SASRec.md",
     "ai/models/Matrix_Factorization.md",
@@ -314,9 +329,7 @@
     "ai/신경망 학습 과정/최적화.md",
     "ai/신경망 학습 과정/오차.md",
     "ai/신경망 학습 과정/순전파.md",
-    "ai/신경망 학습 과정/역전파.md",
     "ai/신경망 학습 과정",
-    "ai/학습.md",
     "ai/비지도 학습",
     "ai/기본 개념",
     "ai/기타 모델",
