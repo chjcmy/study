@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ai/concepts/MLP.md",
+                "file": "CS 하루에 한번씩 볼것/네트워크/네트워크_기초.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,23 +28,10 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "MLP"
-            }
-          },
-          {
-            "id": "fef24c3e9b549cc5",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.10.6"
-              },
-              "icon": "lucide-book-up",
-              "title": "릴리즈 노트 1.10.6"
+              "title": "네트워크_기초"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -101,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 369.5
+    "width": 203.5
   },
   "right": {
     "id": "0c0a0ed5b2a69168",
@@ -269,12 +256,22 @@
             "state": {
               "type": "todo",
               "state": {},
+              "icon": "lucide-ghost",
+              "title": "todo"
+            }
+          },
+          {
+            "id": "ee2bd834a113693a",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {},
               "icon": "checkmark",
               "title": "Todo List"
             }
           }
         ],
-        "currentTab": 13
+        "currentTab": 14
       }
     ],
     "direction": "horizontal",
@@ -299,10 +296,11 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "fef24c3e9b549cc5",
+  "active": "4bca5f8a1e7360bd",
   "lastOpenFiles": [
-    "ai/concepts/MSE (평균 제곱 오차).md",
+    "CS 하루에 한번씩 볼것/콜 바이/콜 바이.md",
     "ai/concepts/MLP.md",
+    "ai/concepts/MSE (평균 제곱 오차).md",
     "ai/회귀/00. 회귀 분석.md",
     "ai/concepts/Transformer.md",
     "ai/concepts/ReLU.md",
@@ -328,7 +326,6 @@
     "ai/신경망 학습 과정/학습.md",
     "ai/신경망 학습 과정/최적화.md",
     "ai/신경망 학습 과정/오차.md",
-    "ai/신경망 학습 과정/순전파.md",
     "ai/신경망 학습 과정",
     "ai/비지도 학습",
     "ai/기본 개념",
