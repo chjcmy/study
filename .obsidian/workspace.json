@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS 하루에 한번씩 볼것/네트워크/네트워크_기초.md",
+                "file": "포스트그레스/3. 기본 SQL/README.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "네트워크_기초"
+              "title": "README"
             }
           }
         ]
@@ -298,6 +298,7 @@
   },
   "active": "4bca5f8a1e7360bd",
   "lastOpenFiles": [
+    "CS 하루에 한번씩 볼것/네트워크/네트워크_기초.md",
     "CS 하루에 한번씩 볼것/콜 바이/콜 바이.md",
     "ai/concepts/MLP.md",
     "ai/concepts/MSE (평균 제곱 오차).md",
@@ -325,7 +326,6 @@
     "ai/신경망 학습 과정/1. 순전파.md",
     "ai/신경망 학습 과정/학습.md",
     "ai/신경망 학습 과정/최적화.md",
-    "ai/신경망 학습 과정/오차.md",
     "ai/신경망 학습 과정",
     "ai/비지도 학습",
     "ai/기본 개념",
