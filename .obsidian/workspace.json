@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "포스트그레스/3. 기본 SQL/README.md",
+                "file": "알고리즘/알고리즘방법/그리디/그리디/그리디 알고리즘.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,7 +28,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "그리디 알고리즘"
             }
           }
         ]
@@ -266,12 +266,22 @@
             "state": {
               "type": "todo",
               "state": {},
+              "icon": "lucide-ghost",
+              "title": "todo"
+            }
+          },
+          {
+            "id": "418a2e9b6c15bbe9",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {},
               "icon": "checkmark",
               "title": "Todo List"
             }
           }
         ],
-        "currentTab": 14
+        "currentTab": 15
       }
     ],
     "direction": "horizontal",
@@ -298,6 +308,7 @@
   },
   "active": "4bca5f8a1e7360bd",
   "lastOpenFiles": [
+    "포스트그레스/3. 기본 SQL/README.md",
     "CS 하루에 한번씩 볼것/네트워크/네트워크_기초.md",
     "CS 하루에 한번씩 볼것/콜 바이/콜 바이.md",
     "ai/concepts/MLP.md",
@@ -325,7 +336,6 @@
     "ai/신경망 학습 과정/2. 오차.md",
     "ai/신경망 학습 과정/1. 순전파.md",
     "ai/신경망 학습 과정/학습.md",
-    "ai/신경망 학습 과정/최적화.md",
     "ai/신경망 학습 과정",
     "ai/비지도 학습",
     "ai/기본 개념",
