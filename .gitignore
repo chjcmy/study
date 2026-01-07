@@ -2,5 +2,4 @@
 .DS_Store
 
 # Obsidian
-.obsidian/workspace
-.obsidian/workspace.json
+.obsidian/
