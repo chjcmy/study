@@ -4,12 +4,19 @@ tags:
   - sequence_diagram
   - admin_consent
 date: 2026-02-20
+completed: true
 ---
 
 # 🚀 단계 1: 접속 및 고객사 연동 (Admin Consent)
 
 > [!info] 문서 개요
 > 고객사 관리자가 최초로 Teams Tab 앱에 접속할 때 발생하는 인증(Silent SSO) 및 권한 승인(Interactive Login)의 흐름을 다룹니다.
+
+## ✅ 구현 체크리스트
+
+- [x] 프론트엔드: `getAuthToken()`을 통한 Silent SSO 토큰 요청 로직 구현
+- [x] 프론트엔드: 최초 접속 시 `Consent Required` 에러 처리 및 `authenticate()` 팝업 로직 구현
+- [x] 프론트엔드: 발급받은 SSO 토큰을 백엔드 API 요청 헤더(`Authorization: Bearer ...`)에 첨부
 
 ## 🔄 시퀀스 다이어그램 (부분)
 
@@ -44,7 +51,7 @@ sequenceDiagram
 
 ## 📝 상세 설명
 
-1. **앱 접속 및 Silent SSO**: 
+1. **앱 접속 및 Silent SSO**:
    - 🏢 **고객사 관리자**가 Teams 환경 내부에서 탭(Personal Tab) 앱을 엽니다.
    - 🛠️ **프론트엔드 (React)** 는 Teams SDK의 `getAuthToken()`을 호출하여 백그라운드 환경에서 사용자의 개입 없이 SSO 토큰 발급을 시도합니다.
 

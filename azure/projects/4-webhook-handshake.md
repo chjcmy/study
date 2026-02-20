@@ -4,12 +4,19 @@ tags:
   - sequence_diagram
   - webhook_handshake
 date: 2026-02-20
+completed: false
 ---
 
 # 🚀 단계 4: 배포 완료 알림 (Handshake & Webhook)
 
 > [!info] 문서 개요
 > 3단계 화면을 거쳐 Azure Functions 기반 **에이전트 인프라** 배포가 종료되면, 새롭게 생성된 에이전트가 공급사 백엔드로 Webhook을 날려 설치 완료를 알리는 아키텍처입니다.
+
+## ✅ 구현 체크리스트
+
+- [ ] 에이전트 (Infra): 배포 완료 및 기동 시 백엔드로 웹훅 발송(`POST /agents/webhook`) 로직 구현
+- [ ] 백엔드: 웹훅 수신 API 처리 및 DB 내 해당 테넌트/에이전트 상태를 "Active"로 업데이트
+- [ ] 프론트엔드: 에이전트 활성화 상태 폴링(Polling) 로직 구현 및 상태 변경 시 대시보드 화면 전환 처리
 
 ## 🔄 시퀀스 다이어그램 (부분)
 
