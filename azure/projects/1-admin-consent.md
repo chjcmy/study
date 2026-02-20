@@ -49,6 +49,12 @@ sequenceDiagram
 
     Note right of Teams: 🛠️ [프론트 구현]: API 호출 (헤더에 토큰 첨부)
     Teams->>SaaS: SSO 토큰 전달 (GET /subscriptions)
+    
+    Note left of SaaS: 🛠️ [백엔드 구현]: 토큰 서명(Signature) 검증 및 DB 연동
+    SaaS->>C_Entra: MS 공개키(JWKS) 요청 및 서명 검증
+    C_Entra-->>SaaS: 성공 (위조 없음 확인)
+    
+    SaaS->>SaaS: 사용자(oid, tid) DB 조회 및 신규 연동 처리
 ```
 
 ## 📝 상세 설명
