@@ -4,7 +4,7 @@ tags:
   - sequence_diagram
   - admin_consent
 date: 2026-02-20
-completed: false
+completed: true
 ---
 
 # 🚀 단계 1: 접속 및 고객사 연동 (Admin Consent)
@@ -17,8 +17,8 @@ completed: false
 - [x] **[프론트엔드]** `getAuthToken()`을 통한 Silent SSO 토큰 요청 로직 구현
 - [x] **[프론트엔드]** 최초 접속 시 `Consent Required` 에러 처리 및 `authenticate()` 팝업 로직 구현
 - [x] **[프론트엔드]** 발급받은 SSO 토큰을 백엔드 API 요청 헤더(`Authorization: Bearer ...`)에 첨부
-- [ ] **[백엔드]** 프론트엔드가 보낸 SSO 토큰의 서명(Signature) 및 만료(Exp) 검증 미들웨어 구현
-- [ ] **[백엔드]** 검증된 페이로드에서 `oid`, `tid`를 추출하여 DB 회원 조회 및 신규 고객사 연동(가입) 처리
+- [x] **[백엔드]** 프론트엔드가 보낸 SSO 토큰의 서명(Signature) 및 만료(Exp) 검증 미들웨어 구현
+- [x] **[백엔드]** 검증된 페이로드에서 `oid`, `tid`를 추출하여 DB 회원 조회 및 신규 고객사 연동(가입) 처리
 
 ## 🔄 시퀀스 다이어그램 (부분)
 
