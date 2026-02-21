@@ -39,6 +39,25 @@ sequenceDiagram
     ARM-->>Agent: Function App 리소스 생성
 ```
 
+## 🌐 Bicep 템플릿 호스팅 전략 (추천)
+
+> [!tip] Azure Portal 배포 뷰를 열기 위해서는 인터넷상에서 접근 가능한(Public URL) 형태의 `main.json` (ARM 템플릿)이 반드시 필요합니다.
+
+### 옵션 1: GitHub Repository 활용 (권장 🌟)
+
+- **방식**: 로컬에서 작성한 `main.bicep`을 `main.json`으로 빌드(`az bicep build --file main.bicep`) 후 Public GitHub 레포지토리에 커밋.
+- **배포 URL**: GitHub의 Raw URL(`https://raw.githubusercontent.com/.../main.json`) 사용.
+- **장점**: 무료이며 구성이 가장 쉽고, 인프라 코드 버전 관리와 배포 URL 관리가 일치됨. **현재 프로젝트(초기 B2B 고객사 배포용) 구조에 가장 적합함.**
+
+### 옵션 2: Azure Storage Account (Blob) 브릿지 사용 (엔터프라이즈용 🏢)
+
+- **방식**: SaaS 백엔드 측 Azure 계정에 Storage Account를 생성하고 Blob Container에 `main.json`을 업로드.
+- **배포 URL**: Blob URL과 제한된 접근 권한을 가진 **SAS Token**을 결합하여 사용.
+- **장점**: 템플릿 코드를 Public 영역(GitHub)에 노출시키지 않고도 배포가 가능하여 기업 내부 보안 규정을 준수할 수 있음.
+
+
+---
+
 ## 📝 상세 설명
 
 1. **옵션 선택 및 커스텀 배포 뷰 생성**:
