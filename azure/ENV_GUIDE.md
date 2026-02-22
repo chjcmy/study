@@ -1,34 +1,37 @@
 # Log Doctor 환경 변수(ENV) 가이드
 
-이 문서는 Log Doctor 프로젝트의 로컬 개발 및 배포를 위해 필요한 핵심 환경 변수 설정값들을 정리합니다.
+이 문서는 Log Doctor 프로젝트의 로컬 개발 및 배포를 위해 필요한 핵심 환경 변수들의 역할을 정리합니다.
+
+> [!IMPORTANT]
+> 실제 설정값(Value)이 포함된 복사 전용 문서는 **[COPY_PASTE_ENV.md](./COPY_PASTE_ENV.md)**를 참조해 주세요.
 
 ---
 
 ## 🖥️ Backend (.env)
 백엔드 루트 디렉토리에 위치하며, 인증 방식 및 데이터베이스 연결에 필수적입니다.
 
-| 변수명 | 설정값 | 설명 |
-| :--- | :--- | :--- |
-| **AUTH_METHOD** | `managed_identity` | `managed_identity`(권장) 또는 `secret` |
-| **CLIENT_ID** | `6880f4e3-6c6f-4865-a16e-f2cd081a3f9d` | Microsoft Entra ID 앱 등록 ID |
-| **TENANT_ID** | `ccdcba04-0a62-4e96-9964-dc1fc61279f8` | Azure Active Directory 테넌트 ID |
-| **CLIENT_SECRET** | `bDq8Q~Mkt3FP...` | `AUTH_METHOD=secret`일 때 필요 |
-| **APP_ID_URI** | `api://localhost:53000/...` | 토큰 검증 시 Audience로 사용 |
-| **COSMOS_ENDPOINT** | `http://localhost:8081/` | Cosmos DB 엔드포인트 (로컬 에뮬레이터) |
-| **COSMOS_DATABASE** | `log-doctor-db` | 사용할 데이터베이스 이름 |
-| **COSMOS_KEY** | `C2y6yDjf5/R+...` | Cosmos DB 마스터 키 |
+| 변수명 | 설명 |
+| :--- | :--- |
+| **AUTH_METHOD** | `managed_identity`(권장) 또는 `secret` |
+| **CLIENT_ID** | Microsoft Entra ID 앱 등록 ID |
+| **TENANT_ID** | Azure Active Directory 테넌트 ID |
+| **CLIENT_SECRET** | `AUTH_METHOD=secret`일 때 필요 |
+| **APP_ID_URI** | 토큰 검증 시 Audience로 사용 |
+| **COSMOS_ENDPOINT** | Cosmos DB 엔드포인트 (로컬 에뮬레이터) |
+| **COSMOS_DATABASE** | 사용할 데이터베이스 이름 |
+| **COSMOS_KEY** | Cosmos DB 마스터 키 |
 
 ---
 
 ## 🎨 Frontend (env/.env.dev)
 Teams Toolkit 및 프론트엔드 동작에 필요한 변수들입니다.
 
-| 변수명 | 설정값 | 설명 |
-| :--- | :--- | :--- |
-| **TEAMS_APP_TENANT_ID** | `ccdcba04-0a62-4e96-9964-dc1fc61279f8` | 테넌트 고유 ID |
-| **TEAMS_APP_ID** | `9e94de61-9b2e...` | Teams 앱 고유 ID |
-| **TAB_ENDPOINT** | `https://tabf1d67b...` | 배포된 탭 서비스의 URL |
-| **AZURE_SUBSCRIPTION_ID** | `b5a82513-0077...` | 배포 대상 Azure 구독 ID |
+| 변수명 | 설명 |
+| :--- | :--- |
+| **TEAMS_APP_TENANT_ID** | 테넌트 고유 ID |
+| **TEAMS_APP_ID** | Teams 앱 고유 ID |
+| **TAB_ENDPOINT** | 배포된 탭 서비스의 URL |
+| **AZURE_SUBSCRIPTION_ID** | 배포 대상 Azure 구독 ID |
 
 ---
 
