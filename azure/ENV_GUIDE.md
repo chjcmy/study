@@ -2,9 +2,6 @@
 
 이 문서는 Log Doctor 프로젝트의 로컬 개발 및 배포를 위해 필요한 핵심 환경 변수들의 역할을 정리합니다.
 
-> [!IMPORTANT]
-> 실제 설정값(Value)이 포함된 복사 전용 문서는 **[COPY_PASTE_ENV.md](./COPY_PASTE_ENV.md)**를 참조해 주세요.
-
 ---
 
 ## 🖥️ Backend (.env)
