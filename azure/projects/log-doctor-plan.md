@@ -214,6 +214,23 @@ stateDiagram-v2
 > [!TIP] 핵심 포인트
 > 일 10GB 로그 발생 시, 전부 LAW에 30일 보존하면 월 **~$828**, 7일만 LAW + 나머지 Archive로 하면 월 **~$195 + $0.5 = ~$196**. **약 75% 비용 절감**이 가능합니다.
 
+> [!CAUTION] #todo - Section 1: Retain 미결 사항
+> **정책 설계**
+> - [ ] Class A/B/C 분류 기준을 고객사가 직접 커스터마이징할 수 있어야 하는가? (예: "우리 회사 Performance 로그는 1년 보존 필요")
+> - [ ] 하나의 로그가 여러 카테고리에 해당할 때(예: Security + Error) 어떤 Class가 우선인가? 우선순위 규칙 필요
+> - [ ] Blob Archive 단계 이전에 Blob Cool 단계를 거치는가, 아니면 바로 Archive로 가는가? 1-6 비용표에는 Cool Tier가 있지만 플로우에는 없음
+>
+> **실행 로직**
+> - [ ] KQL로 대용량 로그를 배치 처리할 때 타임아웃/페이징 처리 전략은? (LAW KQL 최대 쿼리 결과 수 제한 있음)
+> - [ ] Blob으로 Export 시 파일 포맷은 무엇인가? (JSON, Parquet 등) — 나중에 다시 분석이 필요할 때 쿼리 가능 포맷인가?
+> - [ ] Archive export 후 LAW Purge는 즉시 실행되는가, 아니면 Blob 업로드 확인 후 일정 대기 시간(예: 24시간)이 필요한가?
+> - [ ] Agent가 Purge 도중 실패하면? (일부만 삭제된 경우) 멱등성(idempotency) 보장 전략 필요
+>
+> **운영/모니터링**
+> - [ ] Retain이 실패했을 때 Teams 알림이 가는가? 현재 ExecutionReport에 `errorMessage`가 있지만 알림 트리거 로직이 없음
+> - [ ] 동일 테넌트에 여러 Agent가 있을 때, 여러 Agent가 같은 LAW에 동시에 Retain 실행되는 것을 막는 잠금(lock) 메커니즘이 필요한가?
+> - [ ] 고객사 Blob Storage는 누가 생성하는가? Bicep 템플릿에 포함되는가, 고객사가 사전에 만들어야 하는가?
+
 ---
 
 ## 2. Prevent (앱 레벨 예방)
@@ -413,9 +430,25 @@ stateDiagram-v2
 | oversized-entry | Size Check | Backend API | 단일 로그 > 50KB | Payload 로깅 비활성화 권고 |
 | unused-trace | Level Check | Batch Jobs | Trace level count > 0 | Trace 로그 제거 권고 |
 
+> [!CAUTION] #todo - Section 2: Prevent 미결 사항
+> **규칙 설계**
+> - [ ] Prevent 규칙은 누가 어떻게 최초 등록하는가? 초기에 기본 규칙 세트를 Provider가 자동으로 넣어주는가, 아니면 관리자가 처음부터 직접 작성해야 하는가?
+> - [ ] threshold 기준값(예: 100/hour)을 어떻게 결정하는가? 고객사마다 트래픽 규모가 달라 동일 기준이 맞지 않을 수 있음
+> - [ ] "같은 메시지"의 정의는? 완전 동일 문자열인가, 유사도 기반(예: 80% 이상 동일)인가? 로그 메시지에 타임스탬프/Request ID가 포함되면 매번 달라짐
+>
+> **알림/대응 흐름**
+> - [ ] 에스컬레이션 대상(3회 연속 미대응 시)은 누구인가? 고객사 팀장? Provider 운영팀? 에스컬레이션 채널(Teams/Email)은 어떻게 설정하는가?
+> - [ ] 개발팀이 "조치 완료"를 어떻게 표시하는가? Teams에서 버튼 클릭인가, 자동으로 다음 분석 결과가 Clean이면 ActionTaken으로 전환되는가?
+> - [ ] Prevent 알림을 받은 개발팀이 코드를 수정하면, 다음 분석 주기(6시간)까지 기다려야 알림이 사라지는가? 즉각 확인 방법이 있어야 할 수 있음
+>
+> **기술 구현**
+> - [ ] KQL로 "같은 로그가 시간당 N건 이상" 집계 시 시간 윈도우 기준은? (Agent 실행 시점 기준 -1시간인가, 절대 시간 기준인가)
+> - [ ] Agent가 분석한 로그 볼륨 데이터를 얼마나 상세히 Provider에 보내는가? (카운트만? 대표 샘플 로그도 포함?)
+
 ---
 
 ## 3. Detect (인프라 레벨 탐지)
+
 
 앱 단까지 들어온 불량 트래픽을 로그에서 감지하고, 인프라 팀에 차단을 요청하는 **보안 연계 기능**입니다. Prevent가 "로그 품질"에 집중한다면, Detect는 "로그 속 보안 위협"에 집중합니다.
 
@@ -617,6 +650,22 @@ stateDiagram-v2
 | brute-force | Auth Abuse | 동일 소스에서 401 응답 시간당 집계 | 30 per hour | HIGH |
 | suspicious-ua | IP Anomaly | User-Agent가 공격 도구 이름 포함 | 1회 이상 | MEDIUM |
 
+
+> [!CAUTION] #todo - Section 3: Detect 미결 사항
+> **탐지 정확도**
+> - [ ] WAF 로그와 App 로그를 동시에 분석하는가, 아니면 App 로그만 보는가? WAF 로그는 별도 LAW 테이블에 저장됨
+> - [ ] SQL Injection 패턴 매칭 시 인코딩된 공격(URL 인코딩, Base64)도 탐지하는가? KQL에서 디코딩 처리 필요
+> - [ ] 정상 트래픽이 threshold를 초과하는 경우(예: 배포 직후 트래픽 급증, 마케팅 이벤트)를 어떻게 구분하는가? 화이트리스트/예외 기간 설정 필요
+>
+> **인시던트 관리**
+> - [ ] 인시던트를 누가 받아서 처리하는가? 고객사 인프라 팀? Provider 팀? Teams 채널 라우팅 설정이 필요
+> - [ ] 같은 IP에서 여러 공격 패턴이 동시에 감지되면 인시던트를 하나로 묶는 로직은? (현재 DetectionReport → Incident 1:N이지만 그룹핑 기준 불명확)
+> - [ ] 인시던트 해결(Resolved) 후에도 같은 IP에서 공격이 재발하면 어떻게 처리하는가?
+>
+> **기술 구현**
+> - [ ] 30분 안에 CRITICAL 탐지 시 즉시 알림이 가야 하는데, 현재는 분석 완료 후 Provider에 리포트 → 알림 순서임. 탐지 즉시 QueueTrigger로 긴급 알림하는 방법 고려 필요
+> - [ ] 고객사 WAF 규칙 자동 업데이트는 장기적으로 가능한가? (현재는 사람이 수동 업데이트) 관련 Azure API 권한 필요
+
 ---
 
 ## 4. Filter (필터링)
@@ -814,6 +863,22 @@ stateDiagram-v2
 | block-crawler-ips | Source | 알려진 봇/크롤러 IP 리스트 | DROP | 봇 트래픽 로그 제거 |
 | sample-verbose-api | Sampling | /api/v1/status 경로 로그 | 10% SAMPLE | 반복적인 status API 로그 90% 감소 |
 | block-static-assets | Keyword | ".css", ".js", ".png" | DROP | 정적 파일 요청 로그 제거 |
+
+
+> [!CAUTION] #todo - Section 4: Filter 미결 사항
+> **DCR 제어 방식**
+> - [ ] Azure DCR API를 통해 Agent가 필터 규칙을 동적으로 추가/수정/삭제할 수 있는가? DCR 수정에 필요한 MSI 권한 범위 확인 필요 (Monitoring Contributor 이상 필요)
+> - [ ] DCR에서 지원하는 필터 표현식의 한계는? (KQL 서브셋만 지원, 복잡한 정규식 불가 등) 현재 플로우가 DCR 기능 범위 내에서 가능한지 검증 필요
+> - [ ] DCR이 없는 고객사(기존에 Diagnostic Settings만 사용)는 어떻게 처리하는가? Agent가 DCR을 새로 생성하는가?
+>
+> **안전성**
+> - [ ] 필터 규칙 적용 후 실제로 LAW에서 로그가 빠지고 있음을 어떻게 검증하는가? (Dry Run과 실제 적용 결과 비교 메커니즘)
+> - [ ] drop rate 급증 감지 기준은 무엇인가? (예: 전일 대비 20% 이상 증가 시 Review 상태로 전환) 기준값을 누가 설정하는가?
+> - [ ] 필터가 적용된 상태에서 보안 사고 조사를 위해 "필터를 임시로 꺼야" 하는 상황은? 긴급 필터 비활성화 절차 필요
+>
+> **운영**
+> - [ ] Sampling Filter의 "랜덤" 샘플링 방식은? (단순 확률, 시간 기반 토큰 버킷 등) 동일 요청이 항상 샘플링되도록 Request ID 기반 결정적 샘플링이 필요할 수 있음
+> - [ ] Filter 통계 리포트 주기는? 실시간으로 보내는가, 아니면 배치로 보내는가?
 
 ---
 
@@ -1049,11 +1114,222 @@ stateDiagram-v2
 | 3단계 | Retain | "이 로그는 Class A로 장기 보존해야 한다" 분류 | 중간 |
 | 4단계 | Filter | "이 로그는 노이즈다, 필터 규칙 추가" 제안 | 높음 |
 
+> [!CAUTION] #todo - Section 5: LLM Intelligence Layer 미결 사항
+> **모델/인프라**
+> - [ ] 고객사마다 Azure OpenAI 리소스를 별도 배포해야 하는가? Bicep 템플릿에 포함되는가? 비용은 고객사가 부담하는가?
+> - [ ] Azure OpenAI API 호출 실패(throttling, 서비스 장애) 시 Agent는 어떻게 처리하는가? LLM 분석 없이 기존 규칙 기반으로 폴백하는가?
+> - [ ] 고객사 데이터 레지던시(Data Residency) 요건이 있을 경우, Azure OpenAI 리전을 고객사 LAW와 동일 리전에 배포해야 함 — 자동화 가능한가?
+>
+> **프롬프트/정확도**
+> - [ ] 시스템 프롬프트(LLMConfig.systemPrompt)는 누가 작성하는가? 고객사별로 커스터마이징할 수 있는가?
+> - [ ] 거부 이력(reject reason)을 LLM 프롬프트 개선에 어떻게 활용하는가? 자동으로 few-shot 예시에 추가하는 파이프라인이 필요함
+> - [ ] 신뢰도(confidence) 0.8 미만 기준은 어떻게 산출하는가? LLM이 직접 반환하는가, 아니면 별도 계산 로직이 있는가?
+>
+> **운영/비용**
+> - [ ] LLM 분석 비용을 어떻게 고객사에 청구하는가? (사용량 기반? 구독 요금에 포함?)
+> - [ ] Suggestion은 7일 후 자동 만료인데, 7일이 지나기 전에 미검토 Suggestion이 쌓이면 Teams에서 알림을 주는가?
+> - [ ] 4개 엔진에 대해 동시에 Suggestion을 생성하면 운영자가 처리해야 할 건수가 너무 많아질 수 있음 — 우선순위 기반 정렬 또는 자동 필터링 필요
+
+---
+
+## 6. Rollback & Change History (변경 이력 및 원복)
+
+
+Log Doctor가 고객사 LAW/DCR 설정을 변경한 모든 이력을 기록하고, 문제 발생 시 **원래 상태로 되돌릴 수 있는 안전장치**입니다. 모든 엔진(Retain/Prevent/Detect/Filter)의 변경에 대해 공통으로 적용됩니다.
+
+> [!IMPORTANT] 핵심 원칙
+> - Agent가 고객사 환경에 변경을 가하기 **전에 반드시 스냅샷**을 저장합니다.
+> - 운영자는 Teams에서 **원클릭 원복**이 가능합니다.
+
+---
+
+### 6-1. 전체 아키텍처 (Rollback 흐름)
+
+```mermaid
+graph TB
+    subgraph Microsoft 365
+        Teams["Teams Frontend - 변경 이력 UI"]
+    end
+
+    subgraph Provider Cloud
+        PB["Provider Backend - FastAPI"]
+        CosmosDB["Cosmos DB - ConfigSnapshot"]
+    end
+
+    subgraph Client Cloud - 고객사 환경
+        Agent["Client Agent - Azure Functions"]
+        LAW["Log Analytics Workspace"]
+        DCR["Data Collection Rule"]
+    end
+
+    Agent -->|Step1 변경 전 상태 스냅샷| PB
+    PB -->|스냅샷 저장| CosmosDB
+    Agent -->|Step2 변경 적용 - MSI| LAW
+    Agent -->|Step2 변경 적용 - MSI| DCR
+    Agent -->|Step3 변경 완료 리포트| PB
+
+    Teams -->|변경 이력 조회| PB
+    Teams -->|원복 요청| PB
+    PB -->|beforeState 조회| CosmosDB
+    PB -->|원복 지시| Agent
+    Agent -->|beforeState로 복원| LAW
+    Agent -->|beforeState로 복원| DCR
+```
+
+> [!NOTE] 왜 이렇게 짰는가?
+> - **변경 전 스냅샷 필수**: Agent가 설정을 바꾸기 전에 현재 상태를 Provider에 먼저 보냅니다. 이렇게 해야 "원래 어떤 상태였는지" 알 수 있습니다.
+> - **Provider 경유 원복**: 운영자가 Teams에서 "원복" 클릭하면, Provider가 스냅샷에서 beforeState를 읽어 Agent에게 전달합니다. Agent가 직접 DB를 읽지 않습니다.
+
+---
+
+### 6-2. 변경 적용 + 스냅샷 시퀀스 (Sequence Diagram)
+
+모든 엔진에 공통으로 적용되는 변경 → 스냅샷 → 원복 흐름입니다.
+
+```mermaid
+sequenceDiagram
+    participant Agent as Client Agent
+    participant PB as Provider Backend
+    participant DB as Cosmos DB
+    participant LAW as 고객사 LAW / DCR
+    participant Teams as Teams Frontend
+    participant Admin as 운영자
+
+    Note over Agent, LAW: 정상 변경 흐름
+    Agent->>LAW: 현재 설정값 조회 (MSI)
+    LAW-->>Agent: 현재 상태 반환
+
+    Agent->>PB: POST /snapshots - beforeState 전송
+    PB->>DB: ConfigSnapshot 저장 (beforeState)
+
+    Agent->>LAW: 새 설정 적용 (MSI)
+    LAW-->>Agent: 적용 완료
+
+    Agent->>PB: PATCH /snapshots/id - afterState 업데이트
+    PB->>DB: afterState 저장
+
+    Note over Admin, LAW: 원복 흐름
+    Admin->>Teams: 변경 이력 조회
+    Teams->>PB: GET /snapshots?tenantId=xxx
+    PB-->>Teams: 변경 이력 목록 (시간순)
+
+    Admin->>Teams: 특정 변경 건 "원복" 클릭
+    Teams->>PB: POST /snapshots/id/rollback
+
+    PB->>DB: beforeState 조회
+    PB->>Agent: QueueTrigger - 원복 지시 + beforeState
+    Agent->>LAW: beforeState 설정 적용 (MSI)
+    LAW-->>Agent: 복원 완료
+
+    Agent->>PB: 원복 완료 리포트
+    PB->>DB: isRolledBack = true 업데이트
+    PB-->>Teams: 원복 완료 알림
+```
+
+> [!NOTE] 왜 이렇게 짰는가?
+> - **QueueTrigger로 원복**: 원복은 긴급할 수 있으므로, 다음 폴링 주기를 기다리지 않고 **Queue 메시지로 즉시 실행**합니다. (아키텍처 문서의 On-Demand Execution 패턴)
+> - **before → after 순서**: 변경 전에 먼저 스냅샷을 저장하고, 변경 후에 afterState를 업데이트합니다. 변경 도중 실패하더라도 beforeState는 이미 저장되어 있으므로 안전합니다.
+
+---
+
+### 6-3. ConfigSnapshot 데이터 모델 (Class Diagram)
+
+```mermaid
+classDiagram
+    class ConfigSnapshot {
+        +String id
+        +String tenantId
+        +String agentId
+        +String engine
+        +String actionType
+        +JSON beforeState
+        +JSON afterState
+        +DateTime appliedAt
+        +String appliedBy
+        +String triggeredBy
+        +bool isRolledBack
+        +DateTime rolledBackAt
+        +String rolledBackBy
+    }
+
+    class RollbackRequest {
+        +String id
+        +String snapshotId
+        +String requestedBy
+        +DateTime requestedAt
+        +String status
+        +String result
+        +DateTime completedAt
+    }
+
+    ConfigSnapshot "1" --> "0..*" RollbackRequest : triggered by
+```
+
+> [!NOTE] 왜 이렇게 짰는가?
+> - **beforeState / afterState를 JSON으로**: 엔진마다 설정 구조가 다릅니다 (Retain은 보존 기간, Filter는 DCR 규칙 등). JSON 필드로 저장하면 하나의 테이블로 모든 엔진의 변경을 관리할 수 있습니다.
+> - **triggeredBy 필드**: 이 변경이 "수동 설정"인지, "LLM Suggestion 승인"인지, "정기 실행"인지 추적합니다. Suggestion ID를 저장하면 LLM 제안 → 승인 → 적용 → 원복까지의 전체 추적이 가능합니다.
+> - **RollbackRequest 분리**: 같은 스냅샷에 대해 원복 요청이 여러 번 있을 수 있으므로 (원복 → 재적용 → 다시 원복) 별도 테이블로 관리합니다.
+
+---
+
+### 6-4. 스냅샷 생명주기 (State Diagram)
+
+```mermaid
+stateDiagram-v2
+    [*] --> SnapshotSaved: Agent가 변경 전 상태 저장
+
+    SnapshotSaved --> Applied: 변경 성공
+    SnapshotSaved --> Failed: 변경 실패
+
+    Failed --> RolledBack: 자동 원복 (beforeState 복원)
+
+    Applied --> Active: 정상 운영 중
+    Active --> RollbackRequested: 운영자가 원복 요청
+    RollbackRequested --> RolledBack: Agent가 복원 완료
+    RollbackRequested --> RollbackFailed: 복원 실패
+
+    RollbackFailed --> RollbackRequested: 재시도
+
+    RolledBack --> [*]
+```
+
+> [!NOTE] 왜 이렇게 짰는가?
+> - **변경 실패 시 자동 원복**: Agent가 설정 변경 중 오류가 발생하면, 저장해둔 beforeState로 자동 복원합니다. 고객사 환경이 중간 상태로 남는 것을 방지합니다.
+> - **RollbackFailed → 재시도**: 원복도 실패할 수 있으므로 (네트워크 문제 등), 재시도 가능한 상태를 별도로 둡니다.
+
+---
+
+### 6-5. 엔진별 스냅샷 예시
+
+| Engine | actionType | beforeState 예시 | afterState 예시 |
+| --- | --- | --- | --- |
+| Retain | retention_change | `{hotRetentionDays: 30}` | `{hotRetentionDays: 7}` |
+| Filter | dcr_rule_add | `{rules: []}` | `{rules: [{keyword: "health check", action: "DROP"}]}` |
+| Detect | pattern_update | `{threshold: 500}` | `{threshold: 200}` |
+| Prevent | rule_add | `{rules: []}` | `{rules: [{type: "level_check", target: "debug"}]}` |
+
+
+> [!CAUTION] #todo - Section 6: Rollback 미결 사항
+> **스냅샷 설계**
+> - [ ] beforeState/afterState JSON의 스키마는 누가 정의하는가? 각 엔진별로 표준 스키마 명세가 필요함
+> - [ ] 모든 변경에 대해 스냅샷을 저장하면 Cosmos DB 용량이 빠르게 증가할 수 있음 — 스냅샷 보존 기간(예: 90일)과 자동 삭제 정책이 필요함
+> - [ ] 스냅샷 저장 실패 시(Provider 응답 없음, 네트워크 오류) Agent는 변경을 멈추는가, 아니면 스냅샷 없이 변경을 진행하는가?
+>
+> **원복 로직**
+> - [ ] 여러 엔진의 변경이 체인으로 연결된 경우(Retain 변경 → Filter 변경 순서)를 원복할 때 역순으로 원복하는가? 의존성 추적이 필요함
+> - [ ] 부분 원복은 가능한가? (예: 오늘 한 5개의 변경 중 3번째 것만 원복)
+> - [ ] 원복 후 다시 적용(Redo)은 가능한가? (afterState를 재적용하는 기능)
+>
+> **감사/컴플라이언스**
+> - [ ] ConfigSnapshot은 컴플라이언스 감사(Audit) 로그로도 활용할 수 있는가? 변경 이력을 외부로 내보내는 기능이 필요한가?
+> - [ ] rolledBackBy 필드에 저장되는 사용자 정보는 어디서 가져오는가? Teams SSO 토큰의 사용자 정보를 Provider에서 파싱하는가?
+
 ---
 
 ## 전체 기능 비교 요약
 
-5개 기능의 핵심 차이를 한눈에 비교합니다.
+6개 기능의 핵심 차이를 한눈에 비교합니다.
+
 
 
 ```mermaid
@@ -1072,14 +1348,14 @@ graph LR
     L -.->|Cross-cutting| R
 ```
 
-| 항목 | Retain | Prevent | Detect | Filter | LLM Layer |
-| --- | --- | --- | --- | --- | --- |
-| 목적 | 비용 최적화 | 로그 품질 개선 | 보안 위협 탐지 | 노이즈 제거 | 규칙 자동 생성/제안 |
-| 대상 | 수집된 로그 | 로그 패턴 | 트래픽 로그 | 수집 전 로그 | 로그 샘플 100건 |
-| 실행 주기 | 24시간 | 6시간 | 30분 | On Demand | 6~24시간 |
-| Agent 역할 | LAW 쿼리 + Archive + Purge | LAW 분석 | LAW 위협 분석 | DCR 규칙 적용 | LLM 호출 + Suggestion 생성 |
-| Provider 역할 | 정책 관리 + 리포트 수신 | 규칙 관리 + 알림 발송 | 패턴 관리 + 인시던트 관리 | 규칙 관리 + 통계 수집 | Suggestion 저장 + 정책 반영 |
-| Teams 역할 | 리포트 조회 | 위반 알림 수신 | 인시던트 대응 | 필터 설정 + 효과 확인 | Suggestion 승인/거부/수정 |
-| 우선순위 | 1순위 | 2순위 | 3순위 | 4순위 | 점진적 도입 |
-| 인증 방식 | Agent MSI | Agent MSI | Agent MSI | Agent MSI | Agent MSI |
+| 항목 | Retain | Prevent | Detect | Filter | LLM Layer | Rollback |
+| --- | --- | --- | --- | --- | --- | --- |
+| 목적 | 비용 최적화 | 로그 품질 개선 | 보안 위협 탐지 | 노이즈 제거 | 규칙 자동 생성/제안 | 설정 변경 안전장치 |
+| 대상 | 수집된 로그 | 로그 패턴 | 트래픽 로그 | 수집 전 로그 | 로그 샘플 100건 | 모든 엔진의 변경 이력 |
+| 실행 주기 | 24시간 | 6시간 | 30분 | On Demand | 6~24시간 | 이벤트 기반 |
+| Agent 역할 | LAW 쿼리 + Archive + Purge | LAW 분석 | LAW 위협 분석 | DCR 규칙 적용 | LLM 호출 + Suggestion 생성 | 스냅샷 저장 + 원복 실행 |
+| Provider 역할 | 정책 관리 + 리포트 수신 | 규칙 관리 + 알림 발송 | 패턴 관리 + 인시던트 관리 | 규칙 관리 + 통계 수집 | Suggestion 저장 + 정책 반영 | 스냅샷 관리 + 원복 지시 |
+| Teams 역할 | 리포트 조회 | 위반 알림 수신 | 인시던트 대응 | 필터 설정 + 효과 확인 | Suggestion 승인/거부/수정 | 변경 이력 조회 + 원복 클릭 |
+| 우선순위 | 1순위 | 2순위 | 3순위 | 4순위 | 점진적 도입 | 모든 엔진 공통 |
+| 인증 방식 | Agent MSI | Agent MSI | Agent MSI | Agent MSI | Agent MSI | Agent MSI |
 
