@@ -36,10 +36,10 @@ graph TB
 
     AppService -->|Diagnostic Logs| LAW
     VM -->|Diagnostic Logs| LAW
-    RetainFn -->|1. Read Policies| PolicyDB
-    RetainFn -->|2. Query Old Logs| LAW
-    RetainFn -->|3. Export and Archive| Blob
-    RetainFn -->|4. Purge from LAW| LAW
+    RetainFn -->|Step1 Read Policies| PolicyDB
+    RetainFn -->|Step2 Query Old Logs| LAW
+    RetainFn -->|Step3 Export and Archive| Blob
+    RetainFn -->|Step4 Purge from LAW| LAW
 ```
 
 > [!NOTE] 왜 이렇게 짰는가?
