@@ -12,14 +12,14 @@ Managed Identity는 Azure 리소스가 자격 증명(비밀번호, 시크릿)을
 
 아래 서비스들은 SDK의 `DefaultAzureCredential` 클래스를 사용하면 자동으로 관리 ID를 인식하여 인증에 활용합니다.
 
-| 분류 | 서비스 명 | 학습 포인트 |
-| :--- | :--- | :--- |
-| **대표 서비스** | **Azure Container Apps (ACE)** | 서버리스 컨테이너 환경에서 관리 ID를 통한 API 인증 지원 |
-| | **Azure App Service** | 웹 앱에서 시크릿 없이 SQL/Cosmos DB 접근 시 사용 |
-| | **Azure Functions** | 이벤트 트리거 시 외부 리소스 인증에 필수적 |
-| **데이터/저장** | **Azure Cosmos DB** | RBAC(역할 기반 제어)를 통해 관리 ID에 직접 권한 부여 가능 |
-| | **Azure Storage (Blob)** | 시크릿 키 대신 관리 ID로 데이터 읽기/쓰기 권한 제어 |
-| **보안/관리** | **Azure Key Vault** | 다른 기밀 정보를 가져올 때 관리 ID를 '열쇠'로 사용 |
+| 분류         | 서비스 명                          | 학습 포인트                                |
+| :--------- | :----------------------------- | :------------------------------------ |
+| **대표 서비스** | **Azure Container Apps (ACE)** | 서버리스 컨테이너 환경에서 관리 ID를 통한 API 인증 지원    |
+|            | **Azure App Service**          | 웹 앱에서 시크릿 없이 SQL/Cosmos DB 접근 시 사용    |
+|            | **Azure Functions**            | 이벤트 트리거 시 외부 리소스 인증에 필수적              |
+| **데이터/저장** | **Azure Cosmos DB**            | RBAC(역할 기반 제어)를 통해 관리 ID에 직접 권한 부여 가능 |
+|            | **Azure Storage (Blob)**       | 시크릿 키 대신 관리 ID로 데이터 읽기/쓰기 권한 제어       |
+| **보안/관리**  | **Azure Key Vault**            | 다른 기밀 정보를 가져올 때 관리 ID를 '열쇠'로 사용       |
 
 ## 🛠️ 실무 적용 예시 (Python)
 
