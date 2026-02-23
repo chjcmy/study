@@ -817,9 +817,244 @@ stateDiagram-v2
 
 ---
 
+## 5. LLM Intelligence Layer (지능형 분류 엔진)
+
+4개 엔진의 **규칙을 자동 생성/제안**하는 상위 레이어입니다. 기존에는 관리자가 직접 KQL 쿼리와 분류 기준을 작성해야 했지만, LLM을 도입하면 Agent가 로그를 자동 분석하여 **"이 로그는 Class A로 분류하는 게 좋겠다"** 같은 제안(Suggestion)을 생성합니다. 운영자는 Teams에서 승인/거부만 하면 됩니다.
+
+> [!IMPORTANT] 핵심 원칙
+> - LLM은 **Agent 안에서** 실행됩니다. 고객사 로그 원본이 Provider(외부)로 나가지 않습니다.
+> - LLM은 **자동 실행하지 않고 제안만** 합니다. 반드시 사람이 승인해야 정책에 반영됩니다 (Human-in-the-loop).
+
+---
+
+### 5-1. 전체 아키텍처 (LLM 위치)
+
+LLM이 Agent 안에서 동작하고, 분류 결과만 Provider로 전달되는 구조입니다.
+
+```mermaid
+graph TB
+    subgraph Microsoft 365
+        Teams["Teams Frontend - Suggestion 승인 UI"]
+    end
+
+    subgraph Provider Cloud
+        PB["Provider Backend - FastAPI"]
+        CosmosDB["Cosmos DB - Suggestions"]
+    end
+
+    subgraph Client Cloud - 고객사 환경
+        Agent["Client Agent - Azure Functions"]
+        AOAI["Azure OpenAI - 고객사 리소스"]
+        LAW["Log Analytics Workspace"]
+    end
+
+    Agent -->|Step1 로그 샘플 수집 - MSI| LAW
+    Agent -->|Step2 분류 요청 - MSI| AOAI
+    AOAI -->|분류 결과 반환| Agent
+    Agent -->|Step3 Suggestion 전송 - 원본 로그 X| PB
+    PB -->|Suggestion 저장 - status pending| CosmosDB
+
+    Teams -->|pending 목록 조회| PB
+    Teams -->|승인/거부/수정| PB
+    PB -->|승인 시 정책 반영| CosmosDB
+```
+
+> [!NOTE] 왜 이렇게 짰는가?
+> - **Azure OpenAI가 고객사 구독에 배포됩니다.** 로그 원본이 고객사 환경을 벗어나지 않아 데이터 주권을 보장합니다.
+> - **Provider에는 메타데이터만 전송**: "AppGW 로그, Security 카테고리, Class A 추천, 신뢰도 0.92" 같은 분류 결과만 보냅니다. 실제 로그 내용은 전송하지 않습니다.
+> - **Suggestion(제안) 패턴**: LLM이 직접 정책을 변경하지 않고, "이렇게 하면 어떻겠습니까?" 형태로 제안합니다. 운영자가 Teams에서 검토 후 승인하면 그때 실제 정책에 반영됩니다.
+
+---
+
+### 5-2. LLM 분석 흐름 (Decision Flow)
+
+Agent가 로그 샘플을 LLM에 보내고, 결과를 Suggestion으로 변환하는 흐름입니다.
+
+```mermaid
+graph TD
+    A["TimerTrigger - LLM 분석 주기"] --> B["LAW에서 최근 로그 샘플 수집"]
+    B --> C["대표 로그 100건 추출 - 비용 절감"]
+
+    C --> D["Azure OpenAI API 호출"]
+    D --> E["LLM 분류 결과 수신"]
+
+    E --> F{"Suggestion Type?"}
+
+    F -- "새 보존 정책 제안" --> G["Retain Suggestion 생성"]
+    F -- "로그 레벨 이상 감지" --> H["Prevent Suggestion 생성"]
+    F -- "보안 위협 패턴 감지" --> I["Detect Suggestion 생성"]
+    F -- "노이즈 로그 패턴 감지" --> J["Filter Suggestion 생성"]
+
+    G --> K["POST to Provider - status pending"]
+    H --> K
+    I --> K
+    J --> K
+```
+
+> [!NOTE] 왜 이렇게 짰는가?
+> - **샘플링 전략**: 매번 모든 로그를 LLM에 보내면 비용이 폭발합니다. 최근 1시간 로그 중 **대표 100건만 추출**하여 분석합니다. 카테고리별/severity별로 균등 샘플링합니다.
+> - **4개 엔진 모두에 대해 제안 생성**: LLM이 "이 로그는 보존 가치가 높다(Retain)", "이 패턴이 비정상이다(Detect)" 등을 동시에 판단하여 각 엔진에 맞는 Suggestion을 생성합니다.
+
+---
+
+### 5-3. Suggestion 승인 시퀀스 (Sequence Diagram)
+
+LLM 분석부터 운영자 승인, 최종 정책 반영까지의 전체 흐름입니다.
+
+```mermaid
+sequenceDiagram
+    participant Agent as Client Agent
+    participant AOAI as Azure OpenAI - 고객사
+    participant PB as Provider Backend
+    participant DB as Cosmos DB
+    participant Teams as Teams Frontend
+    participant Admin as 운영자
+
+    Agent->>Agent: LAW에서 로그 샘플 100건 수집
+    Agent->>AOAI: 로그 분류 요청 (MSI 인증)
+    AOAI-->>Agent: 분류 결과 반환
+
+    loop For each classification
+        Agent->>Agent: Suggestion 객체 생성
+    end
+
+    Agent->>PB: POST /suggestions - 메타데이터만 전송
+    PB->>DB: Suggestions 저장 (status: pending)
+
+    Admin->>Teams: 대시보드 접속
+    Teams->>PB: GET /suggestions?status=pending
+    PB-->>Teams: pending Suggestion 목록
+
+    Admin->>Teams: Suggestion 상세 확인
+
+    alt 승인
+        Admin->>Teams: 승인 클릭
+        Teams->>PB: PATCH /suggestions/id (status: approved)
+        PB->>DB: 해당 정책 자동 생성 (RetentionPolicy 등)
+        PB-->>Teams: 정책 반영 완료
+    else 수정 후 승인
+        Admin->>Teams: threshold 값 수정 후 승인
+        Teams->>PB: PATCH /suggestions/id (수정된 값 + approved)
+        PB->>DB: 수정된 값으로 정책 생성
+    else 거부
+        Admin->>Teams: 거부 + 사유 입력
+        Teams->>PB: PATCH /suggestions/id (status: rejected, reason)
+        PB->>DB: 거부 이력 저장
+        Note over DB: 거부 사유는 LLM 프롬프트 개선에 활용
+    end
+```
+
+> [!NOTE] 왜 이렇게 짰는가?
+> - **Human-in-the-loop**: LLM이 아무리 정확해도 100%는 아닙니다. 운영자가 반드시 검토하는 단계가 있어야 잘못된 정책이 적용되는 것을 방지합니다.
+> - **수정 후 승인**: "LLM이 threshold를 50으로 제안했는데 100이 더 적절하다" 같은 경우, 운영자가 값을 조정하여 승인할 수 있습니다.
+> - **거부 사유 활용**: 거부된 Suggestion의 사유를 축적하면, LLM 프롬프트를 점진적으로 개선하여 정확도를 높일 수 있습니다.
+
+---
+
+### 5-4. Suggestion 데이터 모델 (Class Diagram)
+
+```mermaid
+classDiagram
+    class Suggestion {
+        +String id
+        +String agentId
+        +String tenantId
+        +DateTime createdAt
+        +String targetEngine
+        +String suggestionType
+        +String summary
+        +float confidence
+        +String status
+        +String reviewedBy
+        +DateTime reviewedAt
+        +String rejectReason
+    }
+
+    class SuggestionDetail {
+        +String id
+        +String suggestionId
+        +String logCategory
+        +String recommendedClass
+        +int recommendedThreshold
+        +String recommendedAction
+        +String evidence
+    }
+
+    class LLMConfig {
+        +String id
+        +String tenantId
+        +String modelDeployment
+        +String systemPrompt
+        +int sampleSize
+        +String analysisSchedule
+        +bool isActive
+    }
+
+    Suggestion "1" --> "*" SuggestionDetail : contains
+    LLMConfig "1" --> "*" Suggestion : generates
+```
+
+> [!NOTE] 왜 이렇게 짰는가?
+> - **confidence (신뢰도)**: LLM이 분류 결과에 대한 확신도를 0.0~1.0으로 반환합니다. 신뢰도가 0.8 미만이면 Teams에서 경고 표시를 하여 운영자가 더 신중하게 검토하도록 합니다.
+> - **targetEngine**: 이 Suggestion이 Retain/Prevent/Detect/Filter 중 어느 엔진에 대한 제안인지 구분합니다.
+> - **LLMConfig**: 테넌트별로 LLM 설정(모델, 프롬프트, 샘플 크기 등)을 다르게 관리할 수 있습니다.
+> - **evidence**: "왜 이렇게 분류했는지" LLM의 근거를 저장합니다. 운영자가 승인/거부 판단에 참고합니다.
+
+---
+
+### 5-5. Suggestion 생명주기 (State Diagram)
+
+```mermaid
+stateDiagram-v2
+    [*] --> Created: Agent LLM이 제안 생성
+
+    Created --> Pending: Provider에 전송 완료
+
+    Pending --> Approved: 운영자 승인
+    Pending --> Modified: 운영자 수정 후 승인
+    Pending --> Rejected: 운영자 거부
+    Pending --> Expired: 7일 내 미검토시 자동 만료
+
+    Approved --> Applied: 실제 정책에 반영
+    Modified --> Applied: 수정된 값으로 정책 반영
+
+    Applied --> [*]
+    Rejected --> [*]
+    Expired --> [*]
+```
+
+> [!NOTE] 왜 이렇게 짰는가?
+> - **Expired 상태**: Suggestion이 7일 이상 방치되면 자동 만료됩니다. 오래된 분석 결과는 현재 상황과 맞지 않을 수 있으므로, 새로운 분석이 필요합니다.
+> - **Modified 분리**: 단순 승인과 수정 후 승인을 구분하여, LLM의 원래 제안과 운영자가 실제 적용한 값의 차이를 추적합니다. 이 데이터가 LLM 정확도 개선의 핵심 피드백입니다.
+
+---
+
+### 5-6. 비용 절감 전략
+
+| 전략 | 설명 | 예상 효과 |
+| --- | --- | --- |
+| 로그 샘플링 | 전체 로그 대신 대표 100건만 분석 | API 호출 비용 99% 감소 |
+| 분석 주기 조절 | 매 30분이 아닌 6~24시간 주기 | 호출 횟수 감소 |
+| 캐시 활용 | 이미 분류된 패턴은 재분석 안 함 | 중복 분석 방지 |
+| 모델 선택 | GPT-4o-mini 사용 (가벼운 분류 작업) | GPT-4o 대비 비용 90% 절감 |
+
+---
+
+### 5-7. 단계별 도입 계획
+
+| 단계 | 적용 대상 | LLM 역할 | 난이도 |
+| --- | --- | --- | --- |
+| 1단계 | Prevent | "이 로그 레벨 너무 낮다" 자동 감지 | 낮음 |
+| 2단계 | Detect | "이 트래픽 패턴 의심스럽다" 이상 탐지 | 중간 |
+| 3단계 | Retain | "이 로그는 Class A로 장기 보존해야 한다" 분류 | 중간 |
+| 4단계 | Filter | "이 로그는 노이즈다, 필터 규칙 추가" 제안 | 높음 |
+
+---
+
 ## 전체 기능 비교 요약
 
-4개 기능의 핵심 차이를 한눈에 비교합니다.
+5개 기능의 핵심 차이를 한눈에 비교합니다.
+
 
 ```mermaid
 graph LR
@@ -828,20 +1063,23 @@ graph LR
         P["Prevent - Every 6h"]
         D["Detect - Every 30min"]
         F["Filter - On Demand"]
+        L["LLM - 6~24h"]
     end
 
     R -.->|Slowest| P
     P -.-> D
     D -.->|Fastest| F
+    L -.->|Cross-cutting| R
 ```
 
-| 항목 | Retain | Prevent | Detect | Filter |
-| --- | --- | --- | --- | --- |
-| 목적 | 비용 최적화 | 로그 품질 개선 | 보안 위협 탐지 | 노이즈 제거 |
-| 대상 | 수집된 로그 | 로그 패턴 | 트래픽 로그 | 수집 전 로그 |
-| 실행 주기 | 24시간 | 6시간 | 30분 | On Demand |
-| Agent 역할 | LAW 쿼리 + Archive + Purge | LAW 분석 | LAW 위협 분석 | DCR 규칙 적용 |
-| Provider 역할 | 정책 관리 + 리포트 수신 | 규칙 관리 + 알림 발송 | 패턴 관리 + 인시던트 관리 | 규칙 관리 + 통계 수집 |
-| Teams 역할 | 리포트 조회 | 위반 알림 수신 | 인시던트 대응 | 필터 설정 + 효과 확인 |
-| 우선순위 | 1순위 | 2순위 | 3순위 | 4순위 |
-| 인증 방식 | Agent MSI | Agent MSI | Agent MSI | Agent MSI |
+| 항목 | Retain | Prevent | Detect | Filter | LLM Layer |
+| --- | --- | --- | --- | --- | --- |
+| 목적 | 비용 최적화 | 로그 품질 개선 | 보안 위협 탐지 | 노이즈 제거 | 규칙 자동 생성/제안 |
+| 대상 | 수집된 로그 | 로그 패턴 | 트래픽 로그 | 수집 전 로그 | 로그 샘플 100건 |
+| 실행 주기 | 24시간 | 6시간 | 30분 | On Demand | 6~24시간 |
+| Agent 역할 | LAW 쿼리 + Archive + Purge | LAW 분석 | LAW 위협 분석 | DCR 규칙 적용 | LLM 호출 + Suggestion 생성 |
+| Provider 역할 | 정책 관리 + 리포트 수신 | 규칙 관리 + 알림 발송 | 패턴 관리 + 인시던트 관리 | 규칙 관리 + 통계 수집 | Suggestion 저장 + 정책 반영 |
+| Teams 역할 | 리포트 조회 | 위반 알림 수신 | 인시던트 대응 | 필터 설정 + 효과 확인 | Suggestion 승인/거부/수정 |
+| 우선순위 | 1순위 | 2순위 | 3순위 | 4순위 | 점진적 도입 |
+| 인증 방식 | Agent MSI | Agent MSI | Agent MSI | Agent MSI | Agent MSI |
+
