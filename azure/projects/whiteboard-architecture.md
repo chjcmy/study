@@ -195,24 +195,24 @@ graph TD
 sequenceDiagram
     participant Template as 고객 Azure 템플릿 배포
     participant Agent as Client Functions (Agent)
-    participant MSI as Managed Identity
+    participant Managed Identity as Managed Identity
     participant Provider as Provider Backend
     participant Cosmos as Cosmos DB
 
     Note over Template, Cosmos: Step 1 - Agent 배포
 
     Template->>Agent: Azure Functions 배포 (Bicep 템플릿)
-    Template->>MSI: Managed Identity 자동 생성
+    Template->>Managed Identity: Managed Identity 자동 생성
 
     Note over Template, Cosmos: Step 2 - Handshake (최초 등록)
 
-    Agent->>MSI: 액세스 토큰 요청
-    MSI-->>Agent: MSI 토큰 반환
+    Agent->>Managed Identity: 액세스 토큰 요청
+    Managed Identity-->>Agent: Managed Identity 토큰 반환
 
-    Agent->>Provider: POST /agents/handshake (MSI 토큰 + 환경 정보)
+    Agent->>Provider: POST /agents/handshake (Managed Identity 토큰 + 환경 정보)
     Note right of Agent: tenantId, subscriptionId, region, version
 
-    Provider->>Provider: MSI 토큰 검증
+    Provider->>Provider: Managed Identity 토큰 검증
     Provider->>Cosmos: Agent 등록 (agents 컬렉션)
     Provider-->>Agent: 등록 완료 + 초기 정책 전달
 
@@ -299,6 +299,102 @@ erDiagram
 
 ---
 
+### 왜 이렇게 설계했는가?
+
+#### 컬렉션을 3개로 나눈 이유
+
+하나의 컬렉션에 모든 정보를 넣을 수도 있지만, **역할과 생명주기(Lifecycle)가 다르기 때문에** 3개로 분리했습니다.
+
+| 컬렉션 | 핵심 질문 | 변경 빈도 |
+| --- | --- | --- |
+| `tenants` | "이 회사가 우리 서비스를 쓰는가?" | 거의 없음 (등록 1회) |
+| `subscriptions` | "이 회사의 어떤 Azure 구독을 관리하는가?" | 가끔 (구독 추가/제거) |
+| `agents` | "지금 Agent가 살아있는가? 최근에 언제 실행했는가?" | 자주 (heartbeat, 버전 업데이트) |
+
+`agents`는 heartbeat 때문에 **30분마다 업데이트**됩니다. 만약 하나의 컬렉션에 모든 정보를 넣으면, 불필요하게 tenantName 같은 거의 바뀌지 않는 데이터까지 매번 덮어쓰게 되어 Cosmos DB RU(비용) 낭비가 발생합니다.
+
+---
+
+#### TENANTS 컬렉션
+
+```json
+{
+  "id": "uuid",
+  "tenantId": "a1b2c3d4-xxxx-xxxx-xxxx (SSO 토큰의 tid)",
+  "tenantName": "Contoso Inc.",
+  "adminEmail": "admin@contoso.com",
+  "registeredAt": "2025-02-24T...",
+  "status": "active"
+}
+```
+
+> **tenantId를 왜 따로 저장하는가?**
+> SSO 토큰의 `tid` 클레임이 곧 Azure AD Tenant ID입니다. 이 값이 "고객사를 구별하는 유일한 키"입니다. `id`(Cosmos 내부 PK)와 `tenantId`(Azure AD 키)를 분리한 이유는, Cosmos DB는 `id`를 파티션 키로 사용하지만 우리 비즈니스 로직은 항상 `tenantId`로 조회하기 때문입니다. 두 역할을 분리해야 인덱스 설계가 명확해집니다.
+
+> **status 필드가 필요한 이유?**
+> 고객사가 구독을 해지하거나 서비스를 중단할 때, 실제 데이터를 삭제하면 감사 이력이 사라집니다. `status`를 `"suspended"` 또는 `"inactive"`로 바꾸는 **소프트 삭제(Soft Delete)** 방식을 쓰면 이력이 보존됩니다.
+
+---
+
+#### SUBSCRIPTIONS 컬렉션
+
+```json
+{
+  "id": "uuid",
+  "tenantId": "a1b2c3d4-xxxx (TENANTS와 연결)",
+  "subscriptionId": "sub-yyyy-zzzz (Azure 구독 ID)",
+  "subscriptionName": "Contoso-Production",
+  "state": "linked",
+  "linkedAt": "2025-02-24T..."
+}
+```
+
+> **왜 TENANTS와 분리했는가?**
+> 하나의 고객사(테넌트)가 **여러 개의 Azure 구독**을 가질 수 있습니다. 예를 들어 "개발 구독", "운영 구독", "DR 구독"이 별도로 존재할 수 있습니다. TENANTS 안에 구독 목록을 배열로 넣으면 구독이 추가/삭제될 때마다 테넌트 문서 전체를 업데이트해야 하고, 쿼리도 복잡해집니다. 분리하면 구독 하나만 조회/수정이 가능합니다.
+
+> **subscriptionId를 왜 저장하는가?**
+> 이 값이 OBO 토큰으로 ARM API를 호출할 때 사용하는 Azure 구독 식별자입니다. Agent가 `should_i_run` 폴링 시 Provider에게 "나는 이 구독에 속한 Agent다"를 알릴 때도 이 ID를 사용합니다.
+
+---
+
+#### AGENTS 컬렉션
+
+```json
+{
+  "id": "uuid",
+  "tenantId": "a1b2c3d4-xxxx",
+  "subscriptionId": "sub-yyyy-zzzz",
+  "agentId": "agent-고유-식별자 (Functions App 이름 등)",
+  "region": "koreacentral",
+  "version": "1.2.0",
+  "registeredAt": "2025-02-24T...",
+  "lastHeartbeat": "2025-02-24T14:30:00Z",
+  "status": "healthy"
+}
+```
+
+> **lastHeartbeat가 핵심인 이유?**
+> Agent가 살아있는지 죽었는지 확인하는 유일한 방법입니다. Agent는 `should_i_run` 폴링을 할 때마다 이 값을 업데이트합니다. Provider가 "30분 이상 heartbeat가 없다"는 것을 감지하면 Teams에 알림을 보낼 수 있습니다. 이 필드 없이는 Agent가 고장나도 아무도 모릅니다.
+
+> **tenantId + subscriptionId를 둘 다 저장하는 이유?**
+> Agent는 특정 구독 안에 배포되어 있지만, 정책을 조회할 때는 테넌트 전체 정책도 필요할 수 있습니다. `tenantId`로 "이 테넌트의 공통 정책"을, `subscriptionId`로 "이 구독 전용 정책"을 구분하여 조회할 수 있습니다. 두 ID를 모두 저장해 두면 쿼리 한 번으로 필요한 범위를 자유롭게 결정할 수 있습니다.
+
+> **version 필드가 필요한 이유?**
+> Agent는 고객사 환경에 배포된 코드이기 때문에, Provider와 버전이 맞지 않으면 API 호환성 문제가 생길 수 있습니다. Provider는 `version`을 보고 "이 Agent는 구버전이니 업데이트가 필요하다"는 메시지를 handshake 응답에 포함시킬 수 있습니다.
+
+---
+
+#### 전체 설계 원칙 요약
+
+| 원칙 | 적용 내용 |
+| --- | --- |
+| **멀티테넌트 격리** | 모든 컬렉션에 `tenantId`를 포함 — 고객사 간 데이터가 절대 섞이지 않음 |
+| **생명주기 분리** | 변경 빈도가 다른 데이터를 다른 컬렉션에 저장 — Cosmos RU 최소화 |
+| **소프트 삭제** | `status` 필드로 삭제 처리 — 감사/이력 보존 |
+| **Cosmos 파티션 전략** | `tenantId`를 파티션 키로 설정하면 같은 테넌트의 데이터가 같은 물리 파티션에 모임 — 조회 성능 최적화 |
+
+---
+
 ## 9. Teams Frontend 화면 흐름
 
 사용자가 Teams 앱에서 보는 화면 전환 순서입니다.
@@ -346,7 +442,7 @@ graph TD
     S5 --> S6["⑥ ARM API로 구독 목록 조회"]
     S6 --> S7["⑦ 구독 선택 + 저장"]
     S7 --> S8["⑧ 고객 Azure 템플릿 배포 (Bicep)"]
-    S8 --> S9["⑨ Agent 생성 (Azure Functions + MSI)"]
+    S8 --> S9["⑨ Agent 생성 (Azure Functions + Managed Identity)"]
     S9 --> S10["⑩ Agent → Provider handshake"]
     S10 --> S11["⑪ Agent 등록 완료 (agents 컬렉션)"]
     S11 --> S12["⑫ Timer/Queue Trigger로 정상 운영"]

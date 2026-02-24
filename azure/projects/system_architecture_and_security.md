@@ -54,7 +54,7 @@ graph TD
     subgraph "Client Cloud (Execution Plane)"
         subgraph "Log Doctor Agent"
             AF["<b>Azure Functions</b><br/>(Python/Linux)"]
-            MSI["<b>Managed Identity</b>"]
+            Managed Identity["<b>Managed Identity</b>"]
             SQ["<b>Storage Queue</b>"]
         end
         Target["진단 대상 Azure 리소스"]
@@ -279,7 +279,7 @@ graph TD
     subgraph "Identities (Who)"
         A["👨‍💻 Teams 사용자 (SSO)"]
         G["🤖 GitHub Actions (OIDC)"]
-        C["⚙️ 클라이언트 에이전트 (MSI)"]
+        C["⚙️ 클라이언트 에이전트 (Managed Identity)"]
     end
 
     subgraph "보안 게이트웨이 (Security Gateway)"

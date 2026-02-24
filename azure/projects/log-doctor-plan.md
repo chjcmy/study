@@ -33,7 +33,7 @@ graph TB
 
     subgraph Client Cloud - 고객사 환경
         Agent["Client Agent - Azure Functions"]
-        MSI["Managed Identity"]
+        Managed Identity["Managed Identity"]
         LAW["Log Analytics Workspace"]
         Blob["Azure Blob Storage - Archive Tier"]
     end
@@ -43,7 +43,7 @@ graph TB
 
     Agent -->|Step1 should_i_run 폴링| PB
     PB -->|Step2 정책 + 승인 응답| Agent
-    Agent -->|Step3 KQL 쿼리 - MSI 인증| LAW
+    Agent -->|Step3 KQL 쿼리 - Managed Identity 인증| LAW
     Agent -->|Step4 Archive Export| Blob
     Agent -->|Step5 Purge 완료 후 리포트 전송| PB
     PB -->|리포트 저장| CosmosDB
@@ -92,16 +92,16 @@ Client Agent가 Provider에 폴링하고, 승인받아 보존 작업을 수행�
 ```mermaid
 sequenceDiagram
     participant Agent as Client Agent - TimerTrigger
-    participant MSI as Managed Identity
+    participant Managed Identity as Managed Identity
     participant PB as Provider Backend
     participant DB as Cosmos DB
     participant LAW as 고객사 LAW
     participant Blob as 고객사 Blob Storage
 
-    Agent->>MSI: Get access token
-    MSI-->>Agent: Bearer token
+    Agent->>Managed Identity: Get access token
+    Managed Identity-->>Agent: Bearer token
 
-    Agent->>PB: should_i_run polling (MSI 토큰)
+    Agent->>PB: should_i_run polling (Managed Identity 토큰)
     PB->>DB: 해당 Agent의 실행 주기 확인
     DB-->>PB: Retain 정책 + 마지막 실행 시각
 
@@ -109,7 +109,7 @@ sequenceDiagram
         PB-->>Agent: 승인 + Retention Policy 목록 전달
         
         loop For each policy
-            Agent->>LAW: KQL Query - expired logs (MSI 인증)
+            Agent->>LAW: KQL Query - expired logs (Managed Identity 인증)
             LAW-->>Agent: Query results
 
             alt Class A - Archive Required
@@ -129,7 +129,7 @@ sequenceDiagram
 ```
 
 > [!NOTE] 왜 이렇게 짰는가?
-> - **MSI 토큰 인증**: Agent는 Managed Identity로 Provider Backend와 고객사 LAW 모두에 인증합니다. 시크릿 키나 연결 문자열을 사용하지 않는 **Zero Trust** 원칙입니다.
+> - **Managed Identity 토큰 인증**: Agent는 Managed Identity로 Provider Backend와 고객사 LAW 모두에 인증합니다. 시크릿 키나 연결 문자열을 사용하지 않는 **Zero Trust** 원칙입니다.
 > - **Provider가 정책 전달**: Agent가 직접 DB에서 정책을 읽지 않고, Provider API를 통해 전달받습니다. 이렇게 해야 Provider에서 **테넌트별 정책 격리**가 가능합니다.
 > - **리포트 전송**: 실행 결과를 Provider에 보고하면, Teams Frontend 대시보드에서 "어제 Retain이 정상 수행되었는지" 확인할 수 있습니다.
 
@@ -264,7 +264,7 @@ graph TB
 
     Agent -->|Step1 should_i_run 폴링| PB
     PB -->|Step2 규칙 + 승인 응답| Agent
-    Agent -->|Step3 KQL 분석 - MSI 인증| LAW
+    Agent -->|Step3 KQL 분석 - Managed Identity 인증| LAW
     Agent -->|Step4 위반 리포트 전송| PB
     PB -->|리포트 저장| CosmosDB
 
@@ -324,7 +324,7 @@ sequenceDiagram
     participant LAW as 고객사 LAW
     participant Teams as Teams Frontend
 
-    Agent->>PB: should_i_run polling (MSI 토큰)
+    Agent->>PB: should_i_run polling (Managed Identity 토큰)
     PB-->>Agent: 승인 + Prevention Rule 목록
 
     loop For each rule
@@ -484,7 +484,7 @@ graph TB
 
     Agent -->|Step1 should_i_run 폴링| PB
     PB -->|Step2 Detection Patterns 전달| Agent
-    Agent -->|Step3 KQL 위협 분석 - MSI 인증| LAW
+    Agent -->|Step3 KQL 위협 분석 - Managed Identity 인증| LAW
     Agent -->|Step4 탐지 결과 리포트| PB
 
     PB -->|인시던트 저장| CosmosDB
@@ -544,7 +544,7 @@ sequenceDiagram
     participant Teams as Teams Frontend
     participant Infra as Infra Team
 
-    Agent->>PB: should_i_run polling (MSI 토큰)
+    Agent->>PB: should_i_run polling (Managed Identity 토큰)
     PB-->>Agent: 승인 + Detection Patterns
 
     loop For each pattern
@@ -701,7 +701,7 @@ graph TB
 
     Agent -->|Step1 should_i_run 폴링| PB
     PB -->|Step2 Filter Rules 전달| Agent
-    Agent -->|Step3 DCR에 규칙 적용 - MSI 인증| DCR
+    Agent -->|Step3 DCR에 규칙 적용 - Managed Identity 인증| DCR
     DCR -->|Pass| LAW
     DCR -->|Drop| Trash
     Agent -->|Step4 필터 통계 리포트| PB
@@ -757,14 +757,14 @@ sequenceDiagram
     PB->>DB: Rule saved
 
     Note over Agent: 다음 폴링 주기
-    Agent->>PB: should_i_run polling (MSI 토큰)
+    Agent->>PB: should_i_run polling (Managed Identity 토큰)
     PB-->>Agent: 승인 + Filter Rules
 
     Agent->>Agent: Dry Run 시뮬레이션
     Note over Agent: 규칙 적용 시 예상 차단 건수 계산
 
     alt Dry Run 통과 - 안전
-        Agent->>DCR: Apply filter rules (MSI 인증)
+        Agent->>DCR: Apply filter rules (Managed Identity 인증)
         DCR-->>Agent: Rules applied
     else Dry Run 위험 - drop rate 너무 높음
         Agent->>PB: Warning report - 규칙 재검토 필요
@@ -776,7 +776,7 @@ sequenceDiagram
 
 > [!NOTE] 왜 이렇게 짰는가?
 > - **Dry Run 자동 실행**: Agent가 규칙을 적용하기 전에 시뮬레이션을 돌려 예상 차단 건수를 계산합니다. 너무 많은 로그가 차단될 것으로 예상되면 Provider에 경고를 보냅니다.
-> - **DCR 직접 제어**: Agent가 고객사 DCR에 MSI 인증으로 접근하여 필터 규칙을 적용합니다.
+> - **DCR 직접 제어**: Agent가 고객사 DCR에 Managed Identity 인증으로 접근하여 필터 규칙을 적용합니다.
 
 ---
 
@@ -867,7 +867,7 @@ stateDiagram-v2
 
 > [!CAUTION] #todo - Section 4: Filter 미결 사항
 > **DCR 제어 방식**
-> - [ ] Azure DCR API를 통해 Agent가 필터 규칙을 동적으로 추가/수정/삭제할 수 있는가? DCR 수정에 필요한 MSI 권한 범위 확인 필요 (Monitoring Contributor 이상 필요)
+> - [ ] Azure DCR API를 통해 Agent가 필터 규칙을 동적으로 추가/수정/삭제할 수 있는가? DCR 수정에 필요한 Managed Identity 권한 범위 확인 필요 (Monitoring Contributor 이상 필요)
 > - [ ] DCR에서 지원하는 필터 표현식의 한계는? (KQL 서브셋만 지원, 복잡한 정규식 불가 등) 현재 플로우가 DCR 기능 범위 내에서 가능한지 검증 필요
 > - [ ] DCR이 없는 고객사(기존에 Diagnostic Settings만 사용)는 어떻게 처리하는가? Agent가 DCR을 새로 생성하는가?
 >
@@ -913,8 +913,8 @@ graph TB
         LAW["Log Analytics Workspace"]
     end
 
-    Agent -->|Step1 로그 샘플 수집 - MSI| LAW
-    Agent -->|Step2 분류 요청 - MSI| AOAI
+    Agent -->|Step1 로그 샘플 수집 - Managed Identity| LAW
+    Agent -->|Step2 분류 요청 - Managed Identity| AOAI
     AOAI -->|분류 결과 반환| Agent
     Agent -->|Step3 Suggestion 전송 - 원본 로그 X| PB
     PB -->|Suggestion 저장 - status pending| CosmosDB
@@ -976,7 +976,7 @@ sequenceDiagram
     participant Admin as 운영자
 
     Agent->>Agent: LAW에서 로그 샘플 100건 수집
-    Agent->>AOAI: 로그 분류 요청 (MSI 인증)
+    Agent->>AOAI: 로그 분류 요청 (Managed Identity 인증)
     AOAI-->>Agent: 분류 결과 반환
 
     loop For each classification
@@ -1164,8 +1164,8 @@ graph TB
 
     Agent -->|Step1 변경 전 상태 스냅샷| PB
     PB -->|스냅샷 저장| CosmosDB
-    Agent -->|Step2 변경 적용 - MSI| LAW
-    Agent -->|Step2 변경 적용 - MSI| DCR
+    Agent -->|Step2 변경 적용 - Managed Identity| LAW
+    Agent -->|Step2 변경 적용 - Managed Identity| DCR
     Agent -->|Step3 변경 완료 리포트| PB
 
     Teams -->|변경 이력 조회| PB
@@ -1196,13 +1196,13 @@ sequenceDiagram
     participant Admin as 운영자
 
     Note over Agent, LAW: 정상 변경 흐름
-    Agent->>LAW: 현재 설정값 조회 (MSI)
+    Agent->>LAW: 현재 설정값 조회 (Managed Identity)
     LAW-->>Agent: 현재 상태 반환
 
     Agent->>PB: POST /snapshots - beforeState 전송
     PB->>DB: ConfigSnapshot 저장 (beforeState)
 
-    Agent->>LAW: 새 설정 적용 (MSI)
+    Agent->>LAW: 새 설정 적용 (Managed Identity)
     LAW-->>Agent: 적용 완료
 
     Agent->>PB: PATCH /snapshots/id - afterState 업데이트
@@ -1218,7 +1218,7 @@ sequenceDiagram
 
     PB->>DB: beforeState 조회
     PB->>Agent: QueueTrigger - 원복 지시 + beforeState
-    Agent->>LAW: beforeState 설정 적용 (MSI)
+    Agent->>LAW: beforeState 설정 적용 (Managed Identity)
     LAW-->>Agent: 복원 완료
 
     Agent->>PB: 원복 완료 리포트
@@ -1357,5 +1357,5 @@ graph LR
 | Provider 역할 | 정책 관리 + 리포트 수신 | 규칙 관리 + 알림 발송 | 패턴 관리 + 인시던트 관리 | 규칙 관리 + 통계 수집 | Suggestion 저장 + 정책 반영 | 스냅샷 관리 + 원복 지시 |
 | Teams 역할 | 리포트 조회 | 위반 알림 수신 | 인시던트 대응 | 필터 설정 + 효과 확인 | Suggestion 승인/거부/수정 | 변경 이력 조회 + 원복 클릭 |
 | 우선순위 | 1순위 | 2순위 | 3순위 | 4순위 | 점진적 도입 | 모든 엔진 공통 |
-| 인증 방식 | Agent MSI | Agent MSI | Agent MSI | Agent MSI | Agent MSI | Agent MSI |
+| 인증 방식 | Agent Managed Identity | Agent Managed Identity | Agent Managed Identity | Agent Managed Identity | Agent Managed Identity | Agent Managed Identity |
 
