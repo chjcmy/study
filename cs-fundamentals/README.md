@@ -14,7 +14,8 @@ cs-fundamentals/
 ├── sync-async/             ← 동기/비동기 + 이벤트 루프
 ├── design-patterns/        ← 디자인 패턴 (Repository, DI, 등)
 ├── auth-security/          ← 인증/보안 (OAuth, JWT, HTTPS)
-└── database/               ← 데이터베이스 (SQL vs NoSQL, 인덱스, 트랜잭션)
+├── database/               ← 데이터베이스 (SQL vs NoSQL, 인덱스, 트랜잭션)
+└── logging/                ← 로깅 (로그 종류, 보안 로그, 구조화된 로깅)
 ```
 
 ---
@@ -44,3 +45,4 @@ Log-Doctor 프로젝트의 모든 기술이 CS 기초 위에 있습니다:
 | 4 | 디자인 패턴 | [design-patterns/](./design-patterns/README.md) | Repository, DI, SOLID, Factory, Observer |
 | 5 | 인증/보안 | [auth-security/](./auth-security/README.md) | OAuth 2.0, JWT, HTTPS, CORS, CSRF |
 | 6 | 데이터베이스 | [database/](./database/README.md) | SQL vs NoSQL, 인덱스, 트랜잭션, CAP 정리 |
+| 7 | 로깅 | [logging/](./logging/README.md) | 로그 종류, 구조화된 로깅, 보안 로그 보존, SIEM |
