@@ -1,4 +1,4 @@
-# Log Doctor: 화이트보드 아키텍처 다이어그램
+# Log Doctor: 온보딩 아키텍처
 
 > [!NOTE] 원본
 > 이 문서는 화이트보드 회의 내용을 Mermaid 다이어그램으로 정리한 것입니다.
@@ -50,10 +50,10 @@ graph TB
     Provider -->|"⑥ 구독 목록 조회"| ARM
     ARM --> SubList
 
-    ClientFn -->|"handshake + 등록"| Provider
-    Provider -->|"정책 배포"| ClientFn
-    ClientFn -->|"로그 분석"| LAW
-    ClientFn --> CustomerRes
+    ClientFn -->|"⑩ handshake + 등록"| Provider
+    Provider -->|"⑪ 정책 배포"| ClientFn
+    ClientFn -->|"⑫ 로그 분석"| LAW
+    ClientFn -->|"⑬ 리소스 분석"| CustomerRes
 ```
 
 ---
