@@ -9,10 +9,10 @@ Azure Monitor의 로그 데이터를 **중앙에서 수집/저장/분석**하는
 ```
 Azure 리소스들                Log Analytics Workspace           분석
 ├── Container App      →    ┌─────────────────────────┐     ├── KQL 쿼리
-├── Function App       →    │  로그 저장소 (테이블)      │  →  ├── 대시보드
+├── Function App       →    │  로그 저장소 (테이블)       │  →  ├── 대시보드
 ├── Key Vault          →    │  ├── ContainerAppLogs    │     ├── 알림 규칙
 ├── Cosmos DB          →    │  ├── FunctionAppLogs     │     └── Workbook
-└── 진단 설정          →    │  └── AzureActivity       │
+└── 진단 설정            →    │  └── AzureActivity       │
                             └─────────────────────────┘
 ```
 
