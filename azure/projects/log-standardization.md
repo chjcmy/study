@@ -73,12 +73,13 @@
 
 어떤 레이어의 로그를 어떤 엔진이 주로 담당하는지 정의합니다.
 
-| 레이어 | 대표 테이블 | Retain | Prevent | Detect | Filter |
-| --- | --- | :---: | :---: | :---: | :---: |
-| **인프라** | AzureActivity, AzureMetrics | ✅ 보존 기간 관리 | - | ✅ 리소스 변조 탐지 | 🟡 메트릭 샘플링 |
-| **런타임** | ContainerAppConsoleLogs, FunctionAppLogs | ✅ 보존 기간 관리 | ✅ Debug 레벨 감지 | - | ✅ 반복 로그 필터 |
-| **애플리케이션** | AppTraces, AppExceptions | ✅ 등급별 보존 | ✅ 레벨/빈도 감지 | - | ✅ 노이즈 제거 |
-| **보안** | SigninLogs, AuditLogs | ✅ 필수 장기 보존 | - | ✅ 공격 패턴 탐지 | ❌ 절대 필터 금지 |
+| 레이어        | 대표 테이블                                   |   Retain   |    Prevent    |   Detect    |   Filter   |
+| ---------- | ---------------------------------------- | :--------: | :-----------: | :---------: | :--------: |
+| **인프라**    | AzureActivity, AzureMetrics              | ✅ 보존 기간 관리 |       -       | ✅ 리소스 변조 탐지 | 🟡 메트릭 샘플링 |
+| **런타임**    | ContainerAppConsoleLogs, FunctionAppLogs | ✅ 보존 기간 관리 | ✅ Debug 레벨 감지 |      -      | ✅ 반복 로그 필터 |
+| **애플리케이션** | AppTraces, AppExceptions                 |  ✅ 등급별 보존  |  ✅ 레벨/빈도 감지   |      -      |  ✅ 노이즈 제거  |
+| **보안**     | SigninLogs, AuditLogs                    | ✅ 필수 장기 보존 |       -       | ✅ 공격 패턴 탐지  | ❌ 절대 필터 금지 |
+|            |                                          |            |               |             |            |
 
 > [!IMPORTANT] 핵심 규칙
 > **보안 레이어(Layer 4)의 로그는 어떤 엔진도 삭제하거나 필터링해서는 안 됩니다.**
