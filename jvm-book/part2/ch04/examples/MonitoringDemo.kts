@@ -71,5 +71,90 @@ val arrays  = (1..10_000).map  { IntArray(100) }
 println("[Histogram] String ${strings.size}개, IntArray ${arrays.size}개 생성")
 println("[Histogram] jmap -histo:live $pid | grep 'String\\|int\\[' 로 확인")
 
+// ── 5. jstat 열 의미 실증 (MemoryMXBean) ─────────────────────────
+println("\n=== 5. jstat 열 의미 — MemoryMXBean으로 실증 ===")
+
+import java.lang.management.ManagementFactory
+import java.lang.management.MemoryType
+
+val memBeans = ManagementFactory.getMemoryPoolMXBeans()
+println("[jstat] 현재 JVM 메모리 풀 상태:")
+println("  ${"풀 이름".padEnd(30)} ${"타입".padEnd(8)} ${"사용".padEnd(10)} ${"최대"}")
+println("  " + "─".repeat(65))
+memBeans.forEach { pool ->
+    val used = pool.usage.used / 1024
+    val max  = if (pool.usage.max > 0) "${pool.usage.max / 1024}KB" else "-"
+    val type = if (pool.type == MemoryType.HEAP) "HEAP" else "NON-HEAP"
+    println("  ${pool.name.padEnd(30)} ${type.padEnd(8)} ${used}KB".padEnd(50) + max)
+}
+
+println("""
+[jstat] jstat -gcutil <pid> 1000 열 의미:
+  S0   : Survivor 0 사용률(%) — 현재 From/To 중 사용 중인 쪽
+  S1   : Survivor 1 사용률(%)
+  E    : Eden 사용률(%) — 빠르게 오르면 새 객체 할당 많음
+  O    : Old Gen 사용률(%) — 천천히 오르다가 Full GC에서 급감
+  M    : Metaspace 사용률(%) — ByteBuddy 클래스 생성 시 증가
+  CCS  : Compressed Class Space 사용률(%)
+  YGC  : Young GC 누적 횟수
+  YGCT : Young GC 누적 시간(초) — YGC/YGCT = 평균 STW
+  FGC  : Full GC 누적 횟수 — 높으면 위험 신호
+  FGCT : Full GC 누적 시간(초)
+  GCT  : 전체 GC 시간 합계
+
+[jstat] log-friends 모니터링 포인트:
+  E(Eden) 증가 속도: AgentEvent 생성 빈도와 비례
+  M(Metaspace) 증가: ByteBuddy 변환 클래스 수 증가
+  FGC > 0 지속 증가: 메모리 누수 또는 힙 부족 신호
+""".trimIndent())
+
+// ── 6. 스레드 덤프 분석 — ThreadMXBean ───────────────────────────
+println("\n=== 6. 스레드 덤프 분석 ===")
+
+val threadBean = ManagementFactory.getThreadMXBean()
+
+// 데드락 감지
+val deadlocked = threadBean.findDeadlockedThreads()
+if (deadlocked != null && deadlocked.isNotEmpty()) {
+    println("[jstack] 데드락 감지! 스레드 IDs: ${deadlocked.toList()}")
+    threadBean.getThreadInfo(deadlocked).forEach { info ->
+        println("[jstack] ${info.threadName} — ${info.threadState}")
+        println("[jstack]   대기 중인 락: ${info.lockName}")
+        println("[jstack]   락 보유자: ${info.lockOwnerName}")
+    }
+} else {
+    println("[jstack] 데드락 없음 (데드락 스레드는 위에서 이미 생성됨)")
+}
+
+// 스레드 상태별 분류
+println("\n[jstack] 스레드 상태별 분류:")
+val threadInfos = threadBean.getThreadInfo(threadBean.allThreadIds, 0)
+val byState = threadInfos.groupBy { it?.threadState }
+byState.entries.sortedBy { it.key?.ordinal ?: 99 }.forEach { (state, threads) ->
+    if (state != null) {
+        val names = threads.mapNotNull { it?.threadName }.take(3)
+        println("  $state (${threads.size}개): ${names.joinToString()} ${if (threads.size > 3) "..." else ""}")
+    }
+}
+
+println("""
+[jstack] jstack 사용법:
+  jstack <pid>          기본 스레드 덤프
+  jstack -l <pid>       락 정보 포함 (데드락 분석용)
+  jstack -F <pid>       응답 없는 프로세스 강제 덤프
+
+  스레드 상태 의미:
+    RUNNABLE     : CPU 실행 중 (I/O 대기도 포함)
+    BLOCKED      : synchronized 락 대기 (데드락 가능성)
+    WAITING      : Object.wait(), join(), LockSupport.park()
+    TIMED_WAITING: sleep(), wait(timeout), parkNanos()
+    TERMINATED   : 종료됨
+
+  log-friends 확인 포인트:
+    "log-friends-batch-flush" 스레드 — TIMED_WAITING이 정상
+    (ScheduledExecutorService.scheduleAtFixedRate 대기 중)
+    BLOCKED 상태이면 flush()의 synchronized 블록에서 경쟁 발생 신호
+""".trimIndent())
+
 println("\n앱 실행 중 — Ctrl+C 로 종료")
 Thread.currentThread().join()
