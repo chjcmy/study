@@ -102,3 +102,92 @@ Instrumentation 접근 방법:
     VirtualMachine.attach(pid).loadAgent("agent.jar")
     → -Djdk.attach.allowAttachSelf=true 필요
 """.trimIndent())
+
+// ── 6. JDK Proxy vs CGLIB vs ByteBuddy 비교 ──────────────────────
+println("\n=== 6. JDK Proxy vs CGLIB vs ByteBuddy ===")
+
+// JDK 동적 프록시: 인터페이스만 가능
+import java.lang.reflect.Proxy
+
+interface Greeter { fun greet(name: String): String }
+
+val jdkProxy = Proxy.newProxyInstance(
+    Greeter::class.java.classLoader,
+    arrayOf(Greeter::class.java)
+) { _, method, args -> "JDK Proxy: Hello, ${args?.get(0)}" } as Greeter
+
+println("[JDKProxy] ${jdkProxy.greet("World")}")
+println("[JDKProxy] 프록시 클래스명: ${jdkProxy.javaClass.name}")   // $Proxy0 형태
+println("[JDKProxy] 인터페이스 구현 여부: ${jdkProxy is Greeter}")
+
+println("""
+[Proxy 비교]
+  JDK Proxy:
+    - Proxy.newProxyInstance() — 인터페이스만 가능
+    - 런타임에 $Proxy0, $Proxy1 ... 클래스 생성
+    - InvocationHandler.invoke()로 모든 호출 위임
+    - Spring AOP가 인터페이스 있을 때 기본 사용
+
+  CGLIB (ASM 기반):
+    - Enhancer.create() — 클래스도 프록시 가능 (서브클래싱)
+    - final 클래스/메서드는 불가 (상속 기반이므로)
+    - Spring AOP가 인터페이스 없을 때 기본 사용
+    - MethodInterceptor.intercept()로 호출 위임
+
+  ByteBuddy Agent (log-friends 방식):
+    - Instrumentation.retransformClasses() — 기존 클래스 자체를 수정
+    - 새 클래스 생성 없음 → 코드 수정 없이 투명 계측 가능
+    - final 클래스/메서드도 계측 가능
+    - JDK Proxy/CGLIB: 새 클래스 → 호출자가 프록시 참조 필요
+    - ByteBuddy Agent: 원본 클래스 수정 → 기존 모든 참조에 적용
+
+  log-friends가 ByteBuddy Agent를 선택한 이유:
+    "코드 수정 없이" = 기존 Spring 코드의 참조 변경 없이 계측
+    → JDK Proxy/CGLIB는 참조를 바꿔야 하므로 "코드 수정 없이" 불가
+""".trimIndent())
+
+// ── 7. RETRANSFORMATION vs 기본 전략 ─────────────────────────────
+println("\n=== 7. RETRANSFORMATION vs 기본 전략 ===")
+
+// 현재 JVM에 로딩된 클래스 중 Spring 관련 확인
+val loadedPackages = Package.getPackages()
+    .map { it.name }
+    .filter { it.startsWith("org.springframework") || it.startsWith("javax.servlet") }
+    .take(5)
+
+println("[RETRANSFORM] 현재 로딩된 Spring/Servlet 패키지 (상위 5개):")
+if (loadedPackages.isEmpty()) {
+    println("  (스크립트 환경 — Spring 미로드)")
+} else {
+    loadedPackages.forEach { println("  $it") }
+}
+
+println("""
+[RETRANSFORM] 세 가지 Agent 전략 비교:
+  기본 전략 (없음):
+    - ClassFileTransformer를 등록하면 이후 로딩되는 클래스만 변환
+    - 이미 로딩된 클래스에는 적용 안 됨
+    - log-friends에서 불충분한 이유:
+      DispatcherServlet은 Spring Boot 초기화 시 이미 로딩됨
+
+  REDEFINITION:
+    - 이미 로딩된 클래스를 완전히 새로운 바이트코드로 교체
+    - 메서드 본문만 교체 가능 (필드/메서드 추가/삭제 불가)
+    - ClassFileTransformer 없이 직접 Instrumentation.redefineClasses() 호출
+
+  RETRANSFORMATION (log-friends 선택):
+    - 이미 로딩된 클래스를 ClassFileTransformer를 통해 재변환
+    - Instrumentation.retransformClasses(clazz) → transformer 재호출
+    - 왜 더 좋은가: ByteBuddy의 기존 transform 파이프라인 재사용 가능
+    - EnvironmentPostProcessor 시점에 transformer 등록 후
+      → retransformClasses로 이미 로딩된 DispatcherServlet 즉시 계측
+
+  실행 시점 타이밍:
+    EnvironmentPostProcessor (log-friends 실행)
+      ↓ 아직 대부분 미로딩
+    SpringApplication.run() → 빈 초기화
+      ↓ DispatcherServlet 로딩됨 (이미 transformer 등록 → 자동 계측)
+    ApplicationReadyEvent
+      ↓ 모든 계측 완료
+    HTTP 요청 처리 시작
+""".trimIndent())
