@@ -64,8 +64,44 @@ println("""
     → 내부적으로 클래스 필드로 컴파일 → 힙에 저장
 """.trimIndent())
 
-// ── 5. Heap OOM (주석 해제 후 실행, JVM 종료됨) ───────────────────
-// println("\n=== 4. Heap OOM ===")
+// ── 5. OOM 줄이기 — 3가지 패턴 ──────────────────────────────────
+println("\n=== 5. OOM 줄이기 ===")
+
+// ① 스트리밍: 전부 모으지 말고 하나씩 처리 후 버리기
+println("[Stream] 스트리밍 처리 — 10만 건을 메모리에 안 쌓고 합산")
+val streamSum = (1..100_000).asSequence()
+    .map { it * 2 }
+    .filter { it % 3 == 0 }
+    .sum()
+println("[Stream] 결과=$streamSum (List로 중간 수집 없음)")
+
+// ② 크기 제한 큐: 오래된 것 자동 제거
+println("\n[BoundedQueue] 크기 제한 — 최대 5개 유지")
+val bounded = ArrayDeque<String>()
+val maxSize = 5
+repeat(10) { i ->
+    if (bounded.size >= maxSize) bounded.removeFirst()
+    bounded.addLast("item-$i")
+}
+println("[BoundedQueue] 10개 추가 후 보관 중인 항목: $bounded")
+
+// ③ SoftReference: 메모리 부족 시 GC가 자동 수거
+println("\n[SoftRef] SoftReference — 메모리 부족 시 자동 해제")
+val softRefs = (1..5).map { java.lang.ref.SoftReference(ByteArray(1024) { it.toByte() }) }
+System.gc()
+val alive = softRefs.count { it.get() != null }
+println("[SoftRef] GC 후 살아있는 참조: $alive / ${softRefs.size} (메모리 여유 있으면 유지)")
+
+println("""
+[요약] OOM 줄이는 핵심 원칙
+  ① 스트리밍     전부 메모리에 올리지 말고 Sequence/Stream으로 하나씩 처리
+  ② 크기 제한    컬렉션에 상한선 설정, 넘으면 오래된 것 제거
+  ③ SoftReference  캐시 용도 — 메모리 부족하면 GC가 자동 수거
+  ④ WeakReference  키 참조 없으면 자동 제거 (WeakHashMap)
+""".trimIndent())
+
+// ── 6. Heap OOM (주석 해제 후 실행, JVM 종료됨) ───────────────────
+// println("\n=== 6. Heap OOM ===")
 // val list = mutableListOf<ByteArray>()
 // var allocated = 0L
 // try {
