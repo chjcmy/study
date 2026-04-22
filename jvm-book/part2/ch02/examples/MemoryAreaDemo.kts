@@ -35,7 +35,36 @@ val perObject = (after - before) / objects.size
 println("[Header] 빈 객체 1개당 약 ${perObject}B (헤더 포함)")
 println("[Header] 이론값: Mark Word 8B + 클래스 포인터 4B(압축) = 최소 12B, 패딩 후 16B")
 
-// ── 4. Heap OOM (주석 해제 후 실행, JVM 종료됨) ───────────────────
+// ── 4. 스택 vs 힙 — 변수 저장 위치 ──────────────────────────────
+println("\n=== 4. 스택 vs 힙 — 변수 저장 위치 ===")
+
+fun stackVsHeap() {
+    val primitive = 42          // 원시 타입 → 스택에 값 직접 저장
+    val text = "hello"          // 객체 타입 → 스택에 힙 주소(참조), 실제 값은 힙
+    val arr = IntArray(3) { it } // 배열 → 힙에 저장, arr 변수는 스택에 주소만
+
+    println("[Stack] primitive=$primitive  (스택에 값 직접)")
+    println("[Heap]  text 참조: ${System.identityHashCode(text).toString(16)}  (스택은 이 주소만 보관)")
+    println("[Heap]  arr  참조: ${System.identityHashCode(arr).toString(16)}  (배열 본체는 힙)")
+}
+stackVsHeap()
+
+println("""
+[요약]
+  원시 타입 지역 변수 (Int, Long, Double ...)
+    → 스택 프레임에 값 직접 저장
+    → 메서드 종료 시 자동 제거 (GC 불필요)
+
+  객체 타입 지역 변수 (String, Array, 사용자 클래스 ...)
+    → 스택 프레임에 힙 주소(참조)만 저장
+    → 실제 데이터는 힙에 존재
+    → GC가 힙을 정리할 때 수거
+
+  클래스/파일 수준 변수 (var depth = 0 처럼 메서드 밖)
+    → 내부적으로 클래스 필드로 컴파일 → 힙에 저장
+""".trimIndent())
+
+// ── 5. Heap OOM (주석 해제 후 실행, JVM 종료됨) ───────────────────
 // println("\n=== 4. Heap OOM ===")
 // val list = mutableListOf<ByteArray>()
 // var allocated = 0L
