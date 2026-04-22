@@ -328,8 +328,8 @@ graph LR
   VT4["Virtual Thread 4"]
   VT5["Virtual Thread 5"]
   VT6["Virtual Thread 6"]
-  CT1["Carrier Thread 1\n(OS Thread / ForkJoinPool)"]
-  CT2["Carrier Thread 2\n(OS Thread / ForkJoinPool)"]
+  CT1["Carrier Thread 1<br/>(OS Thread / ForkJoinPool)"]
+  CT2["Carrier Thread 2<br/>(OS Thread / ForkJoinPool)"]
   CC0["CPU Core 0"]
   CC1["CPU Core 1"]
 

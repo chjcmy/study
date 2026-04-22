@@ -8,9 +8,9 @@
 graph TD
     subgraph JVMStack["JVM 가상 머신 스택"]
         subgraph CurrentFrame["현재 스택 프레임 (Current Frame) ← 실행 중인 메서드"]
-            LVT["지역 변수 테이블 (Local Variable Table)\n[0] this\n[1] arg1\n[2] arg2\n[3] localVar"]
-            OS["피연산자 스택 (Operand Stack)\nval ← top\nval"]
-            DL["동적 링크 (Dynamic Link)\n→ 런타임 상수 풀 참조"]
+            LVT["지역 변수 테이블 (Local Variable Table)<br/>[0] this<br/>[1] arg1<br/>[2] arg2<br/>[3] localVar"]
+            OS["피연산자 스택 (Operand Stack)<br/>val ← top<br/>val"]
+            DL["동적 링크 (Dynamic Link)<br/>→ 런타임 상수 풀 참조"]
             RA["반환 주소 (Return Address)"]
             LVT --> OS --> DL --> RA
         end
@@ -187,10 +187,10 @@ mh.invoke(System.out, "Hello via MethodHandle");
 
 ```mermaid
 flowchart TD
-    Invoke["invokedynamic #X\n(Bootstrap Method 호출)"]
-    Bootstrap["Bootstrap Method 실행\n(최초 1회만)"]
-    CallSite["CallSite 반환\n(MethodHandle을 담고 있음)"]
-    Direct["이후 호출: CallSite의 MethodHandle을 직접 실행\n(Bootstrap 재실행 없음)"]
+    Invoke["invokedynamic #X<br/>(Bootstrap Method 호출)"]
+    Bootstrap["Bootstrap Method 실행<br/>(최초 1회만)"]
+    CallSite["CallSite 반환<br/>(MethodHandle을 담고 있음)"]
+    Direct["이후 호출: CallSite의 MethodHandle을 직접 실행<br/>(Bootstrap 재실행 없음)"]
 
     Invoke --> Bootstrap
     Bootstrap --> CallSite

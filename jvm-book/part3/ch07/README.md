@@ -35,16 +35,16 @@ System.out.println(Const.NAME);   // Const 초기화 안 됨 (상수 풀에 직�
 
 ```mermaid
 flowchart LR
-    Loading["Loading\n(로딩)"]
+    Loading["Loading<br/>(로딩)"]
     subgraph LinkingGroup["Linking (링킹)"]
-        Verification["Verification\n(검증)"]
-        Preparation["Preparation\n(준비)"]
-        Resolution["Resolution\n(해석)"]
+        Verification["Verification<br/>(검증)"]
+        Preparation["Preparation<br/>(준비)"]
+        Resolution["Resolution<br/>(해석)"]
         Verification --> Preparation --> Resolution
     end
-    Initialization["Initialization\n(초기화)"]
-    Using["Using\n(사용)"]
-    Unloading["Unloading\n(언로딩)"]
+    Initialization["Initialization<br/>(초기화)"]
+    Using["Using<br/>(사용)"]
+    Unloading["Unloading<br/>(언로딩)"]
 
     Loading --> Verification
     Resolution --> Initialization
@@ -123,10 +123,10 @@ class Example {
 
 ```mermaid
 graph TD
-    Bootstrap["Bootstrap ClassLoader\n(rt.jar, java.base)\nC++ 구현 — null 반환"]
-    Platform["Platform ClassLoader\n(java.sql, java.xml)\nJava 9+: ExtClassLoader 대체"]
-    Application["Application ClassLoader\n(사용자 코드)\nclasspath의 클래스"]
-    Custom["Custom ClassLoader\n(특수 로딩 로직)\n사용자 정의"]
+    Bootstrap["Bootstrap ClassLoader<br/>(rt.jar, java.base)<br/>C++ 구현 — null 반환"]
+    Platform["Platform ClassLoader<br/>(java.sql, java.xml)<br/>Java 9+: ExtClassLoader 대체"]
+    Application["Application ClassLoader<br/>(사용자 코드)<br/>classpath의 클래스"]
+    Custom["Custom ClassLoader<br/>(특수 로딩 로직)<br/>사용자 정의"]
 
     Bootstrap -->|위임| Platform
     Platform -->|위임| Application
@@ -188,8 +188,8 @@ protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundE
 
 ```mermaid
 graph LR
-    BootstrapCL["Bootstrap CL\n(java.sql.Driver 인터페이스)"]
-    ApplicationCL["Application CL\n(MySQL Driver 구현)"]
+    BootstrapCL["Bootstrap CL<br/>(java.sql.Driver 인터페이스)"]
+    ApplicationCL["Application CL<br/>(MySQL Driver 구현)"]
 
     BootstrapCL -. "부모가 자식의 클래스를 볼 수 없다!" .-> ApplicationCL
 ```

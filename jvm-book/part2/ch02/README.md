@@ -63,15 +63,15 @@ JDK 8+:      Metaspace (네이티브 메모리)
 ```mermaid
 graph TD
     NEW["new MyObject()"]
-    STEP1["1. 클래스 로딩 체크\nconstant pool 클래스 심볼릭 참조 확인\n로드 안 됐으면 클래스 로딩 수행"]
-    STEP2["2. 메모리 할당\n객체 크기 계산 (컴파일 시 결정)"]
-    BUMP["포인터 범핑\n힙이 규칙적일 때 (컴팩트 GC)\n포인터를 객체 크기만큼 이동"]
-    FREELIST["프리 리스트\n힙이 불규칙적일 때\n빈 공간 목록에서 적합한 블록 선택"]
+    STEP1["① 클래스 로딩 체크<br/>constant pool 클래스 심볼릭 참조 확인<br/>로드 안 됐으면 클래스 로딩 수행"]
+    STEP2["② 메모리 할당<br/>객체 크기 계산 (컴파일 시 결정)"]
+    BUMP["포인터 범핑<br/>힙이 규칙적일 때 (컴팩트 GC)<br/>포인터를 객체 크기만큼 이동"]
+    FREELIST["프리 리스트<br/>힙이 불규칙적일 때<br/>빈 공간 목록에서 적합한 블록 선택"]
     CAS["동시성 보장: CAS + 실패 재시도"]
-    TLAB["동시성 보장: TLAB\nThread-Local Allocation Buffer\n스레드별 전용 할당 영역"]
-    STEP3["3. 메모리 초기화 Zero-fill\n인스턴스 필드를 기본값으로\nTLAB 사용 시 할당과 동시에"]
-    STEP4["4. 객체 헤더 설정\nMark Word / 클래스 포인터\n배열이면 배열 길이 추가"]
-    STEP5["5. init 호출\n생성자 실행\n비로소 사용 가능한 객체"]
+    TLAB["동시성 보장: TLAB<br/>Thread-Local Allocation Buffer<br/>스레드별 전용 할당 영역"]
+    STEP3["③ 메모리 초기화 Zero-fill<br/>인스턴스 필드를 기본값으로<br/>TLAB 사용 시 할당과 동시에"]
+    STEP4["④ 객체 헤더 설정<br/>Mark Word / 클래스 포인터<br/>배열이면 배열 길이 추가"]
+    STEP5["⑤ init 호출<br/>생성자 실행<br/>비로소 사용 가능한 객체"]
 
     NEW --> STEP1
     STEP1 --> STEP2
@@ -118,7 +118,7 @@ graph LR
     end
 
     subgraph DIRECT["직접 포인터 방식 (HotSpot)"]
-        DS["스택"] -->|참조| DI["인스턴스 데이터\n헤더에 타입 포인터 포함"]
+        DS["스택"] -->|참조| DI["인스턴스 데이터<br/>헤더에 타입 포인터 포함"]
     end
 ```
 

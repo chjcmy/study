@@ -71,13 +71,13 @@ public void processLargeArray(int[] data) {
 
 ```mermaid
 graph LR
-  BC[바이트코드] --> HIR["HIR\n(High-level IR)"]
-  HIR --> LIR["LIR\n(Low-level IR)"]
+  BC[바이트코드] --> HIR["HIR<br/>(High-level IR)"]
+  HIR --> LIR["LIR<br/>(Low-level IR)"]
   LIR --> REG[레지스터 할당]
   REG --> NAT[네이티브 코드]
 
-  HIR --- OPT1["최적화\n• 인라인\n• 상수 전파\n• 탈출 분석\n• 루프 최적화"]
-  LIR --- OPT2["최적화\n• 피프홀 최적화\n• 명령어 스케줄링"]
+  HIR --- OPT1["최적화<br/>• 인라인<br/>• 상수 전파<br/>• 탈출 분석<br/>• 루프 최적화"]
+  LIR --- OPT2["최적화<br/>• 피프홀 최적화<br/>• 명령어 스케줄링"]
 ```
 
 #### 실전: JIT 컴파일 결과 확인

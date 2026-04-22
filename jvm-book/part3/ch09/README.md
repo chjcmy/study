@@ -10,13 +10,13 @@
 graph TD
     Bootstrap["Bootstrap"]
     System["System (JRE)"]
-    Common["Common ClassLoader\n(server/lib + shared/lib)"]
-    Catalina["Catalina CL\n(서버 내부)"]
+    Common["Common ClassLoader<br/>(server/lib + shared/lib)"]
+    Catalina["Catalina CL<br/>(서버 내부)"]
     Shared["Shared ClassLoader"]
-    WebApp1["WebApp CL #1\n(앱 간 격리)"]
-    WebApp2["WebApp CL #2\n(앱 간 격리)"]
-    JSP1["JSP CL #1\n(JSP 핫 리로드)"]
-    JSP2["JSP CL #2\n(JSP 핫 리로드)"]
+    WebApp1["WebApp CL #1<br/>(앱 간 격리)"]
+    WebApp2["WebApp CL #2<br/>(앱 간 격리)"]
+    JSP1["JSP CL #1<br/>(JSP 핫 리로드)"]
+    JSP2["JSP CL #2<br/>(JSP 핫 리로드)"]
 
     Bootstrap --> System
     System --> Common
@@ -229,7 +229,7 @@ public class ClassLoaderInspector {
         System.out.println("Bootstrap ClassLoader (null)");
 
         // log-friends SDK의 클래스 로더 확인
-        System.out.println("\n=== Log Friends Classes ===");
+        System.out.println("<br/>=== Log Friends Classes ===");
         System.out.println("LogFriendsInstaller: " +
             LogFriendsInstaller.class.getClassLoader());
         System.out.println("SpringInterceptor: " +
