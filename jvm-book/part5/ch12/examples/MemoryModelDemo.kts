@@ -114,3 +114,118 @@ println("""
 val atomicLong = AtomicLong(100L)
 println("[Long] CAS(100→200): ${atomicLong.compareAndSet(100L, 200L)}, 현재: ${atomicLong.get()}")
 println("[Long] CAS(100→300): ${atomicLong.compareAndSet(100L, 300L)}, 현재: ${atomicLong.get()}")
+
+// ── 6. JMM 8가지 연산 & MESI 시뮬레이션 ────────────────────────────
+println("\n=== 6. JMM 8가지 연산 & MESI 프로토콜 ===")
+
+println("""
+[JMM] 메인 메모리 ↔ 작업 메모리 8가지 연산:
+  lock    : 메인 메모리 변수를 특정 스레드 전용으로 잠금
+  unlock  : lock 해제 (타 스레드 접근 가능)
+  read    : 메인 메모리 → 전송 시작 (load와 쌍)
+  load    : 작업 메모리에 값 적재 (read의 완료)
+  use     : 작업 메모리 값 → 실행 엔진에 전달 (읽기 연산마다)
+  assign  : 실행 엔진 결과 → 작업 메모리에 저장 (쓰기 연산마다)
+  store   : 작업 메모리 → 전송 시작 (write와 쌍)
+  write   : 메인 메모리에 값 반영 (store의 완료)
+
+[JMM] volatile 쓰기 순서:
+  assign → store → write  (즉시 메인 메모리 반영 강제)
+  + 다른 스레드의 해당 변수 작업 메모리 무효화 (MESI Invalid)
+
+[MESI] 캐시 라인 상태:
+  Modified  : 이 캐시에서만 수정됨, 메인 메모리 불일치
+  Exclusive : 이 캐시만 보유, 메인 메모리 일치
+  Shared    : 여러 캐시가 보유, 일치
+  Invalid   : 무효화됨 → 다음 읽기 시 메인 메모리에서 로드
+""".trimIndent())
+
+// MESI "Shared → Modified → Invalid" 시퀀스 시뮬레이션
+class MesiCache(val name: String) {
+    enum class State { MODIFIED, EXCLUSIVE, SHARED, INVALID }
+    var state = State.SHARED; var value = 0
+    fun write(v: Int) { value = v; state = State.MODIFIED }
+    fun invalidate() { state = State.INVALID }
+    fun loadFromMain(v: Int) { value = v; state = State.SHARED }
+    override fun toString() = "$name: state=${state.name}, value=$value"
+}
+
+val cacheA = MesiCache("Core0-L1"); cacheA.loadFromMain(10)
+val cacheB = MesiCache("Core1-L1"); cacheB.loadFromMain(10)
+println("[MESI] 초기 (둘 다 Shared, value=10):")
+println("  $cacheA"); println("  $cacheB")
+
+// Core0이 value를 20으로 쓰기 → Core1 캐시 무효화
+cacheA.write(20); cacheB.invalidate()
+println("[MESI] Core0 쓰기 후 (Core1 Invalid):")
+println("  $cacheA"); println("  $cacheB")
+
+// Core1이 읽기 → 메인 메모리(=20)에서 재로드
+cacheB.loadFromMain(20)
+println("[MESI] Core1 재로드 후 (가시성 보장):")
+println("  $cacheA"); println("  $cacheB")
+
+// volatile이 하는 일: write → 즉시 스토어 버퍼 플러시 + 타 코어 캐시 Invalid
+println("[MESI] volatile 쓰기 = lock 접두사 → 스토어 버퍼 flush + 캐시 Invalid 전파")
+
+// ── 7. 명령어 재배열 방지 & 스레드 상태 전이 ────────────────────────
+println("\n=== 7. 명령어 재배열 방지 & 스레드 상태 전이 ===")
+
+println("""
+[Reorder] volatile 없는 DCL의 위험:
+  instance = new Singleton() 는 3단계:
+    ① 메모리 할당 (alloc)
+    ② 생성자 실행 (init)
+    ③ instance 참조 할당 (assign)
+  JIT/CPU가 ②③ 재배열 가능 → 다른 스레드가 null 아닌 미초기화 객체를 볼 수 있음
+  @Volatile → StoreStore + LoadLoad 배리어 삽입 → ②가 ③보다 반드시 먼저
+""".trimIndent())
+
+// 스레드 상태 6가지 실증
+println("[ThreadState] JVM 스레드 6가지 상태:")
+
+val stateResults = mutableMapOf<Thread.State, String>()
+
+// NEW
+val newThread = Thread { }
+stateResults[newThread.state] = "newThread (start() 호출 전)"
+
+// RUNNABLE
+val runnable = Thread { var x = 0L; while (x < Long.MAX_VALUE / 10) x++ }.apply { isDaemon = true; start() }
+Thread.sleep(10)
+stateResults[runnable.state] = "runnable (CPU 연산 중)"
+
+// TIMED_WAITING
+val timedWaiting = Thread { Thread.sleep(10_000) }.apply { isDaemon = true; start() }
+Thread.sleep(20)
+stateResults[timedWaiting.state] = "timedWaiting (sleep 중)"
+
+// WAITING
+val mon = Object()
+val waiting = Thread { synchronized(mon) { mon.wait() } }.apply { isDaemon = true; start() }
+Thread.sleep(20)
+stateResults[waiting.state] = "waiting (monitor.wait() 중)"
+
+// BLOCKED
+val blockLock = Any()
+synchronized(blockLock) {
+    val blocked = Thread { synchronized(blockLock) {} }.apply { start() }
+    Thread.sleep(20)
+    stateResults[blocked.state] = "blocked (synchronized 진입 대기)"
+}
+
+stateResults.forEach { (state, desc) ->
+    println("  ${state.name.padEnd(14)} ← $desc")
+}
+
+println("""
+
+[ThreadState] 가상 스레드(JDK 21) 상태 전이:
+  RUNNING → I/O 블로킹 → unmount (스택을 힙에 저장) → carrier thread 해제
+  I/O 완료 → ForkJoinPool이 carrier 재배치 → mount → RUNNING
+  결과: OS 스레드 수백 개로 수만 개의 가상 스레드 처리 가능
+
+[ThreadState] log-friends:
+  "log-friends-batch-flush": TIMED_WAITING 정상 (scheduleAtFixedRate 대기)
+  BLOCKED 지속 → flush() synchronized 블록에서 경쟁 → 배치 크기/간격 조정 필요
+""".trimIndent())
