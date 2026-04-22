@@ -3,3 +3,8 @@
 
 # Obsidian
 .obsidian/
+
+# 컴파일 산출물
+*.class
+*.jar
+META-INF/
