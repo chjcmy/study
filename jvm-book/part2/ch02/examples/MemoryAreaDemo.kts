@@ -217,3 +217,153 @@ println("""
 // val list = mutableListOf<ByteArray>()
 // try { while (true) list.add(ByteArray(1024 * 1024)) }
 // catch (e: OutOfMemoryError) { println("[OOM] 힙 OOM: ${e.message}") }
+
+// ── 10. 객체 생성 5단계 ──────────────────────────────────────────
+println("\n=== 10. 객체 생성 5단계 ===")
+
+// ── 1단계: 클래스 로딩 체크 ──────────────────────────────────────
+println("\n[1단계] 클래스 로딩 체크")
+
+// 커스텀 ClassLoader로 로딩 시점 관찰
+class TracingLoader(parent: ClassLoader) : ClassLoader(parent) {
+    val loaded = mutableListOf<String>()
+    override fun loadClass(name: String, resolve: Boolean): Class<*> {
+        if (!name.startsWith("java") && !name.startsWith("kotlin") && !name.startsWith("org")) {
+            loaded += name
+            println("[ClassLoad] 로딩 요청: $name")
+        }
+        return super.loadClass(name, resolve)
+    }
+}
+
+val tracer = TracingLoader(ClassLoader.getSystemClassLoader())
+// 처음 참조 시점에 로딩 — Class.forName으로 명시적 트리거
+try {
+    val clazz = Class.forName("java.util.LinkedList", true, tracer)
+    println("[ClassLoad] LinkedList 로드 완료: ${clazz.name}")
+} catch (_: Exception) {}
+
+println("""
+[1단계 요약]
+  new 명령 만나면 → Constant Pool에서 클래스 심볼릭 레퍼런스 확인
+  Method Area에 클래스 정보 없으면 → ClassLoader 체인으로 .class 로드
+  이미 로드됐으면 → 이 단계 스킵 (두 번째 new는 1단계 없음)
+""".trimIndent())
+
+// ── 2단계: 메모리 할당 ───────────────────────────────────────────
+println("\n[2단계] 메모리 할당 — Bump-the-pointer vs Free-list")
+
+// Bump-the-pointer 속도 (TLAB + 연속 Eden 공간)
+val bumpCount = 1_000_000
+val bumpStart = System.nanoTime()
+repeat(bumpCount) { Any() }
+val bumpNs = System.nanoTime() - bumpStart
+
+// 큰 객체 — Old Gen 직접 할당 (bump 불가, 느림)
+val largeCount = 1_000
+val largeStart = System.nanoTime()
+repeat(largeCount) { ByteArray(512 * 1024) }  // 512KB × 1000 = 500MB
+val largeNs = System.nanoTime() - largeStart
+
+println("[Alloc] 소형 객체 ${bumpCount}개 TLAB: ${bumpNs / bumpCount}ns/개 (포인터 이동 1번)")
+println("[Alloc] 대형 객체 ${largeCount}개 Old Gen: ${largeNs / largeCount}ns/개 (Free-list 탐색)")
+println("""
+[2단계 요약]
+  Bump-the-pointer  Eden 여유 공간 포인터를 크기만큼 앞으로 이동 (락 없음, ns 단위)
+  Free-list         단편화 영역에서 알맞은 빈 공간 탐색 (CMS GC 시 사용)
+  TLAB              각 스레드가 Eden 일부를 미리 예약 → 스레드 간 충돌 없음
+  대형 객체(>임계값) → Eden 건너뛰고 Old Gen에 직접 할당
+""".trimIndent())
+
+// ── 3단계: 메모리 0 초기화 ───────────────────────────────────────
+println("\n[3단계] 메모리 0 초기화 — 생성자 실행 전 기본값 보장")
+
+class ZeroInitDemo {
+    var intField: Int = 42          // 명시 초기화
+    var nullableField: String? = null
+    var boolField: Boolean = false
+
+    init {
+        // 이 블록 실행 전에 이미 intField=42, nullableField=null, boolField=false 확정
+        println("[ZeroInit] init 블록 진입 시점 — intField=$intField, nullableField=$nullableField")
+    }
+}
+
+val zd = ZeroInitDemo()
+println("[ZeroInit] 생성 후 — intField=${zd.intField}, boolField=${zd.boolField}")
+println("""
+[3단계 요약]
+  할당된 메모리 전체를 0으로 덮어씀 (JVM 보장)
+  덕분에 int=0, boolean=false, Object=null 기본값 보장
+  명시 초기화(intField=42)는 4단계 <init>에서 덮어씀
+  이 단계가 있기에 Java/Kotlin은 미초기화 필드 접근이 안전
+""".trimIndent())
+
+// ── 4단계: 객체 헤더 설정 ────────────────────────────────────────
+println("\n[4단계] 객체 헤더 설정 — Mark Word + 클래스 포인터")
+
+val obj1 = Any()
+val obj2 = Any()
+
+// identityHashCode 호출 → Mark Word에 해시값 기록 트리거
+val hash1 = System.identityHashCode(obj1)
+val hash2 = System.identityHashCode(obj2)
+
+println("[Header] obj1 identity hash: 0x${hash1.toString(16).padStart(8, '0')}")
+println("[Header] obj2 identity hash: 0x${hash2.toString(16).padStart(8, '0')} (다른 객체 → 다른 값)")
+println("[Header] 클래스 포인터 확인 — obj1 클래스: ${obj1.javaClass.name}")
+
+// synchronized 블록 → Mark Word의 락 상태 변화 관찰
+val lockTarget = Any()
+print("[Header] synchronized 진입 전 hash: 0x${System.identityHashCode(lockTarget).toString(16)}")
+synchronized(lockTarget) {
+    // Mark Word: Biased Lock(편향 락) → Lightweight Lock(박형 락) 상태로 전환
+    print("  →  Lock 보유 중")
+}
+println("  →  Lock 해제 완료")
+
+println("""
+[4단계 요약]  객체 헤더 구조 (64비트 JVM, 압축 포인터 기준)
+  Mark Word  (8B)  ┌ 해시코드 31비트
+                   ├ GC 나이   4비트  (Young GC 생존 횟수, 15 넘으면 Old 이동)
+                   ├ 락 상태   2비트  (01=무락, 00=경량락, 10=중량락, 11=GC 마킹)
+                   └ 편향 스레드 ID (편향 락 활성화 시)
+  클래스 포인터 (4B)  Method Area의 Klass 포인터 (압축 시 4B, 비압축 8B)
+  총 12B → 8B 패딩 정렬 → 실제 최소 객체 크기 16B
+""".trimIndent())
+
+// ── 5단계: <init> 실행 ───────────────────────────────────────────
+println("\n[5단계] <init> 실행 — 생성자 실행 순서")
+
+open class Base(val name: String) {
+    val baseField = "Base-init".also { println("[<init>] Base 필드 초기화: $it") }
+    init { println("[<init>] Base init 블록: name=$name") }
+}
+
+class Child(name: String, val age: Int) : Base(name) {
+    val childField = "Child-init".also { println("[<init>] Child 필드 초기화: $it") }
+    init { println("[<init>] Child init 블록: age=$age") }
+    constructor(name: String) : this(name, 0) {
+        println("[<init>] 보조 생성자 실행")
+    }
+}
+
+println("[<init>] --- 주 생성자 new Child(\"Alice\", 30) ---")
+val c1 = Child("Alice", 30)
+println("[<init>] --- 보조 생성자 new Child(\"Bob\") ---")
+val c2 = Child("Bob")
+
+println("""
+[5단계 요약]  <init> 실행 순서 (바이트코드 기준)
+  ① 부모 클래스 <init> 먼저 (super() 호출)
+  ② 현재 클래스 필드 초기화 (선언 순서대로)
+  ③ init { } 블록 실행 (선언 순서대로)
+  ④ 생성자 본문 실행
+
+[전체 5단계 요약]
+  1. 클래스 로딩  Method Area에 클래스 메타데이터 없으면 ClassLoader 가동
+  2. 메모리 할당  Eden(TLAB Bump-the-pointer) 또는 Old Gen(Free-list)
+  3. 0 초기화     모든 필드를 타입 기본값으로 (null, 0, false)
+  4. 헤더 설정    Mark Word(해시·GC나이·락) + 클래스 포인터 기록
+  5. <init>       부모 → 필드 → init블록 → 생성자 본문 순서로 초기화
+""".trimIndent())
