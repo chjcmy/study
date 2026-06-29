@@ -6,58 +6,42 @@
 set -e
 cd "$(dirname "$0")"
 
-compile() {
+run_script() {
     local name=$1
-    echo "[compile] $name.kt"
-    kotlinc "${name}.kt" -include-runtime -d "${name}.jar" 2>/dev/null
+    echo "[script] $name.kts"
+    kotlinc -script "${name}.kts"
 }
 
 run_jvminfo() {
     echo -e "\n========== JvmInfo ==========\n"
-    compile JvmInfo
-    java -jar JvmInfo.jar
+    run_script JvmInfo
 }
 
 run_bytecode() {
-    echo -e "\n========== BytecodeTarget — javap ==========\n"
-    compile BytecodeTarget
-    jar xf BytecodeTarget.jar
-    echo "--- data class Item ---"
-    javap -p Item.class 2>/dev/null || echo "(Item.class not found)"
+    echo -e "\n========== BytecodeTarget ==========\n"
+    run_script BytecodeTarget
     echo ""
-    echo "--- sealed class Status\$Active ---"
-    javap -p 'Status$Active.class' 2>/dev/null || echo "(not found)"
-    echo ""
-    echo "--- top-level fun → BytecodeTargetKt ---"
-    javap -c BytecodeTargetKt.class 2>/dev/null || echo "(not found)"
+    echo "바이트코드 확인은 BytecodeTarget.kts 상단 주석의 javap 절차를 참고하세요."
 }
 
 run_classloader() {
     echo -e "\n========== ClassLoaderHierarchy ==========\n"
-    compile ClassLoaderHierarchy
-    java -jar ClassLoaderHierarchy.jar
+    run_script ClassLoaderHierarchy
 }
 
 run_jit() {
-    compile JitWarmupDemo
-    echo -e "\n========== JitWarmupDemo — JIT ON ==========\n"
-    java -jar JitWarmupDemo.jar
-
-    echo -e "\n========== JitWarmupDemo — -Xint (JIT OFF) ==========\n"
-    java -Xint -jar JitWarmupDemo.jar
+    echo -e "\n========== JitWarmupDemo ==========\n"
+    run_script JitWarmupDemo
 }
 
 run_vthread() {
     echo -e "\n========== VirtualThreadDemo ==========\n"
-    compile VirtualThreadDemo
-    java -jar VirtualThreadDemo.jar
+    run_script VirtualThreadDemo
 }
 
 run_graal() {
     echo -e "\n========== GraalNativeHint ==========\n"
-    compile GraalNativeHint
-    echo "--- JVM 실행 ---"
-    time java -jar GraalNativeHint.jar
+    run_script GraalNativeHint
 }
 
 case "${1:-all}" in

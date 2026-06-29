@@ -5,6 +5,7 @@
  */
 
 import java.lang.management.ManagementFactory
+import java.lang.reflect.Proxy
 
 // ── 1. 핫 리로드 원리 ─────────────────────────────────────────────
 println("=== 1. 핫 리로드 원리 ===")
@@ -107,8 +108,6 @@ Instrumentation 접근 방법:
 println("\n=== 6. JDK Proxy vs CGLIB vs ByteBuddy ===")
 
 // JDK 동적 프록시: 인터페이스만 가능
-import java.lang.reflect.Proxy
-
 interface Greeter { fun greet(name: String): String }
 
 val jdkProxy = Proxy.newProxyInstance(
@@ -124,7 +123,7 @@ println("""
 [Proxy 비교]
   JDK Proxy:
     - Proxy.newProxyInstance() — 인터페이스만 가능
-    - 런타임에 $Proxy0, $Proxy1 ... 클래스 생성
+    - 런타임에 ${'$'}Proxy0, ${'$'}Proxy1 ... 클래스 생성
     - InvocationHandler.invoke()로 모든 호출 위임
     - Spring AOP가 인터페이스 있을 때 기본 사용
 

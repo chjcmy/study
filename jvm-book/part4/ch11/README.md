@@ -417,38 +417,12 @@ log-friends SDK를 GraalVM native-image로 AOT 컴파일하는 것은 **현재�
 
 ---
 
-### 실습
+### 예제
 
-#### 실습 1: `-XX:+PrintCompilation`으로 JIT 확인
+실제 예제 파일은 `examples/` 아래 `.kts` 스크립트다. 실행은 11장 디렉터리에서 `kotlinc -script examples/<파일명>.kts`로 한다.
 
-```bash
-# log-friends examples 앱에서 JIT 컴파일 관찰
-java -XX:+PrintCompilation \
-     -Djdk.attach.allowAttachSelf=true \
-     -jar examples/build/libs/examples.jar 2>&1 | head -50
-```
-
-#### 실습 2: 탈출 분석 효과 확인
-
-```bash
-# 탈출 분석 ON (기본값)
-java -XX:+DoEscapeAnalysis EscapeAnalysisBenchmark
-# 예상: ~50ms, GC 거의 없음
-
-# 탈출 분석 OFF
-java -XX:-DoEscapeAnalysis EscapeAnalysisBenchmark
-# 예상: ~300ms, GC 빈번 발생 (1억 개 객체 할당)
-```
-
-#### 실습 3: 인라인 효과 확인
-
-```bash
-# 인라인 결정 출력
-java -XX:+UnlockDiagnosticVMOptions \
-     -XX:+PrintInlining \
-     -XX:MaxInlineSize=0 \
-     -jar app.jar 2>&1 | grep "inline"
-```
+- [BackendCompileDemo.kts](examples/BackendCompileDemo.kts): 탈출 분석, 루프 언롤링, 공통 부분식 제거, 상수 폴딩, 죽은 코드 제거, 계층형 컴파일, OSR, 동기화 제거, 배열 경계 검사 제거, JIT vs AOT 비교를 다룬다. 11장의 백엔드 컴파일 최적화 기법을 작은 벤치마크로 연결한다.
+- [JvmOptPhilosophy.kts](examples/JvmOptPhilosophy.kts): JVM 참조를 숨겨진 포인터로 보고, 이동 GC, 탈출 분석, TLAB, C2 런타임 최적화, 개발자가 제어할 수 있는 저수준 옵션을 설명한다. 11장의 최적화 철학과 AOT/JIT 트레이드오프를 보조한다.
 
 ---
 

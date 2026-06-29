@@ -7,14 +7,21 @@
 
 ---
 
+## 탐색
+
+- [전체 로드맵](../index.md)
+- [3부 상세 노트](../part3-execution.md)
+
+---
+
 ## 챕터 목록
 
-| 장 | 제목 | 핵심 주제 |
-|---|---|---|
-| [6장](./ch06/README.md) | 클래스 파일 구조 | 바이너리 포맷, 상수 풀, 바이트코드 명령어 |
-| [7장](./ch07/README.md) | 가상 머신 클래스 로딩 메커니즘 | 로딩 5단계, 부모 위임 모델, 모듈 시스템 |
-| [8장](./ch08/README.md) | 가상 머신 바이트코드 실행 엔진 | 스택 프레임, 메서드 디스패치, invokedynamic |
-| [9장](./ch09/README.md) | 클래스 로딩 및 실행 서브시스템 사례와 실전 | 톰캣/Spring Boot 클래스 로더, 동적 프락시 비교 |
+| 장 | 제목 | 핵심 주제 | 예제 |
+|---|---|---|---|
+| [6장](./ch06/README.md) | 클래스 파일 구조 | 바이너리 포맷, 상수 풀, 바이트코드 명령어 | [examples](./ch06/examples/) |
+| [7장](./ch07/README.md) | 가상 머신 클래스 로딩 메커니즘 | 로딩 5단계, 부모 위임 모델, 모듈 시스템 | [examples](./ch07/examples/) |
+| [8장](./ch08/README.md) | 가상 머신 바이트코드 실행 엔진 | 스택 프레임, 메서드 디스패치, invokedynamic | [examples](./ch08/examples/) |
+| [9장](./ch09/README.md) | 클래스 로딩 및 실행 서브시스템 사례와 실전 | 톰캣/Spring Boot 클래스 로더, 동적 프락시 비교 | [examples](./ch09/examples/) |
 
 ---
 
@@ -44,7 +51,7 @@
 |---|---|---|
 | **6장** | ByteBuddy가 상수 풀에 인터셉터 레퍼런스를 추가하고 Code 속성을 재작성 | `InstrumentationRegistry` 전체 |
 | **7장** | `EnvironmentPostProcessor` 시점에 agent 설치 → 클래스 로딩 전에 transformer 등록 | `LogFriendsInstaller.postProcessEnvironment()` |
-| **7장** | Spring Boot `LaunchedURLClassLoader`가 `BOOT-INF/lib/`에서 SDK 로딩 | `spring.factories` / `AutoConfiguration` |
+| **7장** | Spring Boot `LaunchedURLClassLoader`가 `BOOT-INF/lib/`에서 SDK JAR 로딩 | `spring.factories` / `AutoConfiguration.imports` |
 | **8장** | `invokevirtual`로 `doService()` 호출 시 계측된 버전이 실행됨 (vtable 갱신) | `SpringInterceptor.intercept()` |
 | **8장** | `@SuperCall Callable`이 MethodHandle 기반으로 원본 메서드 호출 | `callable.call()` in `SpringInterceptor` |
 | **9장** | JDK Proxy/CGLIB와 달리 기존 클래스를 직접 수정 → 코드 수정 불필요 | `AgentBuilder.RETRANSFORMATION` |

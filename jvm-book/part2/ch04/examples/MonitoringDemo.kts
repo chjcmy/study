@@ -10,6 +10,8 @@
  *   jmap -histo:live <pid> | head -20
  */
 
+import java.lang.management.ManagementFactory
+import java.lang.management.MemoryType
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.locks.ReentrantLock
@@ -73,9 +75,6 @@ println("[Histogram] jmap -histo:live $pid | grep 'String\\|int\\[' 로 확인")
 
 // ── 5. jstat 열 의미 실증 (MemoryMXBean) ─────────────────────────
 println("\n=== 5. jstat 열 의미 — MemoryMXBean으로 실증 ===")
-
-import java.lang.management.ManagementFactory
-import java.lang.management.MemoryType
 
 val memBeans = ManagementFactory.getMemoryPoolMXBeans()
 println("[jstat] 현재 JVM 메모리 풀 상태:")

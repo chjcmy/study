@@ -706,12 +706,12 @@ log-friends는 `@Service` 메서드 실행 시간이 10ms 이상일 때만 `METH
      (느림)      (보통)  (빠름)     (일시적 느림)
 ```
 
-#### KafkaProducer의 hot path
+#### HTTP ingest 전송의 hot path
 
-`BatchTransporter`의 Kafka 전송 로직은 이벤트가 지속적으로 발생하는 환경에서 hot path가 된다:
+`BatchTransporter`의 HTTP ingest 전송 로직은 eventType이 지속적으로 발생하는 환경에서 hot path가 된다:
 
-- `KafkaProducer.send()` 내부의 직렬화, 파티셔닝, 버퍼링 코드가 C2 컴파일 대상
-- Protobuf 직렬화 코드(`AgentMessage.toByteArray()`)도 반복 호출 시 JIT 최적화
+- `HttpClient.send()` 호출 전후의 JSON 직렬화, request 생성, 응답 처리 코드가 C2 컴파일 대상
+- batch payload 생성 코드도 반복 호출 시 JIT 최적화
 - 배치 큐(`LinkedBlockingQueue`)의 `offer()`/`poll()` 연산은 락 관련 최적화(락 거칠화, 어댑티브 스피닝)가 적용될 수 있음
 
 #### GraalVM native-image와 SDK 호환성
@@ -730,101 +730,20 @@ log-friends SDK를 GraalVM native-image로 AOT 컴파일하는 것은 **현재�
 
 ---
 
-### 실습
+### 실행 가능한 예제
 
-#### 실습 1: `-XX:+PrintCompilation`으로 JIT 확인
+4부 예제는 컴파일러가 실제 코드에 남기는 흔적을 `.kts`로 확인하는 쪽에 맞춘다. 실행은 해당 장 디렉터리에서 `kotlinc -script examples/<파일명>.kts`로 한다.
 
-```bash
-# log-friends examples 앱에서 JIT 컴파일 관찰
-java -XX:+PrintCompilation \
-     -Djdk.attach.allowAttachSelf=true \
-     -jar examples/build/libs/examples.jar 2>&1 | head -50
+- [FrontendCompileDemo.kts](part4/ch10/examples/FrontendCompileDemo.kts): 타입 소거, 브릿지 메서드, 오토박싱, 조건부 컴파일, javac 4단계의 결과를 확인한다.
+- [BackendCompileDemo.kts](part4/ch11/examples/BackendCompileDemo.kts): 탈출 분석, 루프 최적화, 상수 폴딩, OSR, 동기화 제거를 작은 벤치마크로 확인한다.
+- [JvmOptPhilosophy.kts](part4/ch11/examples/JvmOptPhilosophy.kts): 객체 참조, TLAB, 이동 GC, C2 런타임 최적화 철학을 정리한다.
 
-# 출력에서 확인할 것:
-# - BatchTransporter 관련 메서드가 컴파일되는 시점
-# - 컴파일 레벨 (1=C1, 4=C2)
-# - "made not entrant" (탈최적화) 발생 여부
-```
-
-#### 실습 2: JITWatch를 사용한 시각적 분석
+JIT 로그가 필요하면 예제를 별도 `.kt`/`main` 형태로 옮긴 뒤 JVM 옵션을 붙이는 방식이 가장 정확하다.
 
 ```bash
-# JITWatch 설치 및 실행
-git clone https://github.com/AdoptOpenJDK/jitwatch.git
-cd jitwatch
-mvn clean compile exec:java
-
-# 핫 로그 수집을 위한 JVM 옵션
-java -XX:+UnlockDiagnosticVMOptions \
-     -XX:+TraceClassLoading \
-     -XX:+LogCompilation \
-     -XX:LogFile=jit.log \
-     -jar app.jar
-
-# jit.log 파일을 JITWatch에서 열면:
-# - 메서드별 인라인 트리
-# - 바이트코드 → 네이티브 코드 매핑
-# - 최적화 적용/실패 이유
-```
-
-#### 실습 3: 탈출 분석 효과 확인
-
-```java
-// EscapeAnalysisBenchmark.java
-public class EscapeAnalysisBenchmark {
-    
-    static class Point {
-        int x, y;
-        Point(int x, int y) { this.x = x; this.y = y; }
-    }
-    
-    public static long testWithEscape() {
-        long sum = 0;
-        for (int i = 0; i < 100_000_000; i++) {
-            Point p = new Point(i, i + 1);
-            sum += p.x + p.y;
-        }
-        return sum;
-    }
-    
-    public static void main(String[] args) {
-        // 워밍업
-        for (int i = 0; i < 5; i++) testWithEscape();
-        
-        // 측정
-        long start = System.nanoTime();
-        long result = testWithEscape();
-        long elapsed = System.nanoTime() - start;
-        System.out.printf("결과: %d, 시간: %d ms%n", result, elapsed / 1_000_000);
-    }
-}
-```
-
-```bash
-# 탈출 분석 ON (기본값)
-java -XX:+DoEscapeAnalysis EscapeAnalysisBenchmark
-# 예상: ~50ms, GC 거의 없음
-
-# 탈출 분석 OFF
-java -XX:-DoEscapeAnalysis EscapeAnalysisBenchmark
-# 예상: ~300ms, GC 빈번 발생 (1억 개 객체 할당)
-
-# GC 로그로 확인
-java -XX:+DoEscapeAnalysis -Xlog:gc EscapeAnalysisBenchmark
-java -XX:-DoEscapeAnalysis -Xlog:gc EscapeAnalysisBenchmark
-```
-
-#### 실습 4: 인라인 효과 확인
-
-```bash
-# 인라인 결정 출력
-java -XX:+UnlockDiagnosticVMOptions \
-     -XX:+PrintInlining \
-     -XX:MaxInlineSize=0 \
-     -jar app.jar 2>&1 | grep "inline"
-
-# MaxInlineSize=0으로 인라인 비활성화 후 성능 비교
-java -XX:MaxInlineSize=0 -XX:FreqInlineSize=0 -jar app.jar
+java -XX:+PrintCompilation -jar app.jar
+java -XX:+UnlockDiagnosticVMOptions -XX:+PrintInlining -jar app.jar
+java -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation -XX:LogFile=jit.log -jar app.jar
 ```
 
 ---
@@ -849,7 +768,7 @@ java -XX:MaxInlineSize=0 -XX:FreqInlineSize=0 -jar app.jar
 
 9. **Graal 컴파일러의 부분 탈출 분석(Partial Escape Analysis)은 어떤 시나리오에서 C2보다 우수한가?** 실제 코드 패턴으로 예시를 들라.
 
-10. **KafkaProducer의 hot path가 JIT 컴파일되면 어떤 최적화가 적용되겠는가?** Protobuf 직렬화, 파티셔닝, 버퍼링 각각에 대해 예상되는 최적화를 논의하라.
+10. **HTTP ingest 전송의 hot path가 JIT 컴파일되면 어떤 최적화가 적용되겠는가?** JSON 직렬화, request 생성, 큐 offer/poll 각각에 대해 예상되는 최적화를 논의하라.
 
 ---
 

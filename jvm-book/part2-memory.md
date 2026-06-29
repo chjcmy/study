@@ -869,7 +869,7 @@ queue = LinkedBlockingQueue(queueCapacity)
 
 `LinkedBlockingQueue`는 각 요소를 `Node` 객체로 래핑한다. 최대 10,000개 이벤트가 큐에 쌓이면:
 
-- **각 AgentEvent(Protobuf 객체)** + **Node 래퍼** = 약 10,000 * 2 = 20,000개 단명 객체
+- **각 AgentEvent 내부 객체** + **Node 래퍼** = 약 10,000 * 2 = 20,000개 단명 객체
 - 500ms마다 `flush()` → `drainTo()` → 한꺼번에 20,000개 객체가 unreachable
 - Minor GC에서 한 번에 대량 수거 발생
 
@@ -901,28 +901,26 @@ ByteBuddy는 **RETRANSFORMATION** 전략으로 기존 클래스를 변형한다:
 - `installMethodTrace()`는 `@Service` 전체를 대상으로 하므로 서비스 클래스가 많으면 Metaspace 압력 상승
 - 모니터링 권장: `-XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=256m -verbose:class`
 
-#### 3. KafkaProducer의 버퍼와 다이렉트 메모리
+#### 3. HTTP ingest 전송 버퍼와 다이렉트 메모리
 
 ```kotlin
 // BatchTransporter.kt — lazy 초기화
-private val producer: KafkaProducer<String, ByteArray> by lazy {
-    val props = Properties().apply {
-        put(ProducerConfig.LINGER_MS_CONFIG, 5)
-        // buffer.memory 기본값: 32MB
-    }
-    KafkaProducer(props)
+private val httpClient: HttpClient by lazy {
+    HttpClient.newBuilder()
+        .connectTimeout(Duration.ofSeconds(3))
+        .build()
 }
 ```
 
-`KafkaProducer`의 내부 구조:
-- `RecordAccumulator`가 **32MB 기본 버퍼**를 사용 (`buffer.memory`)
-- 네트워크 전송 시 `java.nio.ByteBuffer` 사용 → **다이렉트 메모리** 할당 가능
-- Kafka 클라이언트의 `ByteBufferPool`이 off-heap 메모리를 관리
+HTTP 전송 경로의 관찰 포인트:
+- batch payload를 JSON 문자열로 만들면서 힙 객체가 생성된다.
+- 네트워크 전송 과정에서 `java.nio.ByteBuffer` 계열 버퍼를 사용할 수 있다.
+- 구현체와 TLS 설정에 따라 힙 밖 메모리 사용량이 달라질 수 있으므로, 큰 payload나 높은 전송 빈도에서는 다이렉트 메모리도 함께 관찰한다.
 
 **GC 관점에서의 영향:**
-- lazy 초기화이므로 첫 `flush()` 시점에 32MB 버퍼가 한꺼번에 할당 → Old Gen으로 바로 승격 가능 (큰 객체 직접 할당)
-- 다이렉트 메모리는 `Full GC` 시에만 정리되므로, Young GC만 반복되면 다이렉트 메모리가 계속 쌓일 수 있음
-- `-XX:MaxDirectMemorySize`를 명시적으로 설정하여 한도를 관리해야 함
+- `flush()`마다 JSON payload와 임시 buffer가 생성되므로 Young Gen 압력이 생긴다.
+- batch 크기와 payload 크기가 커지면 큰 객체가 바로 Old Gen으로 승격될 수 있다.
+- `-XX:MaxDirectMemorySize`와 Native Memory Tracking을 함께 보면 힙 밖 메모리 증가를 확인할 수 있다.
 
 #### 4. JDK 21에서 ZGC 기본 활성화 고려
 
@@ -939,10 +937,10 @@ java -Djdk.attach.allowAttachSelf=true \
 ```
 
 **ZGC 선택 이유:**
-- Agent가 삽입하는 인터셉터가 요청마다 `AgentEvent` Protobuf 객체를 생성 → 단명 객체 대량 발생
+- Agent가 삽입하는 인터셉터가 요청마다 `AgentEvent` 내부 객체를 생성 → 단명 객체 대량 발생
 - ZGC의 동시 수집은 이런 패턴에서 STW를 최소화
 - Generational ZGC(JDK 21 기본)는 Young 객체를 독립 수집하므로 더 효율적
-- `LinkedBlockingQueue`의 Node 객체 + Protobuf Builder 객체가 Young Gen에서 빠르게 수거됨
+- `LinkedBlockingQueue`의 Node 객체 + AgentEvent Builder 객체가 Young Gen에서 빠르게 수거됨
 
 #### 5. 싱글톤 패턴과 GC Root
 
@@ -978,38 +976,24 @@ companion object {
 | **jhat** | 힙 덤프 분석 서버 | `jhat heap.hprof` (→ 브라우저) | 간단한 힙 분석 (MAT 권장) |
 | **jstack** | 스레드 덤프 | `jstack -l <pid>` | 데드락, 스레드 블로킹 진단 |
 
-### 실습: log-friends 에이전트 모니터링
+### 실행 가능한 예제
+
+2부 예제는 각 장의 `examples/` 아래 `.kts`로 둔다. 실행은 해당 장 디렉터리에서 `kotlinc -script examples/<파일명>.kts`로 한다.
+
+- [MemoryAreaDemo.kts](part2/ch02/examples/MemoryAreaDemo.kts): 런타임 데이터 영역, StackOverflow, 다이렉트 메모리, String Intern, TLAB, 객체 생성 흐름을 확인한다.
+- [GcDemo.kts](part2/ch03/examples/GcDemo.kts): 참조 강도, `finalize()`, GC Roots, 세대별 할당과 승격을 실험한다.
+- [GcCollectorDemo.kts](part2/ch03/examples/GcCollectorDemo.kts): STW, GC MXBean, G1/ZGC 로그 해석 포인트를 확인한다.
+- [MonitoringDemo.kts](part2/ch04/examples/MonitoringDemo.kts): 오래 살아 있는 JVM을 띄운 뒤 다른 터미널에서 `jps`, `jstat`, `jstack`, `jmap`을 붙여 본다.
+- [AllocationStrategyDemo.kts](part2/ch05/examples/AllocationStrategyDemo.kts): 힙/다이렉트 메모리, 객체 풀, TLAB, 안전 지점, 승격 전략을 비교한다.
+
+모니터링 명령은 `MonitoringDemo.kts` 실행 후 별도 터미널에서 사용한다.
 
 ```bash
-# 1. 실행 중인 log-friends 앱의 PID 확인
-jps -lv | grep examples
-
-# 2. GC 통계를 1초 간격으로 모니터링
+jps -lv
 jstat -gcutil <pid> 1000
-#   S0     S1     E      O      M     CCS    YGC     YGCT    FGC    FGCT     GCT
-#   0.00  45.23  67.12  12.34  95.67  92.45    15    0.123     1    0.045   0.168
-
-# 각 열 의미:
-# S0/S1:  Survivor 0/1 사용률(%)
-# E:      Eden 사용률(%)
-# O:      Old Gen 사용률(%)
-# M:      Metaspace 사용률(%)
-# YGC:    Young GC 횟수
-# YGCT:   Young GC 누적 시간(초)
-# FGC:    Full GC 횟수
-# FGCT:   Full GC 누적 시간(초)
-
-# 3. Metaspace 사용량 확인 (ByteBuddy 클래스 생성 모니터링)
 jstat -gcmetacapacity <pid> 1000
-
-# 4. 힙 히스토그램 (상위 20개 클래스)
 jmap -histo:live <pid> | head -25
-
-# 5. 스레드 덤프 (log-friends-batch-flush 스레드 상태 확인)
 jstack <pid> | grep -A 20 "log-friends-batch-flush"
-
-# 6. 힙 덤프 후 MAT로 분석
-jmap -dump:live,format=b,file=logfriends-heap.hprof <pid>
 ```
 
 ### GUI 도구 요약
@@ -1049,7 +1033,7 @@ JITWatch: JIT 컴파일 로그를 시각화
 
 log-friends 적용:
   → Agent가 삽입된 앱이 대용량 힙이면 ZGC 권장
-  → Agent 자체의 메모리 풋프린트는 작지만 (큐 10K + Kafka 버퍼 32MB)
+  → Agent 자체의 메모리 풋프린트는 작지만 (큐 10K + HTTP batch buffer)
      GC가 길어지면 flush() 스레드도 STW에 걸려 이벤트 전송 지연
 ```
 
@@ -1064,7 +1048,7 @@ log-friends 적용:
 log-friends 적용:
   → BatchTransporter의 flush()가 실패하면 buffer의 이벤트를 큐에 재삽입
   → 반복 실패 시 Old Gen에 AgentEvent 객체가 쌓일 수 있음
-  → Kafka 연결 장애 시 dropCount를 모니터링하여 큐 폭주 방지
+  → Console `/ingest` 연결 장애 시 dropCount를 모니터링하여 큐 폭주 방지
 ```
 
 ### 사례 3: 외부 명령어 fork — Runtime.exec()의 함정
@@ -1076,7 +1060,7 @@ log-friends 적용:
 해결: HttpClient 사용, ProcessBuilder 최소화
 
 log-friends 적용:
-  → log-friends SDK는 외부 프로세스 fork 없음 (Kafka 클라이언트가 소켓 직접 관리)
+  → log-friends SDK는 외부 프로세스 fork 없음 (`HttpClient`가 소켓 통신 처리)
   → 좋은 설계 사례: 네트워크 통신을 Java 라이브러리 레벨에서 해결
 ```
 
@@ -1141,7 +1125,7 @@ log-friends 적용:
 
 컬러드 포인터는 64-bit 참조의 상위 비트(4비트)에 마킹/재배치 메타데이터를 인코딩한다. 32-bit 참조는 4GB 주소 공간 전체가 필요하므로 메타데이터를 저장할 여유 비트가 없다. 이것이 ZGC가 64-bit JVM 전용인 이유다.
 
-### Q7. KafkaProducer의 버퍼가 다이렉트 메모리를 사용하면 GC에 어떤 영향이 있는가?
+### Q7. HTTP 전송 버퍼가 다이렉트 메모리를 사용하면 GC에 어떤 영향이 있는가?
 
 다이렉트 메모리는 자바 힙 밖에 할당되므로 Minor/Major GC의 직접 대상이 아니다. `DirectByteBuffer` 객체 자체는 힙에 있지만 실제 데이터는 네이티브 메모리에 있다. `DirectByteBuffer`가 GC로 수거될 때 `Cleaner`가 네이티브 메모리를 해제한다. 문제는 `DirectByteBuffer` 객체가 Old Gen에 승격되면 Full GC까지 네이티브 메모리가 해제되지 않아 다이렉트 메모리 OOM이 발생할 수 있다는 점이다.
 
@@ -1155,19 +1139,19 @@ RETRANSFORMATION은 이미 로딩된 클래스를 변환한다. 변환된 클래
 
 ### Q10. 안전 지점(Safepoint)이 log-friends의 flush() 스레드에 미치는 영향은?
 
-`flush()`는 `@Synchronized`이므로 모니터를 획득한다. GC가 시작되면 모든 스레드는 안전 지점에서 멈춰야 한다. `flush()` 내부의 `drainTo()` + Kafka `send()`가 진행 중이면, 다음 안전 지점에 도달할 때까지 GC STW가 지연될 수 있다. 다만 이 메서드들 내부에 메서드 호출이 포함되어 있으므로 안전 지점이 존재하며, 실질적인 지연은 미미하다.
+`flush()`는 `@Synchronized`이므로 모니터를 획득한다. GC가 시작되면 모든 스레드는 안전 지점에서 멈춰야 한다. `flush()` 내부의 `drainTo()` + HTTP `send()`가 진행 중이면, 다음 안전 지점에 도달할 때까지 GC STW가 지연될 수 있다. 다만 이 메서드들 내부에 메서드 호출이 포함되어 있으므로 안전 지점이 존재하며, 실질적인 지연은 미미하다.
 
 ### Q11. Young GC 빈도가 높은 환경에서 log-friends 에이전트의 동작은?
 
-매 HTTP 요청마다 `AgentEvent` Protobuf 객체가 Eden에 생성된다. 초당 수천 건의 요청이 들어오면 Eden이 빠르게 채워져 Minor GC가 빈번해진다. Protobuf 객체는 대부분 단명(큐에서 flush 후 즉시 unreachable)이므로 Minor GC의 회수 효율이 높다. 문제는 GC 중 `enqueue()`가 STW에 걸려 이벤트 처리 지연이 발생할 수 있다는 점이다.
+매 HTTP 요청마다 `AgentEvent` 내부 객체가 Eden에 생성된다. 초당 수천 건의 요청이 들어오면 Eden이 빠르게 채워져 Minor GC가 빈번해진다. 이 객체들은 대부분 단명(큐에서 flush 후 즉시 unreachable)이므로 Minor GC의 회수 효율이 높다. 문제는 GC 중 `enqueue()`가 STW에 걸려 이벤트 처리 지연이 발생할 수 있다는 점이다.
 
 ### Q12. G1의 Humongous Region은 언제 문제가 되는가?
 
-Region 크기의 50% 이상인 객체는 Humongous로 분류되어 Old Gen에 직접 할당된다. log-friends에서 매우 긴 SQL 쿼리나 대용량 로그 메시지가 Protobuf로 직렬화될 때 큰 `byte[]`가 생성될 수 있다. 이런 Humongous 객체는 단명이어도 Old Gen에 할당되어 Mixed GC까지 회수되지 않으므로 메모리를 오래 점유한다.
+Region 크기의 50% 이상인 객체는 Humongous로 분류되어 Old Gen에 직접 할당된다. log-friends에서 매우 긴 SQL 쿼리나 대용량 로그 메시지가 JSON payload로 만들어질 때 큰 `String`/`byte[]`가 생성될 수 있다. 이런 Humongous 객체는 단명이어도 Old Gen에 할당되어 Mixed GC까지 회수되지 않으므로 메모리를 오래 점유한다.
 
 ### Q13. JDK 21에서 Generational ZGC를 log-friends에 적용할 때 주의할 점은?
 
-Generational ZGC는 Young/Old을 독립 수집하므로 log-friends의 단명 객체(AgentEvent, Protobuf Builder)가 Young에서 빠르게 수거된다. 주의할 점: 1) ZGC는 `-XX:SoftMaxHeapSize`를 사용한 탄력적 힙 관리가 가능하므로 컨테이너 환경에서 유용. 2) 컬러드 포인터로 인해 네이티브 메모리를 더 사용하므로 컨테이너 메모리 한도에 여유가 필요. 3) ZGC + ByteBuddy 조합에서 알려진 호환성 문제는 없으나, `-Djdk.attach.allowAttachSelf=true`는 여전히 필수.
+Generational ZGC는 Young/Old을 독립 수집하므로 log-friends의 단명 객체(AgentEvent, Builder, JSON payload)가 Young에서 빠르게 수거된다. 주의할 점: 1) ZGC는 `-XX:SoftMaxHeapSize`를 사용한 탄력적 힙 관리가 가능하므로 컨테이너 환경에서 유용. 2) 컬러드 포인터로 인해 네이티브 메모리를 더 사용하므로 컨테이너 메모리 한도에 여유가 필요. 3) ZGC + ByteBuddy 조합에서 알려진 호환성 문제는 없으나, `-Djdk.attach.allowAttachSelf=true`는 여전히 필수.
 
 ---
 
@@ -1208,5 +1192,5 @@ Generational ZGC는 Young/Old을 독립 수집하므로 log-friends의 단명 �
 ### log-friends 연결
 - [ ] BatchTransporter의 큐가 GC에 미치는 영향을 분석할 수 있다
 - [ ] ByteBuddy RETRANSFORMATION의 Metaspace 영향을 설명할 수 있다
-- [ ] KafkaProducer 버퍼의 다이렉트 메모리 사용 가능성을 인식한다
+- [ ] HTTP 전송 버퍼의 다이렉트 메모리 사용 가능성을 인식한다
 - [ ] JDK 21에서 ZGC 적용 시 이점과 주의사항을 설명할 수 있다

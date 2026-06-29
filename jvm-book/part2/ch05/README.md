@@ -17,7 +17,7 @@
 
 log-friends 적용:
   → Agent가 삽입된 앱이 대용량 힙이면 ZGC 권장
-  → Agent 자체의 메모리 풋프린트는 작지만 (큐 10K + Kafka 버퍼 32MB)
+  → Agent 자체의 메모리 풋프린트는 작지만 (큐 10K + HTTP batch buffer)
      GC가 길어지면 flush() 스레드도 STW에 걸려 이벤트 전송 지연
 ```
 
@@ -34,7 +34,7 @@ log-friends 적용:
 log-friends 적용:
   → BatchTransporter의 flush()가 실패하면 buffer의 이벤트를 큐에 재삽입
   → 반복 실패 시 Old Gen에 AgentEvent 객체가 쌓일 수 있음
-  → Kafka 연결 장애 시 dropCount를 모니터링하여 큐 폭주 방지
+  → Console `/ingest` 연결 장애 시 dropCount를 모니터링하여 큐 폭주 방지
 ```
 
 ---
@@ -48,7 +48,7 @@ log-friends 적용:
 해결: HttpClient 사용, ProcessBuilder 최소화
 
 log-friends 적용:
-  → log-friends SDK는 외부 프로세스 fork 없음 (Kafka 클라이언트가 소켓 직접 관리)
+  → log-friends SDK는 외부 프로세스 fork 없음 (`HttpClient`가 소켓 통신 처리)
   → 좋은 설계 사례: 네트워크 통신을 Java 라이브러리 레벨에서 해결
 ```
 
@@ -91,6 +91,14 @@ log-friends 적용:
 
 ---
 
+## 예제
+
+실제 예제 파일은 `examples/` 아래 `.kts` 스크립트다. 실행은 5장 디렉터리에서 `kotlinc -script examples/<파일명>.kts`로 한다.
+
+- [AllocationStrategyDemo.kts](examples/AllocationStrategyDemo.kts): 힙 vs 다이렉트 메모리, 객체 풀, TLAB 멀티스레드 할당, GC 전략, 안전 지점 지연, `Runtime.exec()` 메모리 함정, Eden → Survivor → Old 승격 흐름을 다룬다. 5장의 고성능 메모리 할당 사례를 작은 재현 코드로 연결한다.
+
+---
+
 ## 학습 완료 체크리스트
 
 - [ ] 대용량 힙에서 Full GC 시간이 길어지는 이유와 해결 방안을 설명할 수 있다
@@ -101,5 +109,5 @@ log-friends 적용:
 
 - [ ] BatchTransporter의 큐가 GC에 미치는 영향을 분석할 수 있다
 - [ ] ByteBuddy RETRANSFORMATION의 Metaspace 영향을 설명할 수 있다
-- [ ] KafkaProducer 버퍼의 다이렉트 메모리 사용 가능성을 인식한다
+- [ ] HTTP 전송 버퍼의 다이렉트 메모리 사용 가능성을 인식한다
 - [ ] JDK 21에서 ZGC 적용 시 이점과 주의사항을 설명할 수 있다

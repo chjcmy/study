@@ -351,7 +351,7 @@ companion object {
     fun getInstance(): BatchTransporter {
         return instance ?: synchronized(this) {     // 뮤텍스!
             instance ?: run {
-                BatchTransporter(brokers, batch, interval).also { instance = it }
+                BatchTransporter(batch, interval).also { instance = it }
             }
         }
     }
@@ -381,10 +381,10 @@ private fun flush() {
     val buffer = ArrayList<AgentEvent>(batchSize)
     queue.drainTo(buffer, batchSize)  // 큐에서 배치 크기만큼 drain
     if (buffer.isEmpty()) return
-    // Kafka 전송...
+    // Console /ingest HTTP 전송...
 }
 ```
-- `drainTo` 자체는 스레드 안전하지만, **drain + Kafka 전송**이라는 복합 연산을 원자적으로 묶음
+- `drainTo` 자체는 스레드 안전하지만, **drain + HTTP 전송**이라는 복합 연산을 원자적으로 묶음
 - 스케줄러의 주기적 flush와 `enqueue`에서의 즉시 flush가 동시에 호출될 수 있기 때문
 
 **4. LinkedBlockingQueue --- 내부적으로 ReentrantLock 2개 사용:**
@@ -398,10 +398,10 @@ queue = LinkedBlockingQueue(queueCapacity)  // capacity=10000
 - producer(enqueue)와 consumer(flush)가 **동시에** 동작 가능 (ArrayBlockingQueue보다 처리량 우수)
 - `logfriends.queue.capacity=10000`: 큐 크기가 크면 락 경쟁 감소, 하지만 GC 압력 증가 (트레이드오프)
 
-**5. KafkaProducer의 내부 동기화:**
-- KafkaProducer 내부의 `RecordAccumulator`는 CAS 기반으로 배치에 레코드 추가
-- `Sender` 스레드가 별도로 네트워크 I/O 처리 -> producer-consumer 패턴
-- 이것이 13장에서 다룬 비차단 동기화의 실무 적용 사례
+**5. HTTP ingest 전송 경로의 동기화:**
+- `flush()`는 단일 배치 전송 단위를 보호하고, `HttpClient`는 내부적으로 연결과 I/O 처리를 관리한다.
+- enqueue producer와 flush consumer가 분리되어 producer-consumer 패턴을 이룬다.
+- 이것이 13장에서 다룬 뮤텍스, CAS 카운터, blocking queue의 실무 적용 사례다.
 
 **6. JDK 21 가상 스레드로의 리팩토링 가능성:**
 ```kotlin
@@ -411,7 +411,7 @@ scheduler = Executors.newSingleThreadScheduledExecutor { r ->
 }
 
 // 미래: 가상 스레드 활용 가능성
-// - flush()가 Kafka I/O blocking -> 가상 스레드에서 자동 unmount
+// - flush()가 HTTP I/O blocking -> 가상 스레드에서 자동 unmount
 // - 단, @Synchronized (synchronized) 블록 내 I/O -> pinning 발생!
 // - 해결: ReentrantLock으로 교체 필요
 // - ScheduledExecutorService는 아직 가상 스레드 미지원 -> 직접 구현 필요
@@ -427,120 +427,11 @@ private var workerId: String = "unknown"
 
 ---
 
-### 실습
+### 예제
 
-**1. synchronized vs ReentrantLock 벤치마크:**
-```bash
-# JMH로 동기화 방식 성능 비교
-# synchronized, ReentrantLock(fair), ReentrantLock(unfair), AtomicInteger
-# 스레드 수: 1, 2, 4, 8, 16
-./gradlew jmh
-```
+실제 예제 파일은 `examples/` 아래 `.kts` 스크립트다. 실행은 13장 디렉터리에서 `kotlinc -script examples/<파일명>.kts`로 한다. 이 예제는 JDK 21 가상 스레드 API를 사용한다.
 
-```java
-@BenchmarkMode(Mode.Throughput)
-@Warmup(iterations = 3, time = 1)
-@Measurement(iterations = 5, time = 1)
-@Fork(1)
-@Threads(4)
-public class LockBenchmark {
-    private int syncCount = 0;
-    private final ReentrantLock fairLock = new ReentrantLock(true);
-    private final ReentrantLock unfairLock = new ReentrantLock(false);
-    private final AtomicInteger atomicCount = new AtomicInteger(0);
-
-    @Benchmark
-    public void synchronizedIncrement() {
-        synchronized (this) { syncCount++; }
-    }
-
-    @Benchmark
-    public void fairLockIncrement() {
-        fairLock.lock();
-        try { syncCount++; } finally { fairLock.unlock(); }
-    }
-
-    @Benchmark
-    public void unfairLockIncrement() {
-        unfairLock.lock();
-        try { syncCount++; } finally { unfairLock.unlock(); }
-    }
-
-    @Benchmark
-    public void atomicIncrement() {
-        atomicCount.incrementAndGet();
-    }
-}
-```
-
-**2. 편향 락 관찰 (JDK 15 이전):**
-```bash
-# 편향 락 활성화 + 로그 출력
-java -XX:+UseBiasedLocking -XX:+PrintBiasedLockingStatistics \
-     -jar examples/build/libs/examples.jar
-
-# JDK 15+ 에서는 deprecated (기본 off)
-# -XX:+UnlockDiagnosticVMOptions -XX:+PrintBiasedLockingStatistics
-```
-
-**3. jstack으로 스레드 상태 확인:**
-```bash
-# 애플리케이션 실행 중에 PID 확인
-jps -l
-
-# 스레드 덤프
-jstack <PID>
-
-# log-friends 관련 스레드 확인
-jstack <PID> | grep -A 20 "log-friends"
-
-# 관찰 포인트:
-# - "log-friends-batch-flush" 스레드의 상태 (RUNNABLE vs TIMED_WAITING)
-# - BLOCKED 상태의 스레드가 있다면 -> 락 경쟁 발생 중
-# - "waiting on <0x...>" -> 어떤 모니터 락을 기다리는지 확인
-```
-
-**4. volatile 가시성 실험:**
-```java
-public class VolatilityTest {
-    // volatile 제거하면 무한 루프 가능!
-    static volatile boolean flag = false;
-
-    public static void main(String[] args) throws Exception {
-        new Thread(() -> {
-            while (!flag) {
-                // JIT가 flag를 레지스터에 캐시 -> 메인 메모리 변경 안 보임
-                // volatile이면 매번 메인 메모리에서 읽기
-            }
-            System.out.println("Flag detected!");
-        }).start();
-
-        Thread.sleep(1000);
-        flag = true;  // volatile 없으면 다른 스레드가 영원히 못 봄
-        System.out.println("Flag set!");
-    }
-}
-```
-
-**5. BatchTransporter 동시성 스트레스 테스트:**
-```kotlin
-// 10개 스레드에서 동시에 10만 건 enqueue
-val latch = CountDownLatch(10)
-repeat(10) {
-    Thread {
-        repeat(10_000) {
-            BatchTransporter.getInstance().enqueueLog(
-                "INFO", "test", Thread.currentThread().name,
-                "message-$it", null, null, null
-            )
-        }
-        latch.countDown()
-    }.start()
-}
-latch.await()
-println(BatchTransporter.getInstance().stats)
-// sent + dropped = 100,000 인지 확인 (유실 없음 검증)
-```
+- [ThreadSafetyDemo.kts](examples/ThreadSafetyDemo.kts): `synchronized`, `ReentrantLock`, `AtomicLong` 성능 비교, 락 업그레이드, `Condition`, 가상 스레드 vs 플랫폼 스레드, `LongAdder` vs `AtomicLong`, 스레드 안전성 단계, 락 최적화, log-friends `BatchTransporter` 동시성 분석을 다룬다. 13장의 스레드 안전성과 락 최적화 내용을 실행 가능한 비교 실험으로 연결한다.
 
 ---
 
@@ -568,7 +459,7 @@ println(BatchTransporter.getInstance().stats)
 
 **Q6. log-friends의 flush()를 가상 스레드로 전환할 때 주의점은?**
 
-> 현재 `flush()`는 `@Synchronized` 어노테이션을 사용한다. JDK 21 가상 스레드는 `synchronized` 블록 내에서 blocking I/O를 하면 **pinning**(carrier thread에 고정)이 발생하여 가상 스레드의 이점이 사라진다. `flush()` 내부에서 Kafka I/O(`producer.send()`)가 발생하므로, 가상 스레드 전환 시 `@Synchronized`를 `ReentrantLock`으로 교체해야 한다. 또한 `ScheduledExecutorService`는 아직 가상 스레드를 네이티브로 지원하지 않으므로 스케줄링 로직도 재설계해야 한다.
+> 현재 `flush()`는 `@Synchronized` 어노테이션을 사용한다. JDK 21 가상 스레드는 `synchronized` 블록 내에서 blocking I/O를 하면 **pinning**(carrier thread에 고정)이 발생하여 가상 스레드의 이점이 사라진다. `flush()` 내부에서 HTTP I/O(`httpClient.send()`)가 발생하므로, 가상 스레드 전환 시 `@Synchronized`를 `ReentrantLock`으로 교체해야 한다. 또한 `ScheduledExecutorService`는 아직 가상 스레드를 네이티브로 지원하지 않으므로 스케줄링 로직도 재설계해야 한다.
 
 **Q7. LinkedBlockingQueue vs ArrayBlockingQueue --- log-friends가 LinkedBlockingQueue를 선택한 이유는?**
 

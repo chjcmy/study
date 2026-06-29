@@ -50,10 +50,11 @@ localhost    = 호스트명 (문자열), /etc/hosts에서 보통 127.0.0.1로 �
 
 ```bash
 # 로컬 개발: localhost만 접근 (안전)
-uvicorn app.main:app --host 127.0.0.1 --port 8000
+./gradlew bootRun
+# Spring Boot 기본 바인딩: localhost:8080 또는 설정한 server.port
 
-# 접근 가능: http://localhost:8000 ✅
-# 접근 불가: http://10.0.1.5:8000 ❌ (같은 네트워크 다른 PC)
+# 접근 가능: http://localhost:<server.port> ✅
+# 접근 불가: http://10.0.1.5:<server.port> ❌ (같은 네트워크 다른 PC)
 ```
 
 ### Docker 환경
@@ -62,11 +63,11 @@ uvicorn app.main:app --host 127.0.0.1 --port 8000
 # ❌ 컨테이너 안에서 127.0.0.1로 바인드하면?
 # → 컨테이너 내부에서만 접근 가능, 포트 매핑해도 외부 불가!
 docker run -p 8000:8000 my-app
-# 컨테이너 내부: uvicorn --host 127.0.0.1 → 외부 접근 안 됨!
+# 컨테이너 내부 앱이 127.0.0.1로만 바인드 → 외부 접근 안 됨!
 
 # ✅ 0.0.0.0 으로 바인드
 docker run -p 8000:8000 my-app
-# 컨테이너 내부: uvicorn --host 0.0.0.0 → 외부 접근 OK!
+# 컨테이너 내부 앱이 0.0.0.0으로 바인드 → 외부 접근 OK!
 ```
 
 ### Docker의 네트워크 구조
@@ -77,7 +78,7 @@ docker run -p 8000:8000 my-app
 ├── docker0 bridge (172.17.0.1)
 │       │
 │       ├── 컨테이너 A (172.17.0.2)
-│       │   └── uvicorn --host 0.0.0.0:8000
+│       │   └── Spring Boot server.address=0.0.0.0, server.port=8000
 │       │       → 포트 매핑: 호스트 8000 → 컨테이너 8000
 │       │
 │       └── 컨테이너 B (172.17.0.3)
@@ -89,17 +90,15 @@ docker run -p 8000:8000 my-app
      → 그래야 docker0 브릿지를 통해 호스트에서 접근 가능
 ```
 
-### Azure Container App
+### DSM/Docker 환경
 
 ```bash
-# Container App은 자동으로 외부 노출 관리
-# Dockerfile에서:
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# DSM에서 Docker Compose로 띄운 서비스는 포트 매핑과 방화벽을 같이 봐야 한다.
+ports:
+  - "8082:8082"
 
-# Container App의 Ingress 설정이 외부 트래픽 제어:
-#   - External: 인터넷에서 접근 가능
-#   - Internal: VNet 내부에서만 접근 가능
-#   - Target Port: 8000 (컨테이너가 LISTEN하는 포트)
+environment:
+  SERVER_PORT: 8082
 ```
 
 ---
@@ -111,11 +110,10 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
   127.0.0.1 → 외부 접근 차단 → 안전
 
 프로덕션:
-  0.0.0.0 → 모든 인터페이스 노출 → 방화벽/NSG 필수!
+  0.0.0.0 → 모든 인터페이스 노출 → 방화벽 필수!
   
-  ✅ Azure: NSG + Container App Ingress로 제어
   ✅ AWS: Security Group으로 제어
-  ✅ 온프레미스: iptables/firewall로 제어
+  ✅ 온프레미스/DSM: 라우터 포트포워딩, DSM 방화벽, iptables/firewall로 제어
 
 주의: 0.0.0.0으로 바인드한다고 자동으로 인터넷 공개는 아님!
      방화벽/라우터가 최종 접근을 제어함

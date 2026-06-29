@@ -631,7 +631,7 @@ queue = LinkedBlockingQueue(queueCapacity)
 
 `LinkedBlockingQueue`는 각 요소를 `Node` 객체로 래핑한다. 최대 10,000개 이벤트가 큐에 쌓이면:
 
-- **각 AgentEvent(Protobuf 객체)** + **Node 래퍼** = 약 10,000 * 2 = 20,000개 단명 객체
+- **각 AgentEvent 내부 객체** + **Node 래퍼** = 약 10,000 * 2 = 20,000개 단명 객체
 - 500ms마다 `flush()` → `drainTo()` → 한꺼번에 20,000개 객체가 unreachable
 - Minor GC에서 한 번에 대량 수거 발생
 
@@ -663,28 +663,26 @@ ByteBuddy는 **RETRANSFORMATION** 전략으로 기존 클래스를 변형한다:
 - `installMethodTrace()`는 `@Service` 전체를 대상으로 하므로 서비스 클래스가 많으면 Metaspace 압력 상승
 - 모니터링 권장: `-XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=256m -verbose:class`
 
-### 3. KafkaProducer의 버퍼와 다이렉트 메모리
+### 3. HTTP ingest 전송 버퍼와 다이렉트 메모리
 
 ```kotlin
 // BatchTransporter.kt — lazy 초기화
-private val producer: KafkaProducer<String, ByteArray> by lazy {
-    val props = Properties().apply {
-        put(ProducerConfig.LINGER_MS_CONFIG, 5)
-        // buffer.memory 기본값: 32MB
-    }
-    KafkaProducer(props)
+private val httpClient: HttpClient by lazy {
+    HttpClient.newBuilder()
+        .connectTimeout(Duration.ofSeconds(3))
+        .build()
 }
 ```
 
-`KafkaProducer`의 내부 구조:
-- `RecordAccumulator`가 **32MB 기본 버퍼**를 사용 (`buffer.memory`)
-- 네트워크 전송 시 `java.nio.ByteBuffer` 사용 → **다이렉트 메모리** 할당 가능
-- Kafka 클라이언트의 `ByteBufferPool`이 off-heap 메모리를 관리
+HTTP 전송 경로의 관찰 포인트:
+- batch payload를 JSON 문자열로 만들면서 힙 객체가 생성된다.
+- 네트워크 전송 과정에서 `java.nio.ByteBuffer` 계열 버퍼를 사용할 수 있다.
+- 구현체와 TLS 설정에 따라 힙 밖 메모리 사용량이 달라질 수 있으므로, 큰 payload나 높은 전송 빈도에서는 다이렉트 메모리도 함께 관찰한다.
 
 **GC 관점에서의 영향:**
-- lazy 초기화이므로 첫 `flush()` 시점에 32MB 버퍼가 한꺼번에 할당 → Old Gen으로 바로 승격 가능 (큰 객체 직접 할당)
-- 다이렉트 메모리는 `Full GC` 시에만 정리되므로, Young GC만 반복되면 다이렉트 메모리가 계속 쌓일 수 있음
-- `-XX:MaxDirectMemorySize`를 명시적으로 설정하여 한도를 관리해야 함
+- `flush()`마다 JSON payload와 임시 buffer가 생성되므로 Young Gen 압력이 생긴다.
+- batch 크기와 payload 크기가 커지면 큰 객체가 바로 Old Gen으로 승격될 수 있다.
+- `-XX:MaxDirectMemorySize`와 Native Memory Tracking을 함께 보면 힙 밖 메모리 증가를 확인할 수 있다.
 
 ### 4. JDK 21에서 ZGC 기본 활성화 고려
 
@@ -701,10 +699,10 @@ java -Djdk.attach.allowAttachSelf=true \
 ```
 
 **ZGC 선택 이유:**
-- Agent가 삽입하는 인터셉터가 요청마다 `AgentEvent` Protobuf 객체를 생성 → 단명 객체 대량 발생
+- Agent가 삽입하는 인터셉터가 요청마다 `AgentEvent` 내부 객체를 생성 → 단명 객체 대량 발생
 - ZGC의 동시 수집은 이런 패턴에서 STW를 최소화
 - Generational ZGC(JDK 21 기본)는 Young 객체를 독립 수집하므로 더 효율적
-- `LinkedBlockingQueue`의 Node 객체 + Protobuf Builder 객체가 Young Gen에서 빠르게 수거됨
+- `LinkedBlockingQueue`의 Node 객체 + AgentEvent Builder 객체가 Young Gen에서 빠르게 수거됨
 
 ### 5. 싱글톤 패턴과 GC Root
 
@@ -721,9 +719,18 @@ companion object {
 
 `companion object`의 `instance` 필드는 **정적 필드 = GC Root**다:
 - `BatchTransporter` 인스턴스는 프로그램 종료까지 절대 GC 대상이 아님
-- `BatchTransporter`가 참조하는 `queue`, `scheduler`, `producer` 모두 참조 체인을 통해 생존
+- `BatchTransporter`가 참조하는 `queue`, `scheduler`, `httpClient` 모두 참조 체인을 통해 생존
 - 메모리 누수가 아님 (의도된 설계)
 - 단, `shutdown()` 호출 없이 애플리케이션이 종료되면 큐에 남은 이벤트 손실
+
+---
+
+## 예제
+
+실제 예제 파일은 `examples/` 아래 `.kts` 스크립트다. 실행은 3장 디렉터리에서 `kotlinc -script examples/<파일명>.kts`로 한다.
+
+- [GcDemo.kts](examples/GcDemo.kts): 참조 타입 4종, Minor/Major GC 유발, `finalize()`와 객체 부활, Old Gen 승격, GC Roots, 삼색 마킹, 세대별 할당을 실험한다. 도달 가능성 분석, 참조 강도, GC 알고리즘, 메모리 할당과 회수 전략을 장 내용과 연결한다.
+- [GcCollectorDemo.kts](examples/GcCollectorDemo.kts): STW 측정, GC MXBean 컬렉터 정보, G1 Mixed GC, GC 로그 해석, 카드 테이블/Remembered Set, CMS와 ZGC 특성을 확인한다. 클래식 GC 비교, 저지연 GC, 컬렉터 선택 기준을 실행 결과로 점검한다.
 
 ---
 
@@ -763,7 +770,7 @@ companion object {
 
 컬러드 포인터는 64-bit 참조의 상위 비트(4비트)에 마킹/재배치 메타데이터를 인코딩한다. 32-bit 참조는 4GB 주소 공간 전체가 필요하므로 메타데이터를 저장할 여유 비트가 없다. 이것이 ZGC가 64-bit JVM 전용인 이유다.
 
-### Q7. KafkaProducer의 버퍼가 다이렉트 메모리를 사용하면 GC에 어떤 영향이 있는가?
+### Q7. HTTP 전송 버퍼가 다이렉트 메모리를 사용하면 GC에 어떤 영향이 있는가?
 
 다이렉트 메모리는 자바 힙 밖에 할당되므로 Minor/Major GC의 직접 대상이 아니다. `DirectByteBuffer` 객체 자체는 힙에 있지만 실제 데이터는 네이티브 메모리에 있다. `DirectByteBuffer`가 GC로 수거될 때 `Cleaner`가 네이티브 메모리를 해제한다. 문제는 `DirectByteBuffer` 객체가 Old Gen에 승격되면 Full GC까지 네이티브 메모리가 해제되지 않아 다이렉트 메모리 OOM이 발생할 수 있다는 점이다.
 
@@ -777,16 +784,16 @@ RETRANSFORMATION은 이미 로딩된 클래스를 변환한다. 변환된 클래
 
 ### Q10. 안전 지점(Safepoint)이 log-friends의 flush() 스레드에 미치는 영향은?
 
-`flush()`는 `@Synchronized`이므로 모니터를 획득한다. GC가 시작되면 모든 스레드는 안전 지점에서 멈춰야 한다. `flush()` 내부의 `drainTo()` + Kafka `send()`가 진행 중이면, 다음 안전 지점에 도달할 때까지 GC STW가 지연될 수 있다. 다만 이 메서드들 내부에 메서드 호출이 포함되어 있으므로 안전 지점이 존재하며, 실질적인 지연은 미미하다.
+`flush()`는 `@Synchronized`이므로 모니터를 획득한다. GC가 시작되면 모든 스레드는 안전 지점에서 멈춰야 한다. `flush()` 내부의 `drainTo()` + HTTP `send()`가 진행 중이면, 다음 안전 지점에 도달할 때까지 GC STW가 지연될 수 있다. 다만 이 메서드들 내부에 메서드 호출이 포함되어 있으므로 안전 지점이 존재하며, 실질적인 지연은 미미하다.
 
 ### Q11. Young GC 빈도가 높은 환경에서 log-friends 에이전트의 동작은?
 
-매 HTTP 요청마다 `AgentEvent` Protobuf 객체가 Eden에 생성된다. 초당 수천 건의 요청이 들어오면 Eden이 빠르게 채워져 Minor GC가 빈번해진다. Protobuf 객체는 대부분 단명(큐에서 flush 후 즉시 unreachable)이므로 Minor GC의 회수 효율이 높다. 문제는 GC 중 `enqueue()`가 STW에 걸려 이벤트 처리 지연이 발생할 수 있다는 점이다.
+매 HTTP 요청마다 `AgentEvent` 내부 객체가 Eden에 생성된다. 초당 수천 건의 요청이 들어오면 Eden이 빠르게 채워져 Minor GC가 빈번해진다. 이 객체들은 대부분 단명(큐에서 flush 후 즉시 unreachable)이므로 Minor GC의 회수 효율이 높다. 문제는 GC 중 `enqueue()`가 STW에 걸려 이벤트 처리 지연이 발생할 수 있다는 점이다.
 
 ### Q12. G1의 Humongous Region은 언제 문제가 되는가?
 
-Region 크기의 50% 이상인 객체는 Humongous로 분류되어 Old Gen에 직접 할당된다. log-friends에서 매우 긴 SQL 쿼리나 대용량 로그 메시지가 Protobuf로 직렬화될 때 큰 `byte[]`가 생성될 수 있다. 이런 Humongous 객체는 단명이어도 Old Gen에 할당되어 Mixed GC까지 회수되지 않으므로 메모리를 오래 점유한다.
+Region 크기의 50% 이상인 객체는 Humongous로 분류되어 Old Gen에 직접 할당된다. log-friends에서 매우 긴 SQL 쿼리나 대용량 로그 메시지가 JSON payload로 만들어질 때 큰 `String`/`byte[]`가 생성될 수 있다. 이런 Humongous 객체는 단명이어도 Old Gen에 할당되어 Mixed GC까지 회수되지 않으므로 메모리를 오래 점유한다.
 
 ### Q13. JDK 21에서 Generational ZGC를 log-friends에 적용할 때 주의할 점은?
 
-Generational ZGC는 Young/Old을 독립 수집하므로 log-friends의 단명 객체(AgentEvent, Protobuf Builder)가 Young에서 빠르게 수거된다. 주의할 점: 1) ZGC는 `-XX:SoftMaxHeapSize`를 사용한 탄력적 힙 관리가 가능하므로 컨테이너 환경에서 유용. 2) 컬러드 포인터로 인해 네이티브 메모리를 더 사용하므로 컨테이너 메모리 한도에 여유가 필요. 3) ZGC + ByteBuddy 조합에서 알려진 호환성 문제는 없으나, `-Djdk.attach.allowAttachSelf=true`는 여전히 필수.
+Generational ZGC는 Young/Old을 독립 수집하므로 log-friends의 단명 객체(AgentEvent, Builder, JSON payload)가 Young에서 빠르게 수거된다. 주의할 점: 1) ZGC는 `-XX:SoftMaxHeapSize`를 사용한 탄력적 힙 관리가 가능하므로 컨테이너 환경에서 유용. 2) 컬러드 포인터로 인해 네이티브 메모리를 더 사용하므로 컨테이너 메모리 한도에 여유가 필요. 3) ZGC + ByteBuddy 조합에서 알려진 호환성 문제는 없으나, `-Djdk.attach.allowAttachSelf=true`는 여전히 필수.

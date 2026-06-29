@@ -128,7 +128,7 @@ println("""
     - 컨테이너 환경: -Xmx는 컨테이너 메모리의 50% 이하 (fork 여유 확보)
 
   log-friends:
-    → Kafka 클라이언트가 Java 소켓으로 직접 통신 → exec() 없음 → 안전
+    → JDK HttpClient가 Java 소켓으로 직접 통신 → exec() 없음 → 안전
     → ByteBuddy attach도 JVM 내부 API → exec() 없음
 """.trimIndent())
 
@@ -158,6 +158,6 @@ println("""
 
 [Promotion] log-friends 적용:
   AgentEvent 객체: 단명 → Eden에서 Minor GC로 빠르게 수거 (정상)
-  KafkaProducer 버퍼(32MB): 큰 객체 → Old Gen 직접 할당 가능
+  HTTP batch payload/buffer: 큰 객체 → Old Gen 직접 할당 가능
   CompanionObject.instance: static 필드 = GC Root → 영구 생존 (의도된 설계)
 """.trimIndent())

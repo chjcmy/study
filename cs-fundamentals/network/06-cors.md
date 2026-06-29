@@ -15,13 +15,16 @@ API 서버 (https://api.shop.com)
 3. 실제 요청 진행
 ```
 
-```python
-# FastAPI CORS 설정
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["https://www.shop.com"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+```kotlin
+// Spring MVC CORS 설정 예시
+@Configuration
+class WebConfig : WebMvcConfigurer {
+    override fun addCorsMappings(registry: CorsRegistry) {
+        registry.addMapping("/**")
+            .allowedOrigins("https://www.shop.com")
+            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+            .allowedHeaders("*")
+            .allowCredentials(true)
+    }
+}
 ```

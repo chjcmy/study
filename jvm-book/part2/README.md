@@ -6,6 +6,13 @@
 
 ---
 
+## 탐색
+
+- [전체 로드맵](../index.md)
+- [2부 상세 노트](../part2-memory.md)
+
+---
+
 ## 개요
 
 JVM의 자동 메모리 관리(Automatic Memory Management)는 개발자가 직접 메모리를 할당하고 해제하지 않아도 되도록 하는 핵심 기능이다. 이 부에서는 JVM이 내부적으로 메모리를 어떻게 구성하고, 사용하지 않는 객체를 어떻게 수거하며, 개발자가 이를 어떻게 모니터링하고 최적화할 수 있는지를 다룬다.
@@ -14,12 +21,12 @@ JVM의 자동 메모리 관리(Automatic Memory Management)는 개발자가 직�
 
 ## 챕터 목록
 
-| 장 | 제목 | 핵심 주제 | 예상 시간 |
-|----|------|----------|----------|
-| [2장](./ch02/README.md) | 자바 메모리 영역과 메모리 오버플로 | 런타임 데이터 영역, 객체 생성 과정, OOM 유형 | 3~4시간 |
-| [3장](./ch03/README.md) | 가비지 컬렉터와 메모리 할당 전략 | GC 알고리즘, 클래식 GC 비교, ZGC/Shenandoah, 할당 전략 | 7~8시간 |
-| [4장](./ch04/README.md) | 가상 머신 성능 모니터링/진단 도구 | jps/jstat/jmap/jstack, GUI 도구(VisualVM, JMC) | 2~3시간 |
-| [5장](./ch05/README.md) | 고성능 메모리 할당 | 실전 최적화 사례, Safepoint 지연, Full GC 대응 | 3~4시간 |
+| 장 | 제목 | 핵심 주제 | 예상 시간 | 예제 |
+|----|------|----------|----------|---|
+| [2장](./ch02/README.md) | 자바 메모리 영역과 메모리 오버플로 | 런타임 데이터 영역, 객체 생성 과정, OOM 유형 | 3~4시간 | [examples](./ch02/examples/) |
+| [3장](./ch03/README.md) | 가비지 컬렉터와 메모리 할당 전략 | GC 알고리즘, 클래식 GC 비교, ZGC/Shenandoah, 할당 전략 | 7~8시간 | [examples](./ch03/examples/) |
+| [4장](./ch04/README.md) | 가상 머신 성능 모니터링/진단 도구 | jps/jstat/jmap/jstack, GUI 도구(VisualVM, JMC) | 2~3시간 | [examples](./ch04/examples/) |
+| [5장](./ch05/README.md) | 고성능 메모리 할당 | 실전 최적화 사례, Safepoint 지연, Full GC 대응 | 3~4시간 | [examples](./ch05/examples/) |
 
 ---
 
@@ -52,12 +59,12 @@ JVM GC의 핵심 원리와 모든 컬렉터를 다룬다.
 
 ## 4장: 가상 머신 성능 모니터링/진단 도구
 
-JVM을 진단하는 CLI 도구와 GUI 도구를 실습 중심으로 정리한다.
+JVM을 진단하는 CLI 도구와 GUI 도구를 예제 중심으로 정리한다.
 
 - **CLI**: `jps`, `jstat`, `jinfo`, `jmap`, `jhat`, `jstack`
 - **GUI**: JHSDB, JConsole, VisualVM, JMC(Java Mission Control)
 - **핫스팟 플러그인**: HSDIS(어셈블리 출력), JITWatch(JIT 시각화)
-- **실습**: log-friends 에이전트를 `jstat -gcutil`로 모니터링하는 시나리오 포함
+- **예제**: `MonitoringDemo.kts`를 띄운 뒤 `jstat -gcutil`로 모니터링하는 시나리오 포함
 
 → [4장 상세 보기](./ch04/README.md)
 
@@ -85,7 +92,7 @@ JVM을 진단하는 CLI 도구와 GUI 도구를 실습 중심으로 정리한다
 |------|-------------|----------|
 | GC 압력 | `BatchTransporter` | `LinkedBlockingQueue(10000)`의 Node 래핑 → 단명 객체 대량 발생 |
 | Metaspace | `InstrumentationRegistry` | ByteBuddy RETRANSFORMATION → 변환 클래스 메타데이터 누적 |
-| 다이렉트 메모리 | `KafkaProducer` | `RecordAccumulator` 32MB 버퍼, NIO DirectByteBuffer |
+| 전송 버퍼 | HTTP ingest transport | `HttpClient`/NIO 전송 과정의 버퍼와 힙 밖 메모리 사용 가능성 |
 | GC Root | `BatchTransporter.companion` | `@Volatile` 정적 필드 = GC Root → 인스턴스 영속 생존 |
 | ZGC 권장 | JVM 옵션 | JDK 21 Generational ZGC + `-XX:MaxMetaspaceSize=256m` |
 | Safepoint | `flush()` 스레드 | `@Synchronized` + `drainTo()` → 안전 지점 내 STW 지연 가능성 |

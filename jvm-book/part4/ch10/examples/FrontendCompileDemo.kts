@@ -138,17 +138,19 @@ println("[Bridge] 부모 클래스 공변 오버라이드 시 컴파일러가 �
 // ── 9. 조건부 컴파일 ──────────────────────────────────────────────
 println("\n=== 9. 조건부 컴파일 ===")
 
-const val DEBUG = false
+object CompileFlags {
+    const val DEBUG = false
+}
 
 fun conditionalCompile(): String {
-    if (DEBUG) {
+    if (CompileFlags.DEBUG) {
         println("[ConditionalCompile] 이 코드는 DEBUG=false이면 바이트코드에서 제거될 수 있음")
     }
     return "result"
 }
 
 val condResult = conditionalCompile()
-println("[ConditionalCompile] DEBUG=$DEBUG → if 블록 바이트코드 포함 여부 설명")
+println("[ConditionalCompile] DEBUG=${CompileFlags.DEBUG} → if 블록 바이트코드 포함 여부 설명")
 println("[ConditionalCompile] 결과: $condResult")
 println("""
 [ConditionalCompile] javac 처리 방식:

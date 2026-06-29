@@ -298,6 +298,14 @@ public int calculate();
 
 ---
 
+## 예제
+
+실제 예제 파일은 `examples/` 아래 `.kts` 스크립트다. 실행은 8장 디렉터리에서 `kotlinc -script examples/<파일명>.kts`로 한다.
+
+- [ExecutionEngineDemo.kts](examples/ExecutionEngineDemo.kts): JIT 워밍업, 스택 프레임 시뮬레이션, `invokedynamic`/람다, `MethodHandle`, 인라이닝과 역최적화, 정적/동적 디스패치, 스택 기반 vs 레지스터 기반 아키텍처를 확인한다. 8장의 바이트코드 실행 엔진과 메서드 디스패치 흐름을 실행 결과로 연결한다.
+
+---
+
 ## 핵심 질문 (8장)
 
 9. **스택 프레임의 지역 변수 테이블에서 슬롯 재사용이 GC에 미칠 수 있는 영향을 설명하라. JIT 컴파일러가 이를 어떻게 해결하는가?**

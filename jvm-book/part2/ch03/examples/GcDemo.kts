@@ -12,6 +12,7 @@ import java.lang.ref.PhantomReference
 import java.lang.ref.ReferenceQueue
 import java.lang.ref.SoftReference
 import java.lang.ref.WeakReference
+import java.lang.management.ManagementFactory
 
 // ── 1. 참조 타입 4종 ──────────────────────────────────────────────
 println("=== 1. 참조 타입 4종 ===")
@@ -53,7 +54,7 @@ var survivor: Any? = null
 
 class Mortal {
     @Suppress("DEPRECATION")
-    override fun finalize() {
+    protected fun finalize() {
         println("[Finalize] finalize() 호출됨 — 객체 부활 시도")
         survivor = this
     }
@@ -195,7 +196,6 @@ println("""
 """.trimIndent())
 
 // 메모리 풀 정보로 실제 세대 구조 확인
-import java.lang.management.ManagementFactory
 val pools = ManagementFactory.getMemoryPoolMXBeans()
 println("[Generational] 현재 JVM 메모리 풀:")
 pools.forEach { pool ->

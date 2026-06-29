@@ -269,6 +269,14 @@ public class NamingConventionProcessor extends AbstractProcessor {
 
 ---
 
+### 예제
+
+실제 예제 파일은 `examples/` 아래 `.kts` 스크립트다. 실행은 10장 디렉터리에서 `kotlinc -script examples/<파일명>.kts`로 한다.
+
+- [FrontendCompileDemo.kts](examples/FrontendCompileDemo.kts): 제네릭 타입 소거, 오토박싱/언박싱, for-each 내부 변환, String switch, 애너테이션 처리, `var` 타입 추론, javac 4단계 파이프라인, 브릿지 메서드와 시그니처 충돌, 조건부 컴파일, Java vs C# 제네릭을 확인한다. 10장의 프런트엔드 컴파일 과정과 컴파일 타임 최적화 한계를 실행 가능한 예로 묶는다.
+
+---
+
 ### 핵심 질문 (10장)
 
 1. **javac가 거의 최적화를 하지 않는 이유는 무엇인가?** JVM 언어 생태계와 JIT 컴파일러의 역할 분담 관점에서 설명하라.

@@ -4,6 +4,7 @@
  * 실행: kotlinc -script ThreadSafetyDemo.kts   (JDK 21 필수 — 가상 스레드)
  */
 
+import java.lang.management.ManagementFactory
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
@@ -253,7 +254,7 @@ println("""
      ArrayBlockingQueue(단일 락)보다 처리량 우수
 
   ⑥ @Synchronized flush() — 복합 연산 원자성 보장
-     drainTo + Kafka 전송을 하나의 락으로 묶음
+     drainTo + HTTP 전송을 하나의 락으로 묶음
      스케줄러 flush + 즉시 flush 동시 호출 방지
 
 [BatchTransporter] 락 경쟁 진단:
@@ -263,8 +264,6 @@ println("""
 """.trimIndent())
 
 // jstack 스레드 상태 진단 (ThreadMXBean으로 현재 스레드 분석)
-import java.lang.management.ManagementFactory
-
 val threadBean = ManagementFactory.getThreadMXBean()
 val allInfos = threadBean.getThreadInfo(threadBean.allThreadIds, 3)
 val byState = allInfos.filterNotNull().groupBy { it.threadState }
@@ -288,5 +287,5 @@ println("""
   WAITING  on java.util.concurrent.locks.AbstractQueuedSynchronizer
     → LinkedBlockingQueue.take() 정상 대기 (이벤트 없음)
   RUNNABLE + lock: ... locked <0x...>
-    → Kafka I/O 처리 중 (정상)
+    → HTTP I/O 처리 중 (정상)
 """.trimIndent())

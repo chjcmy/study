@@ -126,7 +126,7 @@ UDP 헤더: 8 바이트만!
 | 흐름 제어 | 있음 (Window) | 없음 |
 | 혼잡 제어 | 있음 | 없음 |
 | 사용 | HTTP, API, 파일 전송, 이메일 | DNS, 스트리밍, 게임, VoIP |
-| **Log-Doctor** | **REST API 통신** | DNS 조회 시 |
+| **log-friends** | **SDK -> Console `/ingest` HTTP 전송** | DNS 조회, QUIC/HTTP3 |
 
 ### 언제 뭘 쓸까?
 
@@ -134,7 +134,7 @@ UDP 헤더: 8 바이트만!
 TCP를 써야 하는 경우:
   ✅ 데이터 정확성이 중요 (API, 파일 전송, 이메일)
   ✅ 순서가 중요 (HTML 페이지 로딩)
-  ✅ Log-Doctor의 REST API 통신
+  ✅ log-friends SDK의 Console `/ingest` 전송
 
 UDP를 써야 하는 경우:
   ✅ 속도가 중요 (실시간 스트리밍, 게임)

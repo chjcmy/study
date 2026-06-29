@@ -1,6 +1,6 @@
 # CS 기초 (Computer Science Fundamentals)
 
-Azure 프로젝트(Log-Doctor)의 **근본이 되는 CS 지식**을 정리합니다.
+프로젝트를 만들 때 반복해서 마주치는 **근본 CS 지식**을 정리합니다. 현재는 log-friends, JVM 학습, 클라우드/백엔드 프로젝트를 같이 연결해 본다.
 
 ---
 
@@ -22,16 +22,16 @@ cs-fundamentals/
 
 ## 왜 CS 기초가 중요한가?
 
-Log-Doctor 프로젝트의 모든 기술이 CS 기초 위에 있습니다:
+백엔드 프로젝트의 모든 기술은 CS 기초 위에 있다:
 
 | 프로젝트 기술 | 근본 CS 지식 |
 |-------------|-------------|
-| FastAPI (async/await) | **동기/비동기, 이벤트 루프, 코루틴** |
-| OBO Flow / JWT | **인증/보안, 토큰 기반 인증, OAuth 2.0** |
-| ARM API / REST | **네트워크, HTTP, TLS/SSL** |
-| Cosmos DB (파티션 키) | **데이터베이스, NoSQL, 분산 시스템** |
-| Repository 패턴 / DI | **디자인 패턴, SOLID 원칙** |
-| Container App (스케일링) | **운영체제, 프로세스/스레드, 컨테이너** |
+| log-friends SDK `POST /ingest` | **네트워크, HTTP, timeout, retry** |
+| JVM/ByteBuddy 계측 | **운영체제, 프로세스, 클래스 로딩** |
+| TimescaleDB/PostgreSQL | **데이터베이스, 인덱스, 트랜잭션** |
+| Spring Boot Console | **HTTP, REST, 동기/비동기, 디자인 패턴** |
+| 인증/권한 설계 | **OAuth, JWT, HTTPS, CORS** |
+| Docker/DSM 배포 | **네트워크 인터페이스, 포트, 컨테이너** |
 
 ---
 

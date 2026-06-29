@@ -171,6 +171,14 @@ public void sync();
 
 ---
 
+## 예제
+
+실제 예제 파일은 `examples/` 아래 `.kts` 스크립트다. 실행은 6장 디렉터리에서 `kotlinc -script examples/<파일명>.kts`로 한다.
+
+- [ClassFileDemo.kts](examples/ClassFileDemo.kts): 매직 넘버, 접근 플래그, 상수 풀 태그, 타입 디스크립터, Kotlin → 바이트코드 매핑, 5가지 메서드 호출 명령어, ByteBuddy 계측과 클래스 파일의 관계를 확인한다. 6장의 클래스 파일 구조와 바이트코드 명령어 분류를 실행 가능한 점검표로 묶는다.
+
+---
+
 ## 핵심 질문 (6장)
 
 1. **클래스 파일의 상수 풀에는 어떤 종류의 정보가 저장되며, ByteBuddy가 계측할 때 상수 풀을 어떻게 수정하는가?**

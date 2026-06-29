@@ -92,7 +92,7 @@ Proto: [바이너리]                                           → 23 바이트
 
 ```
 REST를 쓸 때:
-  ✅ 웹 브라우저 직접 호출 (Teams 앱 → FastAPI)
+  ✅ 웹 브라우저 직접 호출 (Console UI → Spring Boot API)
   ✅ 외부 공개 API (third-party 개발자)
   ✅ 간단한 CRUD
   ✅ 팀이 REST에 익숙할 때
@@ -105,7 +105,7 @@ gRPC를 쓸 때:
   ✅ polyglot 환경 (여러 언어 서비스 → .proto로 코드 자동 생성)
 ```
 
-> Log-Doctor: 외부 API(ARM, Teams)는 **REST**, 만약 내부 서비스가 추가되면 **gRPC**가 효율적
+> log-friends 1차 구현은 단일 Spring Boot Console과 SDK 간 HTTP REST가 맞다. gRPC는 내부 서비스가 분리되거나 초고빈도 양방향 스트리밍이 필요해질 때 검토한다.
 
 ---
 

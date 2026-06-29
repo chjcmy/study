@@ -315,6 +315,14 @@ public class MetaspaceOOM {
 
 ---
 
+## 예제
+
+실제 예제 파일은 `examples/` 아래 `.kts` 스크립트다. 실행은 2장 디렉터리에서 `kotlinc -script examples/<파일명>.kts`로 한다.
+
+- [MemoryAreaDemo.kts](examples/MemoryAreaDemo.kts): 런타임 데이터 영역 5개, `StackOverflowError`, 다이렉트 메모리, String Intern, TLAB, 객체 생성 5단계, 객체 레이아웃, OOM 유형을 한 번에 관찰한다. 2장의 메모리 영역과 메모리 오버플로 원인을 실행 가능한 형태로 연결한다.
+
+---
+
 ## 학습 완료 체크리스트
 
 - [ ] 5개 런타임 데이터 영역(PC, JVM 스택, 네이티브 스택, 힙, 메서드 영역)의 역할과 스레드 공유 여부를 설명할 수 있다

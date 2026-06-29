@@ -188,7 +188,7 @@ ExecutorService executor = Executors.newFixedThreadPool(200);
 ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor();
 ```
 
-> **log-friends와의 연결:** log-friends-sdk가 JDK 21을 타겟으로 하는 것은 가상 스레드의 혜택을 직접 받을 수 있다는 뜻이다. `BatchTransporter`의 비동기 큐 처리나 Kafka 전송 로직에서 가상 스레드를 활용하면 적은 리소스로 높은 처리량을 달성할 수 있다.
+> **log-friends와의 연결:** log-friends-sdk가 JDK 21을 타겟으로 하는 것은 가상 스레드의 혜택을 직접 받을 수 있다는 뜻이다. `BatchTransporter`의 비동기 큐 처리나 Console `/ingest` HTTP 전송 로직에서 가상 스레드를 활용하면 적은 리소스로 높은 처리량을 달성할 수 있다.
 
 ---
 
@@ -363,7 +363,7 @@ graph TD
 // log-friends BatchTransporter에서 가상 스레드 활용 가능성
 val executor = Executors.newVirtualThreadPerTaskExecutor()
 executor.submit {
-    kafkaProducer.send(record)  // I/O 대기 시 자동으로 Carrier에서 내려옴
+    httpClient.send(request)  // I/O 대기 시 자동으로 Carrier에서 내려옴
 }
 ```
 
@@ -395,7 +395,7 @@ log-friends-sdk는 JDK 21을 타겟으로 빌드된다. 이는 프로젝트 차�
 ```mermaid
 graph TD
     JDK21["log-friends-sdk @ JDK 21"]
-    LOOM["가상 스레드 (Project Loom)<br/>BatchTransporter의 Kafka 전송이 I/O 바운드<br/>→ 처리량 대폭 향상 가능"]
+    LOOM["가상 스레드 (Project Loom)<br/>BatchTransporter의 HTTP ingest 전송이 I/O 바운드<br/>→ 처리량 대폭 향상 가능"]
     ZGC["Generational ZGC<br/>SDK가 대상 앱에 주는 GC 영향 최소화<br/>→ Stop-the-World 감소"]
     PATTERN["Pattern Matching 확장<br/>이벤트 타입별 분기 처리 코드 간결화"]
 
@@ -450,81 +450,16 @@ Kotlin 컴파일러가 생성하는 바이트코드는 Java 컴파일러가 생�
 
 ---
 
-### 실습
+### 예제
 
-#### 실습 1: JVM 정보 확인
+실제 예제 파일은 `examples/` 아래 `.kts` 스크립트다. 실행은 1장 디렉터리에서 `kotlinc -script examples/<파일명>.kts`로 한다.
 
-```bash
-# 현재 사용 중인 JVM 확인
-java -version
-
-# 출력 예시:
-# openjdk version "21.0.2" 2024-01-16
-# OpenJDK Runtime Environment (build 21.0.2+13-58)
-# OpenJDK 64-Bit Server VM (build 21.0.2+13-58, mixed mode, sharing)
-#                           ^^^^^^^^^^^^^^^^^^^^^^
-#                           HotSpot VM임을 확인
-
-# JVM 상세 정보
-java -XshowSettings:all -version 2>&1 | head -50
-```
-
-#### 실습 2: 바이트코드 확인 --- Java와 Kotlin 비교
-
-```bash
-# Java 파일 컴파일 후 바이트코드 확인
-echo 'public class Hello { public static void main(String[] args) { System.out.println("Hello"); } }' > Hello.java
-javac Hello.java
-javap -c Hello.class
-
-# Kotlin 파일 컴파일 후 바이트코드 확인
-echo 'fun main() { println("Hello") }' > Hello.kt
-kotlinc Hello.kt -include-runtime -d hello.jar
-javap -c -classpath hello.jar HelloKt
-```
-
-> 두 바이트코드를 비교하면 구조가 매우 유사함을 확인할 수 있다. 이것이 "JVM 언어 독립성"의 실체다.
-
-#### 실습 3: OpenJDK 소스 빌드 (선택)
-
-```bash
-# macOS 기준 (Homebrew 필요)
-# 1. 의존성 설치
-brew install autoconf freetype
-
-# 2. OpenJDK 소스 클론
-git clone https://github.com/openjdk/jdk.git
-cd jdk
-
-# 3. 빌드 설정
-bash configure \
-  --with-target-bits=64 \
-  --with-debug-level=slowdebug \
-  --with-jvm-variants=server
-
-# 4. 빌드 실행 (시간 소요: 30분~1시간)
-make images
-
-# 5. 빌드된 JDK 확인
-./build/macosx-aarch64-server-slowdebug/jdk/bin/java -version
-```
-
-> **slowdebug** 빌드를 사용하면 JVM 내부 동작을 디버거로 추적할 수 있다. 이후 장에서 GC나 JIT 동작을 분석할 때 유용하다.
-
-#### 실습 4: log-friends-sdk에서 VM 정보 로깅
-
-```kotlin
-// 실제 프로젝트에서 JVM 정보를 확인하는 코드
-fun printJvmInfo() {
-    val runtime = Runtime.getRuntime()
-    println("JVM Name: ${System.getProperty("java.vm.name")}")
-    println("JVM Version: ${System.getProperty("java.vm.version")}")
-    println("JVM Vendor: ${System.getProperty("java.vm.vendor")}")
-    println("Available Processors: ${runtime.availableProcessors()}")
-    println("Max Memory: ${runtime.maxMemory() / 1024 / 1024}MB")
-    println("Attach Self Allowed: ${System.getProperty("jdk.attach.allowAttachSelf")}")
-}
-```
+- [JvmInfo.kts](examples/JvmInfo.kts): JDK/JRE/JVM, VM 구현체, JVM 인자와 메모리 정보를 출력한다. 1.1의 자바 기술 시스템 구성과 JVM 제품군을 현재 환경으로 확인한다.
+- [BytecodeTarget.kts](examples/BytecodeTarget.kts): `data class`, `sealed class`, null-safe 연산을 컴파일 대상으로 만든다. WORA와 JVM 언어 독립성을 `javap`로 확인하는 예제다.
+- [VirtualThreadDemo.kts](examples/VirtualThreadDemo.kts): 플랫폼 스레드 풀과 가상 스레드 실행 시간을 비교한다. JDK 21/Project Loom의 동시성 방향을 체감한다.
+- [ClassLoaderHierarchy.kts](examples/ClassLoaderHierarchy.kts): Bootstrap/Application 클래스 로더, ClassPath, Module Path를 출력한다. JVM 제품군과 클래스 로더 계층이 런타임에 어떻게 보이는지 연결한다.
+- [JitWarmupDemo.kts](examples/JitWarmupDemo.kts): 반복 연산의 라운드별 시간을 찍어 JIT 워밍업을 관찰한다. HotSpot의 적응형 최적화와 계층형 컴파일을 확인한다.
+- [GraalNativeHint.kts](examples/GraalNativeHint.kts): GraalVM 여부와 JVM/Native Image 실행 비교 포인트를 출력한다. AOT vs JIT, GraalVM Native Image의 트레이드오프를 다룬다.
 
 ---
 
@@ -558,7 +493,7 @@ log-friends-sdk처럼 ByteBuddy로 런타임 계측하는 도구는 Native Image
 
 #### Q6. JDK 21의 가상 스레드가 기존 스레드 풀 방식보다 유리한 시나리오는?
 
-**A:** **I/O 바운드 작업이 많은 서버 애플리케이션**에서 압도적으로 유리하다. 전통적 스레드 풀(200~500개)은 모든 스레드가 I/O 대기 상태이면 더 이상 요청을 처리할 수 없다. 가상 스레드는 I/O 대기 시 캐리어 스레드에서 자동으로 언마운트되어 다른 가상 스레드가 사용할 수 있게 한다. log-friends의 `BatchTransporter`가 Kafka에 메시지를 전송할 때 네트워크 I/O가 발생하는데, 가상 스레드를 사용하면 소수의 OS 스레드로도 높은 동시 전송량을 달성할 수 있다. 단, **CPU 바운드 작업**에서는 가상 스레드의 이점이 없다.
+**A:** **I/O 바운드 작업이 많은 서버 애플리케이션**에서 압도적으로 유리하다. 전통적 스레드 풀(200~500개)은 모든 스레드가 I/O 대기 상태이면 더 이상 요청을 처리할 수 없다. 가상 스레드는 I/O 대기 시 캐리어 스레드에서 자동으로 언마운트되어 다른 가상 스레드가 사용할 수 있게 한다. log-friends의 `BatchTransporter`가 Console `/ingest`로 batch를 전송할 때 네트워크 I/O가 발생하는데, 가상 스레드를 사용하면 소수의 OS 스레드로도 높은 동시 전송량을 달성할 수 있다. 단, **CPU 바운드 작업**에서는 가상 스레드의 이점이 없다.
 
 #### Q7. Java SE, EE, ME 에디션 구분이 현재도 의미 있는가?
 

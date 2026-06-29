@@ -174,7 +174,7 @@ println("""
 [ZGC] Generational ZGC (JDK 21+):
   기존 ZGC는 세대 구분 없음 → 단명 객체에도 전체 힙 탐색 비용
   Generational ZGC: Young/Old 독립 수집 → 단명 객체 더 빠르게 수거
-  log-friends AgentEvent(단명) + Protobuf 객체 → Generational ZGC 최적화
+  log-friends AgentEvent(단명) + JSON payload → Generational ZGC 최적화
 
 [컬렉터 선택 가이드]
   힙 < 200MB   → Serial GC   (단순, 오버헤드 최소)

@@ -17,39 +17,11 @@
 
 ---
 
-## 실습: log-friends 에이전트 모니터링
+## 예제
 
-```bash
-# 1. 실행 중인 log-friends 앱의 PID 확인
-jps -lv | grep examples
+실제 예제 파일은 `examples/` 아래 `.kts` 스크립트다. 실행은 4장 디렉터리에서 `kotlinc -script examples/<파일명>.kts`로 한다.
 
-# 2. GC 통계를 1초 간격으로 모니터링
-jstat -gcutil <pid> 1000
-#   S0     S1     E      O      M     CCS    YGC     YGCT    FGC    FGCT     GCT
-#   0.00  45.23  67.12  12.34  95.67  92.45    15    0.123     1    0.045   0.168
-
-# 각 열 의미:
-# S0/S1:  Survivor 0/1 사용률(%)
-# E:      Eden 사용률(%)
-# O:      Old Gen 사용률(%)
-# M:      Metaspace 사용률(%)
-# YGC:    Young GC 횟수
-# YGCT:   Young GC 누적 시간(초)
-# FGC:    Full GC 횟수
-# FGCT:   Full GC 누적 시간(초)
-
-# 3. Metaspace 사용량 확인 (ByteBuddy 클래스 생성 모니터링)
-jstat -gcmetacapacity <pid> 1000
-
-# 4. 힙 히스토그램 (상위 20개 클래스)
-jmap -histo:live <pid> | head -25
-
-# 5. 스레드 덤프 (log-friends-batch-flush 스레드 상태 확인)
-jstack <pid> | grep -A 20 "log-friends-batch-flush"
-
-# 6. 힙 덤프 후 MAT로 분석
-jmap -dump:live,format=b,file=logfriends-heap.hprof <pid>
-```
+- [MonitoringDemo.kts](examples/MonitoringDemo.kts): 오래 살아 있는 JVM 프로세스를 띄우고 메모리 누수, 데드락, 스레드 상태, 힙 히스토그램 대상, `MemoryMXBean`, `ThreadMXBean`을 만든다. 별도 터미널에서 `jps`, `jstat`, `jstack`, `jmap`을 붙여 4장의 성능 모니터링 도구를 직접 확인한다.
 
 ---
 

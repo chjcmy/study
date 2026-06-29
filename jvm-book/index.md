@@ -6,6 +6,18 @@
 
 ---
 
+## 빠른 탐색
+
+| 파트 | 허브 | 상세 노트 | 예제 |
+|---|---|---|---|
+| 1부 | [1부 README](part1/README.md) | [자바 기술 시스템 소개](part1-java-intro.md) | [ch01/examples](part1/ch01/examples/) |
+| 2부 | [2부 README](part2/README.md) | [자동 메모리 관리](part2-memory.md) | [ch02](part2/ch02/examples/), [ch03](part2/ch03/examples/), [ch04](part2/ch04/examples/), [ch05](part2/ch05/examples/) |
+| 3부 | [3부 README](part3/README.md) | [가상 머신 실행 서브시스템](part3-execution.md) | [ch06](part3/ch06/examples/), [ch07](part3/ch07/examples/), [ch08](part3/ch08/examples/), [ch09](part3/ch09/examples/) |
+| 4부 | [4부 README](part4/README.md) | [컴파일과 최적화](part4-compilation.md) | [ch10](part4/ch10/examples/), [ch11](part4/ch11/examples/) |
+| 5부 | [5부 README](part5/README.md) | [효율적인 동시성](part5-concurrency.md) | [ch12](part5/ch12/examples/), [ch13](part5/ch13/examples/) |
+
+---
+
 ## 학습 순서
 
 ```
@@ -17,57 +29,67 @@ Part 3 (실행) ← log-friends SDK와 연결 가장 밀접
   ↓
 Part 4 (컴파일) ← JIT 최적화 이해
   ↓
-Part 5 (동시성) ← BatchTransporter, KafkaProducer 설계 이해
+Part 5 (동시성) ← BatchTransporter, HTTP ingest 설계 이해
 ```
 
 ---
 
 ## 파트별 개요
 
-### [1부: 자바와 친해지기](part1-java-intro.md)
+### [1부: 자바와 친해지기](part1/README.md)
 
 | 항목 | 내용 |
 |---|---|
 | **범위** | 1장 — 자바 기술 시스템 소개 |
+| **상세 노트** | [part1-java-intro.md](part1-java-intro.md) |
+| **예제** | [part1/ch01/examples](part1/ch01/examples/) |
 | **학습 시간** | 4~5시간 |
 | **핵심** | JDK/JRE/JVM 계층, JDK 역사 (1.0~21), VM 제품군 비교, 자바의 미래 |
 | **프로젝트 연결** | JDK 21 가상 스레드, ByteBuddy와 Instrumentation API, Kotlin 언어 독립성 |
 
-### [2부: 자동 메모리 관리](part2-memory.md)
+### [2부: 자동 메모리 관리](part2/README.md)
 
 | 항목 | 내용 |
 |---|---|
 | **범위** | 2장 메모리 영역 / 3장 GC / 4장 모니터링 도구 / 5장 튜닝 사례 |
+| **상세 노트** | [part2-memory.md](part2-memory.md) |
+| **예제** | [ch02](part2/ch02/examples/), [ch03](part2/ch03/examples/), [ch04](part2/ch04/examples/), [ch05](part2/ch05/examples/) |
 | **학습 시간** | 15~18시간 |
 | **핵심** | 런타임 데이터 영역, 객체 생성과 레이아웃, GC 알고리즘 4종, GC 수집기 (Serial~ZGC), OOM 진단 |
-| **프로젝트 연결** | BatchTransporter 큐의 GC 압력, ByteBuddy Metaspace 영향, KafkaProducer 다이렉트 메모리, ZGC 권장 설정 |
+| **프로젝트 연결** | BatchTransporter 큐의 GC 압력, ByteBuddy Metaspace 영향, HTTP ingest 전송 버퍼, ZGC 권장 설정 |
 
-### [3부: 가상 머신 실행 서브시스템](part3-execution.md)
+### [3부: 가상 머신 실행 서브시스템](part3/README.md)
 
 | 항목 | 내용 |
 |---|---|
 | **범위** | 6장 클래스 파일 / 7장 클래스 로딩 / 8장 바이트코드 실행 / 9장 실전 |
+| **상세 노트** | [part3-execution.md](part3-execution.md) |
+| **예제** | [ch06](part3/ch06/examples/), [ch07](part3/ch07/examples/), [ch08](part3/ch08/examples/), [ch09](part3/ch09/examples/) |
 | **학습 시간** | 15~20시간 |
 | **핵심** | 클래스 파일 구조, 부모 위임 모델, 스택 프레임과 디스패치, invokedynamic, ByteBuddy 바이트코드 |
 | **프로젝트 연결** | LogFriendsInstaller RETRANSFORMATION, InstrumentationRegistry 계측, MethodDelegation 내부 동작 |
 
-### [4부: 컴파일과 최적화](part4-compilation.md)
+### [4부: 컴파일과 최적화](part4/README.md)
 
 | 항목 | 내용 |
 |---|---|
 | **범위** | 10장 프런트엔드 컴파일 / 11장 백엔드 컴파일 |
+| **상세 노트** | [part4-compilation.md](part4-compilation.md) |
+| **예제** | [ch10](part4/ch10/examples/), [ch11](part4/ch11/examples/) |
 | **학습 시간** | 10~12시간 |
 | **핵심** | javac 4단계, 타입 소거 제네릭, JIT (C1/C2 계층형 컴파일), 인라인, 탈출 분석, AOT vs JIT |
 | **프로젝트 연결** | ByteBuddy 프록시 인라인, Kotlin inline과 JVM 인라인 관계, 10ms 임계값과 워밍업, native-image 호환성 |
 
-### [5부: 효율적인 동시성](part5-concurrency.md)
+### [5부: 효율적인 동시성](part5/README.md)
 
 | 항목 | 내용 |
 |---|---|
 | **범위** | 12장 자바 메모리 모델 / 13장 스레드 안전과 락 최적화 |
+| **상세 노트** | [part5-concurrency.md](part5-concurrency.md) |
+| **예제** | [ch12](part5/ch12/examples/), [ch13](part5/ch13/examples/) |
 | **학습 시간** | 10~12시간 |
 | **핵심** | JMM, volatile/happens-before, 가상 스레드, CAS, 락 팽창 (편향→경량→중량), 스레드 안전성 5단계 |
-| **프로젝트 연결** | BatchTransporter DCL+@Volatile, AtomicBoolean/AtomicLong CAS, LinkedBlockingQueue dual-lock, 가상 스레드 pinning |
+| **프로젝트 연결** | BatchTransporter DCL+@Volatile, AtomicBoolean/AtomicLong CAS, LinkedBlockingQueue dual-lock, HTTP ingest I/O와 가상 스레드 pinning |
 
 ---
 
@@ -90,7 +112,7 @@ BatchTransporter          →  2장 (힙 메모리, GC 압력)
                              12장 (volatile, DCL)
                              13장 (CAS, BlockingQueue)
 
-KafkaProducer (lazy init) →  2장 (다이렉트 메모리)
+HTTP ingest transport     →  2장 (전송 버퍼와 다이렉트 메모리 가능성)
                              12장 (happens-before)
                              13장 (스레드 안전성)
 ```
@@ -100,7 +122,7 @@ KafkaProducer (lazy init) →  2장 (다이렉트 메모리)
 ## 추천 학습 방법
 
 1. **각 파트를 순서대로** 읽되, Part 2와 Part 3에 가장 많은 시간 투자
-2. **실습 섹션**은 반드시 직접 실행 (jps, jstat, javap, JITWatch 등)
+2. **예제 섹션**은 반드시 직접 실행 (`kotlinc -script`, `jps`, `jstat`, `javap` 등)
 3. **핵심 질문**을 먼저 읽고 답변을 가린 채 자기 언어로 설명해보기
 4. **체크리스트** 항목을 모두 체크할 수 있을 때 다음 파트로 이동
 5. **프로젝트 연결** 섹션에서 실제 SDK 코드를 열어 대조하며 읽기

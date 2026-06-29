@@ -252,6 +252,14 @@ module java.sql {
 
 ---
 
+## 예제
+
+실제 예제 파일은 `examples/` 아래 `.kts` 스크립트다. 실행은 7장 디렉터리에서 `kotlinc -script examples/<파일명>.kts`로 한다.
+
+- [ClassLoaderDemo.kts](examples/ClassLoaderDemo.kts): 클래스 로더 계층, 부모 위임 모델, 클래스 초기화 순서, 커스텀 `ClassLoader`, 스레드 컨텍스트 클래스 로더, 능동적/수동적 사용, JDK 9 모듈 시스템 영향을 확인한다. 7장의 클래스 로딩 5단계와 부모 위임 모델을 런타임 관찰로 연결한다.
+
+---
+
 ## 핵심 질문 (7장)
 
 5. **`LogFriendsInstaller`가 `EnvironmentPostProcessor` 시점에 실행되는 것과 `ApplicationReadyEvent` 시점에 실행되는 것의 차이는? 왜 전자를 선택했는가?**

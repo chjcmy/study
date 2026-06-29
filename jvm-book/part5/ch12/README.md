@@ -378,3 +378,11 @@ try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
 - `synchronized` 블록 내에서는 unmount 불가 (pinning) -> `ReentrantLock` 사용 권장
 - CPU 바운드 작업에는 이점 없음 (오히려 오버헤드)
 - ThreadLocal 값이 가상 스레드마다 복사됨 -> 메모리 폭발 가능 -> ScopedValue 사용 권장
+
+---
+
+### 예제
+
+실제 예제 파일은 `examples/` 아래 `.kts` 스크립트다. 실행은 12장 디렉터리에서 `kotlinc -script examples/<파일명>.kts`로 한다.
+
+- [MemoryModelDemo.kts](examples/MemoryModelDemo.kts): `volatile` 가시성, `i++` 원자성 경쟁, happens-before, 이중 확인 잠금, `long`/`double` 원자성, JMM 8가지 연산과 MESI, 명령어 재배열 방지, 스레드 상태 전이를 확인한다. 12장의 JMM 규칙과 스레드 구현을 재현 가능한 사례로 연결한다.

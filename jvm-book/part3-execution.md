@@ -383,7 +383,7 @@ ServiceLoader<Driver> sl = ServiceLoader.load(Driver.class, cl);
 
 이것은 부모가 자식 로더에게 로딩을 요청하는 것이므로, 부모 위임의 역전이다.
 
-> **log-friends 연결:** log-friends SDK는 `compileOnly`로 Spring Boot에 의존한다. 실행 시에는 Spring Boot의 `LaunchedURLClassLoader`가 fat JAR 내부의 `BOOT-INF/lib/`에서 SDK를 로딩한다. 이 로더 자체가 부모 위임을 일부 변형한 구현이다.
+> **log-friends 연결:** log-friends SDK는 사용하는 애플리케이션의 의존성으로 들어가 `BOOT-INF/lib/`에서 로딩된다. SDK 내부의 Spring Boot AutoConfigure 의존성은 `compileOnly`로 두어, Spring 없는 환경까지 과도하게 묶지 않는다. 이 로딩 경로는 Spring Boot의 `LaunchedURLClassLoader`가 부모 위임을 일부 변형한 구현이기 때문에 가능하다.
 
 #### 3차 파괴: OSGi와 모듈화
 
@@ -801,7 +801,7 @@ public class LaunchedURLClassLoader extends URLClassLoader {
 }
 ```
 
-> **log-friends 연결:** `log-friends-sdk`는 `compileOnly`로 선언되어 별도의 JAR로 배포되지 않고, 사용하는 프로젝트의 `BOOT-INF/lib/`에 포함된다. `LogFriendsInstaller`가 `spring.factories`를 통해 발견되는 것도 `LaunchedURLClassLoader`가 `BOOT-INF/classes/META-INF/spring.factories`를 스캔하기 때문이다.
+> **log-friends 연결:** `log-friends-sdk`는 사용하는 프로젝트의 의존성으로 포함되어 `BOOT-INF/lib/` 아래 SDK JAR로 로딩된다. SDK 안의 `META-INF/spring.factories`가 `EnvironmentPostProcessor`를 등록하고, `META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports`가 자동 설정을 등록한다.
 
 #### 바이트코드 생성 기술과 동적 프락시
 
@@ -915,7 +915,7 @@ areturn
 |---|---|---|
 | **6장** (클래스 파일 구조) | ByteBuddy가 상수 풀에 인터셉터 레퍼런스를 추가하고 Code 속성을 재작성 | `InstrumentationRegistry` 전체 |
 | **7장** (클래스 로딩) | `EnvironmentPostProcessor` 시점에 agent 설치 → 클래스 로딩 전에 transformer 등록 | `LogFriendsInstaller.postProcessEnvironment()` |
-| **7장** (부모 위임 도전) | Spring Boot `LaunchedURLClassLoader`가 `BOOT-INF/lib/`에서 SDK 로딩 | `spring.factories` / `AutoConfiguration` |
+| **7장** (부모 위임 도전) | Spring Boot `LaunchedURLClassLoader`가 `BOOT-INF/lib/`에서 SDK JAR 로딩 | `spring.factories` / `AutoConfiguration.imports` |
 | **7장** (클래스 로딩 시점) | `@Service` 어노테이션이 붙은 클래스가 Spring에 의해 로딩될 때 계측 발생 | `installMethodTrace()` |
 | **8장** (동적 디스패치) | `invokevirtual`로 `doService()` 호출 시 계측된 버전이 실행됨 (vtable 갱신) | `SpringInterceptor.intercept()` |
 | **8장** (invokedynamic) | `@SuperCall Callable`이 MethodHandle 기반으로 원본 메서드 호출 | `callable.call()` in `SpringInterceptor` |
@@ -936,91 +936,21 @@ AgentBuilder.Default()
 
 `LogFriendsInstaller`가 `EnvironmentPostProcessor` 시점에 실행되므로, `DispatcherServlet` 같은 Spring 클래스는 이미 로딩되어 있을 수 있다. `RETRANSFORMATION`이 이를 처리한다.
 
-### 실습
+### 실행 가능한 예제
 
-#### 실습 1: javap로 바이트코드 분석
+3부 예제는 클래스 파일, 클래스 로딩, 실행 엔진, ByteBuddy 계측 원리를 나눠 확인한다. 실행은 해당 장 디렉터리에서 `kotlinc -script examples/<파일명>.kts`로 한다.
+
+- [ClassFileDemo.kts](part3/ch06/examples/ClassFileDemo.kts): 매직 넘버, 상수 풀, 접근 플래그, 바이트코드 명령어를 확인한다.
+- [ClassLoaderDemo.kts](part3/ch07/examples/ClassLoaderDemo.kts): 클래스 로더 계층, 부모 위임, 초기화 시점, 컨텍스트 클래스 로더를 확인한다.
+- [ExecutionEngineDemo.kts](part3/ch08/examples/ExecutionEngineDemo.kts): 스택 프레임, 디스패치, `invokedynamic`, `MethodHandle`, JIT 워밍업을 관찰한다.
+- [ClassLoadingCaseDemo.kts](part3/ch09/examples/ClassLoadingCaseDemo.kts): Spring Boot Fat JAR, 동적 프록시, ByteBuddy 스타일 계측, `RETRANSFORMATION` 전략을 묶어 본다.
+
+SDK 바이트코드를 직접 보고 싶으면 `log-friends-sdk` 저장소에서 빌드 후 `javap`를 사용한다.
 
 ```bash
-# Kotlin 클래스의 바이트코드 확인
+./gradlew build
 javap -c -p build/classes/kotlin/main/com/logfriends/agent/SpringInterceptor.class
-
-# 상수 풀까지 보기
-javap -v -p build/classes/kotlin/main/com/logfriends/agent/SpringInterceptor.class
-
-# 특정 메서드만 확인
 javap -c -p -s build/classes/kotlin/main/com/logfriends/agent/BatchTransporter.class
-```
-
-**확인할 포인트:**
-- `@RuntimeType`이 바이트코드에 어떻게 반영되는지
-- `@SuperCall Callable` 파라미터의 디스크립터
-- `invokevirtual` vs `invokestatic` vs `invokeinterface` 사용 패턴
-
-#### 실습 2: ClassLoader 계층 확인
-
-```java
-// Spring Boot 애플리케이션 내에서 실행
-public class ClassLoaderInspector {
-    public static void inspect() {
-        ClassLoader cl = ClassLoaderInspector.class.getClassLoader();
-        System.out.println("=== ClassLoader Hierarchy ===");
-        while (cl != null) {
-            System.out.println(cl.getClass().getName() + ": " + cl);
-            cl = cl.getParent();
-        }
-        System.out.println("Bootstrap ClassLoader (null)");
-
-        // log-friends SDK의 클래스 로더 확인
-        System.out.println("\n=== Log Friends Classes ===");
-        System.out.println("LogFriendsInstaller: " +
-            LogFriendsInstaller.class.getClassLoader());
-        System.out.println("SpringInterceptor: " +
-            SpringInterceptor.class.getClassLoader());
-    }
-}
-```
-
-**예상 출력 (Spring Boot Fat JAR 환경):**
-
-```
-=== ClassLoader Hierarchy ===
-org.springframework.boot.loader.LaunchedURLClassLoader: ...
-jdk.internal.loader.ClassLoaders$AppClassLoader: ...
-jdk.internal.loader.ClassLoaders$PlatformClassLoader: ...
-Bootstrap ClassLoader (null)
-```
-
-#### 실습 3: ByteBuddy 계측 전후 바이트코드 비교
-
-```bash
-# ByteBuddy 디버깅 모드로 변환된 클래스 파일 저장
-# JVM 옵션에 추가:
-# -Dnet.bytebuddy.dump=/tmp/bytebuddy-dump
-
-# 변환 후 클래스 확인
-javap -c -p /tmp/bytebuddy-dump/org/springframework/web/servlet/DispatcherServlet.class
-
-# 원본과 비교하여 ByteBuddy가 삽입한 코드 확인
-```
-
-#### 실습 4: Instrumentation API 직접 사용
-
-```java
-// 간단한 Java Agent 구현 (log-friends의 원리 이해용)
-public class SimpleAgent {
-    public static void premain(String args, Instrumentation inst) {
-        inst.addTransformer((loader, className, classBeingRedefined,
-                             protectionDomain, classfileBuffer) -> {
-            if ("com/example/Target".equals(className)) {
-                System.out.println("Transforming: " + className);
-                System.out.println("ClassLoader: " + loader);
-                System.out.println("Buffer size: " + classfileBuffer.length);
-                // 바이트코드 수정 로직 (ASM/ByteBuddy 사용)
-            }
-            return null; // null = 변환하지 않음
-        });
-    }
-}
 ```
 
 ---
